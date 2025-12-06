@@ -1,0 +1,135 @@
+{
+     "nav": {
+          "home": "Home",
+          "about": "About Me",
+          "services": "Services",
+          "projects": "Projects",
+          "testimonials": "Testimonials",
+          "blogs": "Blogs",
+          "contact": "Contact",
+          "download_cv": "Download CV"
+     },
+     "hero": {
+          "greeting": "Hi, I'm",
+          "role_prefix": "I'm a",
+          "description": "Full-stack developer passionate about merging AI, IoT, and modern web technologies to build meaningful digital solutions."
+     },
+     "about": {
+          "title": "About Me",
+          "description": "I'm {name}, a passionate full-stack developer who loves building practical, smart, and user-friendly solutions. I enjoy combining technology, logic, and creativity to solve real-world problems.",
+          "stats": {
+               "experience": "Years Self-taught Experience",
+               "projects": "Completed Projects",
+               "technologies": "Technologies Used",
+               "models": "ML Models & Experiments"
+          }
+     },
+     "skills": {
+          "logic_tag": "My Logic",
+          "title": "Technical Arsenal",
+          "subtitle": "The tools, languages, and frameworks I use to bring digital products to life.",
+          "categories": {
+               "web": {
+                    "title": "Web Development",
+                    "desc": "Building scalable, responsive, and interactive web applications using the latest web standards."
+               },
+               "iot": {
+                    "title": "IoT & Hardware",
+                    "desc": "Connecting the physical and digital worlds through smart sensors and embedded systems."
+               },
+               "ai": {
+                    "title": "AI & Machine Learning",
+                    "desc": "Leveraging data and algorithms to create intelligent systems and predictive models."
+               }
+          },
+          "stack_title": "Complete Tech Stack",
+          "vision_tag": "My Vision",
+          "vision_title_1": "Innovating for the",
+          "vision_title_2": "Next Generation",
+          "vision_desc": "I don't just write code; I dream of building systems that impact real lives. My journey is driven by curiosity and a relentless pursuit of excellence in the tech world.",
+          "cta": "Join My Journey",
+          "goals": [
+               "Become a strong full-stack engineer with expertise in machine learning.",
+               "Work on innovative projects at the intersection of IoT and AI.",
+               "Contribute to open-source and eventually build a tech startup.",
+               "Engage in freelance projects to solve diverse business challenges.",
+               "Learn advanced robotics and autonomous systems."
+          ]
+     },
+     "services": {
+          "title": "What I Offer",
+          "subtitle": "My expertise to help bring your ideas to life.",
+          "items": {
+               "web": {
+                    "title": "Web Development",
+                    "desc": "Full-stack development using modern technologies like MERN and JAMstack to build responsive and scalable web apps."
+               },
+               "mobile": {
+                    "title": "Mobile App Development",
+                    "desc": "Creating seamless mobile experiences using Flutter, React Native, and Android Studio."
+               },
+               "ml": {
+                    "title": "Machine Learning & AI",
+                    "desc": "Developing ML models and AI-driven systems with Python, Scikit-learn, and TensorFlow."
+               },
+               "iot": {
+                    "title": "IoT Development",
+                    "desc": "Building end-to-end IoT solutions including firmware, sensors, robot systems & cloud dashboards."
+               },
+               "consult": {
+                    "title": "Consulting & Code Review",
+                    "desc": "Providing expert guidance on best practices, architecture, and performance optimization."
+               },
+               "uiux": {
+                    "title": "UI/UX Design",
+                    "desc": "Designing clean and modern interfaces with strong focus on usability and accessibility."
+               }
+          }
+     },
+     "inspiration": {
+          "tag": "My Inspiration",
+          "title": "The Visionary I Look Up To",
+          "quote_desc": "Wear your failure as a badge of honor!",
+          "qualities_title": "Leadership & Humility",
+          "qualities_desc": "Sundar Pichai exemplifies how deep technical knowledge can be combined with incredible humility and leadership. His journey from humble beginnings to leading the world's most influential tech giant is a testament to the power of education and perseverance.",
+          "why_inspired": "Why He Inspires Me",
+          "why_inspired_desc": "His ability to stay grounded while driving global innovation motivates me to build technology that is inclusive, impactful, and accessible to everyone."
+     },
+     "projects": {
+          "title": "Featured Projects",
+          "subtitle": "A showcase of my work in full-stack development, design, and more.",
+          "tech_stack": "Tech Stack",
+          "features": "Features",
+          "demo": "Demo",
+          "code": "Code"
+     },
+     "testimonials": {
+          "title": "What People Say",
+          "subtitle": "Feedback from clients, mentors, and teammates."
+     },
+     "contact": {
+          "title": "Get in Touch",
+          "subtitle": "Let's connect or work together on your project!",
+          "form": {
+               "name": "Name",
+               "name_ph": "Enter your name",
+               "email": "Email",
+               "email_ph": "Enter your email address",
+               "phone": "Phone (Optional)",
+               "phone_ph": "Enter your phone number",
+               "message": "Message",
+               "message_ph": "Your message...",
+               "submit": "Submit Message"
+          },
+          "info": {
+               "email": "Email",
+               "phone": "Phone",
+               "location": "Location"
+          }
+     },
+     "footer": {
+          "quick_nav": "Quick Navigation",
+          "contact_social": "Contact & Social",
+          "built_with": "Built with ❤️ by {name}. © 2024 {name}"
+     }
+}
