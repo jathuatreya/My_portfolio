@@ -7,6 +7,10 @@ const DEFAULT_PARTICLE_COUNT = 8; // Reduced for cleaner look
 const DEFAULT_SPOTLIGHT_RADIUS = 400; // Larger spotlight for smoother gradients
 const DEFAULT_GLOW_COLOR = '0, 119, 237'; // Electric Blue
 
+
+const timeoutsRef = useRef<ReturnType<typeof setTimeout>[]>([]);
+
+
 const createParticleElement = (x: number, y: number, color: string = DEFAULT_GLOW_COLOR): HTMLDivElement => {
      const el = document.createElement('div');
      el.className = 'particle';
@@ -64,11 +68,11 @@ export const MagicCard: React.FC<{
 }) => {
           const cardRef = useRef<HTMLDivElement>(null);
           const particlesRef = useRef<HTMLDivElement[]>([]);
-          const timeoutsRef = useRef<number[]>([]);
           const isHoveredRef = useRef(false);
           const memoizedParticles = useRef<HTMLDivElement[]>([]);
           const particlesInitialized = useRef(false);
           const magnetismAnimationRef = useRef<gsap.core.Tween | null>(null);
+          const timeoutsRef = useRef<ReturnType<typeof setTimeout>[]>([]); // ✅ Fixed type
 
           const initializeParticles = useCallback(() => {
                if (particlesInitialized.current || !cardRef.current) return;
