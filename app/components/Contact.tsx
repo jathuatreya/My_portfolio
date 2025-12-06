@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { Mail, Phone, MapPin, Send } from 'lucide-react'
 import { contactInfo } from '../data/portfolio-data'
@@ -53,7 +53,7 @@ export default function Contact() {
                               <ScrollReveal delay={0.3}>
                                    <MagicCard className="bg-[#F5F5F7] dark:bg-[#121212] p-8 rounded-2xl shadow-[var(--card-shadow)] group cursor-pointer" clickEffect={true}>
                                         <a className="flex items-center gap-6" href={`mailto:${contactInfo.email}`}>
-                                             <div className="flex-shrink-0 w-16 h-16 rounded-full bg-primary/10 dark:bg-primary/20 text-primary flex items-center justify-center transition-colors duration-200 group-hover:bg-primary group-hover:text-white">
+                                             <div className=" w-16 h-16 rounded-full bg-primary/10 dark:bg-primary/20 text-primary flex items-center justify-center transition-colors duration-200 group-hover:bg-primary group-hover:text-white">
                                                   <Mail size={32} />
                                              </div>
                                              <div>

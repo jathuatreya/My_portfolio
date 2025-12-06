@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { useEffect, useState } from 'react'
 
@@ -28,7 +28,7 @@ export default function Preloader() {
 
                     {/* Loading Text */}
                     <div className="mt-8 text-center">
-                         <h2 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-600 dark:from-white dark:to-gray-400">
+                         <h2 className="text-2xl font-bold bg-clip-text text-transparent bg-linear-to-r from-gray-900 to-gray-600 dark:from-white dark:to-gray-400">
                               Jathushan.V
                          </h2>
                          <div className="flex items-center justify-center gap-1 mt-3">

@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { Menu, Moon, Sun, Globe, ChevronDown } from 'lucide-react'
 import { navItems, profile } from '../data/portfolio-data'

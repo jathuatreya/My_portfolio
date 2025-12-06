@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { profile } from '../data/portfolio-data'
 import { Timer, CheckCircle2, Code2, Brain } from 'lucide-react'

@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { CheckCircle2, Code2, Cpu, Globe, Zap } from 'lucide-react'
 import { technologies } from '../data/portfolio-data'

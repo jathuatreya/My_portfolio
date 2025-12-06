@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { Mail, Github, MapPin, Linkedin } from 'lucide-react'
 import { footerLinks, profile } from '../data/portfolio-data'

@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -7,6 +7,7 @@ import EngagementToast from "./components/EngagementToast";
 import Preloader from "./components/Preloader";
 import { LanguageProvider } from "./context/LanguageContext";
 import { profile } from "./data/portfolio-data";
+import { ReactNode } from "react";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -18,15 +19,14 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+// ✅ Metadata (TypeScript-safe, no themeColor in viewport)
 export const metadata: Metadata = {
   title: {
     default: `${profile.name} | Full-Stack Developer & AI Enthusiast`,
     template: `%s | ${profile.name} Portfolio`,
   },
 
-  description:
-    `${profile.name} is a Full-Stack Developer specializing in MERN, Next.js, Machine Learning, IoT systems, automation and modern web engineering. ` +
-    `${profile.shortBio} — Explore projects, skills, services and achievements.`,
+  description: `${profile.name} is a Full-Stack Developer specializing in MERN, Next.js, Machine Learning, IoT systems, automation and modern web engineering. ${profile.shortBio} — Explore projects, skills, services and achievements.`,
 
   keywords: [
     "Full-Stack Developer",
@@ -41,38 +41,7 @@ export const metadata: Metadata = {
     "TypeScript Developer",
     "Frontend Developer",
     "Backend Developer",
-    "Best Portfolio Website",
-    "Cloud Computing",
-    "Automation",
-    "Jathushan Varnakulasingam",
-    "Jathushan Varnakulasingam Developer",
-    "Jathushan Full-Stack Developer",
-    "Jathushan Software Engineer",
-    "Best Developer in Sri Lanka",
-    "Top Full-Stack Developer Sri Lanka",
-    "Best Web Developer Sri Lanka",
-    "Software Engineer Sri Lanka",
-    "Full-Stack Developer Sri Lanka",
-    "Sri Lanka Web Developer",
-    "Next.js Developer Sri Lanka",
-    "React Developer Sri Lanka",
-    "MERN Developer Sri Lanka",
-    "AI Developer Sri Lanka",
-    "Machine Learning Engineer Sri Lanka",
-    "IoT Developer Sri Lanka",
-    "Vavuniya Developer",
-    "Best Developer in Vavuniya",
-    "Top Developer Vavuniya",
-    "Full-Stack Developer Vavuniya",
-    "Web Developer Vavuniya",
-    "Software Engineer Vavuniya",
-    "Next.js Developer Vavuniya",
-    "React Developer Vavuniya",
-    "Portfolio Developer Sri Lanka",
-    "Freelance Developer Sri Lanka",
-    "Freelance Developer Vavuniya",
-    "Sri Lanka Programmer",
-    "Tech Talent Sri Lanka",
+    "Portfolio Developer Vavuniya",
   ],
 
   authors: [{ name: profile.name, url: profile.portfolioURL }],
@@ -87,9 +56,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: profile.portfolioURL,
     title: `${profile.name} | Full-Stack Developer, ML & IoT Enthusiast`,
-    description:
-      `Portfolio of ${profile.name}, a Full-Stack Developer skilled in modern web development, ` +
-      `AI, ML, IoT, automation and API engineering. Explore projects, services and achievements.`,
+    description: `Portfolio of ${profile.name}, a Full-Stack Developer skilled in modern web development, AI, ML, IoT, automation and API engineering. Explore projects, services and achievements.`,
     siteName: `${profile.name} Portfolio`,
     images: [
       {
@@ -104,8 +71,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: `${profile.name} | Full-Stack Developer & AI Innovator`,
-    description:
-      `Explore the portfolio of ${profile.name}, focusing on web development, AI, ML, IoT and modern web systems.`,
+    description: `Explore the portfolio of ${profile.name}, focusing on web development, AI, ML, IoT and modern web systems.`,
     images: [profile.aboutImage],
     creator: "@jathushanstark",
   },
@@ -134,9 +100,9 @@ export const metadata: Metadata = {
     apple: "/favicon.ico",
   },
 
-  themeColor: "#0a0a0a",
 
-  // 📌 Google SEO important additions
+
+  // 📌 Google SEO additions
   other: {
     "geo.region": "LK",
     "geo.placename": "Sri Lanka",
@@ -145,16 +111,19 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#0a0a0a",
+};
+
+// ✅ RootLayout
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <head>
+      </head>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <LanguageProvider>
           <Preloader />
           <GlobalToaster />

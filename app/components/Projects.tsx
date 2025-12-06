@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { ExternalLink, Github } from 'lucide-react'
 import { projects } from '../data/portfolio-data'

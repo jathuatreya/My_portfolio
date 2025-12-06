@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { Linkedin, Github, Twitter, Facebook, Instagram } from 'lucide-react'
 import { profile } from '../data/portfolio-data'

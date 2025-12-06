@@ -1,3 +1,4 @@
+"use client";
 type ToastType = 'success' | 'custom';
 
 export interface ToastEvent {

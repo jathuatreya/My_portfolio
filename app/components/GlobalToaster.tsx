@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { useEffect, useState } from 'react'
 import { subscribe, ToastEvent, toast } from '../utils/toast'

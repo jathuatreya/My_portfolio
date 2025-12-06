@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import React, { useRef, useEffect, useState, useCallback } from 'react';
 import { gsap } from 'gsap';
@@ -8,7 +8,7 @@ const DEFAULT_SPOTLIGHT_RADIUS = 400; // Larger spotlight for smoother gradients
 const DEFAULT_GLOW_COLOR = '0, 119, 237'; // Electric Blue
 
 
-const timeoutsRef = useRef<ReturnType<typeof setTimeout>[]>([]);
+
 
 
 const createParticleElement = (x: number, y: number, color: string = DEFAULT_GLOW_COLOR): HTMLDivElement => {

@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { useLanguage } from '../context/LanguageContext'
 import { Code2, Smartphone, Brain, Cpu, FileCheck2, Palette } from 'lucide-react'
