@@ -9,6 +9,14 @@ import { useRef, useState } from 'react';
 import { toast } from '../utils/toast';
 import emailjs from '@emailjs/browser';
 
+// ⚠️ EmailJS Configuration
+// Please replace these with your actual keys from https://dashboard.emailjs.com/
+const EMAIL_CONFIG = {
+     SERVICE_ID: 'service_4cosu79',     // Replace with your Service ID
+     TEMPLATE_ID: 'template_ol296hf',   // Replace with your Template ID
+     PUBLIC_KEY: 'DTYSV-sEd-sE4IZNS',  // Replace with your Public Key
+};
+
 interface ContactFormElements extends HTMLFormControlsCollection {
      name: HTMLInputElement;
      email: HTMLInputElement;
@@ -41,10 +49,10 @@ export default function Contact() {
 
           try {
                await emailjs.sendForm(
-                    'service_4cosu79',        // Your EmailJS Service ID
-                    'template_ol296hf',       // Your EmailJS Template ID
+                    EMAIL_CONFIG.SERVICE_ID,
+                    EMAIL_CONFIG.TEMPLATE_ID,
                     form.current,
-                    'DTYSV-sEd-sE4IZNS'      // Your EmailJS Public Key
+                    EMAIL_CONFIG.PUBLIC_KEY
                );
 
                toast.success(formText.success);
@@ -86,7 +94,7 @@ export default function Contact() {
                                              <label className="flex flex-col flex-1">
                                                   <p className="text-[#1D1D1F] dark:text-white text-sm font-medium leading-normal pb-2">{formText.name}</p>
                                                   <input
-                                                       name="name"
+                                                       name="user_name"
                                                        className="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#1D1D1F] dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border-none bg-white dark:bg-[#1a1a1a] h-12 placeholder:text-gray-400 dark:placeholder:text-gray-500 p-3 text-base font-normal leading-normal shadow-sm"
                                                        placeholder={formText.name_ph}
                                                        type="text"
@@ -97,7 +105,7 @@ export default function Contact() {
                                              <label className="flex flex-col flex-1">
                                                   <p className="text-[#1D1D1F] dark:text-white text-sm font-medium leading-normal pb-2">{formText.email}</p>
                                                   <input
-                                                       name="email"
+                                                       name="user_email"
                                                        className="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#1D1D1F] dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border-none bg-white dark:bg-[#1a1a1a] h-12 placeholder:text-gray-400 dark:placeholder:text-gray-500 p-3 text-base font-normal leading-normal shadow-sm"
                                                        placeholder={formText.email_ph}
                                                        type="email"
@@ -128,10 +136,11 @@ export default function Contact() {
 
                                         <button
                                              disabled={isSubmitting}
-                                             className="flex items-center justify-center w-full px-6 py-3.5 rounded-lg bg-primary text-white text-base font-bold leading-normal shadow-md hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition-all duration-200 transform hover:scale-[1.02] disabled:opacity-70 disabled:cursor-not-allowed"
+                                             className="flex items-center justify-center gap-2 w-full px-6 py-3.5 rounded-lg bg-[#1D1D1F] dark:bg-white text-white dark:text-black text-base font-bold leading-normal shadow-md hover:bg-[#1D1D1F]/90 dark:hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#1D1D1F] dark:focus:ring-white transition-all duration-200 transform hover:scale-[1.02] disabled:opacity-70 disabled:cursor-not-allowed"
                                              type="submit"
                                         >
-                                             {isSubmitting ? formText.sending : formText.submit}
+                                             <Send size={18} />
+                                             <span>{isSubmitting ? formText.sending : formText.submit}</span>
                                         </button>
                                    </form>
                               </MagicCard>

@@ -14,7 +14,7 @@ export default function Skills() {
                {/* --------------------------------------
              *  TECHNICAL SECTION
              * -------------------------------------- */}
-               <section id="technical-arsenal" className="py-24 px-4 sm:px-6 lg:px-8 bg-white dark:bg-[#0a0a0a] relative overflow-hidden">
+               <section id="technical-arsenal" className="py-20 px-4 sm:px-6 lg:px-8 bg-white dark:bg-[#0a0a0a] relative overflow-hidden">
 
                     {/* Decorative Background */}
                     <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/10 rounded-full blur-3xl opacity-20 pointer-events-none"></div>
@@ -121,22 +121,22 @@ export default function Skills() {
 
                          {/* Full Tech Cloud */}
                          <ScrollReveal delay={0.4}>
-                              <MagicContainer className="bg-white dark:bg-[#121212] rounded-4xl p-8 sm:p-12 shadow-md border border-gray-200 dark:border-white/10 text-center">
-                                   <h3 className="text-lg font-bold text-gray-500 dark:text-gray-400 uppercase tracking-widest mb-8">
+                              <MagicContainer className="bg-white dark:bg-[#121212] rounded-3xl sm:rounded-4xl p-6 sm:p-12 shadow-md border border-gray-200 dark:border-white/10 text-center">
+                                   <h3 className="text-sm sm:text-lg font-bold text-gray-500 dark:text-gray-400 uppercase tracking-widest mb-6 sm:mb-8">
                                         {t.skills.stack_title}
                                    </h3>
 
-                                   <div className="flex flex-wrap justify-center gap-3">
+                                   <div className="flex flex-wrap justify-center gap-1.5 sm:gap-3">
                                         {technologies.map((tech, index) => (
                                              <MagicCard
                                                   key={index}
-                                                  className="group flex items-center gap-2 px-5 py-3 rounded-xl bg-[#F5F5F7] dark:bg-[#1a1a1a] hover:bg-[#e8e8ea] dark:hover:bg-[#222] transition-all"
+                                                  className="group flex items-center gap-1.5 px-2.5 py-1.5 sm:px-5 sm:py-3 rounded-md sm:rounded-xl bg-[#F5F5F7] dark:bg-[#1a1a1a] hover:bg-[#e8e8ea] dark:hover:bg-[#222] transition-all"
                                                   disableAnimations={true}
                                                   particleCount={0}
                                                   enableTilt={true}
                                              >
-                                                  <div className="w-2 h-2 rounded-full bg-primary/40 group-hover:bg-primary transition-colors"></div>
-                                                  <span className="text-gray-700 dark:text-gray-200 font-bold text-base">{tech}</span>
+                                                  <div className="w-1 h-1 sm:w-2 sm:h-2 rounded-full bg-primary/40 group-hover:bg-primary transition-colors"></div>
+                                                  <span className="text-gray-700 dark:text-gray-200 font-bold text-xs sm:text-base">{tech}</span>
                                              </MagicCard>
                                         ))}
                                    </div>
@@ -149,7 +149,7 @@ export default function Skills() {
                {/* --------------------------------------
              *  FUTURE GOALS SECTION
              * -------------------------------------- */}
-               <section id="goals" className="py-24 px-4 sm:px-6 lg:px-8 bg-white dark:bg-[#0a0a0a] relative overflow-hidden">
+               <section id="goals" className="py-20 px-4 sm:px-6 lg:px-8 bg-white dark:bg-[#0a0a0a] relative overflow-hidden">
 
                     <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-primary/10 rounded-full blur-3xl opacity-20 pointer-events-none"></div>
 
