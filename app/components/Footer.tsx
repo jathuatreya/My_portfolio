@@ -1,7 +1,7 @@
 "use client";
 
 import { Mail, Github, MapPin, Linkedin } from 'lucide-react'
-import { footerLinks, profile } from '../data/portfolio-data'
+import { footerLinks, profile, contactInfo } from '../data/portfolio-data'
 import { useLanguage } from '../context/LanguageContext'
 
 export default function Footer() {
@@ -44,9 +44,9 @@ export default function Footer() {
                     <div className="flex flex-col space-y-4">
                          <h3 className="text-lg font-semibold dark:text-white">{t.footer.contact_social}</h3>
                          <div className="flex flex-col space-y-3">
-                              <a className="flex items-center gap-3 text-[#0077ED] hover:text-primary/80 transition-colors duration-200" href={`mailto:${profile.contact.email}`}>
+                              <a className="flex items-center gap-3 text-[#0077ED] hover:text-primary/80 transition-colors duration-200" href={`mailto:${contactInfo.email}`}>
                                    <Mail size={20} />
-                                   <span>{profile.contact.email}</span>
+                                   <span>{contactInfo.email}</span>
                               </a>
                               <a className="flex items-center gap-3 text-[#0077ED] hover:text-primary/80 transition-colors duration-200" href={profile.social.github}>
                                    <Github size={20} />
@@ -58,7 +58,7 @@ export default function Footer() {
                               </a>
                               <div className="flex items-center gap-3 text-gray-700 dark:text-gray-300">
                                    <MapPin size={20} />
-                                   <span>{profile.contact.location}</span>
+                                   <span>{contactInfo.location}</span>
                               </div>
                          </div>
                     </div>

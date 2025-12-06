@@ -20,21 +20,21 @@ export default function Preloader() {
                <div className="flex flex-col items-center">
                     {/* Pulsing Logo/Circle */}
                     <div className="relative flex items-center justify-center">
-                         <div className="absolute w-24 h-24 rounded-full border-4 border-primary/20 animate-ping"></div>
-                         <div className="w-20 h-20 rounded-full bg-primary flex items-center justify-center shadow-lg shadow-primary/40 animate-pulse">
-                              <span className="text-white text-3xl font-black">JV</span>
+                         <div className="absolute w-24 h-24 rounded-full border-4 border-[#0077ED] animate-ping"></div>
+                         <div className="w-20 h-20 rounded-full bg-white flex items-center justify-center shadow-lg shadow-primary animate-pulse">
+                              <span className="text-black dark:text-white  text-3xl ">J.V</span>
                          </div>
                     </div>
 
                     {/* Loading Text */}
                     <div className="mt-8 text-center">
-                         <h2 className="text-2xl font-bold bg-clip-text text-transparent bg-linear-to-r from-gray-900 to-gray-600 dark:from-white dark:to-gray-400">
-                              Jathushan.V
+                         <h2 className="text-2xl font-bold text-primary tracking-widest uppercase">
+                              Jathushan Varnakulasingam
                          </h2>
                          <div className="flex items-center justify-center gap-1 mt-3">
-                              <div className="w-2 h-2 rounded-full bg-primary animate-bounce [animation-delay:-0.3s]"></div>
-                              <div className="w-2 h-2 rounded-full bg-primary animate-bounce [animation-delay:-0.15s]"></div>
-                              <div className="w-2 h-2 rounded-full bg-primary animate-bounce"></div>
+                              <div className="w-2 h-2 rounded-full bg-[#0077ED] animate-bounce [animation-delay:-0.3s]"></div>
+                              <div className="w-2 h-2 rounded-full bg-[#0077ED] animate-bounce [animation-delay:-0.15s]"></div>
+                              <div className="w-2 h-2 rounded-full bg-[#0077ED] animate-bounce"></div>
                          </div>
                     </div>
                </div>

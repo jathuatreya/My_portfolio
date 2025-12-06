@@ -10,7 +10,7 @@ export default function Contact() {
      const { t } = useLanguage()
 
      return (
-          <section id="contact" className="py-16 px-4 sm:px-6 lg:px-8 bg-white dark:bg-[#0a0a0a] relative overflow-hidden">
+          <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8 bg-white dark:bg-[#0a0a0a] relative overflow-hidden">
                {/* Glowing Background Elements */}
                <div className="absolute -bottom-32 right-1/3 w-80 h-80 bg-primary/15 rounded-full blur-3xl opacity-35 animate-pulse-slow pointer-events-none"></div>
                <div className="absolute top-0 left-0 w-72 h-72 bg-purple-500/5 rounded-full blur-3xl opacity-25 animate-pulse-slower pointer-events-none"></div>

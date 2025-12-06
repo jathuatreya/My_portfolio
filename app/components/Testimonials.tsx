@@ -9,7 +9,7 @@ import { MagicCard, MagicContainer } from './MagicCard'
 export default function Testimonials() {
      const { t } = useLanguage()
      return (
-          <section id="testimonials" className="py-16 px-4 bg-white dark:bg-[#0a0a0a]">
+          <section id="testimonials" className="py-20 px-4 sm:px-6 lg:px-8 bg-white dark:bg-[#0a0a0a] relative overflow-hidden">
                <div className="relative w-full max-w-6xl mx-auto px-4">
                     {/* Background Elements */}
                     <div className="absolute -top-24 -left-48 w-96 h-96 bg-primary/10 dark:bg-primary/20 rounded-full blur-3xl opacity-50"></div>
@@ -33,10 +33,7 @@ export default function Testimonials() {
                                    <MagicCard className="group relative flex flex-col rounded-2xl bg-[#F5F5F7] dark:bg-[#121212] p-8 shadow-[var(--card-shadow)] transition-all duration-300 h-full">
                                         <Quote className="absolute top-6 right-6 text-primary/20 dark:text-primary/40 group-hover:text-primary/30 transition-colors duration-300" size={40} />
                                         <div className="flex items-center mb-6">
-                                             <div className="h-16 w-16 rounded-full bg-[#F5F5F7] dark:bg-slate-700 p-1 shadow-md">
-                                                  <img className="h-full w-full rounded-full object-cover" src={testimonial.image} alt={testimonial.name} />
-                                             </div>
-                                             <div className="ml-4">
+                                             <div>
                                                   <p className="text-lg font-bold text-[#1D1D1F] dark:text-white">{testimonial.name}</p>
                                                   <p className="text-sm text-gray-500 dark:text-gray-400">{testimonial.role}</p>
                                              </div>

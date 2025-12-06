@@ -15,20 +15,27 @@ import {
 
 export const profile = {
      name: "Jathushan Varnakulasingam",
-     slogan: "Building Ideas. Solving Problems. Creating Impact.",
+     slogan: "Innovate. Automate. Accelerate.",
      shortBio:
-          "Full-stack developer passionate about merging AI, IoT, and modern web technologies to build meaningful digital solutions.",
-     age: 22,
-     role: "Full-Stack Developer | ML Enthusiast | IoT Innovator",
+          "A full-stack developer and tech enthusiast exploring the worlds of electrical, mechanical, and computer engineering. I build innovative projects that merge software, hardware, and AI to create smart, real-world solutions",
+     age: 25,
+     role: "Full-Stack Developer | ML Enthusiast | IoT Innovator | Robotics Explorer",
      roles: [
           "Full-Stack Developer",
           "ML Enthusiast",
           "IoT Innovator",
-          "Problem Solver"
+
+          "Robotics Explorer",
+
+          "AI Integrator",
+
+          "Software Engineer",
+          "Automation Enthusiast"
      ],
+
      location: "Vavuniya, Sri Lanka",
      availability: "Open for freelance & full-time roles",
-     portfolioURL: "https://jathuatreya.github.io",
+     portfolioURL: "https://jathushanvarnakulasingam-portfolio.vercel.app/",
      profileImage: "/my_image3.png",
      aboutImage: "/jathushan.png",
      resumeURL: "/cv.pdf",
@@ -65,8 +72,8 @@ export const profile = {
      ],
 
      contact: {
-          email: "jathushan@example.com",
-          phone: "+94 XX XXX XXXX",
+          email: "imjathushan.com",
+          phone: "+94 707661734",
           location: "Vavuniya, Sri Lanka",
      },
 } as const;
@@ -90,8 +97,8 @@ export const navItems = [
 // --------------------------------------
 
 export const aboutStats = [
-     { icon: Timer, value: "2+", label: "Years Self-taught Experience" },
-     { icon: CheckCircle2, value: "20+", label: "Completed Projects" },
+     { icon: Timer, value: "3+", label: "Years Self-taught Experience" },
+     { icon: CheckCircle2, value: "50+", label: "Completed Projects" },
      { icon: Code2, value: "15+", label: "Technologies Used" },
      { icon: Brain, value: "5+", label: "ML Models & Experiments" },
 ];
@@ -101,29 +108,90 @@ export const aboutStats = [
 // --------------------------------------
 
 export const technologies = [
-     "MERN Stack",
-     "LAMP Stack",
+     // Programming Languages
      "Python",
      "Java",
-     "Machine Learning",
-     "IoT & Hardware",
-     "Networking",
+     "JavaScript",
+     "TypeScript",
+     "SQL",
+     "Bash",
+
+
+     // Web Development
+     "MERN Stack",
+     "LAMP Stack",
      "Next.js",
-     "Docker",
+     "Node.js",
+     "Express.js",
+     "Laravel",
+     "Spring Boot",
+     "Tailwind CSS",
+     "SASS",
+     "HTML5",
+     "CSS3",
+
+     // Databases
+     "MongoDB",
+     "MySQL",
+     "PostgreSQL",
+
+     // APIs & Backend
+     "RESTful APIs",
+     "JAX-RS",
+     "Postman",
+
+     // DevOps & Tools
      "Git & GitHub",
+     "Docker",
+     "VS Code",
+     "npm",
+
+     // Machine Learning & AI
+     "Machine Learning",
+     "ML Model Training",
+     "Fine-Tuning Models",
+     "RAG (Retrieval-Augmented Generation) Applications",
+     "OpenCV",
+     "MediaPipe",
+     "AI Integration",
+
+     // IoT & Hardware
+     "IoT & Hardware",
+     "MicroPython",
+     "Servo Motors",
+     "DC Motors",
+     "Ultrasonic Sensors",
+
+     // Networking
+     "Networking",
+
+     // Algorithms & CS Concepts
+     "Data Structures & Algorithms",
+
+     // Robotics & Automation
+     "Robotics",
+     "Automation",
+
+
+     "Full-Stack Development",
+     "AI & Robotics Projects"
 ] as const;
+
 
 // --------------------------------------
 // 🎯 GOALS
 // --------------------------------------
 
 export const goals = [
-     "Become a strong full-stack engineer with expertise in machine learning.",
-     "Work on innovative projects at the intersection of IoT and AI.",
-     "Contribute to open-source and eventually build a tech startup.",
-     "Engage in freelance projects to solve diverse business challenges.",
-     "Learn advanced robotics and autonomous systems.",
+     "Master full-stack development using modern frameworks and technologies.",
+     "Train, fine-tune, and deploy machine learning models, including RAG applications.",
+     "Build innovative IoT and robotics projects integrating AI and hardware.",
+     "Work on real-world projects to solve complex technical challenges.",
+     "Explore electrical, mechanical, and computer engineering intersections.",
+     "Contribute to open-source projects and grow a strong professional portfolio.",
+     "Continuously learn new technologies, frameworks, and engineering skills."
 ] as const;
+
 
 // --------------------------------------
 // 📝 BLOGS
@@ -171,12 +239,6 @@ export const services = [
                "Full-stack development using modern technologies like MERN and JAMstack to build responsive and scalable web apps.",
      },
      {
-          icon: Smartphone,
-          title: "Mobile App Development",
-          description:
-               "Creating seamless mobile experiences using Flutter, React Native, and Android Studio.",
-     },
-     {
           icon: Brain,
           title: "Machine Learning & AI",
           description:
@@ -193,14 +255,8 @@ export const services = [
           title: "Consulting & Code Review",
           description:
                "Providing expert guidance on best practices, architecture, and performance optimization.",
-     },
-     {
-          icon: Palette,
-          title: "UI/UX Design",
-          description:
-               "Designing clean and modern interfaces with strong focus on usability and accessibility.",
-     },
-];
+     }
+]
 
 // --------------------------------------
 // 🚀 PROJECTS
@@ -208,56 +264,184 @@ export const services = [
 
 export const projects = [
      {
-          title: "Auto-MML",
+          title: "A/L MCQ Answers Automation",
           image:
-               "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?auto=format&fit=crop&q=80&w=800",
+               "https://images.unsplash.com/photo-1554224155-1696413565d3?auto=format&fit=crop&q=80&w=800",
           description:
-               "An automated machine learning tool designed to simplify model selection and specialized training tasks.",
-          techStack: ["Python", "Machine Learning", "Automation"],
+               "A Python script that automates extracting, organizing, and managing A/L MCQ answers for quick reference and study.",
+          techStack: ["Python"],
           features: [
-               "Automated model selection",
-               "Streamlined training pipeline",
-               "User-friendly interface for non-experts",
+               "Fully automated answer extraction",
+               "Fast processing for large datasets",
+               "Simple and lightweight script",
           ],
      },
      {
-          title: "Food & Movie Web Scrapers",
+          title: "AI Job Application Assistant",
           image:
-               "https://images.unsplash.com/photo-1633356122544-f134324a6cee?auto=format&fit=crop&q=80&w=800",
+               "https://images.unsplash.com/photo-1504384764586-bb4cdc1707b0?auto=format&fit=crop&q=80&w=800",
           description:
-               "Custom Python-based web scrapers built to aggregate large datasets for movies and food pricing analysis.",
-          techStack: ["Python", "BeautifulSoup", "Data Analysis"],
+               "An AI-powered web application built using Next.js and Flask that analyzes resumes, job descriptions, detects skill gaps, and suggests improvements.",
+          techStack: ["Python", "Next.js", "Flask", "NLP", "Machine Learning"],
           features: [
-               "High-performance scraping",
-               "Data cleaning and export",
-               "Automated periodic updates",
+               "Resume content extraction",
+               "Job-description matching",
+               "Skill gap detection",
+               "Job category prediction",
+               "Interview question suggestions",
           ],
      },
      {
-          title: "House Price Prediction",
+          title: "Bulk Folder Creator",
           image:
-               "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=800",
+               "https://images.unsplash.com/photo-1607083206968-13611eab3ab8?auto=format&fit=crop&q=80&w=800",
           description:
-               "A data science project using regression models to accurately predict housing prices based on various features.",
-          techStack: ["Python", "Scikit-learn", "Pandas"],
+               "A simple Python tool to create multiple folders automatically using predefined naming patterns.",
+          techStack: ["Python"],
           features: [
-               "Advanced regression analysis",
-               "Feature engineering",
-               "Visual data insights",
+               "Fast directory creation",
+               "Custom folder naming",
+               "Useful for project setup & organizing files",
           ],
      },
+     {
+          title: "Delete Empty Folders Tool",
+          image:
+               "https://images.unsplash.com/photo-1587620931282-882d3a89a7d3?auto=format&fit=crop&q=80&w=800",
+          description:
+               "A Python utility script that scans directories and removes empty folders automatically.",
+          techStack: ["Python"],
+          features: [
+               "Recursive folder scanning",
+               "Safe deletion",
+               "Useful for cleaning large projects",
+          ],
+     },
+     {
+          title: "Flight Seat Booking System",
+          image:
+               "https://images.unsplash.com/photo-1504196606672-aef5c9cefc92?auto=format&fit=crop&q=80&w=800",
+          description:
+               "A basic Java-based flight seat booking simulation demonstrating object-oriented design concepts.",
+          techStack: ["Java"],
+          features: [
+               "Seat allocation simulation",
+               "OOP-based structure",
+               "User-friendly console interface",
+          ],
+     },
+     {
+          title: "Hunger Eradication Website",
+          image:
+               "https://images.unsplash.com/photo-1520975918319-0983c9aeb963?auto=format&fit=crop&q=80&w=800",
+          description:
+               "A web project aimed at spreading awareness and providing resources related to hunger eradication initiatives.",
+          techStack: ["HTML", "CSS", "JavaScript"],
+          features: [
+               "Clean and responsive UI",
+               "Awareness-driven content",
+               "Easy to navigate pages",
+          ],
+     },
+     {
+          title: "GitHub Profile Automation Repo",
+          image:
+               "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=800",
+          description:
+               "A repo for managing and customizing your GitHub profile with dynamic content and code snippets.",
+          techStack: ["Markdown", "GitHub Actions"],
+          features: [
+               "Automatic GitHub profile updates",
+               "Dynamic readme templates",
+               "Clean customization layout",
+          ],
+     },
+     {
+          title: "Java Multithreading Ticket Booking",
+          image:
+               "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=800",
+          description:
+               "A multi-threaded ticket booking simulator demonstrating concurrency control and synchronized operations in Java.",
+          techStack: ["Java", "Multithreading"],
+          features: [
+               "Vendor-customer thread interaction",
+               "Synchronized ticket operations",
+               "Dynamic ticket pool management",
+          ],
+     },
+     {
+          title: "Laptop Controlled Car",
+          image:
+               "https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&q=80&w=800",
+          description:
+               "A Python-based IoT project where a laptop is used to control a robot car using custom command inputs.",
+          techStack: ["Python", "IoT"],
+          features: [
+               "Laptop-based remote control",
+               "Real-time command execution",
+               "Perfect for robotics beginners",
+          ],
+     },
+     {
+          title: "Library Management (PHP)",
+          image:
+               "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&q=80&w=800",
+          description:
+               "A PHP-based CRUD web app designed to manage library books, students, and borrowing records.",
+          techStack: ["PHP", "MySQL"],
+          features: [
+               "Full CRUD operations",
+               "Clean admin UI",
+               "Book & member management",
+          ],
+     },
+     {
+          title: "Magisk on WSA",
+          image:
+               "https://images.unsplash.com/photo-1605902711622-cfb43c44367f?auto=format&fit=crop&q=80&w=800",
+          description:
+               "A project integrating Magisk root and Google Apps into Windows Subsystem for Android.",
+          techStack: ["WSA", "Android", "Magisk"],
+          features: [
+               "Root Android inside Windows",
+               "GApps integration",
+               "WSA customization",
+          ],
+     },
+     {
+          title: "Marks Evaluation with Graphs",
+          image:
+               "https://images.unsplash.com/photo-1558403194-611308249627?auto=format&fit=crop&q=80&w=800",
+          description:
+               "A Python assignment project for plotting and analyzing student marks using graphs.",
+          techStack: ["Python", "Matplotlib"],
+          features: [
+               "Automated marks visualization",
+               "Graph-based insights",
+               "Easy input and plotting",
+          ],
+     },
+     {
+          title: "Mastermind Game",
+          image:
+               "https://images.unsplash.com/photo-1585366119957-e9730b6d0f5f?auto=format&fit=crop&q=80&w=800",
+          description:
+               "A simple Python implementation of the classic Mastermind code-breaking game.",
+          techStack: ["Python"],
+          features: [
+               "Classic game logic",
+               "Interactive gameplay",
+               "Good for beginners",
+          ],
+     }
 ] as const;
+
 
 // --------------------------------------
 // 💡 INSPIRATION
 // --------------------------------------
 
-export const inspiration = {
-     name: "Sundar Pichai",
-     role: "CEO of Google & Alphabet",
-     image: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Sundar_pichai.png/800px-Sundar_pichai.png",
-     quote: "Wear your failure as a badge of honor!",
-} as const;
+
 
 // --------------------------------------
 // ⭐ TESTIMONIALS
@@ -265,26 +449,20 @@ export const inspiration = {
 
 export const testimonials = [
      {
-          name: "Rajan K.",
+          name: "Thusigan.R",
           role: "Client",
-          image:
-               "https://lh3.googleusercontent.com/aida-public/AB6AXuAQeU9wcIC6JnEuiqVGOKEmkZQZJIuWIVRcZN03V_TDocfBRvR26tfFDZe6FeT1wDicURLZrQJWCNAWMBuWfz9Cg5tGXU1XHo3k_xxCfZ_qzTF_1S5uIKyn--ZIUYBYo2zYYuS7FgyDyl2Uyhp3TDQXBuWiVfHWhL4hXM4lMEJwAoNjdmHLydcLSQKCTLP1dQ_s6PoqCfWMOWCVMp8YdUzXKYbQLDyexXv52keIcwh-Z48NEK81SQ7Shh6mW4HCR59TaXnACC6yjcA",
           quote:
                "Working with Jathushan was smooth and professional. He delivered a high-quality system and communicated clearly.",
      },
      {
-          name: "Dr. Tharsan",
+          name: "Ajanthan.S",
           role: "Lecturer – IIT / UoW",
-          image:
-               "https://lh3.googleusercontent.com/aida-public/AB6AXuDe3-tK_nf40C0boq-HuesPb6sn6CO3Ixm-7pi4S6QxZjQWKSRyrs0BEs-s3HnGYlvm28vzn0ovkL1viArMts09cP4xpWFlUhQeLFTGFXm5FLplhZ4MkjzeegUxyDv26VboJ43A1Ir7p8ccvoE1gUBf33mq6HiY2Iq6FMbgMiXl2AT8TP6UVh9tHs-QcAXeRWKVtDFVnc_k09wkmmCTfWUX-6mJ9sKEDGiwtXchanyMGUXtOk-DhhYWipCLfrxDDPSxF5irKdbH3cU",
           quote:
                "A dedicated learner with strong problem-solving skills. His projects show creativity and technical growth.",
      },
      {
-          name: "Manoj P.",
+          name: "Hrthick Roshan",
           role: "Software Developer – Teammate",
-          image:
-               "https://lh3.googleusercontent.com/aida-public/AB6AXuA7qY4Drh7t8Qhd6ecctsucMYynXJEHZUSw-RSpfRetKPfDwCu1u8bw2_EwxdH-lGC8m6d6wtmL6OGkjOqer3bt1-YFe5SlzsTvA_oR1_L0wWTX1uG2r5VySfvcIhc5iK4TfaKZULnVr91pcoAxCaJD8PuSYgYyZ5PszTD03VfelaCBnbAjOnnTdkOsvCVoViPYD3Mja-RkhjMjK6FuTQF6SJcejPYcap-sZCWsfDx6NL-7hs-WrM5u86ykfRY4onE28fkzymP_LIM",
           quote:
                "Jathu consistently brings clean code and smart solutions. A great team player with passion for learning.",
      },
@@ -295,8 +473,8 @@ export const testimonials = [
 // --------------------------------------
 
 export const contactInfo = {
-     email: "jathushan@example.com",
-     phone: "+94 XX XXX XXXX",
+     email: "imjathushan@gmail.com",
+     phone: "+94 76661734",
      location: "Vavuniya, Sri Lanka",
      social: {
           linkedin: "https://www.linkedin.com/in/jathushan-varnakulasingam-18a551271/",

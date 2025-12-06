@@ -1,22 +1,16 @@
 "use client";
 
-import { profile } from '../data/portfolio-data'
-import { Timer, CheckCircle2, Code2, Brain } from 'lucide-react'
+import { profile, aboutStats } from '../data/portfolio-data'
 import { useLanguage } from '../context/LanguageContext'
 import { MagicCard, MagicContainer } from './MagicCard'
 
 export default function About() {
      const { t } = useLanguage()
 
-     const stats = [
-          { icon: Timer, value: "2+", label: t.about.stats.experience },
-          { icon: CheckCircle2, value: "20+", label: t.about.stats.projects },
-          { icon: Code2, value: "15+", label: t.about.stats.technologies },
-          { icon: Brain, value: "5+", label: t.about.stats.models },
-     ]
+     const stats = aboutStats
 
      return (
-          <section id="about" className="py-16 px-4 sm:px-6 lg:px-8 bg-white dark:bg-[#0a0a0a] relative overflow-hidden">
+          <section id="about" className="py-20 px-4 sm:px-6 lg:px-8 bg-white dark:bg-[#0a0a0a] relative overflow-hidden">
                {/* Glowing Background Elements */}
                <div className="absolute top-20 right-0 w-72 h-72 bg-primary/10 rounded-full blur-3xl opacity-40 animate-pulse-slow pointer-events-none"></div>
                <div className="absolute bottom-40 left-0 w-64 h-64 bg-primary/15 rounded-full blur-3xl opacity-30 animate-pulse-slower pointer-events-none"></div>
@@ -34,6 +28,9 @@ export default function About() {
                               {/* About Me Header & Text */}
                               <div>
                                    <h2 className="text-[#1D1D1F] dark:text-white text-3xl sm:text-4xl font-bold leading-tight tracking-tight">{t.about.title}</h2>
+                                   <p className="mb-6 text-xl sm:text-2xl font-bold italic text-primary">
+                                        &quot;{profile.slogan}&quot;
+                                   </p>
                                    <p className="text-gray-700 dark:text-gray-300 text-base sm:text-lg font-normal leading-relaxed mt-4">
                                         {t.about.description.replace('{name}', profile.name)}
                                    </p>

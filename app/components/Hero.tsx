@@ -17,7 +17,7 @@ export default function Hero() {
 
      useEffect(() => {
           const currentRole = profile.roles[currentRoleIndex]
-          const typingSpeed = isDeleting ? 50 : 100
+          const typingSpeed = isDeleting ? 30 : 50
 
           const timer = setTimeout(() => {
                if (!isDeleting) {
@@ -73,7 +73,7 @@ export default function Hero() {
                                    </p>
                               </div>
                               <p className="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0">
-                                   {t.hero.description}
+                                   {profile.shortBio}
                               </p>
 
                               {/* Social Media Icons */}

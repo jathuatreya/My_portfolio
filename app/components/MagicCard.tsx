@@ -284,7 +284,6 @@ export const MagicCard: React.FC<{
           // Base card styles with Light Mode Defaults
           const cardStyle = {
                ...style,
-               backgroundColor: '#F5F5F7', // Light Grey for Cards
                boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
                '--glow-x': '50%',
                '--glow-y': '50%',

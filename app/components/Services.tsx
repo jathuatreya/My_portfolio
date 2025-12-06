@@ -1,54 +1,17 @@
 "use client";
 
 import { useLanguage } from '../context/LanguageContext'
-import { Code2, Smartphone, Brain, Cpu, FileCheck2, Palette } from 'lucide-react'
+import { services } from '../data/portfolio-data'
 import { ScrollReveal } from './ScrollReveal'
 import { MagicCard, MagicContainer } from './MagicCard'
 
 export default function Services() {
      const { t } = useLanguage()
 
-     const servicesList = [
-          {
-               key: 'web',
-               icon: Code2,
-               title: t.services.items.web.title,
-               description: t.services.items.web.desc
-          },
-          {
-               key: 'mobile',
-               icon: Smartphone,
-               title: t.services.items.mobile.title,
-               description: t.services.items.mobile.desc
-          },
-          {
-               key: 'ml',
-               icon: Brain,
-               title: t.services.items.ml.title,
-               description: t.services.items.ml.desc
-          },
-          {
-               key: 'iot',
-               icon: Cpu,
-               title: t.services.items.iot.title,
-               description: t.services.items.iot.desc
-          },
-          {
-               key: 'consult',
-               icon: FileCheck2,
-               title: t.services.items.consult.title,
-               description: t.services.items.consult.desc
-          },
-          {
-               key: 'uiux',
-               icon: Palette,
-               title: t.services.items.uiux.title,
-               description: t.services.items.uiux.desc
-          }
-     ]
+     const servicesList = services
 
      return (
-          <section id="services" className="py-16 px-4 sm:px-6 lg:px-8 bg-white dark:bg-[#0a0a0a] relative overflow-hidden">
+          <section id="services" className="py-20 px-4 sm:px-6 lg:px-8 bg-white dark:bg-[#0a0a0a] relative overflow-hidden">
                {/* Glowing Background Elements */}
                <div className="absolute -top-20 left-1/4 w-80 h-80 bg-primary/15 rounded-full blur-3xl opacity-35 animate-pulse-slow pointer-events-none"></div>
                <div className="absolute bottom-0 right-0 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl opacity-25 animate-pulse-slower pointer-events-none"></div>
