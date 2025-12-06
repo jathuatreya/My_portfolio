@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 
 import GlobalToaster from "./components/GlobalToaster";
@@ -55,8 +56,8 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: profile.portfolioURL,
-    title: `${profile.name} | Full-Stack Developer, ML & IoT Enthusiast`,
-    description: `Portfolio of ${profile.name}, a Full-Stack Developer skilled in modern web development, AI, ML, IoT, automation and API engineering. Explore projects, services and achievements.`,
+    title: `${profile.name} | Full-Stack Developer & AI Innovator`,
+    description: `Explore the portfolio of ${profile.name}, focusing on web development, AI, ML, IoT and modern web systems.`,
     siteName: `${profile.name} Portfolio`,
     images: [
       {
@@ -130,6 +131,20 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           <EngagementToast />
           {children}
         </LanguageProvider>
+
+        {/* Google Analytics */}
+        <Script
+          strategy="afterInteractive"
+          src="https://www.googletagmanager.com/gtag/js?id=G-Q27H9EQD0D"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-Q27H9EQD0D');
+          `}
+        </Script>
       </body>
     </html>
   );

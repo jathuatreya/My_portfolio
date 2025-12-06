@@ -199,7 +199,7 @@ export default function Navbar() {
                                                   <div className="fixed inset-0 z-10" onClick={() => setIsLangMenuOpen(false)}></div>
                                                   <div className={`absolute right-0 mt-2 w-32 origin-top-right rounded-xl shadow-xl ring-1 z-20 overflow-hidden py-1 transition-colors duration-300 ${isSystemDark
                                                        ? 'bg-[#1a1a1a] border border-gray-800 ring-white/10'
-                                                       : 'bg-white border border-gray-100 ring-black/5'
+                                                       : 'bg-[#F5F5F7] border border-gray-100 ring-black/5'
                                                        }`}>
                                                        {(Object.keys(langLabels) as Language[]).map((lang) => (
                                                             <button
