@@ -1,13 +1,19 @@
+"use client";
+
 import { useRef, useState, useEffect } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
-import { ExternalLink, Github } from 'lucide-react'
-import { projects } from '../data/portfolio-data'
+import {
+     Cpu, Globe, Terminal, Coffee, Database, Smartphone,
+     BookOpen, Wrench, Code2, Layers, ExternalLink, Github
+} from 'lucide-react'
+import Image from 'next/image'
 import { useLanguage } from '../context/LanguageContext'
-
+import { projects } from '../data/portfolio-data'
 import { MagicCard, MagicContainer } from './MagicCard'
 
 export default function Projects() {
      const { t } = useLanguage()
+
      const targetRef = useRef<HTMLDivElement>(null)
      const contentRef = useRef<HTMLDivElement>(null)
      const [xScale, setXScale] = useState(["1%", "-95%"])
@@ -46,7 +52,7 @@ export default function Projects() {
 
      return (
           // Mobile: standard height (auto), Desktop: 300vh for scroll track
-          <section ref={targetRef} id="projects" className="relative bg-white dark:bg-[#0a0a0a] h-auto lg:h-[300vh] overflow-hidden">
+          <section ref={targetRef} id="projects" className="relative bg-white dark:bg-[#0a0a0a] h-auto lg:h-[300vh] overflow-hidden lg:overflow-visible">
                {/* Mobile: relative block, Desktop: sticky viewport */}
                <div className="relative h-auto py-16 lg:py-0 lg:sticky lg:top-0 lg:flex lg:h-screen lg:items-center lg:overflow-hidden">
                     <MagicContainer className="relative w-full h-full flex flex-col justify-center">
@@ -55,17 +61,21 @@ export default function Projects() {
                          <div className="absolute bottom-20 -left-20 w-72 h-72 bg-primary/10 rounded-full blur-3xl opacity-30 animate-pulse-slow pointer-events-none"></div>
                          <div className="absolute top-40 left-20 w-64 h-64 bg-emerald-400/5 rounded-full blur-3xl opacity-20 animate-pulse-slow pointer-events-none"></div>
 
-                         <div className="container mx-auto max-w-7xl relative z-10 px-4 mb-8 lg:mb-16">
+                         <div className="container mx-auto max-w-7xl 3xl:max-w-[96rem] 4k:max-w-[120rem] relative z-10 px-4 mb-8 lg:mb-16 mt-10">
                               <div className="text-center">
+                                   <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#F5F5F7] dark:bg-white/5 border border-primary/10 mb-6 shadow-sm">
+                                        <Layers size={18} className="text-primary" />
+                                        <span className="text-sm font-bold tracking-wide text-primary uppercase ">{t.projects.tag}</span>
+                                   </div>
                                    <h1 className="text-[#1D1D1F] dark:text-white text-3xl sm:text-4xl md:text-5xl font-black leading-tight tracking-[-0.033em]">{t.projects.title}</h1>
                                    <p className="text-gray-600 dark:text-gray-400 text-lg font-normal leading-normal mt-3 max-w-2xl mx-auto">{t.projects.subtitle}</p>
                               </div>
                          </div>
 
                          {/* 
-                           Mobile: overflow-x-auto for native scroll, disable motion x
-                           Desktop: overflow-visible (handled by sticky parent), use motion x
-                         */}
+                                Mobile: overflow-x-auto for native scroll, disable motion x
+                                Desktop: overflow-visible (handled by sticky parent), use motion x
+                              */}
                          <motion.div
                               ref={contentRef}
                               style={{ x: isMobile ? 0 : x }}
@@ -73,8 +83,16 @@ export default function Projects() {
                          >
                               {projects.map((project, index) => (
                                    <div key={index} className="shrink-0 w-[85vw] sm:w-[350px] md:w-[450px] snap-center">
-                                        <MagicCard className="flex flex-col bg-white dark:bg-[#121212] rounded-2xl border border-gray-100 dark:border-slate-700 h-full hover:shadow-xl transition-shadow duration-300">
-                                             <div className="h-48 sm:h-56 bg-cover bg-center shrink-0 rounded-t-2xl" style={{ backgroundImage: `url(${project.image})` }}></div>
+                                        <MagicCard className="flex flex-col bg-white dark:bg-[#121212] rounded-2xl border border-gray-100 dark:border-slate-800 h-full hover:shadow-xl transition-shadow duration-300 overflow-hidden">
+                                             <div className="h-48 relative overflow-hidden group">
+                                                  <Image
+                                                       src={project.image}
+                                                       alt={project.title}
+                                                       fill
+                                                       className="object-cover transition-transform duration-500 group-hover:scale-105"
+                                                  />
+                                                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                                             </div>
                                              <div className="flex flex-col p-5 sm:p-6 flex-grow">
                                                   <div className="flex-grow">
                                                        <h3 className="text-xl font-bold text-[#1D1D1F] dark:text-white">{project.title}</h3>

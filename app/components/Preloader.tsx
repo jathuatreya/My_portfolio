@@ -21,7 +21,7 @@ export default function Preloader() {
                     {/* Pulsing Logo/Circle */}
                     <div className="relative flex items-center justify-center">
                          <div className="absolute w-24 h-24 rounded-full border-4 border-[#0077ED] animate-ping"></div>
-                         <div className="w-20 h-20 rounded-full bg-white flex items-center justify-center shadow-lg shadow-primary animate-pulse">
+                         <div className="w-20 h-20  flex items-center justify-center  animate-pulse">
                               <span className="text-black dark:text-white  text-3xl ">J.V</span>
                          </div>
                     </div>

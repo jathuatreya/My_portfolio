@@ -1,5 +1,5 @@
 "use client";
-type ToastType = 'success' | 'custom';
+type ToastType = 'success' | 'error' | 'custom';
 
 export interface ToastEvent {
      id: string;
@@ -25,7 +25,18 @@ export const toast = {
           toasts = [...toasts, newToast];
           emit();
 
-          // Auto dismiss success toasts
+          setTimeout(() => {
+               toast.dismiss(id);
+          }, 4000);
+
+          return id;
+     },
+     error: (message: string) => {
+          const id = Math.random().toString(36).substring(2, 9);
+          const newToast: ToastEvent = { id, type: 'error', message, visible: true };
+          toasts = [...toasts, newToast];
+          emit();
+
           setTimeout(() => {
                toast.dismiss(id);
           }, 4000);
@@ -34,7 +45,6 @@ export const toast = {
      },
      custom: (renderer: (t: string) => React.ReactNode) => {
           const id = Math.random().toString(36).substring(2, 9);
-          // Pass id to the renderer function so the component can dismiss itself
           const component = renderer(id);
           const newToast: ToastEvent = { id, type: 'custom', component, visible: true };
           toasts = [...toasts, newToast];

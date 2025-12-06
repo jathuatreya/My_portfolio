@@ -10,6 +10,7 @@ export default function Navbar() {
      const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
      const [isLangMenuOpen, setIsLangMenuOpen] = useState(false)
      const [isSystemDark, setIsSystemDark] = useState(false)
+     const [activeSection, setActiveSection] = useState('home')
 
      const { t, language, setLanguage } = useLanguage()
 
@@ -36,6 +37,31 @@ export default function Navbar() {
           }
      }, [])
 
+     // ScrollSpy for Active Section
+     useEffect(() => {
+          const handleScroll = () => {
+               const sections = navItems.map(item => item.id)
+               const scrollPosition = window.scrollY + 100 // Offset for navbar height
+
+               for (const section of sections) {
+                    const element = document.getElementById(section)
+                    if (element) {
+                         const offsetTop = element.offsetTop
+                         const offsetHeight = element.offsetHeight
+
+                         if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+                              setActiveSection(section)
+                              return
+                         }
+                    }
+               }
+          }
+
+          window.addEventListener('scroll', handleScroll)
+          handleScroll() // Initial check
+          return () => window.removeEventListener('scroll', handleScroll)
+     }, [])
+
      const toggleLanguage = (lang: Language) => {
           setLanguage(lang)
           setIsLangMenuOpen(false)
@@ -57,8 +83,8 @@ export default function Navbar() {
 
      const logoTextClasses = `text-xl font-bold tracking-tight transition-colors duration-300 ${isSystemDark ? 'text-gray-100' : 'text-gray-900'}`
 
-     const navLinkClasses = (itemId: string) => `text-sm font-medium transition-colors duration-300 ${itemId === 'home'
-          ? 'text-primary hover:text-primary/80'
+     const navLinkClasses = (itemId: string) => `text-sm font-medium transition-colors duration-300 ${activeSection === itemId
+          ? 'text-primary hover:text-primary/80 font-bold'
           : isSystemDark
                ? 'text-gray-300 hover:text-primary'
                : 'text-gray-700 hover:text-primary'
@@ -85,7 +111,8 @@ export default function Navbar() {
                : 'bg-white border border-gray-100 shadow-[0_8px_32px_rgba(0,0,0,0.12)]'
           }`
 
-     const mobileMenuItemClasses = (itemId: string) => `flex items-center justify-between p-3 rounded-xl text-base font-medium transition-colors duration-300 ${itemId === 'home'
+     // Also update mobile menu item highlighting
+     const mobileMenuItemClasses = (itemId: string) => `flex items-center justify-between p-3 rounded-xl text-base font-medium transition-colors duration-300 ${activeSection === itemId
           ? 'bg-primary/10 text-primary'
           : isSystemDark
                ? 'text-gray-300 hover:bg-white/5'
@@ -125,6 +152,20 @@ export default function Navbar() {
                                              key={item.id}
                                              className={navLinkClasses(item.id)}
                                              href={item.href}
+                                             onClick={(e) => {
+                                                  // Only smooth scroll for internal hash links, allow standard nav for pages if needed
+                                                  if (item.href.includes('#')) {
+                                                       e.preventDefault()
+                                                       const element = document.getElementById(item.id)
+                                                       if (element) {
+                                                            element.scrollIntoView({ behavior: 'smooth' })
+                                                            setActiveSection(item.id)
+                                                       } else {
+                                                            // Fallback if element not found (e.g. cross page)
+                                                            window.location.href = item.href
+                                                       }
+                                                  }
+                                             }}
                                         >
                                              {t.nav[item.id as keyof typeof t.nav] || item.label}
                                         </a>
@@ -206,7 +247,21 @@ export default function Navbar() {
                                    key={item.id}
                                    className={mobileMenuItemClasses(item.id)}
                                    href={item.href}
-                                   onClick={() => setIsMobileMenuOpen(false)}
+                                   onClick={(e) => {
+                                        if (item.href.includes('#')) {
+                                             e.preventDefault()
+                                             const element = document.getElementById(item.id)
+                                             if (element) {
+                                                  element.scrollIntoView({ behavior: 'smooth' })
+                                                  setActiveSection(item.id)
+                                                  setIsMobileMenuOpen(false)
+                                             } else {
+                                                  window.location.href = item.href
+                                             }
+                                        } else {
+                                             setIsMobileMenuOpen(false)
+                                        }
+                                   }}
                               >
                                    {t.nav[item.id as keyof typeof t.nav] || item.label}
                               </a>

@@ -3,6 +3,7 @@
 import { profile, aboutStats } from '../data/portfolio-data'
 import { useLanguage } from '../context/LanguageContext'
 import { MagicCard, MagicContainer } from './MagicCard'
+import { User } from 'lucide-react'
 
 export default function About() {
      const { t } = useLanguage()
@@ -27,9 +28,13 @@ export default function About() {
                          <div className="flex flex-col gap-8 lg:col-span-8">
                               {/* About Me Header & Text */}
                               <div>
+                                   <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#F5F5F7] dark:bg-white/5 border border-primary/10 mb-6 shadow-sm">
+                                        <User size={18} className="text-primary" />
+                                        <span className="text-sm font-bold tracking-wide text-primary uppercase">{t.about.tag}</span>
+                                   </div>
                                    <h2 className="text-[#1D1D1F] dark:text-white text-3xl sm:text-4xl font-bold leading-tight tracking-tight">{t.about.title}</h2>
                                    <p className="mb-6 text-xl sm:text-2xl font-bold italic text-primary">
-                                        &quot;{profile.slogan}&quot;
+                                        &quot;{t.about.slogan || profile.slogan}&quot;
                                    </p>
                                    <p className="text-gray-700 dark:text-gray-300 text-base sm:text-lg font-normal leading-relaxed mt-4">
                                         {t.about.description.replace('{name}', profile.name)}
@@ -41,7 +46,9 @@ export default function About() {
                                         <div key={index} className="flex flex-col items-start p-6 bg-[#F5F5F7] dark:bg-[#1D1D1F] rounded-xl shadow-md hover:shadow-lg transition-shadow">
                                              <stat.icon className="text-primary" size={32} />
                                              <p className="text-[#1D1D1F] dark:text-white text-3xl sm:text-4xl font-bold mt-3">{stat.value}</p>
-                                             <p className="text-gray-600 dark:text-gray-400 text-sm font-medium mt-1">{stat.label}</p>
+                                             <p className="text-gray-600 dark:text-gray-400 text-sm font-medium mt-1">
+                                                  {t.about.stats[stat.id as keyof typeof t.about.stats] || stat.label}
+                                             </p>
                                         </div>
                                    ))}
                               </div>

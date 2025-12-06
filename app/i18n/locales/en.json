@@ -15,7 +15,9 @@
           "description": "Full-stack developer passionate about merging AI, IoT, and modern web technologies to build meaningful digital solutions."
      },
      "about": {
+          "tag": "My Story",
           "title": "About Me",
+          "slogan": "Innovate. Automate. Accelerate.",
           "description": "I'm Jathu. I'm working at Accron Revolutions as a full-stack developer, and I study BSc Hons Computer Science at the Informatics Institute of Technology, affiliated with the University of Westminster, UK.",
           "stats": {
                "experience": "Years Self-taught Experience",
@@ -57,6 +59,7 @@
           ]
      },
      "services": {
+          "tag": "My Expertise",
           "title": "What I Offer",
           "subtitle": "My expertise to help bring your ideas to life.",
           "items": {
@@ -96,6 +99,7 @@
           "why_inspired_desc": "His ability to stay grounded while driving global innovation motivates me to build technology that is inclusive, impactful, and accessible to everyone."
      },
      "projects": {
+          "tag": "Projects",
           "title": "Featured Projects",
           "subtitle": "A showcase of my work in full-stack development, design, and more.",
           "tech_stack": "Tech Stack",
@@ -104,10 +108,12 @@
           "code": "Code"
      },
      "testimonials": {
+          "tag": "Client Voices",
           "title": "What People Say",
           "subtitle": "Feedback from clients, mentors, and teammates."
      },
      "contact": {
+          "tag": "Say Hello",
           "title": "Get in Touch",
           "subtitle": "Let's connect or work together on your project!",
           "form": {
@@ -119,7 +125,10 @@
                "phone_ph": "Enter your phone number",
                "message": "Message",
                "message_ph": "Your message...",
-               "submit": "Submit Message"
+               "submit": "Submit Message",
+               "sending": "Sending...",
+               "success": "Message sent successfully!",
+               "error": "Failed to send message."
           },
           "info": {
                "email": "Email",

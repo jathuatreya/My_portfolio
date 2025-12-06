@@ -1,13 +1,61 @@
 "use client";
 
-import { Mail, Phone, MapPin, Send } from 'lucide-react'
-import { contactInfo } from '../data/portfolio-data'
-import { useLanguage } from '../context/LanguageContext'
-import { ScrollReveal } from './ScrollReveal'
-import { MagicCard, MagicContainer } from './MagicCard'
+import { Mail, Phone, MapPin, Send } from 'lucide-react';
+import { contactInfo } from '../data/portfolio-data';
+import { useLanguage } from '../context/LanguageContext';
+import { ScrollReveal } from './ScrollReveal';
+import { MagicCard, MagicContainer } from './MagicCard';
+import { useRef, useState } from 'react';
+import { toast } from '../utils/toast';
+import emailjs from '@emailjs/browser';
+
+interface ContactFormElements extends HTMLFormControlsCollection {
+     name: HTMLInputElement;
+     email: HTMLInputElement;
+     phone: HTMLInputElement;
+     message: HTMLTextAreaElement;
+}
+
+interface ContactForm extends HTMLFormElement {
+     readonly elements: ContactFormElements;
+}
 
 export default function Contact() {
-     const { t } = useLanguage()
+     const { t } = useLanguage();
+     const [isSubmitting, setIsSubmitting] = useState(false);
+     const form = useRef<ContactForm>(null);
+
+     // Provide fallback translations for missing fields
+     const formText = {
+          ...t.contact.form,
+          sending: t.contact.form.sending || "Sending...",
+          success: t.contact.form.success || "Message sent successfully!",
+          error: t.contact.form.error || "Failed to send message."
+     };
+
+     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+          e.preventDefault();
+          if (!form.current) return;
+
+          setIsSubmitting(true);
+
+          try {
+               await emailjs.sendForm(
+                    'service_4cosu79',        // Your EmailJS Service ID
+                    'template_ol296hf',       // Your EmailJS Template ID
+                    form.current,
+                    'DTYSV-sEd-sE4IZNS'      // Your EmailJS Public Key
+               );
+
+               toast.success(formText.success);
+               form.current.reset();
+          } catch (error: any) {
+               console.error("EmailJS Error:", error.text || error);
+               toast.error(formText.error);
+          } finally {
+               setIsSubmitting(false);
+          }
+     };
 
      return (
           <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8 bg-white dark:bg-[#0a0a0a] relative overflow-hidden">
@@ -17,33 +65,74 @@ export default function Contact() {
 
                <div className="container mx-auto max-w-7xl 3xl:max-w-[96rem] 4k:max-w-[120rem] relative z-10">
                     <ScrollReveal className="text-center mb-12">
-                         <h2 className="text-[#1D1D1F] dark:text-white text-3xl sm:text-4xl font-bold leading-tight tracking-tight">{t.contact.title}</h2>
-                         <p className="text-gray-600 dark:text-gray-300 text-lg font-normal leading-normal mt-2">{t.contact.subtitle}</p>
+                         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#F5F5F7] dark:bg-white/5 border border-primary/10 mb-6 shadow-sm">
+                              <Mail size={18} className="text-primary" />
+                              <span className="text-sm font-bold tracking-wide text-primary uppercase">{t.contact.tag}</span>
+                         </div>
+                         <h2 className="text-[#1D1D1F] dark:text-white text-3xl sm:text-4xl font-bold leading-tight tracking-tight">
+                              {t.contact.title}
+                         </h2>
+                         <p className="text-gray-600 dark:text-gray-300 text-lg font-normal leading-normal mt-2">
+                              {t.contact.subtitle}
+                         </p>
                     </ScrollReveal>
+
                     <MagicContainer className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
                          {/* Left Column: Contact Form */}
                          <ScrollReveal delay={0.2} className="h-full">
                               <MagicCard className="bg-[#F5F5F7] dark:bg-[#121212] p-6 sm:p-8 rounded-2xl shadow-[var(--card-shadow)] h-full">
-                                   <form action="#" className="space-y-6 h-full flex flex-col justify-center" method="POST">
+                                   <form ref={form} onSubmit={handleSubmit} className="space-y-6 h-full flex flex-col justify-center">
                                         <div className="flex flex-col sm:flex-row gap-6">
                                              <label className="flex flex-col flex-1">
-                                                  <p className="text-[#1D1D1F] dark:text-white text-sm font-medium leading-normal pb-2">{t.contact.form.name}</p>
-                                                  <input className="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#1D1D1F] dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border-none bg-white dark:bg-[#1a1a1a] h-12 placeholder:text-gray-400 dark:placeholder:text-gray-500 p-3 text-base font-normal leading-normal shadow-sm" placeholder={t.contact.form.name_ph} type="text" required />
+                                                  <p className="text-[#1D1D1F] dark:text-white text-sm font-medium leading-normal pb-2">{formText.name}</p>
+                                                  <input
+                                                       name="name"
+                                                       className="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#1D1D1F] dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border-none bg-white dark:bg-[#1a1a1a] h-12 placeholder:text-gray-400 dark:placeholder:text-gray-500 p-3 text-base font-normal leading-normal shadow-sm"
+                                                       placeholder={formText.name_ph}
+                                                       type="text"
+                                                       required
+                                                  />
                                              </label>
+
                                              <label className="flex flex-col flex-1">
-                                                  <p className="text-[#1D1D1F] dark:text-white text-sm font-medium leading-normal pb-2">{t.contact.form.email}</p>
-                                                  <input className="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#1D1D1F] dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border-none bg-white dark:bg-[#1a1a1a] h-12 placeholder:text-gray-400 dark:placeholder:text-gray-500 p-3 text-base font-normal leading-normal shadow-sm" placeholder={t.contact.form.email_ph} type="email" required />
+                                                  <p className="text-[#1D1D1F] dark:text-white text-sm font-medium leading-normal pb-2">{formText.email}</p>
+                                                  <input
+                                                       name="email"
+                                                       className="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#1D1D1F] dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border-none bg-white dark:bg-[#1a1a1a] h-12 placeholder:text-gray-400 dark:placeholder:text-gray-500 p-3 text-base font-normal leading-normal shadow-sm"
+                                                       placeholder={formText.email_ph}
+                                                       type="email"
+                                                       required
+                                                  />
                                              </label>
                                         </div>
+
                                         <label className="flex flex-col flex-1">
-                                             <p className="text-[#1D1D1F] dark:text-white text-sm font-medium leading-normal pb-2">{t.contact.form.phone}</p>
-                                             <input className="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#1D1D1F] dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border-none bg-white dark:bg-[#1a1a1a] h-12 placeholder:text-gray-400 dark:placeholder:text-gray-500 p-3 text-base font-normal leading-normal shadow-sm" placeholder={t.contact.form.phone_ph} type="tel" />
+                                             <p className="text-[#1D1D1F] dark:text-white text-sm font-medium leading-normal pb-2">{formText.phone}</p>
+                                             <input
+                                                  name="phone"
+                                                  className="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#1D1D1F] dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border-none bg-white dark:bg-[#1a1a1a] h-12 placeholder:text-gray-400 dark:placeholder:text-gray-500 p-3 text-base font-normal leading-normal shadow-sm"
+                                                  placeholder={formText.phone_ph}
+                                                  type="tel"
+                                             />
                                         </label>
+
                                         <label className="flex flex-col flex-1">
-                                             <p className="text-[#1D1D1F] dark:text-white text-sm font-medium leading-normal pb-2">{t.contact.form.message}</p>
-                                             <textarea className="form-textarea flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#1D1D1F] dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border-none bg-white dark:bg-[#1a1a1a] min-h-[140px] placeholder:text-gray-400 dark:placeholder:text-gray-500 p-3 text-base font-normal leading-normal shadow-sm" placeholder={t.contact.form.message_ph} required></textarea>
+                                             <p className="text-[#1D1D1F] dark:text-white text-sm font-medium leading-normal pb-2">{formText.message}</p>
+                                             <textarea
+                                                  name="message"
+                                                  className="form-textarea flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#1D1D1F] dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border-none bg-white dark:bg-[#1a1a1a] min-h-[140px] placeholder:text-gray-400 dark:placeholder:text-gray-500 p-3 text-base font-normal leading-normal shadow-sm"
+                                                  placeholder={formText.message_ph}
+                                                  required
+                                             ></textarea>
                                         </label>
-                                        <button className="flex items-center justify-center w-full px-6 py-3.5 rounded-lg bg-primary text-white text-base font-bold leading-normal shadow-md hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition-all duration-200 transform hover:scale-[1.02]" type="submit">{t.contact.form.submit}</button>
+
+                                        <button
+                                             disabled={isSubmitting}
+                                             className="flex items-center justify-center w-full px-6 py-3.5 rounded-lg bg-primary text-white text-base font-bold leading-normal shadow-md hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition-all duration-200 transform hover:scale-[1.02] disabled:opacity-70 disabled:cursor-not-allowed"
+                                             type="submit"
+                                        >
+                                             {isSubmitting ? formText.sending : formText.submit}
+                                        </button>
                                    </form>
                               </MagicCard>
                          </ScrollReveal>
@@ -95,5 +184,5 @@ export default function Contact() {
                     </MagicContainer>
                </div>
           </section>
-     )
+     );
 }

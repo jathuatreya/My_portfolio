@@ -88,8 +88,9 @@ export const navItems = [
      { id: "services", label: "Services", href: "/#services" },
      { id: "projects", label: "Projects", href: "/#projects" },
      { id: "testimonials", label: "Testimonials", href: "/#testimonials" },
-     { id: "blogs", label: "Blogs", href: "/blogs" },
+
      { id: "contact", label: "Contact", href: "/#contact" },
+     { id: "blogs", label: "Blogs", href: "/blogs" },
 ] as const;
 
 // --------------------------------------
@@ -97,10 +98,10 @@ export const navItems = [
 // --------------------------------------
 
 export const aboutStats = [
-     { icon: Timer, value: "3+", label: "Years Self-taught Experience" },
-     { icon: CheckCircle2, value: "50+", label: "Completed Projects" },
-     { icon: Code2, value: "15+", label: "Technologies Used" },
-     { icon: Brain, value: "5+", label: "ML Models & Experiments" },
+     { id: "experience", icon: Timer, value: "3+", label: "Years Self-taught Experience" },
+     { id: "projects", icon: CheckCircle2, value: "50+", label: "Completed Projects" },
+     { id: "technologies", icon: Code2, value: "15+", label: "Technologies Used" },
+     { id: "models", icon: Brain, value: "5+", label: "ML Models & Experiments" },
 ];
 
 // --------------------------------------
@@ -233,24 +234,28 @@ export const blogs = [
 
 export const services = [
      {
+          id: "web",
           icon: Code2,
           title: "Web Development",
           description:
                "Full-stack development using modern technologies like MERN and JAMstack to build responsive and scalable web apps.",
      },
      {
+          id: "ml",
           icon: Brain,
           title: "Machine Learning & AI",
           description:
                "Developing ML models and AI-driven systems with Python, Scikit-learn, and TensorFlow.",
      },
      {
+          id: "iot",
           icon: Cpu,
           title: "IoT Development",
           description:
                "Building end-to-end IoT solutions including firmware, sensors, robot systems & cloud dashboards.",
      },
      {
+          id: "consult",
           icon: FileCheck2,
           title: "Consulting & Code Review",
           description:
@@ -265,8 +270,7 @@ export const services = [
 export const projects = [
      {
           title: "A/L MCQ Answers Automation",
-          image:
-               "https://images.unsplash.com/photo-1554224155-1696413565d3?auto=format&fit=crop&q=80&w=800",
+          image: "/projects/mcq-automation.jpg",
           description:
                "A Python script that automates extracting, organizing, and managing A/L MCQ answers for quick reference and study.",
           techStack: ["Python"],
@@ -278,8 +282,7 @@ export const projects = [
      },
      {
           title: "AI Job Application Assistant",
-          image:
-               "https://images.unsplash.com/photo-1504384764586-bb4cdc1707b0?auto=format&fit=crop&q=80&w=800",
+          image: "/projects/ai-job-assistant.jpg",
           description:
                "An AI-powered web application built using Next.js and Flask that analyzes resumes, job descriptions, detects skill gaps, and suggests improvements.",
           techStack: ["Python", "Next.js", "Flask", "NLP", "Machine Learning"],
@@ -292,35 +295,8 @@ export const projects = [
           ],
      },
      {
-          title: "Bulk Folder Creator",
-          image:
-               "https://images.unsplash.com/photo-1607083206968-13611eab3ab8?auto=format&fit=crop&q=80&w=800",
-          description:
-               "A simple Python tool to create multiple folders automatically using predefined naming patterns.",
-          techStack: ["Python"],
-          features: [
-               "Fast directory creation",
-               "Custom folder naming",
-               "Useful for project setup & organizing files",
-          ],
-     },
-     {
-          title: "Delete Empty Folders Tool",
-          image:
-               "https://images.unsplash.com/photo-1587620931282-882d3a89a7d3?auto=format&fit=crop&q=80&w=800",
-          description:
-               "A Python utility script that scans directories and removes empty folders automatically.",
-          techStack: ["Python"],
-          features: [
-               "Recursive folder scanning",
-               "Safe deletion",
-               "Useful for cleaning large projects",
-          ],
-     },
-     {
           title: "Flight Seat Booking System",
-          image:
-               "https://images.unsplash.com/photo-1504196606672-aef5c9cefc92?auto=format&fit=crop&q=80&w=800",
+          image: "/projects/flight-booking.jpg",
           description:
                "A basic Java-based flight seat booking simulation demonstrating object-oriented design concepts.",
           techStack: ["Java"],
@@ -332,8 +308,7 @@ export const projects = [
      },
      {
           title: "Hunger Eradication Website",
-          image:
-               "https://images.unsplash.com/photo-1520975918319-0983c9aeb963?auto=format&fit=crop&q=80&w=800",
+          image: "/projects/hunger-eradication.jpg",
           description:
                "A web project aimed at spreading awareness and providing resources related to hunger eradication initiatives.",
           techStack: ["HTML", "CSS", "JavaScript"],
@@ -344,11 +319,10 @@ export const projects = [
           ],
      },
      {
-          title: "GitHub Profile Automation Repo",
-          image:
-               "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=800",
+          title: "GitHub Profile Automation Chrome Extesntion ",
+          image: "/projects/github-automation.jpg",
           description:
-               "A repo for managing and customizing your GitHub profile with dynamic content and code snippets.",
+               "A chrome extension for automating GitHub profile updates and customizing your profile with dynamic content and code snippets.",
           techStack: ["Markdown", "GitHub Actions"],
           features: [
                "Automatic GitHub profile updates",
@@ -358,8 +332,7 @@ export const projects = [
      },
      {
           title: "Java Multithreading Ticket Booking",
-          image:
-               "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=800",
+          image: "/projects/ticket-booking.jpg",
           description:
                "A multi-threaded ticket booking simulator demonstrating concurrency control and synchronized operations in Java.",
           techStack: ["Java", "Multithreading"],
@@ -371,8 +344,7 @@ export const projects = [
      },
      {
           title: "Laptop Controlled Car",
-          image:
-               "https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&q=80&w=800",
+          image: "/projects/laptop-car.jpg",
           description:
                "A Python-based IoT project where a laptop is used to control a robot car using custom command inputs.",
           techStack: ["Python", "IoT"],
@@ -384,8 +356,7 @@ export const projects = [
      },
      {
           title: "Library Management (PHP)",
-          image:
-               "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&q=80&w=800",
+          image: "/projects/library-management.jpg",
           description:
                "A PHP-based CRUD web app designed to manage library books, students, and borrowing records.",
           techStack: ["PHP", "MySQL"],
@@ -395,23 +366,10 @@ export const projects = [
                "Book & member management",
           ],
      },
-     {
-          title: "Magisk on WSA",
-          image:
-               "https://images.unsplash.com/photo-1605902711622-cfb43c44367f?auto=format&fit=crop&q=80&w=800",
-          description:
-               "A project integrating Magisk root and Google Apps into Windows Subsystem for Android.",
-          techStack: ["WSA", "Android", "Magisk"],
-          features: [
-               "Root Android inside Windows",
-               "GApps integration",
-               "WSA customization",
-          ],
-     },
+
      {
           title: "Marks Evaluation with Graphs",
-          image:
-               "https://images.unsplash.com/photo-1558403194-611308249627?auto=format&fit=crop&q=80&w=800",
+          image: "/projects/marks-evaluation.jpg",
           description:
                "A Python assignment project for plotting and analyzing student marks using graphs.",
           techStack: ["Python", "Matplotlib"],
@@ -423,8 +381,7 @@ export const projects = [
      },
      {
           title: "Mastermind Game",
-          image:
-               "https://images.unsplash.com/photo-1585366119957-e9730b6d0f5f?auto=format&fit=crop&q=80&w=800",
+          image: "/projects/mastermind-game.jpg",
           description:
                "A simple Python implementation of the classic Mastermind code-breaking game.",
           techStack: ["Python"],
@@ -435,11 +392,6 @@ export const projects = [
           ],
      }
 ] as const;
-
-
-// --------------------------------------
-// 💡 INSPIRATION
-// --------------------------------------
 
 
 

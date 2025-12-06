@@ -1,6 +1,6 @@
 "use client";
 
-import { Quote } from 'lucide-react'
+import { Quote, MessageSquare } from 'lucide-react'
 import { testimonials } from '../data/portfolio-data'
 import { useLanguage } from '../context/LanguageContext'
 import { ScrollReveal } from './ScrollReveal'
@@ -10,7 +10,7 @@ export default function Testimonials() {
      const { t } = useLanguage()
      return (
           <section id="testimonials" className="py-20 px-4 sm:px-6 lg:px-8 bg-white dark:bg-[#0a0a0a] relative overflow-hidden">
-               <div className="relative w-full max-w-6xl mx-auto px-4">
+               <div className="container mx-auto max-w-7xl 3xl:max-w-[96rem] 4k:max-w-[120rem] relative z-10">
                     {/* Background Elements */}
                     <div className="absolute -top-24 -left-48 w-96 h-96 bg-primary/10 dark:bg-primary/20 rounded-full blur-3xl opacity-50"></div>
                     <div className="absolute -bottom-32 -right-40 w-96 h-96 bg-primary/10 dark:bg-primary/20 rounded-full blur-3xl opacity-50"></div>
@@ -18,6 +18,10 @@ export default function Testimonials() {
 
                     {/* Section Header */}
                     <div className="text-center mb-12 md:mb-16 relative z-10">
+                         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#F5F5F7] dark:bg-white/5 border border-primary/10 mb-6 shadow-sm">
+                              <MessageSquare size={18} className="text-primary" />
+                              <span className="text-sm font-bold tracking-wide text-primary uppercase">{t.testimonials.tag}</span>
+                         </div>
                          <h2 className="text-[#1D1D1F] dark:text-white text-3xl sm:text-4xl font-bold tracking-tight">
                               {t.testimonials.title}
                          </h2>

@@ -73,7 +73,7 @@ export default function Hero() {
                                    </p>
                               </div>
                               <p className="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0">
-                                   {profile.shortBio}
+                                   {t.hero.description}
                               </p>
 
                               {/* Social Media Icons */}
