@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Libre_Franklin } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 
@@ -7,28 +7,22 @@ import GlobalToaster from "./components/GlobalToaster";
 import EngagementToast from "./components/EngagementToast";
 import Preloader from "./components/Preloader";
 import { LanguageProvider } from "./context/LanguageContext";
-import { profile } from "./data/portfolio-data";
+import { profile, projects } from "./data/portfolio-data";
 import { ReactNode } from "react";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const libreFranklin = Libre_Franklin({
   subsets: ["latin"],
+  variable: "--font-libre-franklin",
+  display: "swap",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
-// ✅ Metadata (TypeScript-safe, no themeColor in viewport)
+// ✅ Metadata
 export const metadata: Metadata = {
   title: {
     default: `${profile.name} | Full-Stack Developer & AI Enthusiast`,
     template: `%s | ${profile.name} Portfolio`,
   },
-
   description: `${profile.name} is a Full-Stack Developer specializing in MERN, Next.js, Machine Learning, IoT systems, automation and modern web engineering. ${profile.shortBio} — Explore projects, skills, services and achievements.`,
-
   keywords: [
     "Full-Stack Developer",
     "MERN Developer",
@@ -44,17 +38,14 @@ export const metadata: Metadata = {
     "Backend Developer",
     "Portfolio Developer Vavuniya",
   ],
-
   authors: [{ name: profile.name, url: profile.portfolioURL }],
   creator: profile.name,
   publisher: profile.name,
-
   category: "Portfolio",
   classification: "Professional Web Developer Portfolio",
-
   openGraph: {
     type: "website",
-    locale: "en_US",
+    locale: "en_LK",
     url: profile.portfolioURL,
     title: `${profile.name} | Full-Stack Developer & AI Innovator`,
     description: `Explore the portfolio of ${profile.name}, focusing on web development, AI, ML, IoT and modern web systems.`,
@@ -68,7 +59,6 @@ export const metadata: Metadata = {
       },
     ],
   },
-
   twitter: {
     card: "summary_large_image",
     title: `${profile.name} | Full-Stack Developer & AI Innovator`,
@@ -76,7 +66,6 @@ export const metadata: Metadata = {
     images: [profile.aboutImage],
     creator: "@jathushanstark",
   },
-
   robots: {
     index: true,
     follow: true,
@@ -88,27 +77,19 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-
   metadataBase: new URL(profile.portfolioURL),
-
-  alternates: {
-    canonical: "/",
-  },
-
+  alternates: { canonical: "/" },
   icons: {
     icon: "/favicon.ico",
     shortcut: "/favicon.ico",
     apple: "/favicon.ico",
   },
-
-
-
-  // 📌 Google SEO additions
   other: {
     "geo.region": "LK",
     "geo.placename": "Sri Lanka",
     "rating": "General",
     "revisit-after": "7 days",
+    "format-detection": "telephone=no",
   },
 };
 
@@ -118,13 +99,17 @@ export const viewport: Viewport = {
   themeColor: "#0a0a0a",
 };
 
-// ✅ RootLayout
+// ✅ RootLayout with full SEO
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
       <head>
+
+
+        {/* Alternate language */}
+        <link rel="alternate" hrefLang="en" href={profile.portfolioURL} />
       </head>
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <body className={`${libreFranklin.variable} font-sans antialiased`}>
         <LanguageProvider>
           <Preloader />
           <GlobalToaster />
@@ -145,6 +130,61 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             gtag('config', 'G-Q27H9EQD0D');
           `}
         </Script>
+
+        {/* Structured Data - Person */}
+        <Script type="application/ld+json" strategy="afterInteractive">
+          {`
+          {
+            "@context": "https://schema.org",
+            "@type": "Person",
+            "name": "${profile.name}",
+            "url": "${profile.portfolioURL}",
+            "image": "${profile.aboutImage}",
+            "sameAs": [
+              "https://github.com/jathushan",
+              "https://www.linkedin.com/in/jathushan"
+            ],
+            "jobTitle": "Full-Stack Developer & AI Enthusiast",
+            "worksFor": {
+              "@type": "Organization",
+              "name": "Self-employed"
+            }
+          }
+          `}
+        </Script>
+
+        {/* Structured Data - Projects */}
+        <Script type="application/ld+json" strategy="afterInteractive">
+          {`
+          {
+            "@context": "https://schema.org",
+            "@graph": [
+              ${projects
+              .map(
+                (project) => `{
+                  "@type": "CreativeWork",
+                  "name": "${project.title}",
+                  "description": "${project.description}",
+                  "url": "${profile.portfolioURL}/projects",
+                  "image": "${project.image}",
+                  "keywords": "${project.techStack.join(", ")}",
+                  "creator": {
+                    "@type": "Person",
+                    "name": "${profile.name}",
+                    "url": "${profile.portfolioURL}"
+                  }
+                }`
+              )
+              .join(",")}
+            ]
+          }
+          `}
+        </Script>
+
+        {/* Web App Manifest */}
+        <link rel="manifest" href="/site.webmanifest" />
+        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
+        <meta name="theme-color" content="#0a0a0a" />
       </body>
     </html>
   );

@@ -23,7 +23,9 @@
                "experience": "Years Self-taught Experience",
                "projects": "Completed Projects",
                "technologies": "Technologies Used",
-               "models": "ML Models & Experiments"
+               "models": "ML Models & Experiments",
+               "hardware": "IoT Projects Hardware",
+               "web": "Web Development Projects"
           }
      },
      "skills": {
@@ -139,6 +141,21 @@
      "footer": {
           "quick_nav": "Quick Navigation",
           "contact_social": "Contact & Social",
-          "built_with": "Built with ❤️ by {name}. © 2024 {name}"
+          "built_with": "Built with ❤️ by {name}. © 2025 {name}"
+     },
+     "blogs_page": {
+          "title": "Insights &",
+          "title_highlight": "Thoughts",
+          "subtitle": "Sharing my journey, tutorials, and perspectives on technology, AI, and software engineering.",
+          "read_article": "Read Article",
+          "back_to_blogs": "Back to Blogs",
+          "share": "Share",
+          "related_tech": "Technologies Analyzed",
+          "explore_more": "Explore Other Insights",
+          "view_all": "View All Posts",
+          "read_more": "Ready for more?",
+          "not_found": "Blog Not Found",
+          "not_found_desc": "The article you are looking for does not exist.",
+          "share_article": "Share this article"
      }
 }

@@ -13,9 +13,11 @@ import Navbar from "@/app/components/Navbar";
 import Footer from "@/app/components/Footer";
 import { blogContent } from "@/app/data/blog-content";
 import { profile } from "@/app/data/portfolio-data";
+import { useLanguage } from "@/app/context/LanguageContext";
 
 export default function BlogDetail() {
      const params = useParams();
+     const { t } = useLanguage();
 
      if (!params?.id) {
           return <div className="min-h-screen flex items-center justify-center bg-gray-50 dark:bg-[#0a0a0a]">Loading...</div>;
@@ -29,10 +31,10 @@ export default function BlogDetail() {
           return (
                <div className="min-h-screen bg-gray-50 dark:bg-[#0a0a0a] flex flex-col items-center justify-center text-center px-4">
                     <Navbar />
-                    <h1 className="text-4xl font-bold text-[#1D1D1F] dark:text-white mb-4">Blog Not Found</h1>
-                    <p className="text-gray-600 dark:text-gray-400 mb-8">The article you are looking for does not exist.</p>
+                    <h1 className="text-4xl font-bold text-[#1D1D1F] dark:text-white mb-4">{t.blogs_page.not_found}</h1>
+                    <p className="text-gray-600 dark:text-gray-400 mb-8">{t.blogs_page.not_found_desc}</p>
                     <Link href="/blogs" className="text-primary font-bold hover:underline flex items-center gap-2">
-                         <ArrowLeft size={16} /> Back to Blogs
+                         <ArrowLeft size={16} /> {t.blogs_page.back_to_blogs}
                     </Link>
                     <Footer />
                </div>
@@ -149,7 +151,7 @@ export default function BlogDetail() {
                                              href="/blogs"
                                              className="inline-flex items-center gap-2 text-white hover:text-primary transition-colors backdrop-blur-md bg-white/10 px-6 py-3 rounded-full border border-white/20 font-medium hover:bg-white hover:border-white"
                                         >
-                                             <ArrowLeft size={16} /> Back to All Insights
+                                             <ArrowLeft size={16} /> {t.blogs_page.back_to_blogs}
                                         </Link>
                                    </motion.div>
                               </div>
@@ -167,7 +169,7 @@ export default function BlogDetail() {
                                         transition={{ delay: 0.5 }}
                                         className="sticky top-32 flex flex-col items-center gap-8"
                                    >
-                                        <p className="text-xs font-bold text-gray-400 uppercase tracking-widest rotate-180 mb-2 writing-mode-vertical">Share</p>
+                                        <p className="text-xs font-bold text-gray-400 uppercase tracking-widest rotate-180 mb-2 writing-mode-vertical">{t.blogs_page.share}</p>
                                         <div className="flex flex-col gap-5">
                                              {shareLinks.map((link) => (
                                                   <a
@@ -228,7 +230,7 @@ export default function BlogDetail() {
                                         viewport={{ once: true }}
                                         className="mt-20 pt-10 border-t border-gray-200 dark:border-white/10"
                                    >
-                                        <h3 className="text-sm font-bold text-gray-400 uppercase tracking-widest mb-6">Technologies Analyzed</h3>
+                                        <h3 className="text-sm font-bold text-gray-400 uppercase tracking-widest mb-6">{t.blogs_page.related_tech}</h3>
                                         <div className="flex flex-wrap gap-3">
                                              {blog.relatedTech && blog.relatedTech.map((tech, i) => (
                                                   <span key={i} className="px-6 py-3 rounded-full bg-gray-50 dark:bg-white/5 text-sm font-medium text-gray-700 dark:text-gray-300 border border-gray-100 dark:border-white/10 hover:border-primary/50 hover:bg-primary/5 hover:text-primary transition-all cursor-default flex items-center gap-2">
@@ -240,7 +242,7 @@ export default function BlogDetail() {
 
                                    {/* Mobile Share Section */}
                                    <div className="lg:hidden mt-16 py-8 border-t border-b border-gray-200 dark:border-white/10">
-                                        <p className="text-center text-sm font-bold text-gray-500 mb-6 uppercase tracking-wider">Share this article</p>
+                                        <p className="text-center text-sm font-bold text-gray-500 mb-6 uppercase tracking-wider">{t.blogs_page.share_article}</p>
                                         <div className="flex justify-center gap-6">
                                              {shareLinks.map((link) => (
                                                   <a
@@ -274,13 +276,13 @@ export default function BlogDetail() {
                               className="flex flex-col md:flex-row justify-center items-center text-center gap-8 py-12 border-t border-gray-200 dark:border-white/10"
                          >
                               <div>
-                                   <p className="text-sm font-medium text-gray-500 dark:text-gray-400 mb-2 uppercase tracking-wide">Ready for more?</p>
-                                   <h4 className="text-3xl font-black text-[#1D1D1F] dark:text-white mb-8">Explore Other Insights</h4>
+                                   <p className="text-sm font-medium text-gray-500 dark:text-gray-400 mb-2 uppercase tracking-wide">{t.blogs_page.read_more}</p>
+                                   <h4 className="text-3xl font-black text-[#1D1D1F] dark:text-white mb-8">{t.blogs_page.explore_more}</h4>
                                    <Link
                                         href="/blogs"
                                         className="inline-block bg-[#1D1D1F] dark:bg-white text-white dark:text-black px-10 py-4 rounded-full font-bold hover:bg-primary hover:text-white dark:hover:bg-primary dark:hover:text-white transition-all shadow-xl hover:shadow-primary/30 hover:-translate-y-1"
                                    >
-                                        View All Posts
+                                        {t.blogs_page.view_all}
                                    </Link>
                               </div>
                          </motion.div>

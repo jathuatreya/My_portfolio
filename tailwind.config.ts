@@ -33,6 +33,9 @@ const config: Config = {
                     'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
                     'pulse-slower': 'pulse 6s cubic-bezier(0.4, 0, 0.6, 1) infinite',
                },
+               fontFamily: {
+                    sans: ["var(--font-libre-franklin)", "sans-serif"],
+               },
           },
      },
      plugins: [],

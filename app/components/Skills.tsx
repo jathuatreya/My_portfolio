@@ -59,7 +59,7 @@ export default function Skills() {
 
                                         <div className="flex flex-wrap gap-2">
                                              {technologies.slice(0, 4).map((tech, i) => (
-                                                  <span key={i} className="text-xs font-semibold px-3 py-1 rounded-lg bg-[#F5F5F7] dark:bg-white text-[#0077ED]">
+                                                  <span key={i} className="text-xs font-semibold px-3 py-1 rounded-lg bg-white dark:bg-white text-[#0077ED] shadow-sm">
                                                        {tech}
                                                   </span>
                                              ))}
@@ -84,7 +84,7 @@ export default function Skills() {
 
                                         <div className="flex flex-wrap gap-2">
                                              {['IoT', 'Hardware', 'Networking', 'Robotics'].map((tech, i) => (
-                                                  <span key={i} className="text-xs font-semibold px-3 py-1 rounded-lg bg-[#F5F5F7] dark:bg-white text-[#0077ED]">
+                                                  <span key={i} className="text-xs font-semibold px-3 py-1 rounded-lg bg-white dark:bg-white text-[#0077ED] shadow-sm">
                                                        {tech}
                                                   </span>
                                              ))}
@@ -109,7 +109,7 @@ export default function Skills() {
 
                                         <div className="flex flex-wrap gap-2">
                                              {['Python', 'TensorFlow', 'Scikit-learn', 'Data Science'].map((tech, i) => (
-                                                  <span key={i} className="text-xs font-semibold px-3 py-1 rounded-lg bg-[#F5F5F7]  dark:bg-white text-[#0077ED]">
+                                                  <span key={i} className="text-xs font-semibold px-3 py-1 rounded-lg bg-white dark:bg-white text-[#0077ED] shadow-sm">
                                                        {tech}
                                                   </span>
                                              ))}

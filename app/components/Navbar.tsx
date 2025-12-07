@@ -1,6 +1,7 @@
 "use client";
 
 import { Menu, Globe, ChevronDown } from 'lucide-react'
+import Link from 'next/link'
 import { navItems, profile } from '../data/portfolio-data'
 import { useState, useEffect } from 'react'
 import { toast } from '../utils/toast'
@@ -134,7 +135,7 @@ export default function Navbar() {
 
                     <div className={navBarClasses}>
                          <div className={navContainerClasses}>
-                              <a className="flex items-center gap-3 shrink-0" href="#">
+                              <Link className="flex items-center gap-3 shrink-0" href="/">
                                    <div className="size-8 text-primary">
                                         <svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
                                              <path clipRule="evenodd" d="M24 4H42V17.3333V30.6667H24V44H6V30.6667V17.3333H24V4Z"
@@ -145,7 +146,7 @@ export default function Navbar() {
                                         <span className="sm:hidden">{profile.name.split(" ")[0]}</span>
                                         <span className="hidden sm:block">{profile.name}</span>
                                    </h1>
-                              </a>
+                              </Link>
                               <nav className="hidden lg:flex items-center gap-8">
                                    {navItems.map((item) => (
                                         <a

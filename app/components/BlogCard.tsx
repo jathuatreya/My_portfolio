@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { Calendar, Clock, ArrowRight } from "lucide-react";
 import { Blog } from "@/types";
+import { useLanguage } from "@/app/context/LanguageContext";
 
 interface BlogCardProps {
     blog: Blog;
@@ -11,6 +12,8 @@ interface BlogCardProps {
 import Link from "next/link";
 
 export default function BlogCard({ blog }: BlogCardProps) {
+    const { t } = useLanguage();
+
     return (
         <article className="group bg-white dark:bg-[#1D1D1F] rounded-3xl overflow-hidden shadow-lg border border-gray-100 dark:border-white/5 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 flex flex-col h-full">
 
@@ -56,7 +59,7 @@ export default function BlogCard({ blog }: BlogCardProps) {
                     href={`/blogs/${blog.id}`}
                     className="inline-flex items-center gap-2 text-primary font-bold text-sm group-hover:gap-3 transition-all mt-auto"
                 >
-                    Read Article <ArrowRight size={16} />
+                    {t.blogs_page.read_article} <ArrowRight size={16} />
                 </Link>
             </div>
         </article>

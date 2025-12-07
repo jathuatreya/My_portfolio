@@ -6,7 +6,9 @@ import {
      Brain,
      Cpu,
      FileCheck2,
-     Palette
+     Palette,
+     Cable,
+     Globe2
 } from 'lucide-react'
 
 // --------------------------------------
@@ -101,7 +103,9 @@ export const aboutStats = [
      { id: "experience", icon: Timer, value: "3+", label: "Years Self-taught Experience" },
      { id: "projects", icon: CheckCircle2, value: "50+", label: "Completed Projects" },
      { id: "technologies", icon: Code2, value: "15+", label: "Technologies Used" },
+     { id: "web", icon: Globe2, value: "50+", label: "Web Development Projects" },
      { id: "models", icon: Brain, value: "5+", label: "ML Models & Experiments" },
+     { id: "hardware", icon: Cable, value: "20+", label: "IoT Projects Hardware" },
 ];
 
 // --------------------------------------

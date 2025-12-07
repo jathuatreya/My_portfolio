@@ -4,8 +4,11 @@ import Navbar from "@/app/components/Navbar";
 import Footer from "@/app/components/Footer";
 import { blogs } from "@/app/data/portfolio-data";
 import BlogCard from "@/app/components/BlogCard";
+import { useLanguage } from "@/app/context/LanguageContext";
 
 export default function Blogs() {
+    const { t } = useLanguage();
+
     return (
         <div className="bg-page-light dark:bg-page-dark text-text-light dark:text-text-dark font-display min-h-screen flex flex-col">
             <Navbar />
@@ -16,10 +19,10 @@ export default function Blogs() {
                     {/* Header */}
                     <div className="text-center mb-16">
                         <h1 className="text-4xl sm:text-5xl font-black tracking-tight text-[#1D1D1F] dark:text-white mb-6">
-                            Insights & <span className="text-primary">Thoughts</span>
+                            {t.blogs_page.title} <span className="text-primary">{t.blogs_page.title_highlight}</span>
                         </h1>
                         <p className="text-gray-600 dark:text-gray-400 text-lg sm:text-xl max-w-2xl mx-auto leading-relaxed">
-                            Sharing my journey, tutorials, and perspectives on technology, AI, and software engineering.
+                            {t.blogs_page.subtitle}
                         </p>
                     </div>
 
