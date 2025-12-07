@@ -120,14 +120,14 @@ export const technologies = [
 
      // Web Development
      "MERN Stack",
-     "LAMP Stack",
+
      "Next.js",
      "Node.js",
      "Express.js",
      "Laravel",
      "Spring Boot",
      "Tailwind CSS",
-     "SASS",
+
      "HTML5",
      "CSS3",
 
@@ -149,7 +149,6 @@ export const technologies = [
 
      // Machine Learning & AI
      "Machine Learning",
-     "ML Model Training",
      "Fine-Tuning Models",
      "RAG (Retrieval-Augmented Generation) Applications",
      "OpenCV",
@@ -187,7 +186,6 @@ export const goals = [
      "Master full-stack development using modern frameworks and technologies.",
      "Train, fine-tune, and deploy machine learning models, including RAG applications.",
      "Build innovative IoT and robotics projects integrating AI and hardware.",
-     "Work on real-world projects to solve complex technical challenges.",
      "Explore electrical, mechanical, and computer engineering intersections.",
      "Contribute to open-source projects and grow a strong professional portfolio.",
      "Continuously learn new technologies, frameworks, and engineering skills."
@@ -201,32 +199,106 @@ export const goals = [
 export const blogs = [
      {
           id: 1,
-          title: "Automating Machine Learning: My Journey with Auto-MML",
-          excerpt: "Building a tool to streamline the ML pipeline and make model selection accessible to everyone.",
-          date: "Dec 15, 2023",
+          title: "Automating A/L MCQ Answers with Python",
+          excerpt:
+               "How I built a lightweight Python script to automatically extract, organize, and manage A/L MCQ answers for faster learning.",
+          date: "Dec 2025",
           readTime: "6 min read",
-          image: "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?auto=format&fit=crop&q=80&w=800",
-          category: "Machine Learning"
+          image: "/projects/mcq-automation.jpg",
+          category: "Python Automation",
      },
      {
           id: 2,
-          title: "Web Scraping at Scale: Analyzing Food & Movie Data",
-          excerpt: "How I built custom scrapers in Python to gather datasets for analysis, featuring my Food and Movie web scraper projects.",
-          date: "Nov 20, 2023",
+          title: "Building an AI Job Application Assistant with Next.js & Flask",
+          excerpt:
+               "A breakdown of my AI-powered resume analyzer that detects skill gaps, matches job descriptions, and provides smart career suggestions.",
+          date: "Dec 2025",
           readTime: "8 min read",
-          image: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?auto=format&fit=crop&q=80&w=800",
-          category: "Python Automation"
+          image: "/projects/ai-job-assistant.jpg",
+          category: "AI & Web Development",
      },
      {
           id: 3,
-          title: "Predicting Housing Prices with Regression Models",
-          excerpt: "A deep dive into my 'Predicting-the-price-of-houses' project, comparing different algorithms for accurate valuation.",
-          date: "Oct 10, 2023",
-          readTime: "10 min read",
-          image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=800",
-          category: "Data Science"
+          title: "Designing a Java Flight Seat Booking Simulator",
+          excerpt:
+               "A beginner-friendly Java project demonstrating OOP concepts through a simple flight seat allocation system.",
+          date: "Nov 2025",
+          readTime: "5 min read",
+          image: "/projects/flight-booking.jpg",
+          category: "Java",
+     },
+     {
+          id: 4,
+          title: "Creating a Hunger Eradication Awareness Website",
+          excerpt:
+               "The story behind building a clean, responsive web project that spreads awareness about global hunger.",
+          date: "Oct 2025",
+          readTime: "4 min read",
+          image: "/projects/hunger-eradication.jpg",
+          category: "Web Development",
+     },
+     {
+          id: 5,
+          title: "Building a GitHub Profile Automation Chrome Extension",
+          excerpt:
+               "A behind-the-scenes look at how I automated GitHub profile updates using Markdown templates and GitHub Actions.",
+          date: "Oct 2025",
+          readTime: "6 min read",
+          image: "/projects/github-automation.jpg",
+          category: "Automation & DevTools",
+     },
+     {
+          id: 6,
+          title: "Mastering Java Multithreading with a Ticket Booking System",
+          excerpt:
+               "How I used threads, synchronization, and shared resources in Java to simulate real-world ticket booking.",
+          date: "Sep 2025",
+          readTime: "7 min read",
+          image: "/projects/ticket-booking.jpg",
+          category: "Java Multithreading",
+     },
+     {
+          id: 7,
+          title: "Building a Laptop-Controlled IoT Car with Python",
+          excerpt:
+               "A fun robotics project where a laptop controls a robot car using Python and custom commands.",
+          date: "Aug 2025",
+          readTime: "5 min read",
+          image: "/projects/laptop-car.jpg",
+          category: "IoT & Robotics",
+     },
+     {
+          id: 8,
+          title: "Creating a PHP Library Management System",
+          excerpt:
+               "A full CRUD web application built with PHP and MySQL for managing library books, members, and borrowing records.",
+          date: "Jul 2025",
+          readTime: "6 min read",
+          image: "/projects/library-management.jpg",
+          category: "PHP & MySQL",
+     },
+     {
+          id: 9,
+          title: "Visualizing Student Marks with Python & Matplotlib",
+          excerpt:
+               "A simple marks evaluation tool that turns student scores into meaningful graphs and insights.",
+          date: "Jun 2025",
+          readTime: "4 min read",
+          image: "/projects/marks-evaluation.jpg",
+          category: "Data Visualization",
+     },
+     {
+          id: 10,
+          title: "Recreating the Classic Mastermind Game in Python",
+          excerpt:
+               "A fun Python project where I built the classic Mastermind code-breaking game from scratch.",
+          date: "May 2025",
+          readTime: "4 min read",
+          image: "/projects/mastermind-game.jpg",
+          category: "Python Games",
      },
 ] as const;
+
 
 // --------------------------------------
 // 🧩 SERVICES
