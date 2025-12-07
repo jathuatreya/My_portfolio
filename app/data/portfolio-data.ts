@@ -40,7 +40,7 @@ export const profile = {
      portfolioURL: "https://jathushanvarnakulasingam-portfolio.vercel.app/",
      profileImage: "/my_image3.png",
      aboutImage: "/jathushan.png",
-     resumeURL: "/cv.pdf",
+     resumeURL: "/Jathushan_CV.pdf",
 
      social: {
           linkedin: "https://www.linkedin.com/in/jathushan-varnakulasingam-18a551271/",

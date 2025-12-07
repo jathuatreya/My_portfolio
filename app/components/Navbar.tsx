@@ -176,7 +176,7 @@ export default function Navbar() {
                                    <div className="hidden md:flex items-center gap-2">
                                         <a
                                              href={profile.resumeURL}
-                                             download="Jathushan_CV.pdf"
+                                             download="Jathushan_SE_CV.pdf"
                                              onClick={() => toast.success("Thanks for downloading my CV! Let's connect.")}
                                              className={downloadCVClasses}
                                         >
@@ -271,7 +271,7 @@ export default function Navbar() {
                               }`}>
                               <a
                                    href={profile.resumeURL}
-                                   download="Jathushan_CV.pdf"
+                                   download="Jathushan_SE_CV.pdf"
                                    className={mobileCVButtonClasses}
                                    onClick={() => setIsMobileMenuOpen(false)}
                               >

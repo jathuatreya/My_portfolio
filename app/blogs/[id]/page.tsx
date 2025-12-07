@@ -8,6 +8,7 @@ import {
      Linkedin, Twitter, Instagram, Smartphone
 } from "lucide-react";
 import { motion } from "framer-motion";
+import { useEffect } from "react";
 
 import Navbar from "@/app/components/Navbar";
 import Footer from "@/app/components/Footer";
@@ -98,6 +99,48 @@ export default function BlogDetail() {
                color: "hover:text-[#E4405F] hover:bg-[#E4405F]/10"
           }
      ];
+
+     // Update meta tags for social sharing to use blog image
+     useEffect(() => {
+          const blogImageUrl = `${profile.portfolioURL}${blog.image}`;
+
+          // Update or create Open Graph image meta tags
+          const updateMetaTag = (property: string, content: string) => {
+               let metaTag = document.querySelector(`meta[property="${property}"]`);
+               if (!metaTag) {
+                    metaTag = document.createElement('meta');
+                    metaTag.setAttribute('property', property);
+                    document.head.appendChild(metaTag);
+               }
+               metaTag.setAttribute('content', content);
+          };
+
+          // Update or create Twitter meta tags
+          const updateTwitterTag = (name: string, content: string) => {
+               let metaTag = document.querySelector(`meta[name="${name}"]`);
+               if (!metaTag) {
+                    metaTag = document.createElement('meta');
+                    metaTag.setAttribute('name', name);
+                    document.head.appendChild(metaTag);
+               }
+               metaTag.setAttribute('content', content);
+          };
+
+          // Set Open Graph tags
+          updateMetaTag('og:image', blogImageUrl);
+          updateMetaTag('og:image:width', '1200');
+          updateMetaTag('og:image:height', '630');
+          updateMetaTag('og:title', `${blog.title} | ${profile.name}`);
+          updateMetaTag('og:description', blog.excerpt);
+          updateMetaTag('og:url', shareUrl);
+
+          // Set Twitter tags
+          updateTwitterTag('twitter:image', blogImageUrl);
+          updateTwitterTag('twitter:title', `${blog.title} | ${profile.name}`);
+          updateTwitterTag('twitter:description', blog.excerpt);
+          updateTwitterTag('twitter:card', 'summary_large_image');
+
+     }, [blog.title, blog.excerpt, blog.image, shareUrl]);
 
      return (
           <div className="bg-white dark:bg-[#0a0a0a] min-h-screen">

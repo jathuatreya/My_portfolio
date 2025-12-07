@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     default: `${profile.name} | Full-Stack Developer & AI Enthusiast`,
     template: `%s | ${profile.name} Portfolio`,
   },
-  description: `${profile.name} is a Full-Stack Developer specializing in MERN, Next.js, Machine Learning, IoT systems, automation and modern web engineering. ${profile.shortBio} — Explore projects, skills, services and achievements.`,
+  description: `Explore the portfolio of ${profile.name}, focusing on web development, AI, ML, IoT and modern web systems.`,
   keywords: [
     "Full-Stack Developer",
     "MERN Developer",
@@ -52,18 +52,18 @@ export const metadata: Metadata = {
     siteName: `${profile.name} Portfolio`,
     images: [
       {
-        url: profile.aboutImage,
-        width: 1200,
-        height: 630,
+        url: "/favicon.ico",
+        width: 512,
+        height: 512,
         alt: `${profile.name} Portfolio Preview`,
       },
     ],
   },
   twitter: {
-    card: "summary_large_image",
+    card: "summary",
     title: `${profile.name} | Full-Stack Developer & AI Innovator`,
     description: `Explore the portfolio of ${profile.name}, focusing on web development, AI, ML, IoT and modern web systems.`,
-    images: [profile.aboutImage],
+    images: ["/favicon.ico"],
     creator: "@jathushanstark",
   },
   robots: {
@@ -139,7 +139,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             "@type": "Person",
             "name": "${profile.name}",
             "url": "${profile.portfolioURL}",
-            "image": "${profile.aboutImage}",
+            "image": "${profile.portfolioURL}/favicon.ico",
             "sameAs": [
               "https://github.com/jathushan",
               "https://www.linkedin.com/in/jathushan"
