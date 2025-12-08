@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Libre_Franklin } from "next/font/google";
+import { Inter } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 
@@ -10,9 +10,9 @@ import { LanguageProvider } from "./context/LanguageContext";
 import { profile, projects } from "./data/portfolio-data";
 import { ReactNode } from "react";
 
-const libreFranklin = Libre_Franklin({
+const inter = Inter({
   subsets: ["latin"],
-  variable: "--font-libre-franklin",
+  variable: "--font-inter",
   display: "swap",
 });
 
@@ -109,7 +109,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         {/* Alternate language */}
         <link rel="alternate" hrefLang="en" href={profile.portfolioURL} />
       </head>
-      <body className={`${libreFranklin.variable} font-sans antialiased`}>
+      <body className={`${inter.variable} font-sans antialiased`}>
         <LanguageProvider>
           <Preloader />
           <GlobalToaster />
