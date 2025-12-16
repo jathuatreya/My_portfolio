@@ -89,7 +89,7 @@ export const navItems = [
      { id: "about", label: "About Me", href: "/#about" },
      { id: "services", label: "Services", href: "/#services" },
      { id: "projects", label: "Projects", href: "/#projects" },
-     { id: "testimonials", label: "Testimonials", href: "/#testimonials" },
+
 
      { id: "contact", label: "Contact", href: "/#contact" },
      { id: "blogs", label: "Blogs", href: "/blogs" },
