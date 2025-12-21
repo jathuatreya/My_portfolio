@@ -90,7 +90,7 @@ export const metadata: Metadata = {
     locale: "en_LK",
     url: profile.portfolioURL,
     title: `${profile.name} | Full-Stack Developer & AI Innovator`,
-    description: `Explore the portfolio of ${profile.name}, focusing on web development, AI, ML, IoT and modern web systems.`,
+    description: `${profile.name} is a full-stack developer specializing in web development, AI, machine learning, IoT, and modern web systems. View projects and skills.`,
     siteName: `${profile.name} Portfolio`,
     images: [
       {
@@ -104,7 +104,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary",
     title: `${profile.name} | Full-Stack Developer & AI Innovator`,
-    description: `Explore the portfolio of ${profile.name}, focusing on web development, AI, ML, IoT and modern web systems.`,
+    description: `${profile.name} is a full-stack developer specializing in web development, AI, machine learning, IoT, and modern web systems. View projects and skills.`,
     images: ["/googlesearch.jpg"],
     creator: "@jathushanstark",
   },
