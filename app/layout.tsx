@@ -52,9 +52,9 @@ export const metadata: Metadata = {
     siteName: `${profile.name} Portfolio`,
     images: [
       {
-        url: "/favicon.ico",
-        width: 512,
-        height: 512,
+        url: "/googlesearch.jpg",
+        width: 1200,
+        height: 630,
         alt: `${profile.name} Portfolio Preview`,
       },
     ],
@@ -63,7 +63,7 @@ export const metadata: Metadata = {
     card: "summary",
     title: `${profile.name} | Full-Stack Developer & AI Innovator`,
     description: `Explore the portfolio of ${profile.name}, focusing on web development, AI, ML, IoT and modern web systems.`,
-    images: ["/favicon.ico"],
+    images: ["/googlesearch.jpg"],
     creator: "@jathushanstark",
   },
   robots: {
@@ -139,7 +139,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             "@type": "Person",
             "name": "${profile.name}",
             "url": "${profile.portfolioURL}",
-            "image": "${profile.portfolioURL}/favicon.ico",
+            "image": "${profile.portfolioURL}/googlesearch.jpg",
             "sameAs": [
               "https://github.com/jathushan",
               "https://www.linkedin.com/in/jathushan"
