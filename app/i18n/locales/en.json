@@ -4,15 +4,18 @@
           "about": "About Me",
           "services": "Services",
           "projects": "Projects",
+          "experience": "Experience",
+          "education": "Education",
           "testimonials": "Testimonials",
           "blogs": "Blogs",
           "contact": "Contact",
+          "other": "Other",
           "download_cv": "Download CV"
      },
      "hero": {
           "greeting": "Hi, I'm",
           "role_prefix": "I'm a",
-          "description": "Full-stack developer passionate about merging AI, IoT, and modern web technologies to build meaningful digital solutions."
+          "description": "Full-stack developer from Vavuniya, Sri Lanka, passionate about merging AI, IoT, and modern web technologies to build simple, minimal, and meaningful interactive digital solutions for the global market."
      },
      "about": {
           "tag": "My Story",

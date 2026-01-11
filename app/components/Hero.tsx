@@ -101,9 +101,9 @@ export default function Hero() {
                               <Image
                                    src={profile.profileImage}
                                    alt={profile.name}
-                                   width={600}
-                                   height={600}
-                                   className="w-full sm:max-w-md lg:max-w-lg h-auto "
+                                   width={2160}
+                                   height={2160}
+                                   className="w-full sm:max-w-lg lg:max-w-2xl h-auto drop-shadow-[30px_35px_60px_rgba(0,0,0,0.7)]"
                                    priority
                               />
                          </ScrollReveal>

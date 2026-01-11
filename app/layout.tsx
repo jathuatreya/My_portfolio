@@ -24,87 +24,52 @@ export const metadata: Metadata = {
   },
   description: `${profile.name} is a full-stack developer specializing in web development, AI, machine learning, IoT, and modern web systems. View projects and skills.`,
   keywords: [
-    "Full-Stack Developer",
-    "MERN Developer",
-    "Next.js Portfolio",
-    "React Developer",
+    "Full-Stack Developer Vavuniya",
     "Software Engineer Sri Lanka",
-    "Machine Learning Engineer",
-    "AI Engineer",
-    "IoT Developer",
-    "Web Developer Portfolio",
-    "TypeScript Developer",
-    "Frontend Developer",
-    "Backend Developer",
-    "Portfolio Developer Vavuniya",
-  "Web Application Developer",
-  "Software Engineer Sri Lanka",
-  "Software Engineer Vavuniya",
-  "AI Engineer",
-  "Machine Learning Engineer",
-  "Computer Vision Developer",
-  "IoT Developer",
-  "Python Developer",
-  "Java Developer",
-  "Developer Portfolio",
-  "Web Developer Portfolio",
-  "Full-Stack Developer Portfolio",
-  "MERN Stack Portfolio",
-  "Next.js Developer Portfolio",
-  "React Developer Portfolio",
-  "TypeScript Developer Portfolio",
-  "Open Source Contributor",
-  "Tech Enthusiast",
-  "Software Developer",
-  "Jathushan Stark",
-  "Jathushan Portfolio",
-  "Jathushan Web Developer",
-  "Jathushan Full-Stack Developer",
-  "Jathushan AI Engineer",
-  "Jathushan Machine Learning Engineer",
-  "Jathushan IoT Developer",
-  "Jathushan Python Developer",
-  "Jathushan Java Developer",
-  "Jathushan Developer Portfolio",
-  "Jathushan Web Developer Portfolio",
-  "Jathushan Full-Stack Developer Portfolio",
-  "Jathushan MERN Stack Portfolio",
-  "Jathushan Next.js Developer Portfolio,",
-  "Jathushan React Developer Portfolio",
-  "Jathushan TypeScript Developer Portfolio",
-  ",Open Source Contributor",
-  "Jathushan Tech Enthusiast",
-  "Jathushan Software Developer",
-  "Jathushan Portfolio",
-  "Jathushan Web Developer Portfolio",
-
-
+    "MERN Stack Developer Sri Lanka",
+    "AI & IoT Innovator Vavuniya",
+    "Next.js Developer Sri Lanka",
+    "React Developer Vavuniya",
+    "Vexel Systems Founder",
+    "Machine Learning Engineer Sri Lanka",
+    "Python Developer Vavuniya",
+    "Java Developer Vavuniya",
+    "Informatics Institute of Technology IIT Alumni",
+    "University of Westminster Computer Science",
+    "Automobile Engineering Technical College",
+    "Northern Province Developer",
+    "Jathushan Stark",
+    "Jathushan Varnakulasingam",
+    "Freelance Web Developer Sri Lanka",
+    "Top Web Developers in Vavuniya",
+    "AI Solution Architect Sri Lanka",
+    "Robotics Explorer Sri Lanka"
   ],
   authors: [{ name: profile.name, url: profile.portfolioURL }],
   creator: profile.name,
   publisher: profile.name,
-  category: "Portfolio",
-  classification: "Professional Web Developer Portfolio",
+  category: "Professional Services",
+  classification: "Full-Stack Developer & AI Solutions",
   openGraph: {
     type: "website",
     locale: "en_LK",
     url: profile.portfolioURL,
-    title: `${profile.name} | Full-Stack Developer & AI Innovator`,
-    description: `${profile.name} is a full-stack developer specializing in web development, AI, machine learning, IoT, and modern web systems. View projects and skills.`,
+    title: `${profile.name} | Top Full-Stack Developer & AI Innovator in Vavuniya, Sri Lanka`,
+    description: `Expert Full-Stack Developer in Vavuniya, Northern Province, Sri Lanka. Specializing in AI, IoT, and high-performance Web Systems. Founder of Vexel Systems.`,
     siteName: `${profile.name} Portfolio`,
     images: [
       {
         url: "/googlesearch.jpg",
         width: 1200,
         height: 630,
-        alt: `${profile.name} Portfolio Preview`,
+        alt: `${profile.name} Portfolio Preview - Software Engineering in Sri Lanka`,
       },
     ],
   },
   twitter: {
-    card: "summary",
-    title: `${profile.name} | Full-Stack Developer & AI Innovator`,
-    description: `${profile.name} is a full-stack developer specializing in web development, AI, machine learning, IoT, and modern web systems. View projects and skills.`,
+    card: "summary_large_image",
+    title: `${profile.name} | Software Engineer & Tech Visionary`,
+    description: `Building the next generation of AI and IoT solutions from Vavuniya, Sri Lanka.`,
     images: ["/googlesearch.jpg"],
     creator: "@jathushanstark",
   },
@@ -120,18 +85,28 @@ export const metadata: Metadata = {
     },
   },
   metadataBase: new URL(profile.portfolioURL),
-  alternates: { canonical: "/" },
+  alternates: { 
+    canonical: "/",
+    languages: {
+      "en-LK": "/en",
+      "ta-LK": "/ta",
+      "si-LK": "/si"
+    }
+  },
   icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon.ico",
-    apple: "/favicon.ico",
+    icon: [
+      { url: "/logo.png", sizes: "32x32", type: "image/png" },
+    ],
+    shortcut: "/logo.png",
+    apple: "/logo.png",
   },
   other: {
-    "geo.region": "LK",
-    "geo.placename": "Sri Lanka",
+    "geo.region": "LK-41", // Northern Province
+    "geo.placename": "Vavuniya",
+    "geo.position": "8.7514;80.4971",
+    "ICBM": "8.7514, 80.4971",
     "rating": "General",
-    "revisit-after": "7 days",
-    "format-detection": "telephone=no",
+    "revisit-after": "3 days",
   },
 };
 
@@ -146,9 +121,6 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
       <head>
-
-
-        {/* Alternate language */}
         <link rel="alternate" hrefLang="en" href={profile.portfolioURL} />
       </head>
       <body className={`${inter.variable} font-sans antialiased`}>
@@ -159,44 +131,104 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           {children}
         </LanguageProvider>
 
-        {/* Google Analytics */}
-        <Script
-          strategy="afterInteractive"
-          src="https://www.googletagmanager.com/gtag/js?id=G-Q27H9EQD0D"
-        />
-        <Script id="google-analytics" strategy="afterInteractive">
+        {/* Structured Data - LocalBusiness (Vexel Systems) */}
+        <Script type="application/ld+json" strategy="afterInteractive" id="json-ld-localbusiness">
           {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-Q27H9EQD0D');
+          {
+            "@context": "https://schema.org",
+            "@type": "ProfessionalService",
+            "name": "Vexel Systems",
+            "image": "${profile.portfolioURL}logo.png",
+            "@id": "${profile.portfolioURL}",
+            "url": "${profile.portfolioURL}",
+            "telephone": "${profile.contact.phone}",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Vavuniya Town",
+              "addressLocality": "Vavuniya",
+              "addressRegion": "Northern Province",
+              "addressCountry": "LK"
+            },
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": 8.7514,
+              "longitude": 80.4971
+            },
+            "openingHoursSpecification": {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": [
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday",
+                "Saturday"
+              ],
+              "opens": "09:00",
+              "closes": "18:00"
+            }
+          }
+          `}
+        </Script>
+
+        {/* Structured Data - Breadcrumbs */}
+        <Script type="application/ld+json" strategy="afterInteractive" id="json-ld-breadcrumbs">
+          {`
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "${profile.portfolioURL}"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Projects",
+                "item": "${profile.portfolioURL}#projects"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Experience",
+                "item": "${profile.portfolioURL}#experience"
+              }
+            ]
+          }
           `}
         </Script>
 
         {/* Structured Data - Person */}
-        <Script type="application/ld+json" strategy="afterInteractive">
+        <Script type="application/ld+json" strategy="afterInteractive" id="json-ld-person">
           {`
           {
             "@context": "https://schema.org",
             "@type": "Person",
             "name": "${profile.name}",
             "url": "${profile.portfolioURL}",
-            "image": "${profile.portfolioURL}/googlesearch.jpg",
+            "image": "${profile.portfolioURL}logo.png",
+            "jobTitle": "Full-Stack Developer & AI Solutions Architect",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Vavuniya",
+              "addressRegion": "Northern Province",
+              "addressCountry": "LK"
+            },
             "sameAs": [
-              "https://github.com/jathushan",
-              "https://www.linkedin.com/in/jathushan"
-            ],
-            "jobTitle": "Full-Stack Developer & AI Enthusiast",
-            "worksFor": {
-              "@type": "Organization",
-              "name": "Self-employed"
-            }
+              "${profile.social.github}",
+              "${profile.social.linkedin}",
+              "${profile.social.twitter}",
+              "${profile.social.instagram}"
+            ]
           }
           `}
         </Script>
 
         {/* Structured Data - Projects */}
-        <Script type="application/ld+json" strategy="afterInteractive">
+        <Script type="application/ld+json" strategy="afterInteractive" id="json-ld-projects">
           {`
           {
             "@context": "https://schema.org",
@@ -204,16 +236,15 @@ export default function RootLayout({ children }: { children: ReactNode }) {
               ${projects
               .map(
                 (project) => `{
-                  "@type": "CreativeWork",
+                  "@type": "SoftwareApplication",
                   "name": "${project.title}",
+                  "applicationCategory": "BusinessApplication",
+                  "operatingSystem": "Web",
                   "description": "${project.description}",
-                  "url": "${profile.portfolioURL}/projects",
-                  "image": "${project.image}",
-                  "keywords": "${project.techStack.join(", ")}",
+                  "url": "${profile.portfolioURL}#projects",
                   "creator": {
                     "@type": "Person",
-                    "name": "${profile.name}",
-                    "url": "${profile.portfolioURL}"
+                    "name": "${profile.name}"
                   }
                 }`
               )

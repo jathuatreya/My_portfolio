@@ -80,7 +80,7 @@ export default function Projects() {
                     <div className="absolute bottom-20 -left-20 w-60 h-60 bg-primary/10 rounded-full blur-3xl opacity-30 pointer-events-none"></div>
 
                     {/* 🔥 Header */}
-                    <div className="container mx-auto max-w-6xl relative z-10 px-4 mb-12">
+                    <div className="container mx-auto max-w-6xl 3xl:max-w-[80rem] 4k:max-w-[100rem] relative z-10 px-4 mb-12">
                          <div className="text-center">
                               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#F5F5F7] dark:bg-white/5 border border-primary/10 mb-4 shadow-sm">
                                    <Layers size={16} className="text-primary" />
@@ -98,7 +98,7 @@ export default function Projects() {
                     </div>
 
                     {/* 🔥 Carousel Container */}
-                    <div className="container mx-auto max-w-7xl px-4 relative">
+                    <div className="container mx-auto max-w-7xl 3xl:max-w-[96rem] 4k:max-w-[120rem] px-4 relative">
                          {/* Card Container with Shadows */}
                          <div
                               ref={containerRef}
@@ -143,8 +143,8 @@ export default function Projects() {
                                                        </div>
 
                                                        {/* Content */}
-                                                       <div className="flex flex-col p-4 flex-grow">
-                                                            <div className="flex-grow">
+                                                       <div className="flex flex-col p-4 grow">
+                                                            <div className="grow">
                                                                  <h3 className="text-lg font-bold text-[#1D1D1F] dark:text-white">{project.title}</h3>
                                                                  <p className="text-gray-600 dark:text-gray-400 text-sm mt-2 line-clamp-2">{project.description}</p>
 

@@ -19,7 +19,7 @@ export const profile = {
      name: "Jathushan Varnakulasingam",
      slogan: "Innovate. Automate. Accelerate.",
      shortBio:
-          "A full-stack developer and tech enthusiast exploring the worlds of electrical, mechanical, and computer engineering. I build innovative projects that merge software, hardware, and AI to create smart, real-world solutions",
+          "I am a passionate Full-Stack Developer and Tech Entrepreneur, driven by innovation, problem-solving, and building technology that makes a real-world impact.",
      age: 25,
      role: "Full-Stack Developer | ML Enthusiast | IoT Innovator | Robotics Explorer",
      roles: [
@@ -35,7 +35,7 @@ export const profile = {
           "Automation Enthusiast"
      ],
 
-     location: "Vavuniya, Sri Lanka",
+     location: "Vavuniya, Northern Province, Sri Lanka",
      availability: "Open for freelance & full-time roles",
      portfolioURL: "https://jathushanvarnakulasingam-portfolio.vercel.app/",
      profileImage: "/my_image3.png",
@@ -54,7 +54,7 @@ export const profile = {
      highlights: [
           "Full-stack developer with strong MERN & LAMP experience",
           "Beginner in Machine Learning with hands-on projects",
-          "IoT + robotics enthusiast building hardware-based systems",
+          "IoT + robotics enthusiast building hardware-based systems in Vavuniya",
           "Experienced with React, Next.js, and modern UI frameworks",
           "Strong foundation in Java & Spring Boot",
      ],
@@ -74,9 +74,9 @@ export const profile = {
      ],
 
      contact: {
-          email: "imjathushan.com",
-          phone: "+94 707661734",
-          location: "Vavuniya, Sri Lanka",
+          email: "imjathushan@gmail.com",
+          phone: "+94 76661734",
+          location: "Vavuniya Town, Northern Province, Sri Lanka",
      },
 } as const;
 
@@ -89,6 +89,8 @@ export const navItems = [
      { id: "about", label: "About Me", href: "/#about" },
      { id: "services", label: "Services", href: "/#services" },
      { id: "projects", label: "Projects", href: "/#projects" },
+     { id: "experience", label: "Experience", href: "/#experience" },
+     { id: "education", label: "Education", href: "/#education" },
 
 
      { id: "contact", label: "Contact", href: "/#contact" },
@@ -106,6 +108,95 @@ export const aboutStats = [
      { id: "web", icon: Globe2, value: "50+", label: "Web Development Projects" },
      { id: "models", icon: Brain, value: "5+", label: "ML Models & Experiments" },
      { id: "hardware", icon: Cable, value: "20+", label: "IoT Projects Hardware" },
+];
+
+// --------------------------------------
+// 💼 EXPERIENCE
+// --------------------------------------
+
+export const experience = [
+     {
+          id: "accron",
+          role: "Full-Stack Developer",
+          company: "Accron Revolution",
+          period: "September 2024 – Present",
+          description: "Currently working as a Full-Stack Developer, significantly contributing to the development of the company's core product ecosystem and multiple high-profile client websites.",
+          responsibilities: [
+               "Lead developer for the Mr. Dood ecosystem, focusing on modular and scalable architecture",
+               "Design and maintain full-stack solutions for company and client platforms",
+               "Contribute to UI/UX improvements and backend optimization for real-time applications"
+          ],
+          projects: [
+               "Mr. Dood Web",
+               "Mr. Dood Driver",
+               "Mr. Dood Merchant",
+               "Accron Company Websites",
+               "British Academy Website"
+          ],
+          skills: ["MERN / LAMP Stack", "Real-time Ecosystems", "Modular Architecture", "Scalable Web Solutions"]
+     },
+     {
+          id: "vexel",
+          role: "Founder & CEO",
+          company: "Vexel Systems",
+          period: "January 2026 – Present",
+          description: "I founded Vexel Systems, a technology startup focused on simplifying technology for businesses and individuals. Technology should empower people, not complicate their lives.",
+          responsibilities: [
+               "Founder, CEO & Technical Lead",
+               "Define company vision, mission, and strategy",
+               "Architect and build core software solutions",
+               "Lead client discussions and project planning",
+               "Manage branding, product direction, and innovation"
+          ],
+          projects: ["Vexel Track", "Vexel POS", "Vexel Systems Website"],
+          services: [
+               "SEO & Local SEO",
+               "Digital Marketing",
+               "Social Media Marketing",
+               "Backend & Database",
+               "Software Development",
+               "Web & Mobile Applications"
+          ]
+     }
+];
+
+// --------------------------------------
+// 🎓 EDUCATION
+// --------------------------------------
+
+export const education = [
+     {
+          id: "school",
+          degree: "Schools",
+          institution: "V/Vavuniya Tamil Madhya Maha Vidyalayam",
+          period: "Grade 1 – Grade 13",
+          description: "Completed school education in Vavuniya, building a strong physical science and analytical foundation.",
+          highlights: [
+               "G.C.E Advanced Level (A/L) - Physical Science Stream",
+               "Subjects: Combined Mathematics, Physics, Chemistry"
+          ]
+     },
+     {
+          id: "automobile",
+          degree: "NVQ Level 3 – Automobile Engineering",
+          institution: "Vavuniya Technical College",
+          period: "2022",
+          description: "Gained hands-on technical knowledge and practical skills in mechanical engineering.",
+          highlights: [
+               "Completed NVQ Level 3 in Automobile Engineering",
+               "Developed discipline, mechanical understanding, and troubleshooting skills"
+          ]
+     },
+     {
+          id: "iit",
+          degree: "BSc (Hons) Computer Science",
+          institution: "Informatics Institute of Technology (IIT)",
+          period: "2022 – Present",
+          affiliation: "Affiliated with the University of Westminster",
+          description: "Currently pursuing a Bachelor’s degree in Computer Science with a strong focus on industrial standards and cutting-edge technologies.",
+          focus: ["Software Engineering", "Web Technologies", "Databases & Networking", "Machine Learning & AI"],
+          details: "Practical, industry-oriented curriculum aligned with global standards."
+     }
 ];
 
 // --------------------------------------
@@ -519,6 +610,8 @@ export const footerLinks = [
      { label: "About", href: "/#about" },
      { label: "Services", href: "/#services" },
      { label: "Projects", href: "/#projects" },
+     { label: "Experience", href: "/#experience" },
+     { label: "Education", href: "/#education" },
      { label: "Testimonials", href: "/#testimonials" },
      { label: "Blogs", href: "/blogs" },
      { label: "Contact", href: "/#contact" },

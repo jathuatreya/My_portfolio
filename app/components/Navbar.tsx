@@ -75,7 +75,7 @@ export default function Navbar() {
      }
 
      // Theme-based classes
-     const navBarClasses = `mx-auto px-2 md:px-4 sm:px-6 lg:px-8 max-w-7xl`
+     const navBarClasses = `mx-auto px-2 md:px-4 sm:px-6 lg:px-8 max-w-7xl 3xl:max-w-[96rem] 4k:max-w-[120rem]`
 
      const navContainerClasses = `flex items-center justify-between rounded-2xl transition-all duration-300 ${isSystemDark
           ? 'bg-[#1a1a1a]/95 backdrop-blur-sm border border-gray-800 shadow-[0_8px_32px_rgba(0,0,0,0.36)]'
@@ -84,11 +84,11 @@ export default function Navbar() {
 
      const logoTextClasses = `text-xl font-bold tracking-tight transition-colors duration-300 ${isSystemDark ? 'text-gray-100' : 'text-gray-900'}`
 
-     const navLinkClasses = (itemId: string) => `text-sm font-medium transition-colors duration-300 ${activeSection === itemId
-          ? 'text-primary hover:text-primary/80 font-bold'
+     const navLinkClasses = (itemId: string) => `text-sm font-medium transition-all duration-300 ${activeSection === itemId
+          ? 'text-primary font-bold'
           : isSystemDark
-               ? 'text-gray-300 hover:text-primary'
-               : 'text-gray-700 hover:text-primary'
+               ? 'text-gray-300 hover:text-primary hover:font-bold'
+               : 'text-gray-700 hover:text-primary hover:font-bold'
           }`
 
      const downloadCVClasses = `flex cursor-pointer items-center justify-center overflow-hidden rounded-lg text-sm font-bold shadow-sm ring-1 ring-inset transition-all duration-300 px-5 py-2.5 mr-2 ${isSystemDark
@@ -113,11 +113,11 @@ export default function Navbar() {
           }`
 
      // Also update mobile menu item highlighting
-     const mobileMenuItemClasses = (itemId: string) => `flex items-center justify-between p-3 rounded-xl text-base font-medium transition-colors duration-300 ${activeSection === itemId
-          ? 'bg-primary/10 text-primary'
+     const mobileMenuItemClasses = (itemId: string) => `flex items-center justify-between p-3 rounded-xl text-base font-medium transition-all duration-300 ${activeSection === itemId
+          ? 'bg-primary/10 text-primary font-bold'
           : isSystemDark
-               ? 'text-gray-300 hover:bg-white/5'
-               : 'text-gray-700 hover:bg-black/5'
+               ? 'text-gray-300 hover:bg-white/5 hover:text-primary hover:font-bold'
+               : 'text-gray-700 hover:bg-black/5 hover:text-primary hover:font-bold'
           }`
 
      const mobileCVButtonClasses = `flex h-10 cursor-pointer items-center justify-center rounded-lg text-sm font-bold shadow-sm transition-colors duration-300 ${isSystemDark
@@ -148,29 +148,90 @@ export default function Navbar() {
                                    </h1>
                               </Link>
                               <nav className="hidden lg:flex items-center gap-8">
-                                   {navItems.map((item) => (
-                                        <a
-                                             key={item.id}
-                                             className={navLinkClasses(item.id)}
-                                             href={item.href}
-                                             onClick={(e) => {
-                                                  // Only smooth scroll for internal hash links, allow standard nav for pages if needed
-                                                  if (item.href.includes('#')) {
-                                                       e.preventDefault()
-                                                       const element = document.getElementById(item.id)
-                                                       if (element) {
-                                                            element.scrollIntoView({ behavior: 'smooth' })
-                                                            setActiveSection(item.id)
-                                                       } else {
-                                                            // Fallback if element not found (e.g. cross page)
-                                                            window.location.href = item.href
+                                   {navItems
+                                        .filter(item => ["home", "about", "services", "projects", "contact", "blogs"].includes(item.id))
+                                        .map((item) => (
+                                             <a
+                                                  key={item.id}
+                                                  className={navLinkClasses(item.id)}
+                                                  href={item.href}
+                                                  onClick={(e) => {
+                                                       if (item.href.includes('#')) {
+                                                            e.preventDefault()
+                                                            const element = document.getElementById(item.id)
+                                                            if (element) {
+                                                                 element.scrollIntoView({ behavior: 'smooth' })
+                                                                 setActiveSection(item.id)
+                                                            } else {
+                                                                 window.location.href = item.href
+                                                            }
                                                        }
-                                                  }
-                                             }}
-                                        >
-                                             {t.nav[item.id as keyof typeof t.nav] || item.label}
-                                        </a>
-                                   ))}
+                                                  }}
+                                             >
+                                                  {t.nav[item.id as keyof typeof t.nav] || item.label}
+                                             </a>
+                                        ))}
+
+                                   {/* Dynamic "Other" Dropdown */}
+                                   {(() => {
+                                        const [isOtherMenuOpen, setIsOtherMenuOpen] = useState(false);
+                                        const dynamicId = activeSection === 'education' ? 'education' : 
+                                                         activeSection === 'experience' ? 'experience' : 'other';
+                                        const dynamicLabel = activeSection === 'education' ? t.nav.education : 
+                                                           activeSection === 'experience' ? t.nav.experience : t.nav.other;
+
+                                        return (
+                                             <div 
+                                                  className="relative"
+                                                  onMouseEnter={() => setIsOtherMenuOpen(true)}
+                                                  onMouseLeave={() => setIsOtherMenuOpen(false)}
+                                             >
+                                                  <button
+                                                       className={`flex items-center gap-1 py-2 transition-colors duration-300 ${
+                                                            isOtherMenuOpen || activeSection === 'experience' || activeSection === 'education'
+                                                            ? 'text-primary font-bold'
+                                                            : navLinkClasses(dynamicId)
+                                                       }`}
+                                                       onClick={() => setIsOtherMenuOpen(!isOtherMenuOpen)}
+                                                  >
+                                                       {dynamicLabel}
+                                                       <ChevronDown size={14} className={`transition-transform duration-300 ${isOtherMenuOpen ? 'rotate-180' : ''}`} />
+                                                  </button>
+
+                                                  {/* Dropdown Menu with bridging padding */}
+                                                  <div className={`absolute left-0 pt-2 w-40 z-20 transition-all duration-300 ${
+                                                       isOtherMenuOpen ? 'opacity-100 scale-100 translate-y-0' : 'opacity-0 scale-95 -translate-y-2 pointer-events-none'
+                                                  }`}>
+                                                       <div className={`rounded-xl shadow-xl ring-1 overflow-hidden py-1 ${isSystemDark
+                                                            ? 'bg-[#1a1a1a] border border-gray-800 ring-white/10'
+                                                            : 'bg-[#F5F5F7] border border-gray-100 ring-black/5'
+                                                       }`}>
+                                                            {['experience', 'education'].map((id) => (
+                                                                 <button
+                                                                      key={id}
+                                                                      onClick={() => {
+                                                                           const element = document.getElementById(id);
+                                                                           if (element) {
+                                                                                element.scrollIntoView({ behavior: 'smooth' });
+                                                                                setActiveSection(id);
+                                                                                setIsOtherMenuOpen(false);
+                                                                           }
+                                                                      }}
+                                                                      className={`w-full text-left px-4 py-2 text-sm flex items-center gap-2 transition-all duration-300 ${activeSection === id
+                                                                           ? 'bg-primary/10 text-primary font-bold'
+                                                                           : isSystemDark
+                                                                                ? 'text-gray-300 hover:bg-white/5 hover:text-primary hover:font-bold'
+                                                                                : 'text-gray-700 hover:bg-[#F5F5F7] hover:text-primary hover:font-bold hover:text-primary'
+                                                                           }`}
+                                                                 >
+                                                                      {t.nav[id as keyof typeof t.nav]}
+                                                                 </button>
+                                                            ))}
+                                                       </div>
+                                                  </div>
+                                             </div>
+                                        );
+                                   })()}
                               </nav>
                               <div className="flex items-center gap-2">
                                    <div className="hidden md:flex items-center gap-2">
@@ -243,28 +304,50 @@ export default function Navbar() {
                {/* Mobile Menu */}
                <div className={mobileMenuClasses}>
                     <div className="flex flex-col p-4 space-y-2">
-                         {navItems.map((item) => (
-                              <a
-                                   key={item.id}
-                                   className={mobileMenuItemClasses(item.id)}
-                                   href={item.href}
-                                   onClick={(e) => {
-                                        if (item.href.includes('#')) {
-                                             e.preventDefault()
-                                             const element = document.getElementById(item.id)
-                                             if (element) {
-                                                  element.scrollIntoView({ behavior: 'smooth' })
-                                                  setActiveSection(item.id)
-                                                  setIsMobileMenuOpen(false)
+                         {navItems
+                              .filter(item => ["home", "about", "services", "projects", "contact", "blogs"].includes(item.id))
+                              .map((item) => (
+                                   <a
+                                        key={item.id}
+                                        className={mobileMenuItemClasses(item.id)}
+                                        href={item.href}
+                                        onClick={(e) => {
+                                             if (item.href.includes('#')) {
+                                                  e.preventDefault()
+                                                  const element = document.getElementById(item.id)
+                                                  if (element) {
+                                                       element.scrollIntoView({ behavior: 'smooth' })
+                                                       setActiveSection(item.id)
+                                                       setIsMobileMenuOpen(false)
+                                                  } else {
+                                                       window.location.href = item.href
+                                                  }
                                              } else {
-                                                  window.location.href = item.href
+                                                  setIsMobileMenuOpen(false)
                                              }
-                                        } else {
-                                             setIsMobileMenuOpen(false)
+                                        }}
+                                   >
+                                        {t.nav[item.id as keyof typeof t.nav] || item.label}
+                                   </a>
+                              ))}
+
+                         {/* Mobile Experience & Education Items */}
+                         {['experience', 'education'].map((id) => (
+                              <a
+                                   key={id}
+                                   className={mobileMenuItemClasses(id)}
+                                   href={`/#${id}`}
+                                   onClick={(e) => {
+                                        e.preventDefault();
+                                        const element = document.getElementById(id);
+                                        if (element) {
+                                             element.scrollIntoView({ behavior: 'smooth' });
+                                             setActiveSection(id);
+                                             setIsMobileMenuOpen(false);
                                         }
                                    }}
                               >
-                                   {t.nav[item.id as keyof typeof t.nav] || item.label}
+                                   {t.nav[id as keyof typeof t.nav]}
                               </a>
                          ))}
                          <div className={`grid grid-cols-1 gap-3 pt-2 mt-2 border-t transition-colors duration-300 ${isSystemDark ? 'border-gray-800' : 'border-gray-200'
