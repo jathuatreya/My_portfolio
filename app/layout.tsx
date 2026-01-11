@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import Script from "next/script";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 
 import GlobalToaster from "./components/GlobalToaster";
@@ -155,6 +156,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           <GlobalToaster />
           <EngagementToast />
           {children}
+          <SpeedInsights />
         </LanguageProvider>
 
         {/* Structured Data - LocalBusiness (Vexel Systems) */}
