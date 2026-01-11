@@ -1,24 +1,25 @@
 "use client";
 
 import { useEffect, useState } from 'react'
+import Image from 'next/image'
 
 export default function Preloader() {
   const [complete, setComplete] = useState(false)
   const [progress, setProgress] = useState(0)
 
   useEffect(() => {
-    // Progress bar animation: 0 -> 100 in ~1.2 seconds
-    // 1200ms / 100 steps = 12ms per step
+    // Progress bar animation: 0 -> 100 in ~0.8 seconds
+    // 800ms / 100 steps = 8ms per step
     const interval = setInterval(() => {
         setProgress((prev) => {
             if (prev >= 100) {
                 clearInterval(interval)
-                setTimeout(() => setComplete(true), 200) // Short delay before unmounting
+                setTimeout(() => setComplete(true), 150) // Brisk exit
                 return 100
             }
             return prev + 1
         })
-    }, 12)
+    }, 8)
 
     return () => clearInterval(interval)
   }, [])
@@ -30,15 +31,23 @@ export default function Preloader() {
       
       {/* Logo & Name - Visible Immediately */}
       <div className="flex flex-col items-center animate-fade-in-up">
-        {/* Favicon */}
-        <div className="relative flex items-center justify-center mb-8">
-             <img src="/logo.png" alt="Logo" className="w-32 h-32" />
+        {/* Favicon - Optimized with Next Image */}
+        <div className="relative flex items-center justify-center mb-8 w-32 h-32">
+             <Image 
+                src="/logo.png" 
+                alt="Logo" 
+                fill
+                priority
+                className="object-contain"
+                sizes="128px"
+             />
         </div>
 
         {/* Name */}
         <h2 className="text-3xl font-bold text-black dark:text-white tracking-widest uppercase text-center px-4">
           Jathushan Varnakulasingam
         </h2>
+
 
          {/* Progress Bar */}
          <div className="w-64 mt-8">
