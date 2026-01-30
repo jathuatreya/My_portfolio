@@ -1,236 +1,302 @@
 import { Blog } from "@/types";
 
 export interface BlogPost extends Blog {
-     content: string;
-     sections: {
-          heading: string;
-          body: string;
-          image?: string;
-     }[];
-     relatedTech: string[];
+  content: string;
+  sections: {
+    heading: string;
+    body: string;
+    image?: string;
+  }[];
+  relatedTech: string[];
 }
 
 export const blogContent: Record<number, BlogPost> = {
-     1: {
-          id: 1,
-          title: "Automating A/L MCQ Answers with Python",
-          excerpt: "How I built a lightweight Python script to automatically extract, organize, and manage A/L MCQ answers for faster learning.",
-          date: "Dec 2025",
-          readTime: "6 min read",
-          image: "/projects/mcq-automation.jpg",
-          category: "Python Automation",
-          content: "Preparing for A/L exams involves practicing hundreds of MCQ papers. Checking answers regarding big books is tedious. I decided to automate this using Python.",
-          sections: [
-               {
-                    heading: "The Problem",
-                    body: "Checking MCQ answers manually takes time and breaks the flow of study. I needed a way to instantly verify my answers and keep track of my progress without flipping through pages of answer keys."
-               },
-               {
-                    heading: "The Solution",
-                    body: "I built a Python script that reads a structured text file containing the answer keys. It then allows me to input my answers and instantly grades them, showing me which ones I got wrong."
-               },
-               {
-                    heading: "Technical Details",
-                    body: "The project uses standard Python file I/O. I used dictionaries to map question numbers to correct answers for O(1) lookup time. The user interface is a simple CLI that is fast and distraction-free."
-               },
-               {
-                    heading: "Future Improvements",
-                    body: "I plan to add a GUI using Tkinter or build a small web interface using Flask so I can use it on my phone."
-               }
-          ],
-          relatedTech: ["Python", "File I/O", "CLI"]
-     },
-     2: {
-          id: 2,
-          title: "Building an AI Job Application Assistant with Next.js & Flask",
-          excerpt: "A breakdown of my AI-powered resume analyzer that detects skill gaps, matches job descriptions, and provides smart career suggestions.",
-          date: "Dec 2025",
-          readTime: "8 min read",
-          image: "/projects/ai-job-assistant.jpg",
-          category: "AI & Web Development",
-          content: "Job hunting is exhaustive. Tailoring resumes for every application is a full-time job. I built an AI assistant to do the heavy lifting.",
-          sections: [
-               {
-                    heading: "Core Features",
-                    body: "The app takes your resume (PDF) and a job description URL. It uses NLP to extract keywords from both and calculates a matching score. It then suggests specific keywords you are missing."
-               },
-               {
-                    heading: "Tech Stack",
-                    body: "The frontend is Next.js for a snappy UI. The backend is Flask, serving the ML models. I used Spacy for initial keyword extraction and then integrated a commercially available LLM API for the career advice generation."
-               },
-               {
-                    heading: "Challenges",
-                    body: "Parsing PDFs accurately is surprisingly hard. I had to experiment with several libraries like PyPDF2 and PDFMiner before settling on a solution that handled format inconsistencies well."
-               }
-          ],
-          relatedTech: ["Next.js", "Flask", "Python", "NLP", "Spacy"]
-     },
-     3: {
-          id: 3,
-          title: "Designing a Java Flight Seat Booking Simulator",
-          excerpt: "A beginner-friendly Java project demonstrating OOP concepts through a simple flight seat allocation system.",
-          date: "Nov 2025",
-          readTime: "5 min read",
-          image: "/projects/flight-booking.jpg",
-          category: "Java",
-          content: "Understanding Object-Oriented Programming (OOP) is crucial for any developer. This project was my playground for learning Classes, Objects, and Inheritance.",
-          sections: [
-               {
-                    heading: "System Design",
-                    body: "The system models a Flight, Passengers, and Seats. I used a 2D array to represent the seating grid of the plane. The logic handles checking availability and reserving specific seats."
-               },
-               {
-                    heading: "OOP Principles Used",
-                    body: "Encapsulation: All data fields are private with getters/setters.\nInheritance: created a base class 'User' for both 'Passenger' and 'Admin'.\nPolymorphism: Different user types see different menus."
-               }
-          ],
-          relatedTech: ["Java", "OOP", "Console UI"]
-     },
-     4: {
-          id: 4,
-          title: "Creating a Hunger Eradication Awareness Website",
-          excerpt: "The story behind building a clean, responsive web project that spreads awareness about global hunger.",
-          date: "Oct 2025",
-          readTime: "4 min read",
-          image: "/projects/hunger-eradication.jpg",
-          category: "Web Development",
-          content: "Technology should serve humanity. This project was about using my web dev skills to shed light on a global crisis.",
-          sections: [
-               {
-                    heading: "Design Philosophy",
-                    body: "The design needed to be impactful but respectful. I chose a color palette that evokes urgency but also hope. The layout is clean, focusing heavily on imagery and statistics."
-               },
-               {
-                    heading: "Responsiveness",
-                    body: "Using CSS Grid and Flexbox, I ensured the site looks good on any device. Accessibility was a priority, ensuring high contrast and screen-reader friendliness."
-               }
-          ],
-          relatedTech: ["HTML5", "CSS3", "JavaScript", "Responsive Design"]
-     },
-     5: {
-          id: 5,
-          title: "Building a GitHub Profile Automation Chrome Extension",
-          excerpt: "A behind-the-scenes look at how I automated GitHub profile updates using Markdown templates and GitHub Actions.",
-          date: "Oct 2025",
-          readTime: "6 min read",
-          image: "/projects/github-automation.jpg",
-          category: "Automation & DevTools",
-          content: "Your GitHub profile is your developer portfolio. keeping it fresh with latest projects and stats can be automated.",
-          sections: [
-               {
-                    heading: "How it Works",
-                    body: "The extension hooks into your browser to grab your latest activity. It then formats this into a Markdown snippet."
-               },
-               {
-                    heading: "GitHub Actions Integration",
-                    body: "The real magic happens with a GitHub Action workflow that runs every night, fetching the latest data and committing it to the README of my special repository."
-               }
-          ],
-          relatedTech: ["Chrome Extensions", "JavaScript", "GitHub Actions", "YAML"]
-     },
-     6: {
-          id: 6,
-          title: "Mastering Java Multithreading with a Ticket Booking System",
-          excerpt: "How I used threads, synchronization, and shared resources in Java to simulate real-world ticket booking.",
-          date: "Sep 2025",
-          readTime: "7 min read",
-          image: "/projects/ticket-booking.jpg",
-          category: "Java Multithreading",
-          content: "Concurrency is tricky. Race conditions are real. I built this simulation to really understand `synchronized` blocks and thread safety.",
-          sections: [
-               {
-                    heading: "The Simulation",
-                    body: "Multiple 'Customer' threads try to book tickets from a single 'TicketCounter' object simultaneously. Without synchronization, two customers could book the last seat."
-               },
-               {
-                    heading: "Key Concepts",
-                    body: "I implemented `Runnable` interfaces for the agents. I used the `synchronized` keyword to ensure that the booking method is atomic—only one thread can execute it at a time."
-               }
-          ],
-          relatedTech: ["Java", "Multithreading", "Concurrency"]
-     },
-     7: {
-          id: 7,
-          title: "Building a Laptop-Controlled IoT Car with Python",
-          excerpt: "A fun robotics project where a laptop controls a robot car using Python and custom commands.",
-          date: "Aug 2025",
-          readTime: "5 min read",
-          image: "/projects/laptop-car.jpg",
-          category: "IoT & Robotics",
-          content: "Bridging the physical and digital world. This project uses Python to send control signals to an Arduino-based robot car.",
-          sections: [
-               {
-                    heading: "The Hardware",
-                    body: "I used an Arduino Uno, an L298N motor driver, and a chassis with 4 DC motors. A Bluetooth module (HC-05) handles the wireless communication."
-               },
-               {
-                    heading: "The Software",
-                    body: "On the laptop, a Python script captures keyboard inputs (WASD) and sends serial data via Bluetooth. On the Arduino, a C++ sketch reads these characters and drives the motors."
-               }
-          ],
-          relatedTech: ["Python", "Arduino", "Serial Communication", "Hardware"]
-     },
-     8: {
-          id: 8,
-          title: "Creating a PHP Library Management System",
-          excerpt: "A full CRUD web application built with PHP and MySQL for managing library books, members, and borrowing records.",
-          date: "Jul 2025",
-          readTime: "6 min read",
-          image: "/projects/library-management.jpg",
-          category: "PHP & MySQL",
-          content: "Databases are the backbone of most apps. This project was a deep dive into Relational Database Management Systems (RDBMS).",
-          sections: [
-               {
-                    heading: "Database Schema",
-                    body: "I designed a normalized schema with tables for Books, Members, and Loans. Foreign keys enforce referential integrity."
-               },
-               {
-                    heading: "Backend Logic",
-                    body: "Vanilla PHP handles the form submissions. I used PDO (PHP Data Objects) for database connections to prevent SQL injection attacks."
-               }
-          ],
-          relatedTech: ["PHP", "MySQL", "SQL", "Database Design"]
-     },
-     9: {
-          id: 9,
-          title: "Visualizing Student Marks with Python & Matplotlib",
-          excerpt: "A simple marks evaluation tool that turns student scores into meaningful graphs and insights.",
-          date: "Jun 2025",
-          readTime: "4 min read",
-          image: "/projects/marks-evaluation.jpg",
-          category: "Data Visualization",
-          content: "Data is useless without visualization. This tool helps teachers quickly understand class performance.",
-          sections: [
-               {
-                    heading: "Features",
-                    body: "Input a CSV of student marks. The script generates histograms of score distribution, bar charts for individual performance, and pie charts for pass/fail ratios."
-               },
-               {
-                    heading: "Libraries",
-                    body: "Pandas is used for data manipulation, and Matplotlib provides the plotting capabilities. It produces high-quality PNGs ready for reports."
-               }
-          ],
-          relatedTech: ["Python", "Pandas", "Matplotlib", "Data Analysis"]
-     },
-     10: {
-          id: 10,
-          title: "Recreating the Classic Mastermind Game in Python",
-          excerpt: "A fun Python project where I built the classic Mastermind code-breaking game from scratch.",
-          date: "May 2025",
-          readTime: "4 min read",
-          image: "/projects/mastermind-game.jpg",
-          category: "Python Games",
-          content: "Logic games are great for exercising programming skills. Mastermind requires handling loops, conditionals, and user input validation robustly.",
-          sections: [
-               {
-                    heading: "Game Logic",
-                    body: "The computer generates a random 4-color code. The player guesses. The program returns feedback: 'Black' peg for correct color & place, 'White' peg for correct color but wrong place."
-               },
-               {
-                    heading: "Implementation",
-                    body: "I used Python's `random` module. The core difficulty was writing the algorithm to correctly calculate the white/black pegs without double-counting."
-               }
-          ],
-          relatedTech: ["Python", "Game Logic", "Algorithms"]
-     }
+  1: {
+    id: 1,
+    title: "Automating A/L MCQ Answers with Python",
+    excerpt:
+      "How I built a lightweight Python script to automatically extract, organize, and manage A/L MCQ answers for faster learning.",
+    date: "Dec 2025",
+    readTime: "6 min read",
+    image: "/projects/mcq-automation.jpg",
+    category: "Python Automation",
+    content:
+      "Preparing for A/L exams involves practicing hundreds of MCQ papers. Checking answers regarding big books is tedious. I decided to automate this using Python.",
+    sections: [
+      {
+        heading: "The Challenge of Manual MCQ Checking",
+        body: "Checking MCQ answers manually takes time and breaks the flow of study. In Sri Lanka, GCE A/L students often spend hours flipping through past paper books to verify their answers. I needed a way to instantly verify my inputs and keep track of my progress without technical overhead.",
+      },
+      {
+        heading: "Building a Python Solution",
+        body: "I built a Python script that reads a structured text file containing the answer keys. It then allows me to input my answers and instantly grades them, showing me which ones I got wrong and providing an overall score to track my performance over time.",
+      },
+      {
+        heading: "Technical Implementation",
+        body: "The project uses standard Python file I/O for simplicity and speed. I used dictionaries to map question numbers to correct answers for O(1) lookup time. The user interface is a distraction-free CLI, perfect for focused study sessions.",
+      },
+      {
+        heading: "Education Technology in Sri Lanka",
+        body: "This tool is a great example of how Python automation can solve localized education challenges in Sri Lanka. Future updates will include a web dashboard to track score history and identify weak subjects by category.",
+      },
+    ],
+    relatedTech: ["Python", "Automation", "Education Tech"],
+  },
+  2: {
+    id: 2,
+    title: "Building an AI Job Application Assistant with Next.js & Flask",
+    excerpt:
+      "A breakdown of my AI-powered resume analyzer that detects skill gaps, matches job descriptions, and provides smart career suggestions.",
+    date: "Dec 2025",
+    readTime: "8 min read",
+    image: "/projects/ai-job-assistant.jpg",
+    category: "AI & Web Development",
+    content:
+      "Job hunting is exhaustive. Tailoring resumes for every application is a full-time task. I built an AI assistant to do the heavy lifting of resume optimization.",
+    sections: [
+      {
+        heading: "AI in Modern Recruitment",
+        body: "Modern job hunting requires speed and precision. This application takes your resume (PDF) and a job description URL, uses Natural Language Processing (NLP) to extract key skills, and calculates a semantic matching score.",
+      },
+      {
+        heading: "The Next.js & Flask Hybrid Tech Stack",
+        body: "The frontend is powered by Next.js for a premium, responsive UI. The backend is a Flask server handling complex ML tasks. I integrated Spacy for keyword extraction and LLM APIs for generating personalized career advice and resume improvements.",
+      },
+      {
+        heading: "Solving Complex PDF Parsing Challenges",
+        body: "Parsing unstructured PDFs accurately is a significant technical hurdle. I experimented with various libraries before settling on a robust pipeline that handles complex resume layouts without losing metadata or formatting context.",
+      },
+    ],
+    relatedTech: ["Next.js", "Flask", "Python", "NLP", "AI"],
+  },
+  3: {
+    id: 3,
+    title: "Designing a Java Flight Seat Booking Simulator",
+    excerpt:
+      "A beginner-friendly Java project demonstrating OOP concepts through a simple flight seat allocation system.",
+    date: "Nov 2025",
+    readTime: "5 min read",
+    image: "/projects/flight-booking.jpg",
+    category: "Java",
+    content:
+      "Understanding Object-Oriented Programming (OOP) is crucial for any aspiring software engineer. This project was my practical playground for mastering Classes, Objects, and Inheritance.",
+    sections: [
+      {
+        heading: "Robust System Architecture",
+        body: "The system models real-world entities like Flights, Passengers, and Seats. I utilized a 2D array data structure to represent the seating grid, and the logic ensures atomic reservations to prevent double-booking.",
+      },
+      {
+        heading: "Mastering Core OOP Principles",
+        body: "Encapsulation: Private data fields protected by accessors ensure data integrity. Inheritance: Created a base model for users to manage permissions. Polymorphism: Implemented dynamic menu systems that adapt to the logged-in user's role.",
+      },
+    ],
+    relatedTech: ["Java", "OOP", "Software Design"],
+  },
+  4: {
+    id: 4,
+    title: "Case Study: Scaling the Vexel Systems Ecosystem",
+    excerpt:
+      "How I built the digital foundation for Vexel Systems using modern web standards for high performance and global reach.",
+    date: "Jan 2026",
+    readTime: "5 min read",
+    image: "/projects/vexel-systems.jpg",
+    category: "Web Development",
+    content:
+      "Vexel Systems is a tech startup focusing on digital transformation. The official website needed to be more than a landing page; it had to be a statement of technical excellence.",
+    sections: [
+      {
+        heading: "Premium Architecture for Brand Growth",
+        body: "Leveraging Next.js 14 and Tailwind CSS, I developed a lightning-fast interface. The design system utilizes dark-mode aesthetics with glassmorphism to create a professional look that resonates with tech-forward clients.",
+      },
+      {
+        heading: "Advanced SEO & Discoverability",
+        body: "I implemented a comprehensive SEO strategy including dynamic sitemaps, automated robots.txt generation, and deep JSON-LD structured data. This ensures Vexel Systems ranks highly for relevant tech services in Sri Lanka and beyond.",
+      },
+    ],
+    relatedTech: ["Next.js", "Tailwind CSS", "SEO", "Cloud Hosting"],
+  },
+  5: {
+    id: 5,
+    title: "GitHub Profile Automation with Custom Chrome Extensions",
+    excerpt:
+      "How I automated my developer portfolio updates using Markdown templates, Chrome API, and GitHub Actions.",
+    date: "Oct 2025",
+    readTime: "6 min read",
+    image: "/projects/github-automation.jpg",
+    category: "Automation",
+    content:
+      "A developer's GitHub profile is their most important resume. keeping mine updated with the latest projects and stats was a manual chore I had to automate.",
+    sections: [
+      {
+        heading: "The Power of Automatic Portfolios",
+        body: "Manual updates lead to outdated profiles. My custom Chrome extension tracks my coding activity across different platforms and pushes the metadata to a centralized automation server.",
+      },
+      {
+        heading: "Integrating GitHub Actions for Real-Time Updates",
+        body: "The real magic happens in the background. A GitHub Action workflow runs on a cron schedule, pulling data from my extension's backend and updating my main profile README.md with fresh stats and project highlights.",
+      },
+    ],
+    relatedTech: ["JavaScript", "GitHub Actions", "Chrome Extensions"],
+  },
+  6: {
+    id: 6,
+    title: "Mastering Java Multithreading: High-Concurrency Ticket Systems",
+    excerpt:
+      "A deep dive into thread safety, synchronization, and avoiding race conditions in complex Java applications.",
+    date: "Sep 2025",
+    readTime: "7 min read",
+    image: "/projects/ticket-booking.jpg",
+    category: "Java",
+    content:
+      "Multithreading is one of the most powerful yet dangerous features in Java. I built a simulation to master the art of thread synchronization.",
+    sections: [
+      {
+        heading: "Simulating High-Traffic Scenarios",
+        body: "The simulation involves multiple 'Customer' threads competing for a finite number of seats. This environment is designed to trigger race conditions, allowing me to test and implement robust safety mechanisms.",
+      },
+      {
+        heading: "Synchronization Best Practices",
+        body: "I implemented fine-grained locking and synchronized blocks to ensure atomicity. This project showcases how to prevent data corruption in high-concurrency environments while maintaining system performance.",
+      },
+    ],
+    relatedTech: ["Java", "Multithreading", "Concurrency"],
+  },
+  7: {
+    id: 7,
+    title: "Python-Powered IoT: Controlling Physical Hardware via Laptop",
+    excerpt:
+      "Building a bridge between software and robotics using Python serial communication and Arduino motor control.",
+    date: "Aug 2025",
+    readTime: "5 min read",
+    image: "/projects/laptop-car.jpg",
+    category: "IoT",
+    content:
+      "Moving from screen-based code to physical motion is a thrill. This project uses Python to control an Arduino-based robot car via Bluetooth.",
+    sections: [
+      {
+        heading: "Robotics Hardware Architecture",
+        body: "The car features an Arduino Uno brains, an L298N motor driver for power, and an HC-05 Bluetooth module for wireless instruction reception. It's a modular build designed for future upgrades.",
+      },
+      {
+        heading: "The Python Control Interface",
+        body: "The laptop-side script uses the `pySerial` library to capture real-time keyboard events and translate them into a custom protocol that the Arduino understands, enabling precise movement control.",
+      },
+    ],
+    relatedTech: ["Python", "IoT", "Arduino", "Robotics"],
+  },
+  8: {
+    id: 8,
+    title: "Building Secure Full-Stack Systems with PHP & MySQL",
+    excerpt:
+      "A comprehensive look at developing CRUD applications with a focus on database normalization and SQL security.",
+    date: "Jul 2025",
+    readTime: "6 min read",
+    image: "/projects/library-management.jpg",
+    category: "PHP & MySQL",
+    content:
+      "Modern web apps rely on solid data management. This project was my deep dive into the classic LAMP-style architecture for business tools.",
+    sections: [
+      {
+        heading: "Relational Database Normalization",
+        body: "I focused on creating a 3NF normalized MySQL database for a library system. This ensures referential integrity and optimizes query performance for searching thousands of student and book records.",
+      },
+      {
+        heading: "Implementing Enterprise Security Standards",
+        body: "Security is non-negotiable. I utilized PHP Data Objects (PDO) with prepared statements to mitigate SQL injection risks, alongside hashing for secure user authentication.",
+      },
+    ],
+    relatedTech: ["PHP", "MySQL", "Database Security"],
+  },
+  9: {
+    id: 9,
+    title: "Data Visualization: Turning Academic Data into Insights",
+    excerpt:
+      "Using Python libraries like Matplotlib and Pandas to analyze and visualize student performance trends.",
+    date: "Jun 2025",
+    readTime: "4 min read",
+    image: "/projects/marks-evaluation.jpg",
+    category: "Data Science",
+    content:
+      "In the age of information, raw numbers are not enough. This project focus on turning student marks into visual charts that teachers can actually act upon.",
+    sections: [
+      {
+        heading: "Efficient Data Processing with Pandas",
+        body: "The tool automates the ingestion of academic CSV files, performing statistical analysis to detect performance gaps and calculating class-wide metrics in seconds.",
+      },
+      {
+        heading: "Impactful Visual Reports",
+        body: "Using Matplotlib, I generatedgrade distribution histograms and performance scatter plots. These visualizations make it easy to see which subjects need more focus and which students are excelling.",
+      },
+    ],
+    relatedTech: ["Python", "Pandas", "Matplotlib"],
+  },
+  10: {
+    id: 10,
+    title: "Algorithmic Thinking: Recreating the Mastermind Logic Game",
+    excerpt:
+      "Building a complex code-breaking logic engine and persistent user interface in the terminal.",
+    date: "May 2025",
+    readTime: "4 min read",
+    image: "/projects/mastermind-game.jpg",
+    category: "Game Dev",
+    content:
+      "Mastermind is the ultimate test of code-breaking. Implementing its ruleset in Python was a fascinating challenge in nested logic and state management.",
+    sections: [
+      {
+        heading: "Designing the Feedback Engine",
+        body: "The 'Black and White' peg logic is notoriously difficult to code efficiently. I developed an O(N) algorithm that accurately counts matches without overlap, ensuring a bug-free game experience.",
+      },
+      {
+        heading: "Terminal UX & Interaction Design",
+        body: "Even in the terminal, user experience matters. I implemented a color-coded CLI with clear instructions and turn history, making the game feel like a premium experience despite its text-based nature.",
+      },
+    ],
+    relatedTech: ["Python", "Algorithms", "Game Logic"],
+  },
+  11: {
+    id: 11,
+    title: "Auto DJ Cross Fade: Automated Audio Mixing with Python",
+    excerpt:
+      "Automating professional track transitions using signal processing and logarithmic cross-fade curves.",
+    date: "Jan 2026",
+    readTime: "5 min read",
+    image: "/projects/auto-dj.jpg",
+    category: "Audio Engineering",
+    content:
+      "Creating smooth audio transitions is an art. I automated this process using Python to help creators mix tracks faster.",
+    sections: [
+      {
+        heading: "Advanced Signal Processing",
+        body: "Using Pydub and NumPy, I analyzed audio waves to find the perfect transition points. The script calculates logarithmic curves to ensure the volume blend feels natural to the human ear.",
+      },
+      {
+        heading: "Streamlining the Creative Workflow",
+        body: "Instead of manual editing, this tool allows users to batch-process tracks. It's a significant time-saver for podcasters and amateur DJs who want professional results without the high cost of entry.",
+      },
+    ],
+    relatedTech: ["Python", "Pydub", "Audio Processing"],
+  },
+  12: {
+    id: 12,
+    title: "AI Offline: Privacy-First Customer Service Solutions",
+    excerpt:
+      "Developing secure, local AI models to handle sensitive customer inquiries without cloud dependency.",
+    date: "Jan 2026",
+    readTime: "7 min read",
+    image: "/projects/chatbot-offline.jpg",
+    category: "AI & Privacy",
+    content:
+      "Privacy is the new gold standard in AI. I built a system that lets businesses use LLMs without ever sending data to the cloud.",
+    sections: [
+      {
+        heading: "Deploying Local Large Language Models",
+        body: "Using Ollama and customized weights, I deployed a high-performance LLM on local workstation hardware. This allows for high-speed inferences while keeping all data behind a firewall.",
+      },
+      {
+        heading: "Retrieval-Augmented Generation (RAG)",
+        body: "The chatbot utilizes a local vector database to search through internal company documents. This ensures the AI only speaks from approved facts, minimizing hallucinations and maximizing utility.",
+      },
+    ],
+    relatedTech: ["Python", "LangChain", "Vector DB", "Privacy"],
+  },
 };

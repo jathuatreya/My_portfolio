@@ -162,10 +162,17 @@ export default function Projects() {
 
                                                             {/* Buttons */}
                                                             <div className="flex gap-2 mt-4 pt-4 border-t border-gray-200 dark:border-slate-800">
-                                                                 <button className={`flex-1 flex items-center justify-center gap-1.5 rounded-lg h-9 text-white text-xs font-bold transition-colors shadow-sm ${isActive ? 'bg-[#0077ED] hover:bg-[#0066CC]' : 'bg-gray-400 cursor-not-allowed'}`}>
+                                                                 <button 
+                                                                      onClick={() => (project as any).demoUrl && window.open((project as any).demoUrl, '_blank')}
+                                                                      className={`flex-1 flex items-center justify-center gap-1.5 rounded-lg h-9 text-white text-xs font-bold transition-colors shadow-sm ${(project as any).demoUrl && isActive ? 'bg-[#0077ED] hover:bg-[#0066CC]' : 'bg-gray-400 cursor-not-allowed'}`}
+                                                                 >
                                                                       <ExternalLink size={14} /> <span>{t.projects.demo}</span>
                                                                  </button>
-                                                                 <button className="flex-1 flex items-center justify-center gap-1.5 rounded-lg h-9 bg-[#F5F5F7] dark:bg-slate-700 text-gray-800 dark:text-white text-xs font-bold hover:bg-[#E5E5E7] dark:hover:bg-slate-600 transition-colors shadow-sm">
+
+                                                                 <button 
+                                                                      onClick={() => (project as any).codeUrl && window.open((project as any).codeUrl, '_blank')}
+                                                                      className="flex-1 flex items-center justify-center gap-1.5 rounded-lg h-9 bg-[#F5F5F7] dark:bg-slate-700 text-gray-800 dark:text-white text-xs font-bold hover:bg-[#E5E5E7] dark:hover:bg-slate-600 transition-colors shadow-sm"
+                                                                 >
                                                                       <Github size={14} /> <span>{t.projects.code}</span>
                                                                  </button>
                                                             </div>

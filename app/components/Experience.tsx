@@ -46,7 +46,13 @@ export default function Experience() {
                                                   <div className="flex items-center gap-4 text-sm font-medium">
                                                        <div className="flex items-center gap-1.5 text-primary italic">
                                                             <Building2 size={14} />
-                                                            <span>{exp.company}</span>
+                                                            { (exp as any).companyUrl ? (
+                                                                 <a href={(exp as any).companyUrl} target="_blank" rel="noopener noreferrer" className="hover:underline">
+                                                                      {exp.company}
+                                                                 </a>
+                                                            ) : (
+                                                                 <span>{exp.company}</span>
+                                                            )}
                                                        </div>
                                                        <div className="flex items-center gap-1.5 text-gray-400 dark:text-gray-500">
                                                             <Calendar size={13} />
@@ -72,9 +78,17 @@ export default function Experience() {
                                                                       {exp.projects.map((project, i) => (
                                                                            <li key={i} className="flex items-start gap-2.5 text-sm text-gray-700 dark:text-gray-300">
                                                                                 <CheckCircle2 size={14} className="text-primary mt-0.5 shrink-0" />
-                                                                                <span className="font-semibold">{project}</span>
+                                                                                <span className="font-semibold text-primary">
+                                                                                     {project.toLowerCase().includes("vexel systems") ? (
+                                                                                          <a href="https://www.vexelsystems.lk" target="_blank" rel="noopener noreferrer" className="hover:underline">
+                                                                                               {project}
+                                                                                          </a>
+                                                                                     ) : (
+                                                                                          <span className="text-gray-700 dark:text-gray-300">{project}</span>
+                                                                                     )}
+                                                                                 </span>
                                                                            </li>
-                                                                      ))}
+                                                                       ))}
                                                                  </ul>
                                                             </div>
                                                        )}
