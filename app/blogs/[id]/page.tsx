@@ -12,8 +12,9 @@ export async function generateStaticParams() {
 }
 
 // Dynamic Metadata Generation
-export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
-  const blogId = parseInt(params.id, 10);
+export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
+  const { id } = await params;
+  const blogId = parseInt(id, 10);
   const blog = blogContent[blogId];
 
   if (!blog) {
@@ -62,8 +63,9 @@ export async function generateMetadata({ params }: { params: { id: string } }): 
 }
 
 // Server Component
-export default function BlogPage({ params }: { params: { id: string } }) {
-  const blogId = parseInt(params.id, 10);
+export default async function BlogPage({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params;
+  const blogId = parseInt(id, 10);
   const blog = blogContent[blogId];
 
   if (!blog) {
