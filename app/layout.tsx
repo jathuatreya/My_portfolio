@@ -145,7 +145,7 @@ export const viewport: Viewport = {
 // ✅ RootLayout with full SEO
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
         <link rel="alternate" hrefLang="en" href={profile.portfolioURL} />
       </head>

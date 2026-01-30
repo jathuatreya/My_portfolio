@@ -141,6 +141,8 @@ export const experience = [
       "Mr. Dood Web",
       "Mr. Dood Driver",
       "Mr. Dood Merchant",
+      "Accron POS",
+      "Accron vehicle management system",
       "Accron Company Websites",
       "British Academy Website",
     ],
