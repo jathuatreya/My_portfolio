@@ -87,7 +87,7 @@ export default async function BlogPage({ params }: { params: Promise<{ id: strin
     }],
     "publisher": {
       "@type": "Organization",
-      "name": "Vexel Systems", // Or profile.name
+      "name": profile.name,
       "logo": {
         "@type": "ImageObject",
         "url": `${profile.portfolioURL}/logo.png`

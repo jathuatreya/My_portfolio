@@ -78,15 +78,9 @@ export default function Experience() {
                                                                       {exp.projects.map((project, i) => (
                                                                            <li key={i} className="flex items-start gap-2.5 text-sm text-gray-700 dark:text-gray-300">
                                                                                 <CheckCircle2 size={14} className="text-primary mt-0.5 shrink-0" />
-                                                                                <span className="font-semibold text-primary">
-                                                                                     {project.toLowerCase().includes("vexel systems") ? (
-                                                                                          <a href="https://www.vexelsystems.lk" target="_blank" rel="noopener noreferrer" className="hover:underline">
-                                                                                               {project}
-                                                                                          </a>
-                                                                                     ) : (
-                                                                                          <span className="text-gray-700 dark:text-gray-300">{project}</span>
-                                                                                     )}
-                                                                                 </span>
+                                                                                <span className="font-semibold text-gray-700 dark:text-gray-300">
+                                                                                     {project}
+                                                                                </span>
                                                                            </li>
                                                                        ))}
                                                                  </ul>

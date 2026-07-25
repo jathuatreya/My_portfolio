@@ -20,6 +20,7 @@ export const blogContent: Record<number, BlogPost> = {
     readTime: "6 min read",
     image: "/projects/mcq-automation.jpg",
     category: "Python Automation",
+    slug: "automating-al-mcq-answers-with-python",
     content:
       "Preparing for A/L exams involves practicing hundreds of MCQ papers. Checking answers regarding big books is tedious. I decided to automate this using Python.",
     sections: [
@@ -51,6 +52,7 @@ export const blogContent: Record<number, BlogPost> = {
     readTime: "8 min read",
     image: "/projects/ai-job-assistant.jpg",
     category: "AI & Web Development",
+    slug: "building-an-ai-job-application-assistant-with-nextjs-and-flask",
     content:
       "Job hunting is exhaustive. Tailoring resumes for every application is a full-time task. I built an AI assistant to do the heavy lifting of resume optimization.",
     sections: [
@@ -78,6 +80,7 @@ export const blogContent: Record<number, BlogPost> = {
     readTime: "5 min read",
     image: "/projects/flight-booking.jpg",
     category: "Java",
+    slug: "designing-a-java-flight-seat-booking-simulator",
     content:
       "Understanding Object-Oriented Programming (OOP) is crucial for any aspiring software engineer. This project was my practical playground for mastering Classes, Objects, and Inheritance.",
     sections: [
@@ -94,26 +97,27 @@ export const blogContent: Record<number, BlogPost> = {
   },
   4: {
     id: 4,
-    title: "Case Study: Scaling the Vexel Systems Ecosystem",
+    title: "Creating a Hunger Eradication Awareness Website",
     excerpt:
-      "How I built the digital foundation for Vexel Systems using modern web standards for high performance and global reach.",
-    date: "Jan 2026",
-    readTime: "5 min read",
-    image: "/projects/vexel-systems.jpg",
+      "The story behind building a clean, responsive web project that spreads awareness about global hunger.",
+    date: "Oct 2025",
+    readTime: "4 min read",
+    image: "/projects/hunger-eradication.jpg",
     category: "Web Development",
+    slug: "creating-a-hunger-eradication-awareness-website",
     content:
-      "Vexel Systems is a tech startup focusing on digital transformation. The official website needed to be more than a landing page; it had to be a statement of technical excellence.",
+      "Global hunger is a pressing issue. I built this website to raise awareness and provide resources for those who want to help eradicate hunger in their local communities.",
     sections: [
       {
-        heading: "Premium Architecture for Brand Growth",
-        body: "Leveraging Next.js 14 and Tailwind CSS, I developed a lightning-fast interface. The design system utilizes dark-mode aesthetics with glassmorphism to create a professional look that resonates with tech-forward clients.",
+        heading: "A Purpose-Driven Design",
+        body: "The design focuses on clear typography, emotional imagery, and accessible color contrast to ensure the message reaches the widest possible audience.",
       },
       {
-        heading: "Advanced SEO & Discoverability",
-        body: "I implemented a comprehensive SEO strategy including dynamic sitemaps, automated robots.txt generation, and deep JSON-LD structured data. This ensures Vexel Systems ranks highly for relevant tech services in Sri Lanka and beyond.",
+        heading: "Responsive and Fast",
+        body: "Built with modern web standards, the site ensures fast loading times even on slow connections, maximizing its global reach.",
       },
     ],
-    relatedTech: ["Next.js", "Tailwind CSS", "SEO", "Cloud Hosting"],
+    relatedTech: ["HTML", "CSS", "JavaScript", "Web Development"],
   },
   5: {
     id: 5,
@@ -124,6 +128,7 @@ export const blogContent: Record<number, BlogPost> = {
     readTime: "6 min read",
     image: "/projects/github-automation.jpg",
     category: "Automation",
+    slug: "github-profile-automation-with-custom-chrome-extensions",
     content:
       "A developer's GitHub profile is their most important resume. keeping mine updated with the latest projects and stats was a manual chore I had to automate.",
     sections: [
@@ -147,6 +152,7 @@ export const blogContent: Record<number, BlogPost> = {
     readTime: "7 min read",
     image: "/projects/ticket-booking.jpg",
     category: "Java",
+    slug: "mastering-java-multithreading-high-concurrency-ticket-systems",
     content:
       "Multithreading is one of the most powerful yet dangerous features in Java. I built a simulation to master the art of thread synchronization.",
     sections: [
@@ -170,6 +176,7 @@ export const blogContent: Record<number, BlogPost> = {
     readTime: "5 min read",
     image: "/projects/laptop-car.jpg",
     category: "IoT",
+    slug: "python-powered-iot-controlling-physical-hardware-via-laptop",
     content:
       "Moving from screen-based code to physical motion is a thrill. This project uses Python to control an Arduino-based robot car via Bluetooth.",
     sections: [
@@ -193,6 +200,7 @@ export const blogContent: Record<number, BlogPost> = {
     readTime: "6 min read",
     image: "/projects/library-management.jpg",
     category: "PHP & MySQL",
+    slug: "building-secure-full-stack-systems-with-php-and-mysql",
     content:
       "Modern web apps rely on solid data management. This project was my deep dive into the classic LAMP-style architecture for business tools.",
     sections: [
@@ -216,6 +224,7 @@ export const blogContent: Record<number, BlogPost> = {
     readTime: "4 min read",
     image: "/projects/marks-evaluation.jpg",
     category: "Data Science",
+    slug: "data-visualization-turning-academic-data-into-insights",
     content:
       "In the age of information, raw numbers are not enough. This project focus on turning student marks into visual charts that teachers can actually act upon.",
     sections: [
@@ -239,6 +248,7 @@ export const blogContent: Record<number, BlogPost> = {
     readTime: "4 min read",
     image: "/projects/mastermind-game.jpg",
     category: "Game Dev",
+    slug: "algorithmic-thinking-recreating-the-mastermind-logic-game",
     content:
       "Mastermind is the ultimate test of code-breaking. Implementing its ruleset in Python was a fascinating challenge in nested logic and state management.",
     sections: [
@@ -262,6 +272,7 @@ export const blogContent: Record<number, BlogPost> = {
     readTime: "5 min read",
     image: "/projects/auto-dj.jpg",
     category: "Audio Engineering",
+    slug: "auto-dj-cross-fade-automated-audio-mixing-with-python",
     content:
       "Creating smooth audio transitions is an art. I automated this process using Python to help creators mix tracks faster.",
     sections: [
@@ -285,6 +296,7 @@ export const blogContent: Record<number, BlogPost> = {
     readTime: "7 min read",
     image: "/projects/chatbot-offline.jpg",
     category: "AI & Privacy",
+    slug: "ai-offline-privacy-first-customer-service-solutions",
     content:
       "Privacy is the new gold standard in AI. I built a system that lets businesses use LLMs without ever sending data to the cloud.",
     sections: [

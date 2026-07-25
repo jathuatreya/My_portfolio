@@ -37,9 +37,9 @@ export const profile = {
 
   location: "Vavuniya, Northern Province, Sri Lanka",
   availability: "Open for freelance & full-time roles",
-  portfolioURL: "https://jathushanvarnakulasingam-portfolio.vercel.app/",
-  profileImage: "/my_image3.png",
-  aboutImage: "/jathushan.png",
+  portfolioURL: "https://jathushan.dev/",
+  profileImage: "/jathushan.jpg",
+  aboutImage: "/jathushan.jpg",
   resumeURL: "/Jathushan_CV.pdf",
 
   social: {
@@ -127,11 +127,11 @@ export const aboutStats = [
 export const experience = [
   {
     id: "accron",
-    role: "Full-Stack Developer",
+    role: "Full-Stack Developer Intern",
     company: "Accron Revolution",
-    period: "September 2024 – Present",
+    period: "September 2025 – March 2026",
     description:
-      "Currently working as a Full-Stack Developer, significantly contributing to the development of the company's core product ecosystem and multiple high-profile client websites.",
+      "Worked as a Full-Stack Developer Intern, significantly contributing to the development of the company's core product ecosystem and multiple high-profile client websites.",
     responsibilities: [
       "Lead developer for the Mr. Dood ecosystem, focusing on modular and scalable architecture",
       "Design and maintain full-stack solutions for company and client platforms",
@@ -143,7 +143,7 @@ export const experience = [
       "Mr. Dood Merchant",
       "Accron POS",
       "Accron vehicle management system",
-      "Accron Company Websites",
+      "Accron Company Website",
       "British Academy Website",
     ],
     skills: [
@@ -153,31 +153,7 @@ export const experience = [
       "Scalable Web Solutions",
     ],
   },
-  {
-    id: "vexel",
-    role: "Founder & CEO",
-    company: "Vexel Systems",
-    companyUrl: "https://www.vexelsystems.lk",
-    period: "January 2026 – Present",
-    description:
-      "I founded Vexel Systems, a technology startup focused on simplifying technology for businesses and individuals. Technology should empower people, not complicate their lives.",
-    responsibilities: [
-      "Founder, CEO & Technical Lead",
-      "Define company vision, mission, and strategy",
-      "Architect and build core software solutions",
-      "Lead client discussions and project planning",
-      "Manage branding, product direction, and innovation",
-    ],
-    projects: ["Vexel Track", "Vexel POS", "Vexel Systems Website"],
-    services: [
-      "SEO & Local SEO",
-      "Digital Marketing",
-      "Social Media Marketing",
-      "Backend & Database",
-      "Software Development",
-      "Web & Mobile Applications",
-    ],
-  },
+
 ];
 
 // --------------------------------------
@@ -326,6 +302,7 @@ export const blogs = [
     readTime: "6 min read",
     image: "/projects/mcq-automation.jpg",
     category: "Python Automation",
+    slug: "automating-al-mcq-answers-with-python",
   },
   {
     id: 2,
@@ -336,6 +313,7 @@ export const blogs = [
     readTime: "8 min read",
     image: "/projects/ai-job-assistant.jpg",
     category: "AI & Web Development",
+    slug: "building-an-ai-job-application-assistant-with-nextjs-and-flask",
   },
   {
     id: 3,
@@ -346,6 +324,7 @@ export const blogs = [
     readTime: "5 min read",
     image: "/projects/flight-booking.jpg",
     category: "Java",
+    slug: "designing-a-java-flight-seat-booking-simulator",
   },
   {
     id: 4,
@@ -356,6 +335,7 @@ export const blogs = [
     readTime: "4 min read",
     image: "/projects/hunger-eradication.jpg",
     category: "Web Development",
+    slug: "creating-a-hunger-eradication-awareness-website",
   },
   {
     id: 5,
@@ -366,6 +346,7 @@ export const blogs = [
     readTime: "6 min read",
     image: "/projects/github-automation.jpg",
     category: "Automation & DevTools",
+    slug: "github-profile-automation-with-custom-chrome-extensions",
   },
   {
     id: 6,
@@ -376,6 +357,7 @@ export const blogs = [
     readTime: "7 min read",
     image: "/projects/ticket-booking.jpg",
     category: "Java Multithreading",
+    slug: "mastering-java-multithreading-high-concurrency-ticket-systems",
   },
   {
     id: 7,
@@ -386,6 +368,7 @@ export const blogs = [
     readTime: "5 min read",
     image: "/projects/laptop-car.jpg",
     category: "IoT & Robotics",
+    slug: "python-powered-iot-controlling-physical-hardware-via-laptop",
   },
   {
     id: 8,
@@ -396,6 +379,7 @@ export const blogs = [
     readTime: "6 min read",
     image: "/projects/library-management.jpg",
     category: "PHP & MySQL",
+    slug: "building-secure-full-stack-systems-with-php-and-mysql",
   },
   {
     id: 9,
@@ -406,6 +390,7 @@ export const blogs = [
     readTime: "4 min read",
     image: "/projects/marks-evaluation.jpg",
     category: "Data Visualization",
+    slug: "data-visualization-turning-academic-data-into-insights",
   },
   {
     id: 10,
@@ -416,6 +401,7 @@ export const blogs = [
     readTime: "4 min read",
     image: "/projects/mastermind-game.jpg",
     category: "Python Games",
+    slug: "algorithmic-thinking-recreating-the-mastermind-logic-game",
   },
   {
     id: 11,
@@ -426,6 +412,7 @@ export const blogs = [
     readTime: "5 min read",
     image: "/projects/auto-dj.jpg",
     category: "Audio Processing",
+    slug: "auto-dj-cross-fade-automated-audio-mixing-with-python",
   },
   {
     id: 12,
@@ -436,6 +423,7 @@ export const blogs = [
     readTime: "7 min read",
     image: "/projects/chatbot-offline.jpg",
     category: "AI & Privacy",
+    slug: "ai-offline-privacy-first-customer-service-solutions",
   },
 ] as const;
 
@@ -519,19 +507,7 @@ export const projects = [
       "User-friendly console interface",
     ],
   },
-  {
-    title: "Vexel Systems Website",
-    image: "/projects/vexel-systems.jpg",
-    description:
-      "Official website for Vexel Systems, showcase of services and digital solutions.",
-    techStack: ["React", "Next.js", "Tailwind CSS"],
-    demoUrl: "https://www.vexelsystems.lk",
-    features: [
-      "Clean and responsive UI",
-      "Service showcase",
-      "Contact integration",
-    ],
-  },
+
   {
     title: "GitHub Profile Automation Chrome Extesntion ",
     image: "/projects/github-automation.jpg",

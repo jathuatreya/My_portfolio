@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     "AI & IoT Innovator Vavuniya",
     "Next.js Developer Sri Lanka",
     "React Developer Vavuniya",
-    "Vexel Systems Founder",
+
     "Machine Learning Engineer Sri Lanka",
     "Python Developer Vavuniya",
     "Java Developer Vavuniya",
@@ -58,7 +58,7 @@ export const metadata: Metadata = {
     "Digital Transformation Vavuniya",
     "Tech Consultant Sri Lanka",
     "Software Development Company Vavuniya",
-    "Vexel Systems AI",
+
     "Best Web Developer in Vavuniya",
     "Freelance Software Engineer Sri Lanka",
     "Web Design Services Vavuniya",
@@ -75,11 +75,11 @@ export const metadata: Metadata = {
     locale: "en_LK",
     url: profile.portfolioURL,
     title: `${profile.name} | Top Full-Stack Developer & AI Innovator in Vavuniya, Sri Lanka`,
-    description: `Expert Full-Stack Developer & AI Solutions Architect in Vavuniya, Sri Lanka. Specializing in high-performance Web Systems, IoT, and Machine Learning. Founder of Vexel Systems.`,
+    description: `Expert Full-Stack Developer & AI Solutions Architect in Vavuniya, Sri Lanka. Specializing in high-performance Web Systems, IoT, and Machine Learning.`,
     siteName: `${profile.name} Portfolio`,
     images: [
       {
-        url: "/jathushan.png",
+        url: "/jathushan.jpg",
         width: 1200,
         height: 630,
         alt: `${profile.name} - Full Stack Developer`,
@@ -96,7 +96,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: `${profile.name} | Software Engineer & Tech Visionary`,
     description: `Building the next generation of AI and IoT solutions from Vavuniya, Sri Lanka.`,
-    images: ["/jathushan.png"],
+    images: ["/jathushan.jpg"],
     creator: "@jathushanstark",
   },
   robots: {
@@ -157,13 +157,13 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           {children}
         </LanguageProvider>
 
-        {/* Structured Data - LocalBusiness (Vexel Systems) */}
+        {/* Structured Data - LocalBusiness */}
         <Script type="application/ld+json" strategy="afterInteractive" id="json-ld-localbusiness">
           {`
           {
             "@context": "https://schema.org",
             "@type": "ProfessionalService",
-            "name": "Vexel Systems",
+            "name": "${profile.name}",
             "image": "${profile.portfolioURL}logo.png",
             "@id": "${profile.portfolioURL}",
             "url": "${profile.portfolioURL}",
