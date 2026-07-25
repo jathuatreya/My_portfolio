@@ -7,7 +7,7 @@ import { useState, useEffect } from 'react'
 import { useLanguage } from '../context/LanguageContext'
 import { ScrollReveal } from './ScrollReveal'
 
-import LiquidEther from './LiquidEther'
+import { HeroBackgroundCanvas } from './HeroBackgroundCanvas'
 
 export default function Hero() {
      const { t } = useLanguage()
@@ -41,23 +41,8 @@ export default function Hero() {
 
      return (
           <section id="home" className="min-h-screen flex items-center pt-4 pb-16 px-4 sm:px-6 lg:px-8 bg-white dark:bg-[#0a0a0a] relative overflow-hidden">
-               {/* Liquid Background Effect */}
-               <div className="absolute inset-0 z-0 opacity-80 pointer-events-none">
-                    <LiquidEther
-                         colors={['#f8f9fa', '#e9ecef', '#0077ED', '#dee2e6']}
-                         mouseForce={15}
-                         cursorSize={80}
-                         isViscous={false}
-                         viscous={25}
-                         resolution={0.35}
-                         autoDemo={true}
-                         autoSpeed={0.3}
-                         autoIntensity={1.5}
-                         takeoverDuration={0.3}
-                         autoResumeDelay={2000}
-                         autoRampDuration={1.0}
-                    />
-               </div>
+               {/* Particle Network Background */}
+               <HeroBackgroundCanvas />
 
                <div className="container mx-auto max-w-7xl 3xl:max-w-[96rem] 4k:max-w-[120rem] relative z-10">
                     <div className="flex flex-col-reverse lg:grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
