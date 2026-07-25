@@ -7,15 +7,6 @@ import { ScrollReveal } from './ScrollReveal';
 import { MagicCard, MagicContainer } from './MagicCard';
 import { useRef, useState } from 'react';
 import { toast } from '../utils/toast';
-import emailjs from '@emailjs/browser';
-
-// ⚠️ EmailJS Configuration
-// Please replace these with your actual keys from https://dashboard.emailjs.com/
-const EMAIL_CONFIG = {
-  SERVICE_ID: 'service_4alb9zq',     // Replace with your Service ID
-  TEMPLATE_ID: 'template_18kf3sd',   // Replace with your Template ID
-  PUBLIC_KEY: 'DTYSV-sEd-sE4IZNS',  // Replace with your Public Key
-};
 
 interface ContactFormElements extends HTMLFormControlsCollection {
   name: HTMLInputElement;
@@ -41,7 +32,7 @@ export default function Contact() {
     error: t.contact.form.error || "Failed to send message."
   };
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!form.current) return;
 
@@ -49,23 +40,24 @@ export default function Contact() {
 
     try {
       const formData = new FormData(form.current);
-      const templateParams = Object.fromEntries(formData.entries());
+      const data = Object.fromEntries(formData.entries());
+      
+      const name = data.name || "";
+      const email = data.email || "";
+      const phone = data.phone || "";
+      const message = data.message || "";
 
-      console.log("Sending email with params:", { ...templateParams, serviceId: EMAIL_CONFIG.SERVICE_ID });
-
-      // Send Admin Notification
-      await emailjs.send(
-        EMAIL_CONFIG.SERVICE_ID,
-        EMAIL_CONFIG.TEMPLATE_ID,
-        templateParams,
-        { publicKey: EMAIL_CONFIG.PUBLIC_KEY }
-      );
+      // Format message for WhatsApp
+      const text = `Hello Jathushan,%0A%0ANew message from your portfolio contact form:%0A%0A*Name:* ${name}%0A*Email:* ${email}%0A*Phone:* ${phone}%0A*Message:* ${message}`;
+      
+      // Redirect to WhatsApp
+      const whatsappUrl = `https://wa.me/9476661734?text=${text}`;
+      window.open(whatsappUrl, "_blank");
 
       toast.success(formText.success);
       form.current.reset();
-    } catch (error: any) {
-      console.error("EmailJS Error Details:", JSON.stringify(error, null, 2));
-      if (error?.text) console.error("EmailJS Error Text:", error.text);
+    } catch (error) {
+      console.error("WhatsApp Redirect Error:", error);
       toast.error(formText.error);
     } finally {
       setIsSubmitting(false);
