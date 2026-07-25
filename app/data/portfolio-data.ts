@@ -38,7 +38,7 @@ export const profile = {
   location: "Vavuniya, Northern Province, Sri Lanka",
   availability: "Open for freelance & full-time roles",
   portfolioURL: "https://jathushan.dev/",
-  profileImage: "/jathushan.jpg",
+  profileImage: "/my_image3.png",
   aboutImage: "/jathushan.jpg",
   resumeURL: "/Jathushan_CV.pdf",
 
@@ -153,7 +153,33 @@ export const experience = [
       "Scalable Web Solutions",
     ],
   },
-
+  {
+    id: "freelance",
+    role: "Freelance Full-Stack Developer",
+    company: "Self-Employed",
+    period: "March 15, 2026 – Present",
+    description:
+      "Working as an independent full-stack developer, delivering high-performance web applications and digital solutions for diverse clients.",
+    responsibilities: [
+      "Architect and build custom full-stack solutions tailored to specific client needs",
+      "Drive business impact through SEO optimization and performance enhancements",
+      "Manage end-to-end development lifecycles, from UI/UX design to cloud deployment",
+    ],
+    projects: [
+      "POS System Development",
+      "Portfolio Website Development",
+      "Custom E-Commerce Platforms",
+      "Business Automation Tools",
+    ],
+    skills: [
+      "React / Next.js",
+      "Node.js / Express",
+      "MongoDB / PostgreSQL",
+      "Firebase & Firestore",
+      "Tailwind CSS",
+      "System Architecture",
+    ],
+  },
 ];
 
 // --------------------------------------
@@ -410,7 +436,7 @@ export const blogs = [
       "Developing an automated audio mixing tool that creates professional-grade cross-fades between tracks.",
     date: "Jan 2026",
     readTime: "5 min read",
-    image: "/projects/auto-dj.jpg",
+    image: "/projects/bulk-folder-creator.jpg",
     category: "Audio Processing",
     slug: "auto-dj-cross-fade-automated-audio-mixing-with-python",
   },
@@ -421,9 +447,42 @@ export const blogs = [
       "A deep dive into creating a fully offline chatbot using local LLMs and LangChain for secure customer interactions.",
     date: "Jan 2026",
     readTime: "7 min read",
-    image: "/projects/chatbot-offline.jpg",
+    image: "/projects/delete-empty-folders.jpg",
     category: "AI & Privacy",
     slug: "ai-offline-privacy-first-customer-service-solutions",
+  },
+  {
+    id: 13,
+    title: "Building a Full-Featured POS Application",
+    excerpt:
+      "A deep dive into how I built a complete Point of Sale system with inventory management, billing, and real-time reporting.",
+    date: "Apr 2026",
+    readTime: "8 min read",
+    image: "/projects/sam-pak-HjBcAVWlxnE-unsplash.jpg",
+    category: "Full-Stack Development",
+    slug: "building-a-full-featured-pos-application",
+  },
+  {
+    id: 14,
+    title: "Designing a Corporate Company Website from Scratch",
+    excerpt:
+      "How I planned, designed, and launched a professional corporate website with SEO, performance, and modern aesthetics.",
+    date: "May 2026",
+    readTime: "6 min read",
+    image: "/projects/github-automation.jpg",
+    category: "Web Development",
+    slug: "designing-a-corporate-company-website-from-scratch",
+  },
+  {
+    id: 15,
+    title: "Creating a Stunning Developer Portfolio Website",
+    excerpt:
+      "A step-by-step guide on building a high-impact developer portfolio with Next.js, animations, and SEO best practices.",
+    date: "Jun 2026",
+    readTime: "7 min read",
+    image: "/projects/mastermind-game.jpg",
+    category: "Web Development",
+    slug: "creating-a-stunning-developer-portfolio-website",
   },
 ] as const;
 

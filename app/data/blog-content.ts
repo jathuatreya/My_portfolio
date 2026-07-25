@@ -270,7 +270,7 @@ export const blogContent: Record<number, BlogPost> = {
       "Automating professional track transitions using signal processing and logarithmic cross-fade curves.",
     date: "Jan 2026",
     readTime: "5 min read",
-    image: "/projects/auto-dj.jpg",
+    image: "/projects/bulk-folder-creator.jpg",
     category: "Audio Engineering",
     slug: "auto-dj-cross-fade-automated-audio-mixing-with-python",
     content:
@@ -294,7 +294,7 @@ export const blogContent: Record<number, BlogPost> = {
       "Developing secure, local AI models to handle sensitive customer inquiries without cloud dependency.",
     date: "Jan 2026",
     readTime: "7 min read",
-    image: "/projects/chatbot-offline.jpg",
+    image: "/projects/delete-empty-folders.jpg",
     category: "AI & Privacy",
     slug: "ai-offline-privacy-first-customer-service-solutions",
     content:
@@ -310,5 +310,77 @@ export const blogContent: Record<number, BlogPost> = {
       },
     ],
     relatedTech: ["Python", "LangChain", "Vector DB", "Privacy"],
+  },
+  13: {
+    id: 13,
+    title: "Building a Full-Featured POS Application",
+    excerpt:
+      "A deep dive into how I built a complete Point of Sale system with inventory management, billing, and real-time reporting.",
+    date: "Apr 2026",
+    readTime: "8 min read",
+    image: "/projects/sam-pak-HjBcAVWlxnE-unsplash.jpg",
+    category: "Full-Stack Development",
+    slug: "building-a-full-featured-pos-application",
+    content:
+      "A POS system is the backbone of any retail or service business. I built a full-featured POS application that handles everything from product management to real-time sales reporting.",
+    sections: [
+      {
+        heading: "Core POS Features",
+        body: "The system includes a barcode scanner integration, product catalog management, customer records, and an intuitive billing interface. Built with React for the frontend and Node.js + PostgreSQL for the backend, it handles high transaction volumes with ease.",
+      },
+      {
+        heading: "Inventory & Reporting",
+        body: "I integrated real-time inventory tracking that automatically deducts stock on each sale and triggers low-stock alerts. The dashboard provides daily, weekly, and monthly sales reports with visual charts powered by Firebase for live data sync.",
+      },
+    ],
+    relatedTech: ["React", "Node.js", "PostgreSQL", "Firebase", "Firestore"],
+  },
+  14: {
+    id: 14,
+    title: "Designing a Corporate Company Website from Scratch",
+    excerpt:
+      "How I planned, designed, and launched a professional corporate website with SEO, performance, and modern aesthetics.",
+    date: "May 2026",
+    readTime: "6 min read",
+    image: "/projects/github-automation.jpg",
+    category: "Web Development",
+    slug: "designing-a-corporate-company-website-from-scratch",
+    content:
+      "Corporate websites are more than a digital brochure — they are a brand statement. I walk through my end-to-end process for designing and launching a professional company website.",
+    sections: [
+      {
+        heading: "Planning & Design System",
+        body: "The project started with a brand discovery session to understand the company's values. I created a consistent design system with a curated color palette, typography, and reusable UI components, ensuring a polished and professional look across all pages.",
+      },
+      {
+        heading: "Performance & SEO",
+        body: "Using Next.js with server-side rendering, the site achieves near-perfect Lighthouse scores. I implemented JSON-LD structured data, dynamic sitemaps, and Open Graph tags to maximize search engine visibility and social media sharing.",
+      },
+    ],
+    relatedTech: ["Next.js", "Tailwind CSS", "SEO", "Vercel"],
+  },
+  15: {
+    id: 15,
+    title: "Creating a Stunning Developer Portfolio Website",
+    excerpt:
+      "A step-by-step guide on building a high-impact developer portfolio with Next.js, animations, and SEO best practices.",
+    date: "Jun 2026",
+    readTime: "7 min read",
+    image: "/projects/mastermind-game.jpg",
+    category: "Web Development",
+    slug: "creating-a-stunning-developer-portfolio-website",
+    content:
+      "Your portfolio is your most powerful career tool. I share the lessons learned from building my own developer portfolio — from design decisions to technical implementation.",
+    sections: [
+      {
+        heading: "Design Philosophy",
+        body: "A great portfolio balances personality with professionalism. I chose a dark-mode aesthetic with glassmorphism elements and smooth micro-animations to create a premium feel. Every section is crafted to tell a story — not just list skills.",
+      },
+      {
+        heading: "Technical Stack & SEO",
+        body: "Built with Next.js 14, TypeScript, and Tailwind CSS, the portfolio is fully server-side rendered for maximum SEO performance. I implemented structured data, a dynamic sitemap, and multi-language support to reach a global audience.",
+      },
+    ],
+    relatedTech: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
   },
 };

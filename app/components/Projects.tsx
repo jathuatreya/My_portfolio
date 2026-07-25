@@ -111,7 +111,7 @@ export default function Projects() {
                                    transition={{ type: "spring", stiffness: 300, damping: 30 }}
                                    style={{ width: "fit-content" }}
                               >
-                                   {projects.map((project, index) => {
+                                   {[...projects].reverse().map((project, index) => {
                                         const isActive = index === currentIndex;
                                         return (
                                              <motion.div

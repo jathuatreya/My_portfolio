@@ -116,7 +116,7 @@ export default function Experience() {
                                                                       {skill}
                                                                  </span>
                                                             ))}
-                                                            {'services' in exp && exp.services?.map((service, i) => (
+                                                            {'services' in exp && (exp.services as string[])?.map((service: string, i: number) => (
                                                                  <span key={i} className="px-3 py-1 bg-primary/5 border border-primary/20 rounded-full text-[11px] font-black text-primary flex items-center gap-1.5 transition-all">
                                                                       <Star size={10} fill="currentColor" />
                                                                       {service}
