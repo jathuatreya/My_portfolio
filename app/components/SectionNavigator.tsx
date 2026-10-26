@@ -26,9 +26,14 @@ const SECTIONS: Section[] = [
 export default function SectionNavigator() {
   const [activeSection, setActiveSection] = useState<string>("home");
   const [hoveredSection, setHoveredSection] = useState<string | null>(null);
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
+      // Hide in hero section (top 350px or when on home)
+      const isPastHero = window.scrollY > 350;
+      setIsVisible(isPastHero);
+
       const scrollPosition = window.scrollY + window.innerHeight * 0.35;
 
       for (let i = SECTIONS.length - 1; i >= 0; i--) {
@@ -76,9 +81,13 @@ export default function SectionNavigator() {
   return (
     <nav
       aria-label="Section quick navigator"
-      className="fixed right-2.5 sm:right-4 top-1/2 -translate-y-1/2 z-40 hidden md:flex flex-col items-center select-none"
+      className={`fixed right-2.5 sm:right-4 top-1/2 -translate-y-1/2 z-40 hidden md:flex flex-col items-center select-none transition-all duration-300 transform ${
+        isVisible
+          ? "opacity-100 translate-x-0 pointer-events-auto"
+          : "opacity-0 translate-x-4 pointer-events-none"
+      }`}
     >
-      <div className="flex flex-col items-center bg-[#09101d]/90 dark:bg-[#070c16]/95 backdrop-blur-md border border-[#0077ED]/35 rounded-full py-2 px-1.5 shadow-2xl shadow-black/50 gap-1.5 transition-all">
+      <div className="flex flex-col items-center bg-white/95 dark:bg-[#070c16]/95 backdrop-blur-md border border-black/15 dark:border-[#0077ED]/40 rounded-full py-2 px-1.5 shadow-xl shadow-black/10 dark:shadow-2xl dark:shadow-black/50 gap-1.5 transition-all">
         {/* Quick Prev Section Arrow */}
         <button
           type="button"
@@ -86,7 +95,7 @@ export default function SectionNavigator() {
           disabled={currentIndex <= 0}
           title="Previous section"
           aria-label="Previous section"
-          className="w-6 h-6 rounded-full flex items-center justify-center text-[#0077ED] hover:text-white hover:bg-[#0077ED]/30 disabled:opacity-25 disabled:hover:bg-transparent disabled:hover:text-[#0077ED] transition-all cursor-pointer"
+          className="w-6 h-6 rounded-full flex items-center justify-center text-[#0077ED] dark:text-[#38bdf8] hover:text-white hover:bg-[#0077ED] dark:hover:bg-[#0077ED]/40 disabled:opacity-20 disabled:hover:bg-transparent disabled:hover:text-[#0077ED] transition-all cursor-pointer"
         >
           <ChevronUp size={14} strokeWidth={2.5} />
         </button>
@@ -112,10 +121,10 @@ export default function SectionNavigator() {
                       : "opacity-0 translate-x-2 scale-95 pointer-events-none"
                   }`}
                 >
-                  <div className="bg-[#09101d] text-white text-xs font-semibold px-3 py-1.5 rounded-xl shadow-xl border border-[#0077ED]/50 flex items-center gap-2 whitespace-nowrap shadow-black/40">
+                  <div className="bg-white dark:bg-[#09101d] text-neutral-900 dark:text-white text-xs font-semibold px-3 py-1.5 rounded-xl shadow-xl shadow-black/10 border border-black/10 dark:border-[#0077ED]/50 flex items-center gap-2 whitespace-nowrap">
                     <span className="w-1.5 h-1.5 rounded-full bg-[#0077ED]" />
                     <span>{section.label}</span>
-                    <span className="text-[10px] font-mono text-[#0077ED]/80">
+                    <span className="text-[10px] font-mono text-[#0077ED]/80 font-bold">
                       0{idx + 1}
                     </span>
                   </div>
@@ -131,8 +140,8 @@ export default function SectionNavigator() {
                   <span
                     className={`block rounded-full transition-all duration-300 ${
                       isActive
-                        ? "w-2.5 h-5 bg-[#0077ED] shadow-[0_0_12px_#0077ED]"
-                        : "w-2 h-2 bg-white/25 hover:bg-[#0077ED]/80 hover:scale-125"
+                        ? "w-2.5 h-5 bg-[#0077ED] shadow-[0_0_12px_rgba(0,119,237,0.7)]"
+                        : "w-2 h-2 bg-neutral-300 dark:bg-white/25 hover:bg-[#0077ED] dark:hover:bg-[#0077ED]/80 hover:scale-125"
                     }`}
                   />
                 </button>
@@ -147,7 +156,7 @@ export default function SectionNavigator() {
           onClick={goToNextSection}
           title="Next section"
           aria-label="Next section"
-          className="w-6 h-6 rounded-full flex items-center justify-center text-[#0077ED] hover:text-white hover:bg-[#0077ED]/30 transition-all cursor-pointer animate-pulse"
+          className="w-6 h-6 rounded-full flex items-center justify-center text-[#0077ED] dark:text-[#38bdf8] hover:text-white hover:bg-[#0077ED] dark:hover:bg-[#0077ED]/40 transition-all cursor-pointer animate-pulse"
         >
           <ChevronDown size={14} strokeWidth={2.5} />
         </button>
