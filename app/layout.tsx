@@ -6,6 +6,7 @@ import "./globals.css";
 import GlobalToaster from "./components/GlobalToaster";
 import FloatingActions from "./components/FloatingActions";
 import ScrollProgressBar from "./components/ScrollProgressBar";
+import CookieConsent from "./components/CookieConsent";
 import { LanguageProvider } from "./context/LanguageContext";
 import { profile, projects } from "./data/portfolio-data";
 import { ReactNode } from "react";
@@ -176,6 +177,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           <ScrollProgressBar />
           <GlobalToaster />
           <FloatingActions />
+          <CookieConsent />
           {children}
         </LanguageProvider>
 
