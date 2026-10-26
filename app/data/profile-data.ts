@@ -20,7 +20,7 @@ export const profile = {
 
   location: "Vavuniya, Northern Province, Sri Lanka",
   availability: "Open for freelance & full-time roles",
-  portfolioURL: "https://jathushan.dev/",
+  portfolioURL: "https://jathushan.dev",
   profileImage: "/jathushan.png",
   aboutImage: "/jathushan.jpg",
   resumeURL: "/Jathushan_SE_Dev.pdf",

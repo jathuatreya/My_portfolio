@@ -188,7 +188,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             "@context": "https://schema.org",
             "@type": "ProfessionalService",
             "name": "${profile.name}",
-            "image": "${profile.portfolioURL}og-image.png",
+            "image": "${profile.portfolioURL}/og-image.png",
             "@id": "${profile.portfolioURL}",
             "url": "${profile.portfolioURL}",
             "telephone": "${profile.contact.phone}",
@@ -238,13 +238,13 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                 "@type": "ListItem",
                 "position": 2,
                 "name": "Projects",
-                "item": "${profile.portfolioURL}#projects"
+                "item": "${profile.portfolioURL}/#projects"
               },
               {
                 "@type": "ListItem",
                 "position": 3,
                 "name": "Experience",
-                "item": "${profile.portfolioURL}#experience"
+                "item": "${profile.portfolioURL}/#experience"
               }
             ]
           }
@@ -259,7 +259,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             "@type": "Person",
             "name": "${profile.name}",
             "url": "${profile.portfolioURL}",
-            "image": "${profile.portfolioURL}og-image.png",
+            "image": "${profile.portfolioURL}/og-image.png",
             "jobTitle": "Full-Stack Developer & AI Solutions Architect",
             "address": {
               "@type": "PostalAddress",
@@ -291,7 +291,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                   "applicationCategory": "BusinessApplication",
                   "operatingSystem": "Web",
                   "description": "${project.description}",
-                  "url": "${profile.portfolioURL}#projects",
+                  "url": "${profile.portfolioURL}/#projects",
                   "creator": {
                     "@type": "Person",
                     "name": "${profile.name}"
