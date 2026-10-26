@@ -28,3 +28,4 @@ export * from "./testimonials-data";
 export * from "./contact-data";
 export * from "./blogs-data";
 export * from "./pricing-data";
+export * from "./teaching-data";

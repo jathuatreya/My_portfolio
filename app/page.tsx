@@ -10,6 +10,7 @@ import Skills from './components/Skills'
 import Services from './components/Services'
 import Projects from './components/Projects'
 import Pricing from './components/Pricing'
+import Teaching from './components/Teaching'
 import Testimonials from './components/Testimonials'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
@@ -29,6 +30,7 @@ export default function Home() {
           <Services />
           <Projects />
           <Pricing />
+          <Teaching />
           <Testimonials />
           <Contact />
         </main>

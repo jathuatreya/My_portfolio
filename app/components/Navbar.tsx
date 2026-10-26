@@ -75,6 +75,7 @@ export default function Navbar() {
         "services",
         "projects",
         "pricing",
+        "teaching",
         "testimonials",
         "contact",
       ];
