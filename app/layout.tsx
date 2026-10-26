@@ -5,6 +5,7 @@ import "./globals.css";
 
 import GlobalToaster from "./components/GlobalToaster";
 import FloatingActions from "./components/FloatingActions";
+import ScrollProgressBar from "./components/ScrollProgressBar";
 import { LanguageProvider } from "./context/LanguageContext";
 import { profile, projects } from "./data/portfolio-data";
 import { ReactNode } from "react";
@@ -172,6 +173,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       </head>
       <body className={`${inter.variable} font-sans antialiased`} suppressHydrationWarning>
         <LanguageProvider>
+          <ScrollProgressBar />
           <GlobalToaster />
           <FloatingActions />
           {children}

@@ -11,15 +11,11 @@ export const profile = {
   role: "Full-Stack Developer ",
   roles: [
     "Full-Stack Developer",
-    "ML Enthusiast",
-    "IoT Innovator",
-
-    "Robotics Explorer",
-
-    "AI Integrator",
 
     "Software Engineer",
-    "Automation Enthusiast",
+    "Automation Enthusiast", "ML Enthusiast",
+
+    "AI Integrator",
   ],
 
   location: "Vavuniya, Northern Province, Sri Lanka",
