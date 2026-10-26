@@ -41,14 +41,15 @@ export default function Skills() {
                               </p>
                          </ScrollReveal>
 
-                         {/* Capabilities Grid - 3 Columns matching Reference Design */}
-                         <MagicContainer className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-7 lg:gap-8 mb-16">
+                         {/* Capabilities Grid - 5 Core Pillars: Full Stack, Digital Marketing, Custom Software, AI/ML Projects, Automations */}
+                         <MagicContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-6 sm:gap-7 lg:gap-8 mb-16">
                               {[
                                    {
                                         number: "01",
-                                        title: t.skills.categories.ui_ux?.title || "UI/UX & Web Design",
-                                        desc: t.skills.categories.ui_ux?.desc || "Build fast, responsive, and visually stunning digital experiences. I focus on intuitive user journeys, clean interfaces, and premium branding.",
-                                        icon: <Palette size={24} strokeWidth={1.5} />,
+                                        title: "Full-Stack Development",
+                                        desc: "Scalable engineering using Next.js 16, React 19, TypeScript, Node.js, and modern databases. I connect pixel-perfect frontends with secure, reliable cloud backend architectures.",
+                                        icon: <Code2 size={24} strokeWidth={1.5} />,
+                                        colSpan: "md:col-span-1 lg:col-span-2",
                                         cardClass: "border-2 border-emerald-500/40 dark:border-emerald-500/50 bg-gradient-to-b from-emerald-500/[0.08] via-emerald-500/[0.02] to-white dark:from-emerald-500/[0.12] dark:via-[#111624] dark:to-[#111624] bg-white dark:bg-[#111624] shadow-lg shadow-emerald-500/5",
                                         numberClass: "text-[#16A34A] dark:text-[#22C55E]",
                                         iconClass: "text-[#1D1D1F] dark:text-neutral-200",
@@ -57,9 +58,10 @@ export default function Skills() {
                                    },
                                    {
                                         number: "02",
-                                        title: t.skills.categories.fullstack?.title || "Full-Stack Development",
-                                        desc: t.skills.categories.fullstack?.desc || "Scalable engineering using Next.js, React, and robust databases. I connect pixel-perfect frontends with secure, reliable backend architectures.",
-                                        icon: <Code2 size={24} strokeWidth={1.5} />,
+                                        title: "Digital Marketing",
+                                        desc: "Drive high-intent traffic and conversions with technical SEO, targeted PPC campaigns, and data-driven digital growth strategies that elevate your brand visibility.",
+                                        icon: <TrendingUp size={24} strokeWidth={1.5} />,
+                                        colSpan: "md:col-span-1 lg:col-span-2",
                                         cardClass: "border border-black/[0.08] dark:border-white/10 bg-white dark:bg-[#111624] shadow-sm hover:shadow-xl hover:border-black/20 dark:hover:border-white/20",
                                         numberClass: "text-[#9CA3AF] dark:text-neutral-600 group-hover:text-neutral-700 dark:group-hover:text-neutral-300",
                                         iconClass: "text-[#9CA3AF] dark:text-neutral-500 group-hover:text-neutral-800 dark:group-hover:text-white",
@@ -68,9 +70,34 @@ export default function Skills() {
                                    },
                                    {
                                         number: "03",
-                                        title: t.skills.categories.marketing?.title || "Marketing & Growth",
-                                        desc: t.skills.categories.marketing?.desc || "Drive traffic and conversions with technical SEO, social media marketing, and strategic digital campaigns that elevate your brand visibility.",
-                                        icon: <TrendingUp size={24} strokeWidth={1.5} />,
+                                        title: "Custom Software",
+                                        desc: "Bespoke enterprise applications, cloud POS systems, inventory management engines, and tailor-made business tools built to solve unique operational bottlenecks.",
+                                        icon: <Layers size={24} strokeWidth={1.5} />,
+                                        colSpan: "md:col-span-2 lg:col-span-2",
+                                        cardClass: "border border-black/[0.08] dark:border-white/10 bg-white dark:bg-[#111624] shadow-sm hover:shadow-xl hover:border-black/20 dark:hover:border-white/20",
+                                        numberClass: "text-[#9CA3AF] dark:text-neutral-600 group-hover:text-neutral-700 dark:group-hover:text-neutral-300",
+                                        iconClass: "text-[#9CA3AF] dark:text-neutral-500 group-hover:text-neutral-800 dark:group-hover:text-white",
+                                        linkClass: "text-neutral-900 dark:text-white",
+                                        link: "/#projects",
+                                   },
+                                   {
+                                        number: "04",
+                                        title: "AI & ML Projects",
+                                        desc: "Deep learning models, computer vision systems (OpenCV), predictive algorithms with PyTorch & TensorFlow, and custom LLM integrations tailored for production impact.",
+                                        icon: <Cpu size={24} strokeWidth={1.5} />,
+                                        colSpan: "md:col-span-1 lg:col-span-3",
+                                        cardClass: "border border-black/[0.08] dark:border-white/10 bg-white dark:bg-[#111624] shadow-sm hover:shadow-xl hover:border-black/20 dark:hover:border-white/20",
+                                        numberClass: "text-[#9CA3AF] dark:text-neutral-600 group-hover:text-neutral-700 dark:group-hover:text-neutral-300",
+                                        iconClass: "text-[#9CA3AF] dark:text-neutral-500 group-hover:text-neutral-800 dark:group-hover:text-white",
+                                        linkClass: "text-neutral-900 dark:text-white",
+                                        link: "/#projects",
+                                   },
+                                   {
+                                        number: "05",
+                                        title: "Automations",
+                                        desc: "End-to-end workflow automations, webhook pipelines, WhatsApp & messaging bots, and smart IoT telemetry that eliminate repetitive manual tasks and accelerate operations.",
+                                        icon: <Zap size={24} strokeWidth={1.5} />,
+                                        colSpan: "md:col-span-1 lg:col-span-3",
                                         cardClass: "border border-black/[0.08] dark:border-white/10 bg-white dark:bg-[#111624] shadow-sm hover:shadow-xl hover:border-black/20 dark:hover:border-white/20",
                                         numberClass: "text-[#9CA3AF] dark:text-neutral-600 group-hover:text-neutral-700 dark:group-hover:text-neutral-300",
                                         iconClass: "text-[#9CA3AF] dark:text-neutral-500 group-hover:text-neutral-800 dark:group-hover:text-white",
@@ -78,7 +105,7 @@ export default function Skills() {
                                         link: "/#projects",
                                    },
                               ].map((item, index) => (
-                                   <ScrollReveal key={item.number} delay={index * 0.1} className="h-full">
+                                   <ScrollReveal key={item.number} delay={index * 0.08} className={`h-full ${item.colSpan}`}>
                                         <MagicCard
                                              className={`group relative flex flex-col justify-between rounded-[28px] sm:rounded-[34px] p-7 sm:p-9 h-full transition-all duration-300 ${item.cardClass}`}
                                         >
@@ -104,7 +131,7 @@ export default function Skills() {
                                                   </p>
                                              </div>
 
-                                             {/* Bottom Action: "Learn more ->" matching Reference */}
+                                             {/* Bottom Action: "Learn more ->" */}
                                              <div className="pt-8 sm:pt-10">
                                                   <a
                                                        href={item.link}
