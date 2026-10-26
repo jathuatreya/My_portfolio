@@ -441,15 +441,7 @@ export default function Hero() {
                                         </p
                                    ></motion.div>
 
-                                   {/* 4. Third: Bio Description */}
-                                   <motion.p
-                                        initial={{ opacity: 0, y: 12 }}
-                                        animate={{ opacity: 1, y: 0 }}
-                                        transition={{ duration: 0.55, delay: 0.95, ease: "easeOut" }}
-                                        className="text-sm sm:text-base text-gray-600 dark:text-gray-300 leading-relaxed max-w-[320px] sm:max-w-[360px] lg:max-w-[330px] xl:max-w-[380px]"
-                                   >
-                                        {t.hero.description}
-                                   </motion.p>
+                                   
 
                                     </div>
                           </div>
