@@ -195,6 +195,7 @@ export default function ProjectsPage() {
                                                                  src={project.image}
                                                                  alt={project.title}
                                                                  fill
+                                                                 sizes="(max-width: 1024px) 100vw, 42vw"
                                                                  className="object-cover object-center group-hover:scale-[1.03] transition-transform duration-500"
                                                             />
                                                             <div className="absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />

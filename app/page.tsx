@@ -1,5 +1,3 @@
-"use client";
-
 import Navbar from './components/Navbar'
 import SectionNavigator from './components/SectionNavigator'
 import Hero from './components/Hero'

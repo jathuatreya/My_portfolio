@@ -99,14 +99,14 @@ export default function Hero() {
 
      useEffect(() => {
           const currentRole = profile.roles[currentRoleIndex];
-          const typingSpeed = isDeleting ? 30 : 50;
+          const typingSpeed = isDeleting ? 25 : 35;
 
           const timer = setTimeout(() => {
                if (!isDeleting) {
                     if (displayText.length < currentRole.length) {
                          setDisplayText(currentRole.substring(0, displayText.length + 1));
                     } else {
-                         setTimeout(() => setIsDeleting(true), 2000);
+                         setTimeout(() => setIsDeleting(true), 1400);
                     }
                } else {
                     if (displayText.length > 0) {
@@ -158,6 +158,7 @@ export default function Hero() {
                          width={1536}
                          height={1024}
                          priority
+                         sizes="(max-width: 1024px) 100vw, (max-width: 1536px) 65vw, 980px"
                          className="w-auto h-[750px] lg:h-[880px] xl:h-[980px] 2xl:h-[1100px] max-h-[86vh] xl:max-h-[89vh] max-w-[95vw] object-contain object-bottom block drop-shadow-[0_20px_55px_rgba(0,119,237,0.28)] dark:drop-shadow-[0_25px_70px_rgba(0,119,237,0.4)]"
                     />
                </div>
@@ -176,7 +177,7 @@ export default function Hero() {
                                    <motion.div
                                         initial={{ opacity: 0, y: 16 }}
                                         animate={{ opacity: 1, y: 0 }}
-                                        transition={{ duration: 0.5, delay: 0.15, ease: "easeOut" }}
+                                        transition={{ duration: 0.35, delay: 0.05, ease: "easeOut" }}
                                    >
                                         <span className="text-3xl sm:text-5xl lg:text-5xl xl:text-6xl font-bold tracking-tight text-[#1D1D1F] dark:text-white leading-[1.12] block mb-1 sm:mb-2">
                                              Hi <span className="animate-wave inline-block origin-[70%_70%] select-none">👋</span>,
@@ -187,7 +188,7 @@ export default function Hero() {
                                    <motion.div
                                         initial={{ opacity: 0, y: 16 }}
                                         animate={{ opacity: 1, y: 0 }}
-                                        transition={{ duration: 0.55, delay: 0.45, ease: "easeOut" }}
+                                        transition={{ duration: 0.4, delay: 0.12, ease: "easeOut" }}
                                    >
                                         <h1 className="text-3xl sm:text-5xl lg:text-5xl xl:text-6xl font-bold tracking-tight text-[#1D1D1F] dark:text-white leading-[1.12] break-words">
                                              <span className="block">
@@ -203,7 +204,7 @@ export default function Hero() {
                                    <motion.div
                                         initial={{ opacity: 0, y: 12 }}
                                         animate={{ opacity: 1, y: 0 }}
-                                        transition={{ duration: 0.5, delay: 0.7, ease: "easeOut" }}
+                                        transition={{ duration: 0.35, delay: 0.22, ease: "easeOut" }}
                                         className="min-h-[32px] sm:min-h-[40px] flex items-center"
                                    >
                                         <p className="text-xl sm:text-2xl md:text-3xl font-medium text-[#0077ED] tracking-tight">
@@ -217,7 +218,7 @@ export default function Hero() {
                                    <motion.div
                                         initial={{ opacity: 0, y: 16 }}
                                         animate={{ opacity: 1, y: 0 }}
-                                        transition={{ duration: 0.5, delay: 0.95, ease: "easeOut" }}
+                                        transition={{ duration: 0.35, delay: 0.32, ease: "easeOut" }}
                                         className="flex items-center gap-3 pt-2 sm:pt-3"
                                    >
                                         <Link
@@ -257,6 +258,7 @@ export default function Hero() {
                                         width={1536}
                                         height={1024}
                                         priority
+                                        sizes="(max-width: 768px) 100vw, 680px"
                                         className="w-full max-w-[680px] sm:max-w-[780px] h-auto object-contain object-bottom block select-none drop-shadow-[0_20px_50px_rgba(0,119,237,0.25)]"
                                    />
                               </ScrollReveal>
@@ -268,7 +270,7 @@ export default function Hero() {
                                  <motion.div
                                       initial={{ opacity: 0, y: 24 }}
                                       animate={{ opacity: 1, y: 0 }}
-                                      transition={{ duration: 0.6, delay: 0.8 }}
+                                      transition={{ duration: 0.35, delay: 0.2 }}
                                       className="flex items-center gap-2 mb-3.5 px-1"
                                  >
                                       <span className="w-2 h-2 rounded-full bg-[#0077ED] animate-pulse" />
@@ -285,8 +287,8 @@ export default function Hero() {
                                            visible: {
                                                 opacity: 1,
                                                 transition: {
-                                                     staggerChildren: 0.09,
-                                                     delayChildren: 0.9,
+                                                     staggerChildren: 0.05,
+                                                     delayChildren: 0.25,
                                                 },
                                            },
                                       }}
@@ -343,7 +345,7 @@ export default function Hero() {
                 <motion.div
                      initial={{ opacity: 0, y: 16 }}
                      animate={{ opacity: 1, y: 0 }}
-                     transition={{ duration: 0.7, delay: 1.4 }}
+                     transition={{ duration: 0.4, delay: 0.4 }}
                      onClick={() => {
                           const aboutSection = document.getElementById("about");
                           if (aboutSection) {
