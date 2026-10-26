@@ -108,22 +108,6 @@ export default function Experience() {
                                                                                      </ul>
                                                                                 </div>
                                                                            )}
-
-                                                                           {/* Impact */}
-                                                                           <div>
-                                                                                <h4 className="text-[10px] font-black uppercase tracking-[0.2em] text-[#1D1D1F]/50 dark:text-white/40 mb-2.5 flex items-center gap-1.5">
-                                                                                     <div className="w-2.5 h-px bg-primary"></div>
-                                                                                     Impact
-                                                                                </h4>
-                                                                                <ul className="space-y-2">
-                                                                                     {exp.responsibilities.map((resp, i) => (
-                                                                                          <li key={i} className="flex items-start gap-2 text-xs text-gray-600 dark:text-gray-300 leading-relaxed">
-                                                                                               <CheckCircle2 size={13} className="text-primary mt-0.5 shrink-0" />
-                                                                                               <span>{resp}</span>
-                                                                                          </li>
-                                                                                     ))}
-                                                                                </ul>
-                                                                           </div>
                                                                       </div>
 
                                                                       {/* Expertise tags at bottom */}

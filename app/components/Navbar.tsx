@@ -60,6 +60,12 @@ export default function Navbar() {
         return;
       }
 
+      // If currently on projects page
+      if (window.location.pathname.startsWith("/projects")) {
+        setActiveSection("projects");
+        return;
+      }
+
       const sections = [
         "home",
         "about",
@@ -110,8 +116,8 @@ export default function Navbar() {
     { id: "education", label: t.nav.education || "Education", href: "/#education" },
     { id: "skills", label: "Skills", href: "/#skills" },
     { id: "services", label: t.nav.services || "Services", href: "/#services" },
-    { id: "projects", label: t.nav.projects || "Projects", href: "/#projects" },
     { id: "testimonials", label: t.nav.testimonials || "Testimonials", href: "/#testimonials" },
+    { id: "projects", label: t.nav.projects || "Projects", href: "/projects" },
     { id: "blogs", label: t.nav.blogs === "Blogs" ? "Blog" : (t.nav.blogs || "Blog"), href: "/blogs" },
   ];
 
@@ -162,7 +168,7 @@ export default function Navbar() {
         className={`fixed top-0 left-0 right-0 z-50 w-full transition-all duration-300 ${
           isScrolled
             ? "bg-white/80 dark:bg-[#0a0a0a]/80 backdrop-blur-md border-b border-black/[0.06] dark:border-white/[0.08] shadow-xs"
-            : "bg-white/60 dark:bg-[#0a0a0a]/60 backdrop-blur-sm border-b border-black/[0.03] dark:border-white/[0.04]"
+            : "bg-transparent border-b border-transparent"
         }`}
       >
         <div className="w-[80%] mx-auto h-16 sm:h-20 flex items-center justify-between">

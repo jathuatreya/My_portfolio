@@ -34,7 +34,7 @@ export default function Footer() {
     { label: "Education", href: "/#education" },
     { label: "Skills", href: "/#skills" },
     { label: "Services", href: "/#services" },
-    { label: "Projects", href: "/#projects" },
+    { label: "Projects", href: "/projects" },
     { label: "Testimonials", href: "/#testimonials" },
     { label: "Blogs", href: "/blogs" },
     { label: "Contact", href: "/#contact" },
