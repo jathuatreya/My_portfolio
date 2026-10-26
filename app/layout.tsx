@@ -4,7 +4,6 @@ import Script from "next/script";
 import "./globals.css";
 
 import GlobalToaster from "./components/GlobalToaster";
-import EngagementToast from "./components/EngagementToast";
 import FloatingActions from "./components/FloatingActions";
 import { LanguageProvider } from "./context/LanguageContext";
 import { profile, projects } from "./data/portfolio-data";
@@ -174,7 +173,6 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       <body className={`${inter.variable} font-sans antialiased`} suppressHydrationWarning>
         <LanguageProvider>
           <GlobalToaster />
-          <EngagementToast />
           <FloatingActions />
           {children}
         </LanguageProvider>
