@@ -30,9 +30,10 @@ export default function SectionNavigator() {
 
   useEffect(() => {
     const handleScroll = () => {
-      // Hide in hero section (top 350px or when on home)
+      // Hide in hero section (top 350px) and hide when user reaches footer
       const isPastHero = window.scrollY > 350;
-      setIsVisible(isPastHero);
+      const isAtFooter = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 220;
+      setIsVisible(isPastHero && !isAtFooter);
 
       const scrollPosition = window.scrollY + window.innerHeight * 0.35;
 
