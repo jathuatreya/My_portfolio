@@ -90,7 +90,7 @@ export default async function BlogPage({ params }: { params: Promise<{ id: strin
       "name": profile.name,
       "logo": {
         "@type": "ImageObject",
-        "url": `${profile.portfolioURL}/logo.png`
+        "url": `${profile.portfolioURL}/og-image.png`
       }
     },
     "description": blog.excerpt,

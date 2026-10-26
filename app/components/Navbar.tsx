@@ -89,6 +89,10 @@ export default function Navbar() {
 
     window.addEventListener("scroll", handleScroll, { passive: true });
     handleScroll();
+
+    if (window.location.hash === "#home") {
+      window.scrollTo(0, 0);
+    }
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -100,7 +104,7 @@ export default function Navbar() {
 
   // Navigation items matching Jathushan's portfolio sections in exact page order
   const desktopNavItems: { id: string; label: string; href: string; external?: boolean }[] = [
-    { id: "home", label: t.nav.home || "Home", href: "/#home" },
+    { id: "home", label: t.nav.home || "Home", href: "/" },
     { id: "about", label: t.nav.about === "About Me" ? "About" : (t.nav.about || "About"), href: "/#about" },
     { id: "experience", label: t.nav.experience || "Experience", href: "/#experience" },
     { id: "education", label: t.nav.education || "Education", href: "/#education" },
@@ -120,13 +124,33 @@ export default function Navbar() {
   ) => {
     if (item.external) return;
 
+    // Home item: Always scroll directly to true top (top: 0) with zero white space
+    if (item.id === "home") {
+      if (window.location.pathname === "/") {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: "smooth" });
+        setActiveSection("home");
+        if (window.history.pushState) {
+          window.history.pushState(null, "", "/");
+        }
+      }
+      return;
+    }
+
     if (item.href.includes("#")) {
       const targetId = item.id;
       const element = document.getElementById(targetId);
 
       if (element && window.location.pathname === "/") {
         e.preventDefault();
-        element.scrollIntoView({ behavior: "smooth" });
+        const navHeight = 80;
+        const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+        const offsetPosition = elementPosition - navHeight;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth"
+        });
         setActiveSection(targetId);
       }
     }
@@ -145,10 +169,17 @@ export default function Navbar() {
           {/* 1. Left: Brand Logo (e.g. Jathushan.) */}
           <Link
             href="/"
-            className="flex items-center text-xl sm:text-2xl font-bold tracking-tight text-neutral-900 dark:text-white transition-opacity hover:opacity-90 shrink-0"
+            onClick={(e) => {
+              if (window.location.pathname === "/") {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: "smooth" });
+                setActiveSection("home");
+              }
+            }}
+            className="flex items-center text-sm sm:text-base lg:text-lg xl:text-xl font-bold tracking-tight text-neutral-900 dark:text-white transition-opacity hover:opacity-90 shrink-0"
           >
-            <span>Jathushan</span>
-            <span className="text-[#0077ED] font-black text-2xl leading-none">.</span>
+            <span>{profile.name}</span>
+            <span className="text-[#0077ED] font-black text-lg xl:text-xl leading-none">.</span>
           </Link>
 
           {/* 2. Center: Navigation Links with Soft Pill Highlight */}
@@ -160,7 +191,7 @@ export default function Navbar() {
                   key={item.id}
                   href={item.href}
                   onClick={(e) => handleNavClick(e, item)}
-                  className={`px-2.5 xl:px-3.5 py-1.5 text-[14px] xl:text-[16px] font-medium transition-all duration-200 rounded-full ${
+                  className={`px-2 xl:px-3 py-1.5 text-[16px] xl:text-[18px] font-medium transition-all duration-200 rounded-full ${
                     isActive
                       ? "bg-black/5 dark:bg-white/10 text-neutral-900 dark:text-white font-semibold"
                       : "text-neutral-500 hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-white hover:bg-black/[0.02] dark:hover:bg-white/[0.05]"
@@ -279,7 +310,7 @@ export default function Navbar() {
                       handleNavClick(e, item);
                       setIsMobileMenuOpen(false);
                     }}
-                    className={`px-4 py-2.5 rounded-full text-[16px] font-medium transition-colors ${
+                    className={`px-4 py-2.5 rounded-full text-[17px] sm:text-[18px] font-medium transition-colors ${
                       isActive
                         ? "bg-black/5 dark:bg-white/10 text-neutral-900 dark:text-white font-semibold"
                         : "text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white hover:bg-black/5 dark:hover:bg-white/5"

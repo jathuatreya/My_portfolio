@@ -1,0 +1,44 @@
+# Jathushan Varnakulasingam
+
+> Freelance Full-Stack Developer & Tech Entrepreneur specializing in high-performance web systems, modern UI/UX, AI integrations, IoT, and smart automation. Crafting fast, scalable digital products for forward-thinking clients worldwide.
+
+## Quick Facts
+- **Name**: Jathushan Varnakulasingam
+- **Primary Roles**: Full-Stack Developer, AI & Automation Integrator, IoT Innovator
+- **Education**: BSc (Hons) Computer Science – University of Westminster (IIT)
+- **Location**: Vavuniya, Northern Province, Sri Lanka (Available for remote contracts worldwide)
+- **Official Website**: https://jathushan.dev/
+- **GitHub**: https://github.com/jathuatreya
+- **LinkedIn**: https://www.linkedin.com/in/jathushan-varnakulasingam-431872224/
+- **Resume**: https://jathushan.dev/Jathushan_SE_Dev.pdf
+- **Direct Contact**: Available via WhatsApp (+94 76 661 7342) and portfolio contact form
+
+## Technical Skills & Stack
+- **Programming Languages**: TypeScript, Python, JavaScript, Java, SQL, Bash, HTML5, CSS3
+- **Frontend Frameworks & Libraries**: Next.js 16 (App Router, Turbopack), React 19, Tailwind CSS v4, Framer Motion, GSAP, Three.js
+- **Backend & APIs**: Node.js, Express.js, RESTful APIs, Spring Boot, Laravel
+- **Databases & Storage**: PostgreSQL, MongoDB, MySQL, Firebase Firestore
+- **DevOps, Tooling & Cloud**: Docker, Git & GitHub, Linux, Postman, npm
+- **AI & Emerging Technologies**: Machine Learning, Fine-Tuning Models, RAG (Retrieval-Augmented Generation), Local LLMs (LangChain), IoT & Embedded Robotics
+
+## Work Experience
+### Freelance Full-Stack Developer (March 2026 – Present)
+- Developing end-to-end web applications, corporate web portals, POS systems, and automation tools for businesses and startups globally.
+- Architecting scalable cloud infrastructure, responsive frontend interfaces, and database backends.
+
+### Full-Stack Developer Intern — Accron Revolution (September 2025 – March 2026)
+- Lead developer on the modular Mr. Dood multi-sided ecosystem (Web, Driver, Merchant platforms).
+- Designed and maintained enterprise POS systems, vehicle management platforms, and company web infrastructure.
+
+## Key Projects
+- **Mr. Dood Delivery Ecosystem**: Comprehensive on-demand delivery platform with live order dispatching, driver tracking, and merchant store management.
+- **Accron Cloud POS**: Full-featured point-of-sale solution with inventory control, real-time analytics, and thermal receipt generation.
+- **Offline AI Chatbot**: Privacy-first customer support agent powered by local LLMs with zero third-party data leaks.
+- **Automated DJ Cross-Fade Tool**: Audio processing script utilizing Python for smooth harmonic beat transitions.
+- **Bulk Folder Creator**: Lightweight desktop automation utility for recursive file-tree hierarchy generation.
+
+## Website Navigation & Links
+- [Portfolio Homepage](https://jathushan.dev/): Main portal featuring interactive showcase, credentials, services, and live contact triggers.
+- [Technical Blogs](https://jathushan.dev/blogs): 15 comprehensive technical articles covering web architecture, audio processing, offline AI, and systems engineering.
+- [Contact Section](https://jathushan.dev/#contact): Interactive brief submission form with immediate WhatsApp redirection.
+- [Full LLM Knowledge Document](https://jathushan.dev/llms-full.txt): Complete unabridged text containing all project descriptions, experience entries, and technical details.

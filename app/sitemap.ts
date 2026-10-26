@@ -2,28 +2,37 @@ import { MetadataRoute } from "next";
 import { blogContent } from "./data/blog-content";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://www.jathushan.dev";
+  const baseUrl = "https://jathushan.dev";
 
-  // Static routes
-  const routes = [
-    "",
-    "/projects", // Assuming this exists or is a section
-    "/experience", // Assuming this exists or is a section
-    "/blogs",
-  ].map((route) => ({
-    url: `${baseUrl}${route}`,
-    lastModified: new Date(),
-    changeFrequency: "monthly" as const,
-    priority: route === "" ? 1 : 0.8,
-  }));
+  // Core static page routes
+  const staticRoutes: MetadataRoute.Sitemap = [
+    {
+      url: `${baseUrl}`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 1.0,
+    },
+    {
+      url: `${baseUrl}/blogs`,
+      lastModified: new Date(),
+      changeFrequency: "daily",
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/projects`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+  ];
 
-  // Dynamic blog routes
-  const blogRoutes = Object.values(blogContent).map((post) => ({
+  // Dynamic blog post routes
+  const blogRoutes: MetadataRoute.Sitemap = Object.values(blogContent).map((post) => ({
     url: `${baseUrl}/blogs/${post.id}`,
-    lastModified: new Date(), // Ideally this would be post.date but we need to parse it or just use current date
-    changeFrequency: "monthly" as const,
-    priority: 0.7,
+    lastModified: new Date(),
+    changeFrequency: "monthly",
+    priority: 0.8,
   }));
 
-  return [...routes, ...blogRoutes];
+  return [...staticRoutes, ...blogRoutes];
 }

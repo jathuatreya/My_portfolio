@@ -65,17 +65,17 @@ export default function Contact() {
     <section id="contact" className="py-20 sm:py-24 bg-white dark:bg-[#0a0a0a] transition-colors duration-300 relative overflow-hidden">
       {/* Background ambient lighting */}
       <div className="absolute top-1/4 -right-32 w-96 h-96 bg-primary/10 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-10 -left-32 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-10 -left-32 w-96 h-96 bg-[#0077ED]/15 rounded-full blur-3xl pointer-events-none" />
 
       <div className="w-[80%] mx-auto relative z-10">
         {/* Section Header */}
         <ScrollReveal className="text-left mb-10 sm:mb-12">
-          <div className="flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-widest text-[#F59E0B] mb-3">
+          <div className="flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-widest text-[#0077ED] mb-3">
             <span>—</span>
             <span>Direct Communication</span>
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight text-[#1D1D1F] dark:text-white leading-tight">
-            Let&apos;s Build Something <span className="text-[#F59E0B]">Exceptional</span>
+            Let&apos;s Build Something <span className="text-[#0077ED]">Exceptional</span>
           </h2>
           <p className="text-gray-600 dark:text-gray-400 text-sm sm:text-base leading-relaxed mt-2 max-w-2xl">
             Available for remote full-stack engineering, AI integrations, freelance software development, and technical consultations.
@@ -94,7 +94,7 @@ export default function Contact() {
                 <div>
                   <h3 className="text-2xl sm:text-3xl font-extrabold tracking-tight leading-snug text-white">
                     Let&apos;s Build Something{" "}
-                    <span className="text-[#F59E0B]">Exceptional.</span>
+                    <span className="text-[#0077ED]">Exceptional.</span>
                   </h3>
                   <p className="text-xs sm:text-sm text-gray-400 leading-relaxed mt-3">
                     Open to remote & international software engineering roles, full-stack contracts, AI integrations, and technical consultations.
@@ -108,14 +108,14 @@ export default function Contact() {
                     href="mailto:imjathushan@gmail.com"
                     className="flex items-center gap-3.5 p-2 rounded-xl hover:bg-white/5 transition-colors group cursor-pointer"
                   >
-                    <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center shrink-0 group-hover:border-[#F59E0B]/50 transition-colors">
-                      <Mail size={16} className="text-[#F59E0B]" />
+                    <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center shrink-0 group-hover:border-[#0077ED]/50 transition-colors">
+                      <Mail size={16} className="text-[#0077ED]" />
                     </div>
                     <div className="flex flex-col text-left truncate">
                       <span className="text-[10px] font-mono font-bold tracking-wider uppercase text-gray-400">
                         EMAIL
                       </span>
-                      <span className="text-xs sm:text-sm font-semibold text-white truncate mt-0.5 group-hover:text-[#F59E0B] transition-colors">
+                      <span className="text-xs sm:text-sm font-semibold text-white truncate mt-0.5 group-hover:text-[#0077ED] transition-colors">
                         imjathushan@gmail.com
                       </span>
                     </div>
@@ -146,14 +146,14 @@ export default function Contact() {
                     href="tel:+94706601734"
                     className="flex items-center gap-3.5 p-2 rounded-xl hover:bg-white/5 transition-colors group cursor-pointer"
                   >
-                    <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center shrink-0 group-hover:border-[#F59E0B]/50 transition-colors">
-                      <Phone size={16} className="text-[#F59E0B]" />
+                    <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center shrink-0 group-hover:border-[#0077ED]/50 transition-colors">
+                      <Phone size={16} className="text-[#0077ED]" />
                     </div>
                     <div className="flex flex-col text-left">
                       <span className="text-[10px] font-mono font-bold tracking-wider uppercase text-gray-400">
                         SRI LANKA LINE
                       </span>
-                      <span className="text-xs sm:text-sm font-semibold text-white font-mono mt-0.5 group-hover:text-[#F59E0B] transition-colors">
+                      <span className="text-xs sm:text-sm font-semibold text-white font-mono mt-0.5 group-hover:text-[#0077ED] transition-colors">
                         +94 706601734
                       </span>
                     </div>
@@ -162,7 +162,7 @@ export default function Contact() {
                   {/* Item 4: Location */}
                   <div className="flex items-center gap-3.5 p-2">
                     <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center shrink-0">
-                      <MapPin size={16} className="text-[#F59E0B]" />
+                      <MapPin size={16} className="text-[#0077ED]" />
                     </div>
                     <div className="flex flex-col text-left">
                       <span className="text-[10px] font-mono font-bold tracking-wider uppercase text-gray-400">
@@ -222,7 +222,7 @@ export default function Contact() {
                     <h3 className="text-xl sm:text-2xl font-bold text-[#1D1D1F] dark:text-white tracking-tight">
                       Send a Message or Project Brief
                     </h3>
-                    <span className="px-2.5 py-1 rounded-md bg-[#F59E0B] text-black font-mono font-black text-[10px] tracking-widest uppercase shrink-0 shadow-xs">
+                    <span className="px-2.5 py-1 rounded-md bg-[#0077ED] text-white font-mono font-bold text-[10px] tracking-widest uppercase shrink-0 shadow-xs">
                       DIRECT TRANSMISSION
                     </span>
                   </div>
@@ -240,7 +240,7 @@ export default function Contact() {
                           type="text"
                           required
                           placeholder="John Anderson"
-                          className="w-full rounded-xl bg-white dark:bg-[#141B2D] border border-black/10 dark:border-white/10 px-4 py-3 text-sm text-[#1D1D1F] dark:text-white placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[#F59E0B]/50 transition-all shadow-xs"
+                          className="w-full rounded-xl bg-white dark:bg-[#141B2D] border border-black/10 dark:border-white/10 px-4 py-3 text-sm text-[#1D1D1F] dark:text-white placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[#0077ED]/50 transition-all shadow-xs"
                         />
                       </div>
                       <div>
@@ -252,7 +252,7 @@ export default function Contact() {
                           type="email"
                           required
                           placeholder="contact@company.com"
-                          className="w-full rounded-xl bg-white dark:bg-[#141B2D] border border-black/10 dark:border-white/10 px-4 py-3 text-sm text-[#1D1D1F] dark:text-white placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[#F59E0B]/50 transition-all shadow-xs"
+                          className="w-full rounded-xl bg-white dark:bg-[#141B2D] border border-black/10 dark:border-white/10 px-4 py-3 text-sm text-[#1D1D1F] dark:text-white placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[#0077ED]/50 transition-all shadow-xs"
                         />
                       </div>
                     </div>
@@ -266,7 +266,7 @@ export default function Contact() {
                         name="phone"
                         type="tel"
                         placeholder="+94 ... or +1 ..."
-                        className="w-full rounded-xl bg-white dark:bg-[#141B2D] border border-black/10 dark:border-white/10 px-4 py-3 text-sm text-[#1D1D1F] dark:text-white placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[#F59E0B]/50 transition-all shadow-xs"
+                        className="w-full rounded-xl bg-white dark:bg-[#141B2D] border border-black/10 dark:border-white/10 px-4 py-3 text-sm text-[#1D1D1F] dark:text-white placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[#0077ED]/50 transition-all shadow-xs"
                       />
                     </div>
 
@@ -280,7 +280,7 @@ export default function Contact() {
                         required
                         rows={4}
                         placeholder="Describe your engineering requirements, project location, timeline..."
-                        className="w-full rounded-xl bg-white dark:bg-[#141B2D] border border-black/10 dark:border-white/10 px-4 py-3 text-sm text-[#1D1D1F] dark:text-white placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[#F59E0B]/50 transition-all shadow-xs resize-none"
+                        className="w-full rounded-xl bg-white dark:bg-[#141B2D] border border-black/10 dark:border-white/10 px-4 py-3 text-sm text-[#1D1D1F] dark:text-white placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[#0077ED]/50 transition-all shadow-xs resize-none"
                       />
                     </div>
 
@@ -290,7 +290,7 @@ export default function Contact() {
                       <button
                         type="submit"
                         disabled={isSubmitting}
-                        className="flex-1 py-3.5 px-6 rounded-xl bg-[#F59E0B] hover:bg-[#E08E07] active:scale-[0.98] text-black font-extrabold text-xs sm:text-sm tracking-wide uppercase flex items-center justify-center gap-2 shadow-lg shadow-[#F59E0B]/20 hover:shadow-[#F59E0B]/35 transition-all duration-200 cursor-pointer disabled:opacity-70 group"
+                        className="flex-1 py-3.5 px-6 rounded-xl bg-[#0077ED] hover:bg-[#0066CC] active:scale-[0.98] text-white font-bold text-xs sm:text-sm tracking-wide uppercase flex items-center justify-center gap-2 shadow-lg shadow-[#0077ED]/20 hover:shadow-[#0077ED]/35 transition-all duration-200 cursor-pointer disabled:opacity-70 group"
                       >
                         <Send size={15} strokeWidth={2.5} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                         <span>{isSubmitting ? "TRANSMITTING..." : "SEND MESSAGE"}</span>

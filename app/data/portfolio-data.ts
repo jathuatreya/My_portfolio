@@ -69,7 +69,7 @@ export const profile = {
   ],
 
   achievements: [
-    "20+ completed software projects",
+    "10+ completed software projects",
     "Built a working AI-powered hardware robot",
     "Created multiple full-stack applications",
     "Consistently praised for clean code and dedication",
@@ -113,13 +113,13 @@ export const aboutStats = [
   {
     id: "projects",
     icon: CheckCircle2,
-    value: "50+",
+    value: "10+",
     label: "Completed Projects",
   },
-  { id: "technologies", icon: Code2, value: "15+", label: "Technologies Used" },
-  { id: "web", icon: Globe2, value: "50+", label: "Web Development Projects" },
+  { id: "technologies", icon: Code2, value: "12+", label: "Technologies Used" },
+  { id: "web", icon: Globe2, value: "15+", label: "Web Development Projects" },
   { id: "models", icon: Brain, value: "5+", label: "ML Models & Experiments" },
-  { id: "hardware", icon: Cable, value: "20+", label: "IoT Projects Hardware" },
+  { id: "hardware", icon: Cable, value: "5+", label: "IoT Projects Hardware" },
 ];
 
 // --------------------------------------
@@ -237,6 +237,9 @@ export const education = [
 // --------------------------------------
 
 export const technologies = [
+  // Engineering & Software
+  "Custom Software Development",
+
   // Programming Languages
   "Python",
   "Java",
@@ -528,6 +531,161 @@ export const services = [
 // --------------------------------------
 
 export const projects = [
+{
+  "title": "FixMate — On-Demand Services & Handyman Mobile App",
+  "image": "/projects/fixmate-mobile.jpg",
+  "description": "A cross-platform on-demand repair and maintenance mobile app connecting users with vetted local technicians with real-time GPS tracking and instant bookings.",
+  "techStack": [
+    "React Native",
+    "TypeScript",
+    "Node.js",
+    "Firebase",
+    "Google Maps API"
+  ],
+  "codeUrl": "https://github.com/jathuatreya",
+  "features": [
+    "Real-time GPS technician tracking and route mapping",
+    "On-demand booking for plumbing, electrical, and HVAC repairs",
+    "Integrated direct quote chat and secure in-app checkout"
+  ]
+},
+{
+  "title": "Breast Cancer Detection & Classification ML",
+  "image": "/projects/breast-cancer-detection.jpg",
+  "description": "A supervised machine learning classification system trained on diagnostic biopsy datasets to detect malignant vs. benign tumors with 98.2% accuracy.",
+  "techStack": [
+    "Python",
+    "Scikit-learn",
+    "Machine Learning",
+    "XGBoost",
+    "Pandas"
+  ],
+  "codeUrl": "https://github.com/jathuatreya",
+  "features": [
+    "Supervised classification with Random Forest and XGBoost",
+    "High-accuracy biopsy diagnostic recall (98.2%)",
+    "Comprehensive ROC-AUC and feature importance analysis"
+  ]
+},
+  {
+    "title": "Vexel Systems — Corporate & Software Showcase",
+    "image": "/projects/vexel-systems.jpg",
+    "description": "Official corporate portfolio and product showcase platform for Vexel Systems, featuring dynamic dark-mode UI/UX and full-stack architecture.",
+    "techStack": [
+      "Next.js 16",
+      "React 19",
+      "TypeScript",
+      "Tailwind CSS"
+    ],
+    "codeUrl": "https://www.vexelsystems.lk/",
+    "features": [
+      "Dynamic modern dark mode aesthetics",
+      "Enterprise product & services catalog",
+      "SEO optimized and cloud deployed"
+    ]
+  },
+  {
+    "title": "Vexel POS — Official Product Showcase Platform",
+    "image": "/projects/vexel-pos-showcase.jpg",
+    "description": "Official product showcase website demonstrating the Vexel POS ecosystem, highlighting multi-branch synchronization and fast thermal billing.",
+    "techStack": [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Tailwind CSS"
+    ],
+    "codeUrl": "https://www.vexelsystems.lk/",
+    "features": [
+      "Multi-branch cloud sync showcase",
+      "Offline-first POS capabilities",
+      "Thermal printer and scanner integration"
+    ]
+  },
+  {
+    "title": "Dishan Siddha Ayurvedha & Skin Care Clinic",
+    "image": "/projects/dishan-ayurvedha.jpg",
+    "description": "A comprehensive clinic website for Dishan Siddha Ayurvedha & Skin Care Clinic led by registered physician Dr. Thanikaparan Arasaratnam in Vavuniya.",
+    "techStack": [
+      "Next.js",
+      "React",
+      "Tailwind CSS",
+      "TypeScript"
+    ],
+    "codeUrl": "https://dishan-siddha-ayurvedha-clinic.vercel.app/",
+    "features": [
+      "Authentic pulse diagnosis & treatment showcase",
+      "Direct online appointment consultation booking",
+      "Botanical medicines & herbal remedies directory"
+    ]
+  },
+  {
+    "title": "Pavishan Sivakumaran — Civil Engineer Portfolio",
+    "image": "/projects/pavishan-portfolio.png",
+    "description": "High-end personal portfolio and professional project showcase website designed and engineered for Civil Engineer & Construction PM Pavishan Sivakumaran.",
+    "techStack": [
+      "React",
+      "Next.js",
+      "Tailwind CSS",
+      "Framer Motion"
+    ],
+    "codeUrl": "https://pavishansivakumaranportfolio.vercel.app/",
+    "features": [
+      "Editorial dark-mode aesthetic layout",
+      "Engineering discipline & credential showcase",
+      "100% responsive fluid mobile layout"
+    ]
+  },
+  {
+    "title": "Vexel Hotel POS — Hospitality Management & Billing",
+    "image": "/projects/vexel-hotel-pos.jpg",
+    "description": "Comprehensive hospitality POS with table layout management, Kitchen Order Tickets (KOT), room-service billing, and daily revenue audits.",
+    "techStack": [
+      "React",
+      "Node.js",
+      "Express",
+      "PostgreSQL"
+    ],
+    "codeUrl": "https://www.vexelsystems.lk/",
+    "features": [
+      "Floor plan and table status management",
+      "Automated Kitchen Order Ticket (KOT) routing",
+      "Room service billing & ledger synchronization"
+    ]
+  },
+  {
+    "title": "Vexel Stationery POS — Retail Inventory & Billing",
+    "image": "/projects/vexel-stationery-pos.jpg",
+    "description": "Specialized retail POS and stock management software built for bookstores and stationery shops with high-speed barcode scanning.",
+    "techStack": [
+      "Next.js",
+      "React",
+      "Node.js",
+      "MongoDB / SQL"
+    ],
+    "codeUrl": "https://www.vexelsystems.lk/",
+    "features": [
+      "High-speed barcode scanner integration",
+      "Wholesale and retail dual pricing switch",
+      "Low stock alerts and automatic reordering"
+    ]
+  },
+  {
+    "title": "Vexel Quotify — Quotation to Invoice Maker",
+    "image": "/projects/vexel-quotify.jpg",
+    "description": "Bespoke business billing software enabling instant professional quotation generation with tax calculations and 1-click invoice conversion.",
+    "techStack": [
+      "TypeScript",
+      "React",
+      "Node.js",
+      "Tailwind CSS"
+    ],
+    "codeUrl": "https://www.vexelsystems.lk/",
+    "features": [
+      "1-click quotation to formal invoice conversion",
+      "Instant client ledger & payment status tracking",
+      "Automated PDF generation and tax computation"
+    ]
+  },
   {
     title: "A/L MCQ Answers Automation",
     image: "/projects/mcq-automation.jpg",

@@ -5,7 +5,6 @@ import "./globals.css";
 
 import GlobalToaster from "./components/GlobalToaster";
 import EngagementToast from "./components/EngagementToast";
-import Preloader from "./components/Preloader";
 import { LanguageProvider } from "./context/LanguageContext";
 import { profile, projects } from "./data/portfolio-data";
 import { ReactNode } from "react";
@@ -81,16 +80,16 @@ export const metadata: Metadata = {
     siteName: `${profile.name} Portfolio`,
     images: [
       {
-        url: "/jathushan.jpg",
+        url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: `${profile.name} - Full Stack Developer`,
+        alt: `${profile.name} - Freelance Full-Stack Developer & AI Solutions`,
       },
       {
-        url: "/logo.png",
-        width: 512,
-        height: 512,
-        alt: `${profile.name} Logo`,
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: `${profile.name} - Freelance Full-Stack Developer & AI Solutions`,
       },
     ],
   },
@@ -99,7 +98,7 @@ export const metadata: Metadata = {
     title: "Jathushan Varnakulasingam | Full-Stack Developer",
     description:
       "Freelance Full-Stack Developer specializing in Next.js, React, Node.js, AI integrations, and smart automation.",
-    images: ["/jathushan.jpg"],
+    images: ["/og-image.png"],
     creator: "@jathushanstark",
   },
   robots: {
@@ -120,14 +119,14 @@ export const metadata: Metadata = {
       "en-LK": "/en",
       "ta-LK": "/ta",
       "si-LK": "/si"
+    },
+    types: {
+      "text/markdown": "/llms.txt"
     }
   },
   icons: {
-    icon: [
-      { url: "/logo.png", sizes: "32x32", type: "image/png" },
-    ],
-    shortcut: "/logo.png",
-    apple: "/logo.png",
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
   },
   other: {
     "geo.region": "LK-41", // Northern Province
@@ -171,9 +170,8 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           }}
         />
       </head>
-      <body className={`${inter.variable} font-sans antialiased`}>
+      <body className={`${inter.variable} font-sans antialiased`} suppressHydrationWarning>
         <LanguageProvider>
-          <Preloader />
           <GlobalToaster />
           <EngagementToast />
           {children}
@@ -186,7 +184,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             "@context": "https://schema.org",
             "@type": "ProfessionalService",
             "name": "${profile.name}",
-            "image": "${profile.portfolioURL}logo.png",
+            "image": "${profile.portfolioURL}og-image.png",
             "@id": "${profile.portfolioURL}",
             "url": "${profile.portfolioURL}",
             "telephone": "${profile.contact.phone}",
@@ -257,7 +255,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             "@type": "Person",
             "name": "${profile.name}",
             "url": "${profile.portfolioURL}",
-            "image": "${profile.portfolioURL}logo.png",
+            "image": "${profile.portfolioURL}og-image.png",
             "jobTitle": "Full-Stack Developer & AI Solutions Architect",
             "address": {
               "@type": "PostalAddress",

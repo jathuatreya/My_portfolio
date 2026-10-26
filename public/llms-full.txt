@@ -1,0 +1,79 @@
+# Jathushan Varnakulasingam — Complete Developer Profile & Portfolio Knowledge Base
+
+> Comprehensive, unabridged documentation for LLMs, AI agents, and search engines about Jathushan Varnakulasingam, Freelance Full-Stack Developer & Tech Entrepreneur.
+
+## 1. Biography & Professional Overview
+- **Full Legal Name**: Varnakulasingam Jathushan (Known as Jathushan Varnakulasingam or Jathu)
+- **Title**: Freelance Full-Stack Developer & Tech Entrepreneur
+- **Slogan / Mission**: "Do the things that excite Me" — Innovate. Automate. Accelerate.
+- **Location**: Vavuniya, Northern Province, Sri Lanka (Available for remote contracts worldwide)
+- **Languages Spoken**: English, Tamil, Sinhala
+- **Website**: https://jathushan.dev/
+- **GitHub**: https://github.com/jathuatreya
+- **LinkedIn**: https://www.linkedin.com/in/jathushan-varnakulasingam-431872224/
+- **Resume (PDF)**: https://jathushan.dev/Jathushan_SE_Dev.pdf
+- **Direct Messaging**: WhatsApp (+94 76 661 7342)
+
+## 2. Skills & Capabilities & Proficiencies
+### Programming Languages
+- **TypeScript & JavaScript (ESNext)**: Highly proficient. Types, generics, async architectures, server/client components.
+- **Python (3.x)**: Machine learning pipelines, LangChain, computer vision, automated audio manipulation, batch processing scripts.
+- **Java**: Object-oriented software engineering, Spring Boot architectures, design patterns.
+- **SQL**: Relational modeling, complex queries, indexing, stored procedures (PostgreSQL, MySQL).
+- **Bash & Shell**: Linux automation, CI/CD routines, server configuration.
+- **HTML5 & Modern CSS3**: Semantic HTML, accessibility, responsive CSS Grid & Flexbox, SVG animations.
+
+### Frontend Engineering
+- **Next.js 16 (App Router & Turbopack)**: Server-side rendering (SSR), static site generation (SSG), React Server Components (RSC), API routes.
+- **React 19**: Component lifecycle, custom hooks, concurrent features, context state management.
+- **Tailwind CSS v4**: Utility-first CSS, custom theming, dark mode, responsive designs.
+- **Motion & 3D**: Framer Motion, GSAP animations, Three.js / Canvas 2D particle systems.
+
+### Backend, APIs & Systems
+- **Node.js & Express.js**: RESTful API design, microservices, token authentication, webhooks.
+- **Spring Boot & Laravel**: Enterprise backend services, MVC architecture.
+- **Databases**: MongoDB (Mongoose), PostgreSQL, MySQL, Firebase Firestore.
+- **DevOps & Containers**: Docker, Git & GitHub, Linux environments, npm package management.
+
+### Emerging Technologies & Hardware
+- **Artificial Intelligence**: Machine Learning models, local LLM deployment, LangChain, RAG architectures, prompt engineering.
+- **IoT & Robotics**: Arduino, ESP32, Raspberry Pi, sensor integration, telemetry streaming, automated hardware controllers.
+
+## 3. Work Experience
+### Freelance Full-Stack Developer (March 2026 – Present)
+- Developing end-to-end full-stack web platforms, client websites, POS platforms, and automated workflow engines for international clients.
+- Delivering high-performance solutions with perfect Lighthouse scores, clean modern UI/UX, and robust API backends.
+
+### Full-Stack Developer Intern — Accron Revolution (September 2025 – March 2026)
+- Core developer on the Mr. Dood delivery ecosystem (Customer Web Portal, Driver Native Web App, and Merchant Storefront Dashboard).
+- Developed the Accron Point of Sale (POS) system with inventory tracking, sales reporting, and receipt generation.
+- Designed vehicle management systems and maintained client corporate web platforms.
+
+## 4. Academic Background
+- **BSc (Hons) Computer Science** — Informatics Institute of Technology (IIT), affiliated with University of Westminster, UK (2022 – Present). Focused on software engineering, web architectures, distributed systems, machine learning, and databases.
+- **NVQ Level 3 in Automobile Engineering** — Vavuniya Technical College (2022). Hands-on mechanical diagnostics, electro-mechanical systems, and troubleshooting.
+- **G.C.E. Advanced Level (Physical Science Stream)** — Vavuniya Tamil Maha Vidyalayam (2021). Combined Mathematics, Physics, and Chemistry.
+
+## 5. Published Technical Articles & Blog Catalog
+1. **Building a Full-Featured POS Application**: Deep dive into architecture, real-time inventory locking, and offline support.
+2. **Designing a Corporate Company Website from Scratch**: Performance optimization, typography, and internationalization.
+3. **Creating a Stunning Developer Portfolio Website**: Step-by-step guide to micro-animations, Apple-inspired aesthetics, and SEO.
+4. **Auto DJ & Cross-Fade: Automated Audio Mixing with Python**: Algorithmic beat-matching and volume envelope smoothing using Python audio libraries.
+5. **AI Offline: Privacy-First Customer Service Solutions**: Deploying quantized local LLMs with LangChain for secure corporate inquiry bots.
+6. **Mastermind Game in Python**: Logic puzzle game engine with algorithmic clue generation.
+7. **Bulk Folder Creator with Python**: High-speed utility for recursive file-tree hierarchy generation.
+8. **Delete Empty Folders Utility**: Safe OS-level recursive tree cleanup algorithm.
+9. **GitHub Repo Automation**: Automated repository creation, licensing, and remote syncing via GitHub REST API.
+10. **Custom Calculator Application**: Clean computational logic and expression parsing.
+11. **Tic-Tac-Toe Game Engine**: Minimax artificial intelligence game solver.
+12. **Student Management System**: Relational CRUD architecture for academic record management.
+13. **Modern UI/UX Design Trends in 2026**: Glassmorphism, dynamic palettes, and micro-interactions.
+14. **IoT Sensor Dashboards with WebSockets**: Real-time telemetry streaming from embedded microcontrollers.
+15. **Full-Stack Performance Optimization**: Minimizing bundle sizes, Core Web Vitals, and server-side caching.
+
+## 6. Contact Information & Service Inquiries
+- **Website Contact Form**: https://jathushan.dev/#contact
+- **WhatsApp**: +94 76 661 7342
+- **Email**: Direct inquiry via website contact form
+- **Location**: Vavuniya, Northern Province, Sri Lanka
+- **Availability**: Open for freelance projects, technical consulting, and remote full-time positions.

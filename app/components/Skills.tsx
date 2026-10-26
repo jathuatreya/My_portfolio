@@ -1,6 +1,6 @@
 "use client";
 
-import { CheckCircle2, Code2, Cpu, Globe, Zap } from 'lucide-react'
+import { CheckCircle2, Code2, Cpu, Globe, Zap, Layers } from 'lucide-react'
 import { technologies, goals } from '../data/portfolio-data'
 import { useLanguage } from '../context/LanguageContext'
 import { ScrollReveal } from './ScrollReveal'
@@ -16,6 +16,7 @@ export default function Skills() {
              * -------------------------------------- */}
                <section id="skills" className="py-20 bg-white dark:bg-[#0a0a0a] relative overflow-hidden">
                     <span id="technical-arsenal" className="sr-only" aria-hidden="true">Technical Arsenal</span>
+                    <span id="skills-capabilities" className="sr-only" aria-hidden="true">Skills & Capabilities</span>
 
                     {/* Decorative Background */}
                     <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/10 rounded-full blur-3xl opacity-20 pointer-events-none"></div>
@@ -38,28 +39,30 @@ export default function Skills() {
                               </p>
                          </ScrollReveal>
 
-                         {/* Categories Grid */}
-                         <MagicContainer className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                         {/* Categories Grid - 4 Columns */}
+                         <MagicContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
 
-                              {/* Web Development */}
-                              <ScrollReveal delay={0.1} className="h-full">
+                              {/* Custom Software Development */}
+                              <ScrollReveal delay={0.05} className="h-full">
                                    <MagicCard
-                                        className="bg-[#F5F5F7] dark:bg-[#121212] p-8 rounded-3xl h-full shadow-md hover:shadow-xl transition-all"
+                                        className="bg-[#F5F5F7] dark:bg-[#121212] p-7 rounded-3xl h-full shadow-md hover:shadow-xl transition-all flex flex-col justify-between"
                                    >
-                                        <div className="w-12 h-12 bg-blue-50 dark:bg-blue-500/10 rounded-2xl flex items-center justify-center mb-6">
-                                             <Globe className="text-primary" size={24} />
+                                        <div>
+                                             <div className="w-12 h-12 bg-blue-50 dark:bg-blue-500/10 rounded-2xl flex items-center justify-center mb-6">
+                                                  <Layers className="text-primary" size={24} />
+                                             </div>
+
+                                             <h3 className="text-xl font-bold text-[#1D1D1F] dark:text-white mb-3">
+                                                  {t.skills.categories.custom_software.title}
+                                             </h3>
+
+                                             <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed mb-6">
+                                                  {t.skills.categories.custom_software.desc}
+                                             </p>
                                         </div>
 
-                                        <h3 className="text-xl font-bold text-[#1D1D1F] dark:text-white mb-4">
-                                             {t.skills.categories.web.title}
-                                        </h3>
-
-                                        <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed mb-6">
-                                             {t.skills.categories.web.desc}
-                                        </p>
-
-                                        <div className="flex flex-wrap gap-2">
-                                             {technologies.slice(0, 4).map((tech, i) => (
+                                        <div className="flex flex-wrap gap-2 pt-2">
+                                             {['Bespoke Systems', 'Custom APIs', 'Automation', 'Architecture'].map((tech, i) => (
                                                   <span key={i} className="text-xs font-semibold px-3 py-1 rounded-lg bg-white dark:bg-white text-[#0077ED] shadow-sm">
                                                        {tech}
                                                   </span>
@@ -68,23 +71,27 @@ export default function Skills() {
                                    </MagicCard>
                               </ScrollReveal>
 
-                              {/* IoT & Robotics */}
-                              <ScrollReveal delay={0.2} className="h-full">
-                                   <MagicCard className="bg-[#F5F5F7] dark:bg-[#121212] p-8 rounded-3xl h-full shadow-md hover:shadow-xl transition-all">
-                                        <div className="w-12 h-12 bg-purple-50 dark:bg-purple-500/10 rounded-2xl flex items-center justify-center mb-6">
-                                             <Cpu className="text-purple-500 dark:text-purple-300" size={24} />
+                              {/* Web Development */}
+                              <ScrollReveal delay={0.15} className="h-full">
+                                   <MagicCard
+                                        className="bg-[#F5F5F7] dark:bg-[#121212] p-7 rounded-3xl h-full shadow-md hover:shadow-xl transition-all flex flex-col justify-between"
+                                   >
+                                        <div>
+                                             <div className="w-12 h-12 bg-cyan-50 dark:bg-cyan-500/10 rounded-2xl flex items-center justify-center mb-6">
+                                                  <Globe className="text-[#0077ED]" size={24} />
+                                             </div>
+
+                                             <h3 className="text-xl font-bold text-[#1D1D1F] dark:text-white mb-3">
+                                                  {t.skills.categories.web.title}
+                                             </h3>
+
+                                             <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed mb-6">
+                                                  {t.skills.categories.web.desc}
+                                             </p>
                                         </div>
 
-                                        <h3 className="text-xl font-bold text-[#1D1D1F] dark:text-white mb-4">
-                                             {t.skills.categories.iot.title}
-                                        </h3>
-
-                                        <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed mb-6">
-                                             {t.skills.categories.iot.desc}
-                                        </p>
-
-                                        <div className="flex flex-wrap gap-2">
-                                             {['IoT', 'Hardware', 'Networking', 'Robotics'].map((tech, i) => (
+                                        <div className="flex flex-wrap gap-2 pt-2">
+                                             {technologies.filter(t => t !== "Custom Software Development").slice(0, 4).map((tech, i) => (
                                                   <span key={i} className="text-xs font-semibold px-3 py-1 rounded-lg bg-white dark:bg-white text-[#0077ED] shadow-sm">
                                                        {tech}
                                                   </span>
@@ -94,22 +101,51 @@ export default function Skills() {
                               </ScrollReveal>
 
                               {/* AI & ML */}
-                              <ScrollReveal delay={0.3} className="h-full">
-                                   <MagicCard className="bg-[#F5F5F7] dark:bg-[#121212] p-8 rounded-3xl h-full shadow-md hover:shadow-xl transition-all">
-                                        <div className="w-12 h-12 bg-emerald-50 dark:bg-emerald-500/10 rounded-2xl flex items-center justify-center mb-6">
-                                             <Zap className="text-emerald-500 dark:text-emerald-300" size={24} />
+                              <ScrollReveal delay={0.25} className="h-full">
+                                   <MagicCard className="bg-[#F5F5F7] dark:bg-[#121212] p-7 rounded-3xl h-full shadow-md hover:shadow-xl transition-all flex flex-col justify-between">
+                                        <div>
+                                             <div className="w-12 h-12 bg-emerald-50 dark:bg-emerald-500/10 rounded-2xl flex items-center justify-center mb-6">
+                                                  <Zap className="text-emerald-500 dark:text-emerald-300" size={24} />
+                                             </div>
+
+                                             <h3 className="text-xl font-bold text-[#1D1D1F] dark:text-white mb-3">
+                                                  {t.skills.categories.ai.title}
+                                             </h3>
+
+                                             <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed mb-6">
+                                                  {t.skills.categories.ai.desc}
+                                             </p>
                                         </div>
 
-                                        <h3 className="text-xl font-bold text-[#1D1D1F] dark:text-white mb-4">
-                                             {t.skills.categories.ai.title}
-                                        </h3>
-
-                                        <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed mb-6">
-                                             {t.skills.categories.ai.desc}
-                                        </p>
-
-                                        <div className="flex flex-wrap gap-2">
+                                        <div className="flex flex-wrap gap-2 pt-2">
                                              {['Python', 'TensorFlow', 'Scikit-learn', 'Data Science'].map((tech, i) => (
+                                                  <span key={i} className="text-xs font-semibold px-3 py-1 rounded-lg bg-white dark:bg-white text-[#0077ED] shadow-sm">
+                                                       {tech}
+                                                  </span>
+                                             ))}
+                                        </div>
+                                   </MagicCard>
+                              </ScrollReveal>
+
+                              {/* IoT & Robotics */}
+                              <ScrollReveal delay={0.35} className="h-full">
+                                   <MagicCard className="bg-[#F5F5F7] dark:bg-[#121212] p-7 rounded-3xl h-full shadow-md hover:shadow-xl transition-all flex flex-col justify-between">
+                                        <div>
+                                             <div className="w-12 h-12 bg-purple-50 dark:bg-purple-500/10 rounded-2xl flex items-center justify-center mb-6">
+                                                  <Cpu className="text-purple-500 dark:text-purple-300" size={24} />
+                                             </div>
+
+                                             <h3 className="text-xl font-bold text-[#1D1D1F] dark:text-white mb-3">
+                                                  {t.skills.categories.iot.title}
+                                             </h3>
+
+                                             <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed mb-6">
+                                                  {t.skills.categories.iot.desc}
+                                             </p>
+                                        </div>
+
+                                        <div className="flex flex-wrap gap-2 pt-2">
+                                             {['IoT', 'Hardware', 'Networking', 'Robotics'].map((tech, i) => (
                                                   <span key={i} className="text-xs font-semibold px-3 py-1 rounded-lg bg-white dark:bg-white text-[#0077ED] shadow-sm">
                                                        {tech}
                                                   </span>
