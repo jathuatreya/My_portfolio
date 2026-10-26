@@ -46,7 +46,7 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="w-full bg-[#070A12] text-white pt-16 pb-8 border-t border-white/5 transition-colors duration-300">
+    <footer className="w-full bg-[#F8FAFC] dark:bg-[#070A12] text-neutral-900 dark:text-white pt-16 pb-8 border-t border-black/[0.08] dark:border-white/5 transition-colors duration-300">
       <div className="w-full px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12">
         {/* Main 4-Column Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-8 pb-14">
@@ -60,7 +60,7 @@ export default function Footer() {
                 JV
               </div>
               <div className="flex flex-col">
-                <span className="text-xs font-bold tracking-widest uppercase text-white font-mono leading-tight">
+                <span className="text-xs font-bold tracking-widest uppercase text-neutral-900 dark:text-white font-mono leading-tight">
                   Jathushan
                 </span>
                 <span className="text-[10px] tracking-widest uppercase text-[#0077ED] font-mono font-semibold">
@@ -71,7 +71,7 @@ export default function Footer() {
 
             {/* Name & Role */}
             <div>
-              <h2 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
+              <h2 className="text-xl sm:text-2xl font-bold text-neutral-900 dark:text-white tracking-tight">
                 Jathushan Varnakulasingam
               </h2>
               <p className="text-xs font-medium text-[#0077ED] tracking-wide mt-1">
@@ -80,12 +80,12 @@ export default function Footer() {
             </div>
 
             {/* Bio */}
-            <p className="text-xs sm:text-sm text-gray-400 leading-relaxed max-w-sm">
+            <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 leading-relaxed max-w-sm">
               Freelance Full-Stack Developer specializing in high-performance web systems, modern UI/UX, AI integrations, and smart automation. Delivering scalable digital products worldwide.
             </p>
 
             {/* Credentials / Location */}
-            <div className="space-y-2 pt-1 text-xs text-gray-400 font-mono">
+            <div className="space-y-2 pt-1 text-xs text-gray-600 dark:text-gray-400 font-mono">
               <div className="flex items-start gap-2">
                 <GraduationCap size={14} className="text-[#0077ED] mt-0.5 shrink-0" />
                 <span>BSc (Hons) Computer Science · Westminster / IIT</span>
@@ -118,7 +118,7 @@ export default function Footer() {
                   <li key={item.label}>
                     <a
                       href={item.href}
-                      className="text-xs sm:text-sm text-gray-400 hover:text-[#0077ED] hover:translate-x-1 transition-all duration-200 inline-block"
+                      className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 hover:text-[#0077ED] hover:translate-x-1 transition-all duration-200 inline-block"
                     >
                       {item.label}
                     </a>
@@ -130,7 +130,7 @@ export default function Footer() {
                   <li key={item.label}>
                     <a
                       href={item.href}
-                      className="text-xs sm:text-sm text-gray-400 hover:text-[#0077ED] hover:translate-x-1 transition-all duration-200 inline-block"
+                      className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 hover:text-[#0077ED] hover:translate-x-1 transition-all duration-200 inline-block"
                     >
                       {item.label}
                     </a>
@@ -153,7 +153,7 @@ export default function Footer() {
                 type="button"
                 onClick={scrollToTop}
                 aria-label="Scroll to top"
-                className="w-8 h-8 rounded-lg bg-[#0E1524] border border-white/10 hover:border-[#0077ED]/50 hover:bg-[#152036] text-gray-300 hover:text-[#0077ED] flex items-center justify-center transition-all cursor-pointer shadow-xs"
+                className="w-8 h-8 rounded-lg bg-white dark:bg-[#0E1524] border border-black/10 dark:border-white/10 hover:border-[#0077ED]/50 hover:bg-neutral-50 dark:hover:bg-[#152036] text-gray-700 dark:text-gray-300 hover:text-[#0077ED] flex items-center justify-center transition-all cursor-pointer shadow-xs"
                 title="Back to top"
               >
                 <ArrowUp size={15} />
@@ -165,7 +165,7 @@ export default function Footer() {
               href="https://wa.me/94706601734?text=Hi%20Jathushan,%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20work%20with%20you!"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2.5 sm:p-3 rounded-xl bg-[#0D1322] hover:bg-[#121A2E] border border-white/5 hover:border-emerald-500/40 transition-all duration-200 flex items-center justify-between group cursor-pointer"
+              className="p-2.5 sm:p-3 rounded-xl bg-white dark:bg-[#0D1322] hover:bg-neutral-50 dark:hover:bg-[#121A2E] border border-black/10 dark:border-white/5 shadow-xs hover:border-emerald-500/40 transition-all duration-200 flex items-center justify-between group cursor-pointer"
             >
               <div className="flex items-center gap-3">
                 <div className="w-8 h-8 rounded-lg bg-emerald-500/15 text-emerald-400 flex items-center justify-center shrink-0">
@@ -175,7 +175,7 @@ export default function Footer() {
                   <span className="text-[10px] font-mono font-bold tracking-wider text-emerald-400 uppercase leading-none">
                     WhatsApp
                   </span>
-                  <span className="text-xs sm:text-sm font-semibold text-white font-mono mt-1">
+                  <span className="text-xs sm:text-sm font-semibold text-neutral-900 dark:text-white font-mono mt-1">
                     +94 706601734
                   </span>
                 </div>
@@ -188,7 +188,7 @@ export default function Footer() {
             {/* Card 2: Direct Call */}
             <a
               href="tel:+94706601734"
-              className="p-2.5 sm:p-3 rounded-xl bg-[#0D1322] hover:bg-[#121A2E] border border-white/5 hover:border-[#0077ED]/40 transition-all duration-200 flex items-center justify-between group cursor-pointer"
+              className="p-2.5 sm:p-3 rounded-xl bg-white dark:bg-[#0D1322] hover:bg-neutral-50 dark:hover:bg-[#121A2E] border border-black/10 dark:border-white/5 shadow-xs hover:border-[#0077ED]/40 transition-all duration-200 flex items-center justify-between group cursor-pointer"
             >
               <div className="flex items-center gap-3">
                 <div className="w-8 h-8 rounded-lg bg-[#0077ED]/15 text-[#0077ED] flex items-center justify-center shrink-0">
@@ -198,7 +198,7 @@ export default function Footer() {
                   <span className="text-[10px] font-mono font-bold tracking-wider text-[#0077ED] uppercase leading-none">
                     Direct Call
                   </span>
-                  <span className="text-xs sm:text-sm font-semibold text-white font-mono mt-1">
+                  <span className="text-xs sm:text-sm font-semibold text-neutral-900 dark:text-white font-mono mt-1">
                     +94 706601734
                   </span>
                 </div>
@@ -213,7 +213,7 @@ export default function Footer() {
               href={profile.social.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2.5 sm:p-3 rounded-xl bg-[#0D1322] hover:bg-[#121A2E] border border-white/5 hover:border-blue-500/40 transition-all duration-200 flex items-center justify-between group cursor-pointer"
+              className="p-2.5 sm:p-3 rounded-xl bg-white dark:bg-[#0D1322] hover:bg-neutral-50 dark:hover:bg-[#121A2E] border border-black/10 dark:border-white/5 shadow-xs hover:border-blue-500/40 transition-all duration-200 flex items-center justify-between group cursor-pointer"
             >
               <div className="flex items-center gap-3 min-w-0">
                 <div className="w-8 h-8 rounded-lg bg-blue-500/15 text-blue-400 flex items-center justify-center shrink-0">
@@ -223,18 +223,18 @@ export default function Footer() {
                   <span className="text-[10px] font-mono font-bold tracking-wider text-blue-400 uppercase leading-none">
                     LinkedIn
                   </span>
-                  <span className="text-xs sm:text-sm font-semibold text-white truncate mt-1">
+                  <span className="text-xs sm:text-sm font-semibold text-neutral-900 dark:text-white truncate mt-1">
                     Jathushan Varnakulasingam
                   </span>
                 </div>
               </div>
-              <ExternalLink size={14} className="text-gray-400 group-hover:text-white transition-colors shrink-0" />
+              <ExternalLink size={14} className="text-gray-400 group-hover:text-neutral-900 dark:group-hover:text-white transition-colors shrink-0" />
             </a>
 
             {/* Card 4: Email */}
             <a
               href="mailto:imjathushan@gmail.com"
-              className="p-2.5 sm:p-3 rounded-xl bg-[#0D1322] hover:bg-[#121A2E] border border-white/5 hover:border-indigo-500/40 transition-all duration-200 flex items-center justify-between group cursor-pointer"
+              className="p-2.5 sm:p-3 rounded-xl bg-white dark:bg-[#0D1322] hover:bg-neutral-50 dark:hover:bg-[#121A2E] border border-black/10 dark:border-white/5 shadow-xs hover:border-indigo-500/40 transition-all duration-200 flex items-center justify-between group cursor-pointer"
             >
               <div className="flex items-center gap-3 min-w-0">
                 <div className="w-8 h-8 rounded-lg bg-indigo-500/15 text-indigo-400 flex items-center justify-center shrink-0">
@@ -244,7 +244,7 @@ export default function Footer() {
                   <span className="text-[10px] font-mono font-bold tracking-wider text-indigo-400 uppercase leading-none">
                     Email
                   </span>
-                  <span className="text-xs sm:text-sm font-semibold text-white truncate mt-1">
+                  <span className="text-xs sm:text-sm font-semibold text-neutral-900 dark:text-white truncate mt-1">
                     imjathushan@gmail.com
                   </span>
                 </div>
@@ -273,7 +273,7 @@ export default function Footer() {
         {/* ========================================================= */}
         {/* BOTTOM COPYRIGHT BAR                                      */}
         {/* ========================================================= */}
-        <div className="pt-6 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-4 text-xs font-mono text-gray-500">
+        <div className="pt-6 border-t border-black/[0.06] dark:border-white/5 flex flex-col md:flex-row items-center justify-between gap-4 text-xs font-mono text-gray-500 dark:text-gray-400">
           <p>© 2026 Jathushan Varnakulasingam. All Rights Reserved.</p>
           <p className="flex items-center gap-1.5 text-gray-400">
             Made with <Heart size={13} className="text-red-500 fill-red-500" /> in Sri Lanka
