@@ -27,3 +27,4 @@ export * from "./projects-data";
 export * from "./testimonials-data";
 export * from "./contact-data";
 export * from "./blogs-data";
+export * from "./pricing-data";

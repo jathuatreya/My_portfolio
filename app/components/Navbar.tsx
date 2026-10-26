@@ -74,6 +74,7 @@ export default function Navbar() {
         "skills",
         "services",
         "projects",
+        "pricing",
         "testimonials",
         "contact",
       ];
@@ -197,7 +198,7 @@ export default function Navbar() {
                   key={item.id}
                   href={item.href}
                   onClick={(e) => handleNavClick(e, item)}
-                  className={`px-2 xl:px-3 py-1.5 text-[16px] xl:text-[18px] font-medium transition-all duration-200 rounded-full ${
+                  className={`px-2 xl:px-3 py-1.5 text-[14px] xl:text-[15px] font-medium transition-all duration-200 rounded-full ${
                     isActive
                       ? "bg-black/5 dark:bg-white/10 text-neutral-900 dark:text-white font-semibold"
                       : "text-neutral-500 hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-white hover:bg-black/[0.02] dark:hover:bg-white/[0.05]"
@@ -316,7 +317,7 @@ export default function Navbar() {
                       handleNavClick(e, item);
                       setIsMobileMenuOpen(false);
                     }}
-                    className={`px-4 py-2.5 rounded-full text-[17px] sm:text-[18px] font-medium transition-colors ${
+                    className={`px-4 py-2.5 rounded-full text-[15px] sm:text-[16px] font-medium transition-colors ${
                       isActive
                         ? "bg-black/5 dark:bg-white/10 text-neutral-900 dark:text-white font-semibold"
                         : "text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white hover:bg-black/5 dark:hover:bg-white/5"
