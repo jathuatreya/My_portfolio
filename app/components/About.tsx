@@ -5,6 +5,7 @@ import { useLanguage } from '../context/LanguageContext'
 import { MagicCard, MagicContainer } from './MagicCard'
 import { User } from 'lucide-react'
 import { highlightTitle } from '../utils/highlight-text'
+import { ScrollReveal } from './ScrollReveal'
 
 export default function About() {
      const { t } = useLanguage()
@@ -19,16 +20,19 @@ export default function About() {
 
                <div className="w-[92%] sm:w-[88%] lg:w-[82%] xl:w-[80%] mx-auto relative z-10">
                     <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-                         {/* Left Column: Image */}
+                         {/* Left Column: Image with Entry Animation */}
                          <div className="flex justify-center lg:justify-start lg:col-span-4 w-full">
-                              <div className="w-64 h-64 sm:w-80 sm:h-80 lg:w-full lg:h-auto lg:aspect-square rounded-xl bg-[#F5F5F7] dark:bg-slate-800 p-3 shadow-lg max-w-sm">
-                                   <div className="w-full h-full rounded-lg bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url('${profile.aboutImage}')` }}></div>
-                              </div>
+                              <ScrollReveal delay={0.1} className="w-full max-w-sm">
+                                   <div className="w-64 h-64 sm:w-80 sm:h-80 lg:w-full lg:h-auto lg:aspect-square rounded-xl bg-[#F5F5F7] dark:bg-slate-800 p-3 shadow-lg">
+                                        <div className="w-full h-full rounded-lg bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url('${profile.aboutImage}')` }}></div>
+                                   </div>
+                              </ScrollReveal>
                          </div>
-                         {/* Right Column: Content */}
+
+                         {/* Right Column: Content with Entry Animation */}
                          <div className="flex flex-col gap-8 lg:col-span-8">
                               {/* About Me Header & Text */}
-                              <div>
+                              <ScrollReveal delay={0.15}>
                                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#F5F5F7] dark:bg-white/5 border border-primary/10 mb-6 shadow-sm">
                                         <User size={18} className="text-primary" />
                                         <span className="text-sm font-bold tracking-wide text-primary uppercase">{t.about.tag}</span>
@@ -42,17 +46,20 @@ export default function About() {
                                    <p className="text-gray-700 dark:text-gray-300 text-base sm:text-lg font-normal leading-relaxed mt-4">
                                         {t.about.description.replace('{name}', profile.name)}
                                    </p>
-                              </div>
-                              {/* Highlight Cards */}
+                              </ScrollReveal>
+
+                              {/* Highlight Cards with Staggered Entry Animation */}
                               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                                    {stats.map((stat, index) => (
-                                        <div key={index} className="flex flex-col items-start p-6 bg-[#F5F5F7] dark:bg-[#1D1D1F] rounded-xl shadow-md hover:shadow-lg transition-shadow">
-                                             <stat.icon className="text-primary" size={32} />
-                                             <p className="text-[#1D1D1F] dark:text-white text-3xl sm:text-4xl font-bold mt-3">{stat.value}</p>
-                                             <p className="text-gray-600 dark:text-gray-400 text-sm font-medium mt-1">
-                                                  {t.about.stats[stat.id as keyof typeof t.about.stats] || stat.label}
-                                             </p>
-                                        </div>
+                                        <ScrollReveal key={index} delay={0.25 + index * 0.1}>
+                                             <div className="flex flex-col items-start p-6 bg-[#F5F5F7] dark:bg-[#1D1D1F] rounded-xl shadow-md hover:shadow-lg transition-shadow h-full">
+                                                  <stat.icon className="text-primary" size={32} />
+                                                  <p className="text-[#1D1D1F] dark:text-white text-3xl sm:text-4xl font-bold mt-3">{stat.value}</p>
+                                                  <p className="text-gray-600 dark:text-gray-400 text-sm font-medium mt-1">
+                                                       {t.about.stats[stat.id as keyof typeof t.about.stats] || stat.label}
+                                                  </p>
+                                             </div>
+                                        </ScrollReveal>
                                    ))}
                               </div>
                          </div>

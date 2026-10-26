@@ -26,7 +26,7 @@ export default function Testimonials() {
                     <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-blue-300/5 rounded-full blur-3xl opacity-20 pointer-events-none" />
 
                     {/* Section Header */}
-                    <div className="text-center mb-14 sm:mb-20 relative z-10">
+                    <ScrollReveal className="text-center mb-14 sm:mb-20 relative z-10">
                          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#F5F5F7] dark:bg-white/5 border border-primary/10 mb-4 shadow-sm">
                               <MessageSquare size={16} className="text-primary" />
                               <span className="text-xs font-bold tracking-[0.15em] text-primary uppercase">{t.testimonials.tag}</span>
@@ -37,7 +37,7 @@ export default function Testimonials() {
                          <p className="mt-3 text-sm sm:text-base text-gray-500 dark:text-gray-400 max-w-2xl mx-auto">
                               {t.testimonials.subtitle}
                          </p>
-                    </div>
+                    </ScrollReveal>
 
                     {/* Testimonials Grid */}
                     <MagicContainer className="grid grid-cols-1 gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-3 relative z-10">
