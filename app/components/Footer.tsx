@@ -47,7 +47,7 @@ export default function Footer() {
 
   return (
     <footer className="w-full bg-[#070A12] text-white pt-16 pb-8 border-t border-white/5 transition-colors duration-300">
-      <div className="w-[92%] sm:w-[88%] lg:w-[82%] xl:w-[80%] mx-auto">
+      <div className="w-full px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12">
         {/* Main 4-Column Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-8 pb-14">
           {/* ========================================================= */}
