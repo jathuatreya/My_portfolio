@@ -1,6 +1,7 @@
 "use client";
 
 import Navbar from './components/Navbar'
+import SectionNavigator from './components/SectionNavigator'
 import Hero from './components/Hero'
 import About from './components/About'
 import Experience from './components/Experience'
@@ -19,6 +20,7 @@ export default function Home() {
   return (
       <div className="min-h-screen bg-[var(--background)] text-[var(--foreground)] font-sans">
         <Navbar />
+        <SectionNavigator />
 
         <main className="pt-20">
           <Hero />
