@@ -27,29 +27,22 @@ export default function Footer() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  const navLinks = [
+    const navColumn1 = [
     { label: "Home", href: "/#home" },
     { label: "About Me", href: "/#about" },
     { label: "Experience", href: "/#experience" },
     { label: "Education", href: "/#education" },
     { label: "Skills", href: "/#skills" },
     { label: "Services", href: "/#services" },
+  ];
+
+  const navColumn2 = [
     { label: "Projects", href: "/projects" },
+    { label: "Teaching", href: "/#teaching" },
     { label: "Pricing", href: "/#pricing" },
     { label: "Testimonials", href: "/#testimonials" },
     { label: "Blogs", href: "/blogs" },
     { label: "Contact", href: "/#contact" },
-  ];
-
-  const disciplines = [
-    "Full-Stack Web Development",
-    "Next.js & React 19 Applications",
-    "AI & ML Model Integrations",
-    "IoT & Embedded Robotics",
-    "Cloud & RESTful APIs",
-    "Automation & Microservices",
-    "Modern UI/UX Architecture",
-    "Database Systems (SQL & MongoDB)",
   ];
 
   return (
@@ -113,46 +106,44 @@ export default function Footer() {
           </div>
 
           {/* ========================================================= */}
-          {/* COLUMN 2: Navigation Links (2 cols)                       */}
+          {/* COLUMN 2: Navigation Links (2 Columns)                     */}
           {/* ========================================================= */}
-          <div className="lg:col-span-2 flex flex-col">
+          <div className="lg:col-span-4 flex flex-col">
             <h3 className="text-xs font-mono font-bold tracking-widest uppercase text-[#0077ED] mb-4">
               Navigation
             </h3>
-            <ul className="space-y-2.5">
-              {navLinks.map((item) => (
-                <li key={item.label}>
-                  <a
-                    href={item.href}
-                    className="text-xs sm:text-sm text-gray-400 hover:text-[#0077ED] hover:translate-x-1 transition-all duration-200 inline-block"
-                  >
-                    {item.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
+            <div className="grid grid-cols-2 gap-x-6 sm:gap-x-8">
+              <ul className="space-y-2.5">
+                {navColumn1.map((item) => (
+                  <li key={item.label}>
+                    <a
+                      href={item.href}
+                      className="text-xs sm:text-sm text-gray-400 hover:text-[#0077ED] hover:translate-x-1 transition-all duration-200 inline-block"
+                    >
+                      {item.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+              <ul className="space-y-2.5">
+                {navColumn2.map((item) => (
+                  <li key={item.label}>
+                    <a
+                      href={item.href}
+                      className="text-xs sm:text-sm text-gray-400 hover:text-[#0077ED] hover:translate-x-1 transition-all duration-200 inline-block"
+                    >
+                      {item.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
 
+              {/* ========================================================= */}
+          {/* COLUMN 3: Connect & Action Cards (4 cols)                 */}
           {/* ========================================================= */}
-          {/* COLUMN 3: Disciplines / Technical Expertise (3 cols)      */}
-          {/* ========================================================= */}
-          <div className="lg:col-span-3 flex flex-col">
-            <h3 className="text-xs font-mono font-bold tracking-widest uppercase text-[#0077ED] mb-4">
-              Disciplines
-            </h3>
-            <ul className="space-y-2.5">
-              {disciplines.map((item) => (
-                <li key={item} className="text-xs sm:text-sm text-gray-400 hover:text-white transition-colors duration-200 cursor-default">
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* ========================================================= */}
-          {/* COLUMN 4: Connect & Action Cards (3 cols)                 */}
-          {/* ========================================================= */}
-          <div className="lg:col-span-3 flex flex-col space-y-3">
+          <div className="lg:col-span-4 flex flex-col space-y-3">
             {/* Header + Scroll To Top Button */}
             <div className="flex items-center justify-between mb-1">
               <h3 className="text-xs font-mono font-bold tracking-widest uppercase text-[#0077ED]">

@@ -1,9 +1,5 @@
 "use client";
 
-import {
-     Code2,
-     Wrench,
-} from "lucide-react";
 import { profile } from "../data/portfolio-data";
 import Image from "next/image";
 import { useState, useEffect } from "react";
@@ -17,6 +13,13 @@ const heroTechnologies = [
      {
           name: "Next.js 16",
           role: "Framework",
+          posDesktop: "top-[4%] left-[10%]",
+          posMobile: "top-[4%] left-[4%]",
+          floatY: [-14, 8, -14],
+          floatX: [0, 8, 0],
+          rotate: [-3, 4, -3],
+          duration: 4.6,
+          delay: 0,
           icon: (
                <svg className="w-7 h-7 sm:w-8 sm:h-8 text-black dark:text-white" viewBox="0 0 180 180" fill="currentColor">
                     <circle cx="90" cy="90" r="90" fill="currentColor" />
@@ -28,6 +31,13 @@ const heroTechnologies = [
      {
           name: "Python",
           role: "AI & Core",
+          posDesktop: "top-[2%] right-[8%]",
+          posMobile: "top-[2%] right-[6%]",
+          floatY: [12, -10, 12],
+          floatX: [0, -7, 0],
+          rotate: [4, -3, 4],
+          duration: 5.2,
+          delay: 0.3,
           icon: (
                <svg className="w-7 h-7 sm:w-8 sm:h-8" viewBox="0 0 24 24">
                     <path fill="#3776AB" d="M11.927 0C6.074 0 6.444 2.548 6.444 2.548l.006 2.639h5.578v.831H4.218S0 5.56 0 11.458c0 5.898 3.682 5.679 3.682 5.679h2.197v-3.088s-.119-3.682 3.623-3.682h5.548s3.444.059 3.444-3.325V2.548S19.068 0 11.927 0zM8.887 1.838a1.07 1.07 0 1 1 0 2.14 1.07 1.07 0 0 1 0-2.14z"/>
@@ -38,6 +48,13 @@ const heroTechnologies = [
      {
           name: "Node.js",
           role: "Backend",
+          posDesktop: "top-[23%] left-[44%]",
+          posMobile: "top-[34%] left-[40%]",
+          floatY: [-10, 12, -10],
+          floatX: [6, -4, 6],
+          rotate: [-4, 3, -4],
+          duration: 4.1,
+          delay: 0.7,
           icon: (
                <svg className="w-7 h-7 sm:w-8 sm:h-8" viewBox="0 0 24 24" fill="#5FA04E">
                     <path d="M12 2L2 7.773v11.547L12 25l10-5.68V7.773L12 2zm7.986 16.147L12 22.684l-7.986-4.537V8.927L12 4.39l7.986 4.537v9.22z"/>
@@ -47,6 +64,13 @@ const heroTechnologies = [
      {
           name: "PostgreSQL",
           role: "Database",
+          posDesktop: "top-[25%] left-[2%]",
+          posMobile: "top-[34%] left-[6%]",
+          floatY: [14, -8, 14],
+          floatX: [-5, 6, -5],
+          rotate: [3, -5, 3],
+          duration: 4.9,
+          delay: 0.2,
           icon: (
                <svg className="w-7 h-7 sm:w-8 sm:h-8 text-[#336791]" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 14.93V17h-2v-.07A6 6 0 0 1 6.07 13H6v-2h.07A6 6 0 0 1 11 6.07V6h2v.07A6 6 0 0 1 17.93 11H18v2h-.07A6 6 0 0 1 13 16.93zM12 8a4 4 0 1 0 4 4 4 4 0 0 0-4-4z"/>
@@ -56,6 +80,13 @@ const heroTechnologies = [
      {
           name: "TensorFlow",
           role: "Machine Learning",
+          posDesktop: "top-[36%] right-[8%]",
+          posMobile: "top-[34%] right-[6%]",
+          floatY: [-16, 10, -16],
+          floatX: [-7, 5, -7],
+          rotate: [-5, 4, -5],
+          duration: 5.6,
+          delay: 0.5,
           icon: (
                <svg className="w-7 h-7 sm:w-8 sm:h-8 text-[#FF6F00]" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M1.292 5.856L11.54 0v24l-4.095-2.395V7.869L3.35 10.264l-2.058-4.408zm21.416 0l-2.058 4.408-4.095-2.395v13.736L12.46 24V0l10.248 5.856z"/>
@@ -65,6 +96,13 @@ const heroTechnologies = [
      {
           name: "PyTorch",
           role: "Deep Learning",
+          posDesktop: "top-[48%] left-[16%]",
+          posMobile: "top-[66%] left-[10%]",
+          floatY: [10, -12, 10],
+          floatX: [7, -6, 7],
+          rotate: [4, -3, 4],
+          duration: 3.9,
+          delay: 0.8,
           icon: (
                <svg className="w-7 h-7 sm:w-8 sm:h-8 text-[#EE4C2C]" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M12.923 0a11.968 11.968 0 00-2.327.227l2.84 2.84a8.966 8.966 0 011.85-.192c4.958 0 8.992 4.034 8.992 8.992 0 4.958-4.034 8.992-8.992 8.992a8.966 8.966 0 01-8.992-8.992c0-1.85.56-3.57 1.516-5l-2.13-2.13A11.93 11.93 0 00.72 11.867C.72 18.498 6.09 23.867 12.72 23.867c6.63 0 12-5.37 12-12S19.553 0 12.923 0zm2.74 3.738a1.5 1.5 0 100 3 1.5 1.5 0 000-3z"/>
@@ -74,6 +112,13 @@ const heroTechnologies = [
      {
           name: "OpenCV",
           role: "Computer Vision",
+          posDesktop: "top-[58%] right-[20%]",
+          posMobile: "top-[64%] right-[38%]",
+          floatY: [-12, 14, -12],
+          floatX: [-6, 8, -6],
+          rotate: [-3, 5, -3],
+          duration: 4.7,
+          delay: 0.4,
           icon: (
                <svg className="w-7 h-7 sm:w-8 sm:h-8" viewBox="0 0 24 24" fill="none">
                     <circle cx="12" cy="6" r="3.2" stroke="#EA2F29" strokeWidth="2.4"/>
@@ -85,6 +130,13 @@ const heroTechnologies = [
      {
           name: "Docker",
           role: "DevOps",
+          posDesktop: "top-[72%] left-[4%]",
+          posMobile: "top-[68%] right-[6%]",
+          floatY: [14, -10, 14],
+          floatX: [6, -5, 6],
+          rotate: [5, -4, 5],
+          duration: 4.3,
+          delay: 0.9,
           icon: (
                <svg className="w-7 h-7 sm:w-8 sm:h-8 text-[#2496ED]" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M13.983 11.078h2.119a.186.186 0 0 0 .186-.185V9.006a.186.186 0 0 0-.186-.186h-2.119a.185.185 0 0 0-.185.185v1.888c0 .102.083.185.185.185m-2.954-5.43h2.118a.186.186 0 0 0 .186-.186V3.574a.186.186 0 0 0-.186-.185h-2.118a.185.185 0 0 0-.185.185v1.888c0 .102.082.186.185.186zm0 2.716h2.118a.187.187 0 0 0 .186-.186V6.29a.186.186 0 0 0-.186-.185h-2.118a.185.185 0 0 0-.185.185v1.888c0 .102.082.186.185.186zm-2.93 0h2.12a.186.186 0 0 0 .184-.186V6.29a.185.185 0 0 0-.185-.185H8.1a.185.185 0 0 0-.185.185v1.888c0 .102.083.186.185.186zm-2.964 0h2.119a.186.186 0 0 0 .185-.186V6.29a.185.185 0 0 0-.185-.185H5.136a.186.186 0 0 0-.186.185v1.888c0 .102.084.186.186.186zm5.893 2.715h2.119a.186.186 0 0 0 .186-.185V9.006a.186.186 0 0 0-.186-.186h-2.119a.185.185 0 0 0-.185.185v1.888c0 .102.082.185.185.185zm-2.93 0h2.12a.185.185 0 0 0 .184-.185V9.006a.185.185 0 0 0-.184-.186h-2.12a.185.185 0 0 0-.184.186v1.888c0 .102.083.185.185.185zm-2.964 0h2.119a.185.185 0 0 0 .185-.185V9.006a.185.185 0 0 0-.185-.186H5.136a.186.186 0 0 0-.186.185v1.888c0 .102.084.185.186.185zm-2.928 0h2.119a.185.185 0 0 0 .185-.185V9.006a.185.185 0 0 0-.185-.186H2.208a.186.186 0 0 0-.186.186v1.888c0 .102.084.185.186.185zM23.978 11.7a3.486 3.486 0 0 0-1.898-1.574c-.468-.184-.969-.28-1.487-.282a5.577 5.577 0 0 0-1.87.319c-.38-.857-1.049-1.532-1.905-1.916V8.18H1.36a1.36 1.36 0 0 0-1.36 1.36v2.308c0 3.235 1.572 6.069 4.14 7.785 1.765 1.176 3.864 1.867 6.12 1.867 6.46 0 11.967-4.475 13.518-10.42.067-.28.1-.567.1-.856 0-.175-.034-.347-.1-.504z"/>
@@ -94,6 +146,13 @@ const heroTechnologies = [
      {
           name: "GitHub Actions",
           role: "DevOps & CI/CD",
+          posDesktop: "top-[78%] right-[10%]",
+          posMobile: "top-[4%] left-[44%]",
+          floatY: [-10, 12, -10],
+          floatX: [-5, 6, -5],
+          rotate: [-4, 3, -4],
+          duration: 5.4,
+          delay: 0.6,
           icon: (
                <svg className="w-7 h-7 sm:w-8 sm:h-8 text-[#2088FF]" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/>
@@ -364,73 +423,71 @@ export default function Hero() {
                               </ScrollReveal>
                          </div>
                            {/* ==================================================== */}
-                           {/* RIGHT PANEL: Technologies & Languages (Only Bigger Animated Icons) */}
-                           {/* ==================================================== */}
-                           <div className="w-full lg:w-[280px] xl:w-[310px] 2xl:w-[330px] shrink-0 lg:ml-auto flex flex-col lg:self-start translate-y-0 lg:-translate-y-20 xl:-translate-y-28 2xl:-translate-y-32 lg:translate-x-4 xl:translate-x-8 2xl:translate-x-10">
-                                <motion.div initial={{ opacity: 0, x: 25 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.6, delay: 1.5, ease: "easeOut" }} className="w-full">
-                                     <div className="bg-white/[0.05] dark:bg-black/[0.2] backdrop-blur-md border border-black/10 dark:border-white/15 rounded-3xl p-4 sm:p-5 shadow-[0_8px_32px_rgba(0,0,0,0.04)] dark:shadow-[0_8px_32px_rgba(0,0,0,0.3)] hover:border-[#0077ED]/40 transition-all duration-300">
-                                          {/* Card Header */}
-                                          <div className="flex items-center justify-between mb-4 pb-3 border-b border-black/10 dark:border-white/10">
-                                               <div className="flex items-center gap-2">
-                                                    <div className="w-7 h-7 rounded-lg bg-[#0077ED]/15 text-[#0077ED] flex items-center justify-center">
-                                                         <Code2 size={16} />
-                                                    </div>
-                                                    <span className="text-xs font-bold uppercase tracking-wider text-gray-700 dark:text-gray-300">
-                                                         Core Technologies
-                                                    </span>
-                                               </div>
-                                               <span className="text-[11px] font-semibold px-2.5 py-0.5 rounded-full bg-[#0077ED]/15 text-[#0077ED] border border-[#0077ED]/20">
-                                                    Verified Stack
-                                               </span>
-                                          </div>
+                            {/* RIGHT PANEL: Free-Floating Random Tech Icons (No Rigid Box) */}
+                            {/* ==================================================== */}
+                            <div className="w-full lg:w-[320px] xl:w-[380px] 2xl:w-[420px] shrink-0 lg:ml-auto flex flex-col lg:self-start translate-y-0 lg:-translate-y-16 xl:-translate-y-24 2xl:-translate-y-28 lg:translate-x-4 xl:translate-x-8">
+                                 <div className="relative w-full h-[280px] sm:h-[320px] lg:h-[480px] xl:h-[520px]">
+                                      {heroTechnologies.map((item, index) => (
+                                           <motion.div
+                                                key={item.name}
+                                                initial={{ opacity: 0, scale: 0.6 }}
+                                                animate={{
+                                                     opacity: 1,
+                                                     scale: 1,
+                                                     y: item.floatY,
+                                                     x: item.floatX,
+                                                     rotate: item.rotate,
+                                                }}
+                                                transition={{
+                                                     opacity: { duration: 0.5, delay: 1.2 + index * 0.08 },
+                                                     scale: { duration: 0.5, delay: 1.2 + index * 0.08 },
+                                                     y: {
+                                                          duration: item.duration,
+                                                          repeat: Infinity,
+                                                          ease: "easeInOut",
+                                                          delay: item.delay,
+                                                     },
+                                                     x: {
+                                                          duration: item.duration * 1.15,
+                                                          repeat: Infinity,
+                                                          ease: "easeInOut",
+                                                          delay: item.delay * 0.8,
+                                                     },
+                                                     rotate: {
+                                                          duration: item.duration * 1.3,
+                                                          repeat: Infinity,
+                                                          ease: "easeInOut",
+                                                          delay: item.delay * 0.5,
+                                                     },
+                                                }}
+                                                whileHover={{
+                                                     scale: 1.25,
+                                                     zIndex: 50,
+                                                     transition: { duration: 0.2 },
+                                                }}
+                                                className={`absolute ${item.posMobile} lg:${item.posDesktop} group flex items-center justify-center cursor-pointer`}
+                                           >
+                                                {/* Glass Squircle Bubble */}
+                                                <div className="relative w-12 h-12 sm:w-13 sm:h-13 lg:w-14 lg:h-14 rounded-2xl bg-white/80 dark:bg-[#0c121e]/80 backdrop-blur-md border border-black/10 dark:border-white/15 shadow-xl shadow-black/5 dark:shadow-black/40 hover:border-[#0077ED] hover:bg-[#0077ED]/15 hover:shadow-[0_0_25px_rgba(0,119,237,0.4)] flex items-center justify-center p-2.5 transition-colors duration-200">
+                                                     {/* Glowing Hover Halo */}
+                                                     <div className="absolute inset-0 rounded-2xl bg-[#0077ED]/20 opacity-0 group-hover:opacity-100 transition-opacity blur-md pointer-events-none" />
 
-                                          {/* 3x3 Icons Grid: Only Bigger Icons with Subtle Floating Animation & Hover Tooltip */}
-                                          <div className="grid grid-cols-3 gap-2.5 sm:gap-3">
-                                               {heroTechnologies.map((item, index) => (
-                                                    <motion.div
-                                                         key={item.name}
-                                                         initial={{ opacity: 0, scale: 0.8 }}
-                                                         animate={{
-                                                              opacity: 1,
-                                                              scale: 1,
-                                                              y: [0, -3.5, 0],
-                                                         }}
-                                                         transition={{
-                                                              opacity: { duration: 0.4, delay: 1.6 + index * 0.08 },
-                                                              scale: { duration: 0.4, delay: 1.6 + index * 0.08 },
-                                                              y: {
-                                                                   duration: 2.8 + (index % 3) * 0.4,
-                                                                   repeat: Infinity,
-                                                                   ease: "easeInOut",
-                                                                   delay: (index % 3) * 0.3,
-                                                              },
-                                                         }}
-                                                         whileHover={{
-                                                              scale: 1.15,
-                                                              y: -5,
-                                                              transition: { duration: 0.2 },
-                                                         }}
-                                                         className="group relative flex flex-col items-center justify-center aspect-square rounded-2xl bg-white/[0.15] dark:bg-white/[0.04] backdrop-blur-sm border border-black/[0.06] dark:border-white/[0.08] hover:border-[#0077ED]/60 hover:bg-[#0077ED]/15 hover:shadow-lg hover:shadow-[#0077ED]/20 transition-all duration-300 cursor-pointer p-2.5"
-                                                         title={`${item.name} • ${item.role}`}
-                                                    >
-                                                         {/* Glowing background halo on hover */}
-                                                         <div className="absolute inset-0 rounded-2xl bg-[#0077ED]/10 opacity-0 group-hover:opacity-100 transition-opacity blur-sm pointer-events-none" />
+                                                     {/* Tech Icon */}
+                                                     <div className="relative z-10 flex items-center justify-center transition-transform duration-200 group-hover:scale-110">
+                                                          {item.icon}
+                                                     </div>
 
-                                                         {/* Tech Icon (Bigger) */}
-                                                         <div className="relative z-10 flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
-                                                              {item.icon}
-                                                         </div>
-
-                                                         {/* Interactive Floating Tooltip Badge on Hover */}
-                                                         <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 px-2.5 py-1 rounded-lg bg-neutral-900 dark:bg-white text-white dark:text-neutral-900 text-[10px] font-mono font-bold whitespace-nowrap opacity-0 group-hover:opacity-100 group-hover:-translate-y-1 transition-all duration-200 pointer-events-none z-30 shadow-lg shadow-black/20 flex items-center gap-1">
-                                                              <span>{item.name}</span>
-                                                         </div>
-                                                    </motion.div>
-                                               ))}
-                                          </div>
-                                     </div>
-                                </motion.div>
-                           </div>
+                                                     {/* Interactive Floating Tooltip Badge */}
+                                                     <div className="absolute -bottom-9 left-1/2 -translate-x-1/2 px-2.5 py-1 rounded-lg bg-neutral-900/95 dark:bg-white/95 text-white dark:text-neutral-900 text-[11px] font-mono font-bold whitespace-nowrap opacity-0 group-hover:opacity-100 group-hover:-translate-y-1 transition-all duration-200 pointer-events-none z-50 shadow-xl shadow-black/30 border border-white/10 dark:border-black/10 flex items-center gap-1.5">
+                                                          <span>{item.name}</span>
+                                                          <span className="text-[#0077ED] text-[10px]">•</span>
+                                                          <span className="text-gray-400 dark:text-gray-600 text-[10px] font-normal">{item.role}</span>
+                                                     </div>
+                                                </div>
+                                           </motion.div>
+                                      ))}
+                                 </div>
+                            </div>
 
                      </div>
                 </div>
