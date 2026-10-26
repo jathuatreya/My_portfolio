@@ -5,6 +5,7 @@ import { technologies, goals } from '../data/portfolio-data'
 import { useLanguage } from '../context/LanguageContext'
 import { ScrollReveal } from './ScrollReveal'
 import { MagicCard, MagicContainer } from './MagicCard'
+import { getTechIcon } from './tech-icons'
 
 export default function Skills() {
      const { t } = useLanguage()
@@ -12,8 +13,8 @@ export default function Skills() {
      return (
           <>
                {/* --------------------------------------
-             *  TECHNICAL SECTION
-             * -------------------------------------- */}
+              *  TECHNICAL SECTION
+              * -------------------------------------- */}
                <section id="skills" className="py-20 bg-white dark:bg-[#0a0a0a] relative overflow-hidden">
                     <span id="technical-arsenal" className="sr-only" aria-hidden="true">Technical Arsenal</span>
                     <span id="skills-capabilities" className="sr-only" aria-hidden="true">Skills & Capabilities</span>
@@ -156,24 +157,28 @@ export default function Skills() {
 
                          </MagicContainer>
 
-                         {/* Full Tech Cloud */}
+                         {/* Full Tech Cloud with Real Brand & Domain Icons */}
                          <ScrollReveal delay={0.4}>
                               <MagicContainer className="bg-white dark:bg-[#121212] rounded-3xl sm:rounded-4xl p-6 sm:p-12 shadow-md border border-gray-200 dark:border-white/10 text-center">
                                    <h3 className="text-sm sm:text-lg font-bold text-gray-500 dark:text-gray-400 uppercase tracking-widest mb-6 sm:mb-8">
                                         {t.skills.stack_title}
                                    </h3>
 
-                                   <div className="flex flex-wrap justify-center gap-1.5 sm:gap-3">
+                                   <div className="flex flex-wrap justify-center gap-2 sm:gap-3">
                                         {technologies.map((tech, index) => (
                                              <MagicCard
                                                   key={index}
-                                                  className="group flex items-center gap-1.5 px-2.5 py-1.5 sm:px-5 sm:py-3 rounded-md sm:rounded-xl bg-[#F5F5F7] dark:bg-[#1a1a1a] hover:bg-[#e8e8ea] dark:hover:bg-[#222] transition-all"
+                                                  className="group flex items-center gap-2 sm:gap-2.5 px-3 py-2 sm:px-4 sm:py-2.5 rounded-xl sm:rounded-2xl bg-[#F5F5F7] dark:bg-[#161b26] border border-black/5 dark:border-white/5 hover:border-[#0077ED]/40 dark:hover:border-[#0077ED]/40 hover:bg-white dark:hover:bg-[#1a2234] hover:shadow-md transition-all cursor-default"
                                                   disableAnimations={true}
                                                   particleCount={0}
                                                   enableTilt={true}
                                              >
-                                                  <div className="w-1 h-1 sm:w-2 sm:h-2 rounded-full bg-primary/40 group-hover:bg-primary transition-colors"></div>
-                                                  <span className="text-gray-700 dark:text-gray-200 font-bold text-xs sm:text-base">{tech}</span>
+                                                  <div className="flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+                                                       {getTechIcon(tech)}
+                                                  </div>
+                                                  <span className="text-gray-800 dark:text-gray-200 font-semibold text-xs sm:text-sm whitespace-nowrap">
+                                                       {tech}
+                                                  </span>
                                              </MagicCard>
                                         ))}
                                    </div>
@@ -184,8 +189,8 @@ export default function Skills() {
                </section>
 
                {/* --------------------------------------
-             *  FUTURE GOALS SECTION
-             * -------------------------------------- */}
+              *  FUTURE GOALS SECTION
+              * -------------------------------------- */}
                <section id="goals" className="py-20 bg-white dark:bg-[#0a0a0a] relative overflow-hidden">
 
                     <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-primary/10 rounded-full blur-3xl opacity-20 pointer-events-none"></div>

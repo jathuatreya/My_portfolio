@@ -5,6 +5,7 @@ import "./globals.css";
 
 import GlobalToaster from "./components/GlobalToaster";
 import EngagementToast from "./components/EngagementToast";
+import WhatsAppButton from "./components/WhatsAppButton";
 import { LanguageProvider } from "./context/LanguageContext";
 import { profile, projects } from "./data/portfolio-data";
 import { ReactNode } from "react";
@@ -174,6 +175,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <LanguageProvider>
           <GlobalToaster />
           <EngagementToast />
+          <WhatsAppButton />
           {children}
         </LanguageProvider>
 

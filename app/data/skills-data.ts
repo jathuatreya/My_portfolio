@@ -24,6 +24,7 @@ export const technologies = [
   "Spring Boot",
   "Tailwind CSS",
 
+
   "HTML5",
   "CSS3",
 
@@ -31,45 +32,41 @@ export const technologies = [
   "MongoDB",
   "MySQL",
   "PostgreSQL",
+  "Firebase",
 
-  // APIs & Backend
-  "RESTful APIs",
-  "JAX-RS",
-  "Postman",
+
+
 
   // DevOps & Tools
   "Git & GitHub",
   "Docker",
   "VS Code",
-  "npm",
 
   // Machine Learning & AI
   "Machine Learning",
-  "Fine-Tuning Models",
-  "RAG (Retrieval-Augmented Generation) Applications",
+
+  "RAG Applications",
   "OpenCV",
-  "MediaPipe",
+
   "AI Integration",
 
   // IoT & Hardware
   "IoT & Hardware",
   "MicroPython",
-  "Servo Motors",
-  "DC Motors",
-  "Ultrasonic Sensors",
+  "C++",
+  "Arduino IDE",
+  " Sensors",
 
   // Networking
   "Networking",
+  "ROS ",
+  "n8n",
 
-  // Algorithms & CS Concepts
-  "Data Structures & Algorithms",
+
 
   // Robotics & Automation
   "Robotics",
   "Automation",
-
-  "Full-Stack Development",
-  "AI & Robotics Projects",
 ] as const;
 
 // --------------------------------------
