@@ -39,7 +39,7 @@ export default function Blogs() {
             <Navbar />
 
             <main className="pt-32 pb-20 flex-grow">
-                <div className="w-[80%] mx-auto">
+                <div className="w-[92%] sm:w-[88%] lg:w-[82%] xl:w-[80%] mx-auto">
 
                     {/* Header */}
                     <div className="text-center mb-16">

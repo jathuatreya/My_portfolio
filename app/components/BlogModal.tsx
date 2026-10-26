@@ -83,7 +83,7 @@ export default function BlogModal({ blog, onClose, onSelectBlog }: BlogModalProp
           className="relative w-full max-w-4xl max-h-[92vh] bg-white dark:bg-[#0c111d] border border-black/10 dark:border-white/10 rounded-[28px] sm:rounded-[36px] shadow-2xl overflow-hidden flex flex-col z-10"
         >
           {/* Top Sticky Header */}
-          <div className="sticky top-0 z-20 flex items-center justify-between px-5 sm:px-8 py-4 bg-white/90 dark:bg-[#0c111d]/90 backdrop-blur-md border-b border-black/5 dark:border-white/10">
+          <div className="sticky top-0 z-20 flex items-center justify-between px-4 sm:px-8 py-3.5 sm:py-4 bg-white/90 dark:bg-[#0c111d]/90 backdrop-blur-md border-b border-black/5 dark:border-white/10">
             <div className="flex items-center gap-3">
               <span className="px-3 py-1 rounded-full bg-[#0077ED]/10 border border-[#0077ED]/25 text-[#0077ED] text-xs font-mono font-bold uppercase tracking-wider">
                 {blog.category}
@@ -118,7 +118,7 @@ export default function BlogModal({ blog, onClose, onSelectBlog }: BlogModalProp
           </div>
 
           {/* Scrollable Content Body */}
-          <div className="overflow-y-auto px-5 sm:px-8 md:px-12 py-6 sm:py-8 space-y-8 overscroll-contain">
+          <div className="overflow-y-auto px-4 sm:px-8 md:px-12 py-5 sm:py-8 space-y-6 sm:space-y-8 overscroll-contain">
             {/* Hero Cover Image */}
             <div className="relative w-full h-56 sm:h-72 md:h-96 rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl border border-black/5 dark:border-white/10 bg-neutral-900">
               <Image

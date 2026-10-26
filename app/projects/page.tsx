@@ -26,7 +26,7 @@ export default function ProjectsPage() {
                     <div className="absolute top-1/4 -right-32 w-96 h-96 bg-primary/10 rounded-full blur-3xl pointer-events-none" />
                     <div className="absolute bottom-1/3 -left-32 w-96 h-96 bg-primary/10 rounded-full blur-3xl pointer-events-none" />
 
-                    <div className="w-[80%] mx-auto relative z-10">
+                    <div className="w-[92%] sm:w-[88%] lg:w-[82%] xl:w-[80%] mx-auto relative z-10">
                          {/* Breadcrumb Navigation */}
                          <div className="flex items-center gap-2 text-xs font-mono font-medium text-gray-500 dark:text-gray-400 mb-6">
                               <Link href="/" className="hover:text-[#0077ED] transition-colors flex items-center gap-1">
@@ -89,7 +89,7 @@ export default function ProjectsPage() {
                                              animate={{ opacity: 1, y: 0 }}
                                              exit={{ opacity: 0, scale: 0.96 }}
                                              transition={{ duration: 0.45, delay: index * 0.05, ease: "easeOut" }}
-                                             className="w-full rounded-[28px] sm:rounded-[36px] bg-[#FAFBFD] dark:bg-[#101624] border border-black/[0.08] dark:border-white/10 p-6 sm:p-8 lg:p-10 shadow-[0_8px_32px_rgba(0,0,0,0.03)] dark:shadow-[0_12px_40px_rgba(0,0,0,0.35)] hover:border-[#0077ED]/40 dark:hover:border-[#0077ED]/40 hover:shadow-xl transition-all duration-300 group"
+                                             className="w-full rounded-[28px] sm:rounded-[36px] bg-[#FAFBFD] dark:bg-[#101624] border border-black/[0.08] dark:border-white/10 p-4 sm:p-8 lg:p-10 shadow-[0_8px_32px_rgba(0,0,0,0.03)] dark:shadow-[0_12px_40px_rgba(0,0,0,0.35)] hover:border-[#0077ED]/40 dark:hover:border-[#0077ED]/40 hover:shadow-xl transition-all duration-300 group"
                                         >
                                              <div className="flex flex-col lg:flex-row items-stretch gap-8 lg:gap-12 justify-between">
                                                   {/* Left Column: Details & Tech Stack */}

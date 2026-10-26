@@ -12,9 +12,9 @@ export default function ProfileCtaBanner() {
 
   return (
     <section className="py-12 sm:py-16 bg-white dark:bg-[#0a0a0a] transition-colors duration-300 overflow-hidden">
-      <div className="w-[80%] mx-auto">
+      <div className="w-[92%] sm:w-[88%] lg:w-[82%] xl:w-[80%] mx-auto">
         <ScrollReveal>
-          <div className="relative rounded-[28px] sm:rounded-[36px] bg-[#070B16] dark:bg-[#080D1D] border border-white/10 dark:border-white/[0.08] p-7 sm:p-10 lg:p-14 shadow-2xl overflow-hidden group">
+          <div className="relative rounded-[28px] sm:rounded-[36px] bg-[#070B16] dark:bg-[#080D1D] border border-white/10 dark:border-white/[0.08] p-5 sm:p-8 lg:p-14 shadow-2xl overflow-hidden group">
             {/* Soft Ambient Background Glow */}
             <div
               aria-hidden="true"

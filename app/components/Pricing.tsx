@@ -12,9 +12,9 @@ export default function Pricing() {
       <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-primary/10 rounded-full blur-3xl opacity-30 pointer-events-none" />
       <div className="absolute bottom-0 left-1/4 w-[500px] h-[500px] bg-blue-500/10 rounded-full blur-3xl opacity-20 pointer-events-none" />
 
-      <div className="w-[85%] xl:w-[80%] mx-auto relative z-10">
+      <div className="w-[92%] sm:w-[88%] lg:w-[82%] xl:w-[80%] mx-auto relative z-10">
         {/* Section Heading */}
-        <ScrollReveal className="text-center mb-16 sm:mb-20">
+        <ScrollReveal className="text-center mb-14 sm:mb-20">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#F5F5F7] dark:bg-white/5 border border-primary/10 mb-4 shadow-sm">
             <DollarSign size={16} className="text-primary" />
             <span className="text-xs font-bold tracking-[0.15em] text-primary uppercase">
@@ -32,7 +32,7 @@ export default function Pricing() {
         </ScrollReveal>
 
         {/* Pricing Cards Grid */}
-        <MagicContainer className="grid grid-cols-1 lg:grid-cols-3 gap-8 relative z-10 items-stretch">
+        <MagicContainer className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8 relative z-10 items-stretch">
           {pricingPlans.map((plan, index) => {
             const isPopular = plan.popular;
             const whatsappLink = `https://wa.me/94706601734?text=${encodeURIComponent(plan.whatsappMessage)}`;
@@ -40,7 +40,7 @@ export default function Pricing() {
             return (
               <ScrollReveal key={plan.id} delay={index * 0.12} className="h-full">
                 <MagicCard
-                  className={`group relative flex flex-col justify-between rounded-3xl p-7 sm:p-9 transition-all duration-300 h-full backdrop-blur-sm ${
+                  className={`group relative flex flex-col justify-between rounded-3xl p-5 sm:p-7 lg:p-8 transition-all duration-300 h-full backdrop-blur-sm ${
                     isPopular
                       ? "bg-[#FAFBFD] dark:bg-[#0E1526] border-2 border-[#0077ED] shadow-xl shadow-[#0077ED]/15"
                       : "bg-[#FAFBFD] dark:bg-[#111624] border border-black/[0.08] dark:border-white/10 shadow-sm hover:shadow-xl hover:border-[#0077ED]/40"

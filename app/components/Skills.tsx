@@ -23,30 +23,30 @@ export default function Skills() {
                     <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/10 rounded-full blur-3xl opacity-20 pointer-events-none"></div>
                     <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-blue-400/10 rounded-full blur-3xl opacity-20 pointer-events-none"></div>
 
-                    <div className="w-[80%] mx-auto relative z-10">
+                    <div className="w-[92%] sm:w-[88%] lg:w-[82%] xl:w-[80%] mx-auto relative z-10">
                          {/* Heading */}
-                         <ScrollReveal className="text-center mb-16">
+                         <ScrollReveal className="text-center mb-12 sm:mb-16">
                               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#F5F5F7] dark:bg-white/5 border border-primary/10 mb-6 shadow-sm">
                                    <Code2 size={18} className="text-primary" />
                                    <span className="text-sm font-bold tracking-wide text-primary uppercase">{t.skills.logic_tag}</span>
                               </div>
 
-                              <h2 className="text-[#1D1D1F] dark:text-white text-4xl sm:text-5xl font-black tracking-tight mb-6">
+                              <h2 className="text-[#1D1D1F] dark:text-white text-3xl sm:text-5xl font-black tracking-tight mb-4 sm:mb-6">
                                    {t.skills.title}
                               </h2>
 
-                              <p className="text-gray-600 dark:text-gray-300 text-lg sm:text-xl max-w-2xl mx-auto leading-relaxed">
+                              <p className="text-gray-600 dark:text-gray-300 text-base sm:text-xl max-w-2xl mx-auto leading-relaxed">
                                    {t.skills.subtitle}
                               </p>
                          </ScrollReveal>
 
                          {/* Categories Grid - 4 Columns */}
-                         <MagicContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+                         <MagicContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-12">
 
                               {/* Custom Software Development */}
                               <ScrollReveal delay={0.05} className="h-full">
                                    <MagicCard
-                                        className="bg-[#F5F5F7] dark:bg-[#121212] p-7 rounded-3xl h-full shadow-md hover:shadow-xl transition-all flex flex-col justify-between"
+                                        className="bg-[#F5F5F7] dark:bg-[#121212] p-5 sm:p-7 rounded-3xl h-full shadow-md hover:shadow-xl transition-all flex flex-col justify-between"
                                    >
                                         <div>
                                              <div className="w-12 h-12 bg-blue-50 dark:bg-blue-500/10 rounded-2xl flex items-center justify-center mb-6">
@@ -75,7 +75,7 @@ export default function Skills() {
                               {/* Web Development */}
                               <ScrollReveal delay={0.15} className="h-full">
                                    <MagicCard
-                                        className="bg-[#F5F5F7] dark:bg-[#121212] p-7 rounded-3xl h-full shadow-md hover:shadow-xl transition-all flex flex-col justify-between"
+                                        className="bg-[#F5F5F7] dark:bg-[#121212] p-5 sm:p-7 rounded-3xl h-full shadow-md hover:shadow-xl transition-all flex flex-col justify-between"
                                    >
                                         <div>
                                              <div className="w-12 h-12 bg-cyan-50 dark:bg-cyan-500/10 rounded-2xl flex items-center justify-center mb-6">
@@ -103,7 +103,7 @@ export default function Skills() {
 
                               {/* AI & ML */}
                               <ScrollReveal delay={0.25} className="h-full">
-                                   <MagicCard className="bg-[#F5F5F7] dark:bg-[#121212] p-7 rounded-3xl h-full shadow-md hover:shadow-xl transition-all flex flex-col justify-between">
+                                   <MagicCard className="bg-[#F5F5F7] dark:bg-[#121212] p-5 sm:p-7 rounded-3xl h-full shadow-md hover:shadow-xl transition-all flex flex-col justify-between">
                                         <div>
                                              <div className="w-12 h-12 bg-emerald-50 dark:bg-emerald-500/10 rounded-2xl flex items-center justify-center mb-6">
                                                   <Zap className="text-emerald-500 dark:text-emerald-300" size={24} />
@@ -130,7 +130,7 @@ export default function Skills() {
 
                               {/* IoT & Robotics */}
                               <ScrollReveal delay={0.35} className="h-full">
-                                   <MagicCard className="bg-[#F5F5F7] dark:bg-[#121212] p-7 rounded-3xl h-full shadow-md hover:shadow-xl transition-all flex flex-col justify-between">
+                                   <MagicCard className="bg-[#F5F5F7] dark:bg-[#121212] p-5 sm:p-7 rounded-3xl h-full shadow-md hover:shadow-xl transition-all flex flex-col justify-between">
                                         <div>
                                              <div className="w-12 h-12 bg-purple-50 dark:bg-purple-500/10 rounded-2xl flex items-center justify-center mb-6">
                                                   <Cpu className="text-purple-500 dark:text-purple-300" size={24} />
@@ -159,16 +159,16 @@ export default function Skills() {
 
                          {/* Full Tech Cloud with Real Brand & Domain Icons */}
                          <ScrollReveal delay={0.4}>
-                              <MagicContainer className="bg-white dark:bg-[#121212] rounded-3xl sm:rounded-4xl p-6 sm:p-12 shadow-md border border-gray-200 dark:border-white/10 text-center">
+                              <MagicContainer className="bg-white dark:bg-[#121212] rounded-3xl sm:rounded-4xl p-4 sm:p-8 lg:p-12 shadow-md border border-gray-200 dark:border-white/10 text-center">
                                    <h3 className="text-sm sm:text-lg font-bold text-gray-500 dark:text-gray-400 uppercase tracking-widest mb-6 sm:mb-8">
                                         {t.skills.stack_title}
                                    </h3>
 
-                                   <div className="flex flex-wrap justify-center gap-2 sm:gap-3">
+                                   <div className="flex flex-wrap justify-center gap-1.5 sm:gap-3">
                                         {technologies.map((tech, index) => (
                                              <MagicCard
                                                   key={index}
-                                                  className="group flex items-center gap-2 sm:gap-2.5 px-3 py-2 sm:px-4 sm:py-2.5 rounded-xl sm:rounded-2xl bg-[#F5F5F7] dark:bg-[#161b26] border border-black/5 dark:border-white/5 hover:border-[#0077ED]/40 dark:hover:border-[#0077ED]/40 hover:bg-white dark:hover:bg-[#1a2234] hover:shadow-md transition-all cursor-default"
+                                                  className="group flex items-center gap-1.5 sm:gap-2.5 px-2.5 py-1.5 sm:px-4 sm:py-2.5 rounded-xl sm:rounded-2xl bg-[#F5F5F7] dark:bg-[#161b26] border border-black/5 dark:border-white/5 hover:border-[#0077ED]/40 dark:hover:border-[#0077ED]/40 hover:bg-white dark:hover:bg-[#1a2234] hover:shadow-md transition-all cursor-default"
                                                   disableAnimations={true}
                                                   particleCount={0}
                                                   enableTilt={true}
@@ -195,7 +195,7 @@ export default function Skills() {
 
                     <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-primary/10 rounded-full blur-3xl opacity-20 pointer-events-none"></div>
 
-                    <div className="w-[80%] mx-auto relative z-10">
+                    <div className="w-[92%] sm:w-[88%] lg:w-[82%] xl:w-[80%] mx-auto relative z-10">
                          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
                               <ScrollReveal className="flex flex-col">

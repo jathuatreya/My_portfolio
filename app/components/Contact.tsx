@@ -67,7 +67,7 @@ export default function Contact() {
       <div className="absolute top-1/4 -right-32 w-96 h-96 bg-primary/10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-10 -left-32 w-96 h-96 bg-[#0077ED]/15 rounded-full blur-3xl pointer-events-none" />
 
-      <div className="w-[80%] mx-auto relative z-10">
+      <div className="w-[92%] sm:w-[88%] lg:w-[82%] xl:w-[80%] mx-auto relative z-10">
         {/* Section Header */}
         <ScrollReveal className="text-left mb-10 sm:mb-12">
           <div className="flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-widest text-[#0077ED] mb-3">
@@ -84,13 +84,13 @@ export default function Contact() {
 
         {/* Main Unified Contact Card */}
         <ScrollReveal delay={0.15}>
-          <div className="rounded-[28px] sm:rounded-[36px] bg-[#EEF2F6] dark:bg-[#0E1526] border border-black/[0.06] dark:border-white/10 p-3 sm:p-4 lg:p-5 shadow-2xl overflow-hidden">
+          <div className="rounded-[28px] sm:rounded-[36px] bg-[#EEF2F6] dark:bg-[#0E1526] border border-black/[0.06] dark:border-white/10 p-2.5 sm:p-4 lg:p-5 shadow-2xl overflow-hidden">
             <div className="flex flex-col lg:flex-row gap-4 sm:gap-6 lg:gap-8 items-stretch">
               
               {/* ==================================================== */}
               {/* LEFT COLUMN: Dark Info Panel                         */}
               {/* ==================================================== */}
-              <div className="w-full lg:w-[40%] xl:w-[38%] rounded-[24px] sm:rounded-[28px] bg-[#161E2E] dark:bg-[#080C16] text-white p-6 sm:p-8 lg:p-9 flex flex-col justify-between space-y-8 border border-white/5 shadow-xl">
+              <div className="w-full lg:w-[40%] xl:w-[38%] rounded-[24px] sm:rounded-[28px] bg-[#161E2E] dark:bg-[#080C16] text-white p-5 sm:p-7 lg:p-9 flex flex-col justify-between space-y-8 border border-white/5 shadow-xl">
                 <div>
                   <h3 className="text-2xl sm:text-3xl font-extrabold tracking-tight leading-snug text-white">
                     Let&apos;s Build Something{" "}

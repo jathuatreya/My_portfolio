@@ -16,7 +16,7 @@ export default function About() {
                <div className="absolute top-20 right-0 w-72 h-72 bg-primary/10 rounded-full blur-3xl opacity-40 animate-pulse-slow pointer-events-none"></div>
                <div className="absolute bottom-40 left-0 w-64 h-64 bg-primary/15 rounded-full blur-3xl opacity-30 animate-pulse-slower pointer-events-none"></div>
 
-               <div className="w-[80%] mx-auto relative z-10">
+               <div className="w-[92%] sm:w-[88%] lg:w-[82%] xl:w-[80%] mx-auto relative z-10">
                     <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
                          {/* Left Column: Image */}
                          <div className="flex justify-center lg:justify-start lg:col-span-4 w-full">

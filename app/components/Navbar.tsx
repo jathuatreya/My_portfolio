@@ -172,7 +172,7 @@ export default function Navbar() {
             : "bg-transparent border-b border-transparent"
         }`}
       >
-        <div className="w-[80%] mx-auto h-16 sm:h-20 flex items-center justify-between">
+        <div className="w-[92%] sm:w-[88%] lg:w-[82%] xl:w-[80%] mx-auto h-16 sm:h-20 flex items-center justify-between">
           {/* 1. Left: Brand Logo (e.g. Jathushan.) */}
           <Link
             href="/"
@@ -211,13 +211,13 @@ export default function Navbar() {
           </nav>
 
           {/* 3. Right: Circular Theme Toggle + Language + Let's Talk CTA */}
-          <div className="flex items-center gap-2 sm:gap-3">
+          <div className="flex items-center gap-1.5 sm:gap-3">
             {/* Circular Dark / Light Mode Toggle */}
             <button
               type="button"
               onClick={toggleTheme}
               aria-label={isDark ? "Switch to light theme" : "Switch to dark theme"}
-              className="w-10 h-10 rounded-full flex items-center justify-center bg-black/5 dark:bg-white/10 hover:bg-black/10 dark:hover:bg-white/20 text-neutral-700 dark:text-neutral-200 transition-colors cursor-pointer"
+              className="w-9 h-9 sm:w-10 sm:h-10 rounded-full flex items-center justify-center bg-black/5 dark:bg-white/10 hover:bg-black/10 dark:hover:bg-white/20 text-neutral-700 dark:text-neutral-200 transition-colors cursor-pointer"
             >
               {isDark ? (
                 <Sun size={17} strokeWidth={2.2} className="text-amber-400" />
@@ -232,7 +232,7 @@ export default function Navbar() {
                 type="button"
                 onClick={() => setIsLangMenuOpen(!isLangMenuOpen)}
                 aria-label="Change language"
-                className="w-10 h-10 rounded-full flex items-center justify-center bg-black/5 dark:bg-white/10 hover:bg-black/10 dark:hover:bg-white/20 text-neutral-700 dark:text-neutral-200 transition-colors cursor-pointer"
+                className="w-9 h-9 sm:w-10 sm:h-10 rounded-full flex items-center justify-center bg-black/5 dark:bg-white/10 hover:bg-black/10 dark:hover:bg-white/20 text-neutral-700 dark:text-neutral-200 transition-colors cursor-pointer"
               >
                 <Globe size={17} strokeWidth={2} />
               </button>
@@ -268,7 +268,7 @@ export default function Navbar() {
               )}
             </div>
 
-            {/* Let's Talk Pill Button */}
+            {/* Let's Talk Pill Button (Hidden on small mobile where hamburger drawer provides it) */}
             <a
               href="#contact"
               onClick={(e) => {
@@ -278,7 +278,7 @@ export default function Navbar() {
                   setActiveSection("contact");
                 }
               }}
-              className="rounded-full bg-black dark:bg-white text-white dark:text-black hover:bg-neutral-800 dark:hover:bg-neutral-200 px-5 sm:px-6 py-2 sm:py-2.5 text-[14px] sm:text-[15px] font-semibold transition-all shadow-xs cursor-pointer flex items-center justify-center shrink-0"
+              className="hidden sm:inline-flex rounded-full bg-black dark:bg-white text-white dark:text-black hover:bg-neutral-800 dark:hover:bg-neutral-200 px-5 sm:px-6 py-2 sm:py-2.5 text-[14px] sm:text-[15px] font-semibold transition-all shadow-xs cursor-pointer items-center justify-center shrink-0"
             >
               Let's Talk
             </a>
@@ -288,9 +288,9 @@ export default function Navbar() {
               type="button"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               aria-label="Toggle menu"
-              className="lg:hidden w-10 h-10 rounded-full flex items-center justify-center bg-black/5 dark:bg-white/10 hover:bg-black/10 dark:hover:bg-white/20 text-neutral-800 dark:text-neutral-200 transition-colors cursor-pointer"
+              className="lg:hidden w-9 h-9 sm:w-10 sm:h-10 rounded-full flex items-center justify-center bg-black/5 dark:bg-white/10 hover:bg-black/10 dark:hover:bg-white/20 text-neutral-800 dark:text-neutral-200 transition-colors cursor-pointer"
             >
-              {isMobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
+              {isMobileMenuOpen ? <X size={19} /> : <Menu size={19} />}
             </button>
           </div>
         </div>

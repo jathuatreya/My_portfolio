@@ -20,7 +20,7 @@ export default function Projects() {
                <div className="absolute top-1/4 -right-32 w-96 h-96 bg-primary/10 rounded-full blur-3xl pointer-events-none" />
                <div className="absolute bottom-20 -left-32 w-96 h-96 bg-primary/10 rounded-full blur-3xl pointer-events-none" />
 
-               <div className="w-[80%] mx-auto relative z-10">
+               <div className="w-[92%] sm:w-[88%] lg:w-[82%] xl:w-[80%] mx-auto relative z-10">
                     {/* Section Header */}
                     <ScrollReveal className="text-left mb-10 sm:mb-12">
                          <div className="flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-widest text-[#0077ED] mb-3">
@@ -50,7 +50,7 @@ export default function Projects() {
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 items-stretch">
                          {featuredThree.map((project, index) => (
                               <ScrollReveal key={project.id} delay={index * 0.1} className="h-full">
-                                   <div className="h-full rounded-[24px] sm:rounded-[28px] border border-black/[0.08] dark:border-white/10 bg-white dark:bg-[#111624] p-5 sm:p-6 shadow-sm hover:shadow-2xl hover:border-[#0077ED]/40 dark:hover:border-[#0077ED]/40 transition-all duration-300 flex flex-col justify-between group overflow-hidden">
+                                   <div className="h-full rounded-[24px] sm:rounded-[28px] border border-black/[0.08] dark:border-white/10 bg-white dark:bg-[#111624] p-4 sm:p-6 shadow-sm hover:shadow-2xl hover:border-[#0077ED]/40 dark:hover:border-[#0077ED]/40 transition-all duration-300 flex flex-col justify-between group overflow-hidden">
                                         <div>
                                              {/* Top Image Mockup Frame */}
                                              <div className="relative w-full h-[190px] sm:h-[210px] rounded-2xl overflow-hidden border border-black/[0.06] dark:border-white/10 bg-gray-50 dark:bg-black/30 mb-5">

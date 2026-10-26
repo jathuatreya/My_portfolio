@@ -18,14 +18,14 @@ export default function Testimonials() {
 
      return (
           <section id="testimonials" className="py-24 bg-white dark:bg-[#0a0a0a] relative overflow-hidden">
-               <div className="w-[85%] xl:w-[80%] mx-auto relative z-10">
+               <div className="w-[92%] sm:w-[88%] lg:w-[82%] xl:w-[80%] mx-auto relative z-10">
                     {/* Background Ambient Glow Elements */}
                     <div className="absolute -top-24 -left-48 w-96 h-96 bg-primary/10 dark:bg-primary/20 rounded-full blur-3xl opacity-50 pointer-events-none" />
                     <div className="absolute -bottom-32 -right-40 w-96 h-96 bg-primary/10 dark:bg-primary/20 rounded-full blur-3xl opacity-50 pointer-events-none" />
                     <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-blue-300/5 rounded-full blur-3xl opacity-20 pointer-events-none" />
 
                     {/* Section Header */}
-                    <div className="text-center mb-16 sm:mb-20 relative z-10">
+                    <div className="text-center mb-14 sm:mb-20 relative z-10">
                          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#F5F5F7] dark:bg-white/5 border border-primary/10 mb-4 shadow-sm">
                               <MessageSquare size={16} className="text-primary" />
                               <span className="text-xs font-bold tracking-[0.15em] text-primary uppercase">{t.testimonials.tag}</span>
@@ -42,7 +42,7 @@ export default function Testimonials() {
                     <MagicContainer className="grid grid-cols-1 gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-3 relative z-10">
                          {testimonials.map((testimonial, index) => (
                               <ScrollReveal key={index} delay={index * 0.08} className="h-full">
-                                   <MagicCard className="group relative flex flex-col justify-between rounded-2xl sm:rounded-3xl bg-[#FAFBFD] dark:bg-[#111624] border border-black/[0.08] dark:border-white/10 p-6 sm:p-7 shadow-sm hover:shadow-xl hover:border-[#0077ED]/40 dark:hover:border-[#0077ED]/40 transition-all duration-300 h-full backdrop-blur-sm">
+                                   <MagicCard className="group relative flex flex-col justify-between rounded-2xl sm:rounded-3xl bg-[#FAFBFD] dark:bg-[#111624] border border-black/[0.08] dark:border-white/10 p-5 sm:p-7 shadow-sm hover:shadow-xl hover:border-[#0077ED]/40 dark:hover:border-[#0077ED]/40 transition-all duration-300 h-full backdrop-blur-sm">
                                         <div>
                                              {/* Header: Avatar, Name, Role, and Quote Icon */}
                                              <div className="flex items-start justify-between gap-3 mb-5">

@@ -14,9 +14,9 @@ export default function Education() {
                {/* Subtle background flair */}
                <div className="absolute top-0 left-0 w-1/3 h-1/2 bg-primary/5 blur-[120px] pointer-events-none -z-10"></div>
                
-               <div className="w-[85%] xl:w-[80%] mx-auto relative z-10">
+               <div className="w-[92%] sm:w-[88%] lg:w-[82%] xl:w-[80%] mx-auto relative z-10">
                     <ScrollReveal>
-                         <div className="text-center mb-16 sm:mb-20">
+                         <div className="text-center mb-14 sm:mb-20">
                               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#F5F5F7] dark:bg-white/5 border border-primary/10 mb-4 shadow-sm">
                                    <GraduationCap size={16} className="text-primary" />
                                    <span className="text-xs font-bold tracking-[0.15em] text-primary uppercase">Academics</span>
@@ -35,10 +35,10 @@ export default function Education() {
                               {/* Central Vertical Timeline Line (centered on md+, left-aligned on mobile) */}
                               <div 
                                    aria-hidden="true" 
-                                   className="absolute left-4 md:left-1/2 -translate-x-1/2 top-4 bottom-4 w-[2px] bg-gradient-to-b from-[#0077ED] via-[#0077ED]/30 to-transparent pointer-events-none" 
+                                   className="absolute left-3.5 sm:left-4 md:left-1/2 -translate-x-1/2 top-4 bottom-4 w-[2px] bg-gradient-to-b from-[#0077ED] via-[#0077ED]/30 to-transparent pointer-events-none" 
                               />
 
-                              <div className="space-y-12 md:space-y-16">
+                              <div className="space-y-10 sm:space-y-12 md:space-y-16">
                                    {orderedEducation.map((edu, index) => {
                                         const isLeft = index % 2 === 0;
                                         const isCurrent = edu.period.includes("Present");
@@ -46,12 +46,12 @@ export default function Education() {
                                         return (
                                              <div key={edu.id} className="relative">
                                                   {/* Center Timeline Indicator Dot */}
-                                                  <div className="absolute left-4 md:left-1/2 -translate-x-1/2 top-6 w-6 h-6 rounded-full bg-white dark:bg-[#0a0a0a] border-4 border-[#0077ED] flex items-center justify-center shadow-[0_0_14px_rgba(0,119,237,0.4)] z-20 group-hover:scale-125 transition-transform duration-300">
-                                                       <div className="w-2 h-2 bg-[#0077ED] rounded-full"></div>
+                                                  <div className="absolute left-3.5 sm:left-4 md:left-1/2 -translate-x-1/2 top-6 w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-white dark:bg-[#0a0a0a] border-[3px] sm:border-4 border-[#0077ED] flex items-center justify-center shadow-[0_0_14px_rgba(0,119,237,0.4)] z-20 group-hover:scale-125 transition-transform duration-300">
+                                                       <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-[#0077ED] rounded-full"></div>
                                                   </div>
 
                                                   {/* Compact Card Container: Left on even, Right on odd on md+ */}
-                                                  <div className={`w-full pl-10 md:pl-0 md:w-[calc(50%-2.5rem)] lg:md:w-[calc(50%-3rem)] ${isLeft ? 'md:mr-auto' : 'md:ml-auto'}`}>
+                                                  <div className={`w-full pl-8 sm:pl-10 md:pl-0 md:w-[calc(50%-2.5rem)] lg:md:w-[calc(50%-3rem)] ${isLeft ? 'md:mr-auto' : 'md:ml-auto'}`}>
                                                        <ScrollReveal delay={index * 0.15}>
                                                             <div className="group relative">
                                                                  {/* Degree Header Info */}
@@ -88,7 +88,7 @@ export default function Education() {
                                                                  </div>
 
                                                                  {/* Minimized Compact MagicCard matching Professional Journey */}
-                                                                 <MagicCard className="bg-[#FAFBFD] dark:bg-[#111624] border border-black/[0.08] dark:border-white/10 rounded-2xl sm:rounded-3xl p-5 sm:p-6 shadow-sm hover:shadow-xl hover:border-[#0077ED]/40 dark:hover:border-[#0077ED]/40 transition-all duration-300 backdrop-blur-sm">
+                                                                 <MagicCard className="bg-[#FAFBFD] dark:bg-[#111624] border border-black/[0.08] dark:border-white/10 rounded-2xl sm:rounded-3xl p-4 sm:p-6 shadow-sm hover:shadow-xl hover:border-[#0077ED]/40 dark:hover:border-[#0077ED]/40 transition-all duration-300 backdrop-blur-sm">
                                                                       <p className="text-gray-600 dark:text-gray-400 text-xs sm:text-sm leading-relaxed mb-5">
                                                                            {edu.description}
                                                                       </p>
