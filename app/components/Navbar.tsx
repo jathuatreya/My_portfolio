@@ -52,7 +52,9 @@ export default function Navbar() {
   // ScrollSpy & sticky border detection
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      const isHome = window.location.pathname === "/";
+      const scrollThreshold = isHome ? 420 : 20;
+      setIsScrolled(window.scrollY > scrollThreshold);
 
       // If currently on blog pages
       if (window.location.pathname.startsWith("/blogs")) {
