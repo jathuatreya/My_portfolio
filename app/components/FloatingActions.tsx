@@ -47,7 +47,7 @@ export default function FloatingActions() {
   return (
     <div
       aria-label="Floating quick navigation and contact controls"
-      className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-40 flex flex-col items-center gap-2.5 sm:gap-3"
+      className="fixed bottom-14 right-4 sm:bottom-16 sm:right-6 z-40 flex flex-col items-center gap-2.5 sm:gap-3"
     >
       {/* 1. SCROLL TO TOP SQUIRCLE BUTTON */}
       <div
