@@ -40,7 +40,7 @@ export const pricingPlans: PricingPlan[] = [
       "Free Custom Domain Setup & Vercel Deployment",
       "Full Clean Source Code Delivery",
     ],
-    ctaText: "Order Portfolio Website",
+    ctaText: "discuss about this package",
     whatsappMessage:
       "Hi Jathushan, I'm interested in the Portfolio Website package ($150). Let's discuss my requirements!",
   },
@@ -65,7 +65,7 @@ export const pricingPlans: PricingPlan[] = [
       "Offline-Resilient Operation with Cloud Backup",
       "Staff Training & 30 Days Priority Technical Support",
     ],
-    ctaText: "Get POS Application",
+    ctaText: "discuss about this pos",
     whatsappMessage:
       "Hi Jathushan, I want to implement the POS Application package (starting from $200) for my business. Let's talk!",
   },
@@ -90,7 +90,7 @@ export const pricingPlans: PricingPlan[] = [
       "Complete Staging, Quality Assurance & Production Launch",
       "Full Documentation & 90 Days Free Maintenance",
     ],
-    ctaText: "Request Custom Software",
+    ctaText: "discuss about this package",
     whatsappMessage:
       "Hi Jathushan, I have a Custom Software Development project (starting from $450). I'd love to schedule a discussion!",
   },
