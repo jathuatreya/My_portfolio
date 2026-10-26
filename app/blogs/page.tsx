@@ -13,8 +13,8 @@ export default function Blogs() {
         <div className="bg-page-light dark:bg-page-dark text-text-light dark:text-text-dark font-display min-h-screen flex flex-col">
             <Navbar />
 
-            <main className="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
-                <div className="container mx-auto max-w-6xl">
+            <main className="pt-32 pb-20">
+                <div className="w-[80%] mx-auto">
 
                     {/* Header */}
                     <div className="text-center mb-16">

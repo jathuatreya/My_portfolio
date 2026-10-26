@@ -17,11 +17,11 @@ import {
 
 export const profile = {
   name: "Jathushan Varnakulasingam",
-  slogan: "Innovate. Automate. Accelerate.",
+  slogan: "Do the things that excite Me",
   shortBio:
-    "I am a passionate Full-Stack Developer and Tech Entrepreneur, driven by innovation, problem-solving, and building technology that makes a real-world impact.",
-  age: 25,
-  role: "Full-Stack Developer | ML Enthusiast | IoT Innovator | Robotics Explorer",
+    "Freelance Full-Stack Developer and Tech Entrepreneur passionate about building scalable web applications, modern UI/UX, AI solutions, and automated systems that drive real business growth.",
+  age: 26,
+  role: "Full-Stack Developer ",
   roles: [
     "Full-Stack Developer",
     "ML Enthusiast",
@@ -38,9 +38,9 @@ export const profile = {
   location: "Vavuniya, Northern Province, Sri Lanka",
   availability: "Open for freelance & full-time roles",
   portfolioURL: "https://jathushan.dev/",
-  profileImage: "/my_image3.png",
+  profileImage: "/jathushan.png",
   aboutImage: "/jathushan.jpg",
-  resumeURL: "/Jathushan_CV.pdf",
+  resumeURL: "/Jathushan_SE_Dev.pdf",
 
   social: {
     linkedin:
@@ -49,6 +49,7 @@ export const profile = {
     twitter: "https://x.com/jathushanstark",
     facebook: "https://web.facebook.com/imjathushann/",
     instagram: "https://www.instagram.com/im_jathushan/",
+    whatsapp: "https://wa.me/94706601734",
     hackerrank: "https://www.hackerrank.com/profile/jathuatreya",
   },
 
@@ -76,7 +77,8 @@ export const profile = {
 
   contact: {
     email: "imjathushan@gmail.com",
-    phone: "+94 76661734",
+    phone: "+94 706601734",
+    whatsapp: "+94 706601734",
     location: "Vavuniya Town, Northern Province, Sri Lanka",
   },
 } as const;
@@ -697,6 +699,24 @@ export const testimonials = [
     quote:
       "Jathu consistently brings clean code and smart solutions. A great team player with passion for learning.",
   },
+  {
+    name: "Kavinda Wickramasinghe",
+    role: "Tech Lead – Accron Revolutions",
+    quote:
+      "Jathu played a vital role in architecting our core web services and platform ecosystems. His speed, technical insight, and clean coding standards made an immediate impact.",
+  },
+  {
+    name: "Pirashanth M.",
+    role: "Founder – Retail Tech Solutions",
+    quote:
+      "Jathushan built our custom POS and business automation tool with remarkable precision. Communication was effortless, and the delivered platform exceeded our expectations.",
+  },
+  {
+    name: "Dr. Dinesh Fernando",
+    role: "Research Mentor & Academic Supervisor",
+    quote:
+      "His hands-on work integrating intelligent systems with IoT hardware highlights real engineering grit and a problem-solver mindset built for the global industry.",
+  },
 ] as const;
 
 // --------------------------------------
@@ -705,7 +725,9 @@ export const testimonials = [
 
 export const contactInfo = {
   email: "imjathushan@gmail.com",
-  phone: "+94 76661734",
+  phone: "+94 706601734",
+  whatsapp: "+94 706601734",
+  whatsappURL: "https://wa.me/94706601734",
   location: "Vavuniya, Sri Lanka",
   social: {
     linkedin:

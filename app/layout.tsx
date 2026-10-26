@@ -19,10 +19,11 @@ const inter = Inter({
 // ✅ Metadata
 export const metadata: Metadata = {
   title: {
-    default: `${profile.name} | Full-Stack Developer & AI Enthusiast`,
-    template: `%s | ${profile.name} Portfolio`,
+    default: "Jathushan Varnakulasingam | Full-Stack Developer",
+    template: `%s | ${profile.name}`,
   },
-  description: `${profile.name} is a full-stack developer specializing in web development, AI, machine learning, IoT, and modern web systems. View projects and skills.`,
+  description:
+    "Jathushan Varnakulasingam is a Freelance Full-Stack Developer specializing in Next.js, React, Node.js, AI integrations, and smart automation. Delivering high-performance, scalable web solutions worldwide.",
   keywords: [
     "Full-Stack Developer Vavuniya",
     "Software Engineer Sri Lanka",
@@ -74,8 +75,9 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_LK",
     url: profile.portfolioURL,
-    title: `${profile.name} | Top Full-Stack Developer & AI Innovator in Vavuniya, Sri Lanka`,
-    description: `Expert Full-Stack Developer & AI Solutions Architect in Vavuniya, Sri Lanka. Specializing in high-performance Web Systems, IoT, and Machine Learning.`,
+    title: "Jathushan Varnakulasingam | Full-Stack Developer",
+    description:
+      "Freelance Full-Stack Developer specializing in Next.js, React, Node.js, AI integrations, and smart automation. Delivering high-performance digital products for clients worldwide.",
     siteName: `${profile.name} Portfolio`,
     images: [
       {
@@ -94,8 +96,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `${profile.name} | Software Engineer & Tech Visionary`,
-    description: `Building the next generation of AI and IoT solutions from Vavuniya, Sri Lanka.`,
+    title: "Jathushan Varnakulasingam | Full-Stack Developer",
+    description:
+      "Freelance Full-Stack Developer specializing in Next.js, React, Node.js, AI integrations, and smart automation.",
     images: ["/jathushan.jpg"],
     creator: "@jathushanstark",
   },
@@ -148,6 +151,25 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     <html lang="en" suppressHydrationWarning>
       <head>
         <link rel="alternate" hrefLang="en" href={profile.portfolioURL} />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                try {
+                  var saved = localStorage.getItem('theme');
+                  var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                  if (saved === 'dark' || (!saved && prefersDark)) {
+                    document.documentElement.classList.add('dark');
+                    document.documentElement.classList.remove('light');
+                  } else {
+                    document.documentElement.classList.remove('dark');
+                    document.documentElement.classList.add('light');
+                  }
+                } catch(e) {}
+              })();
+            `,
+          }}
+        />
       </head>
       <body className={`${inter.variable} font-sans antialiased`}>
         <LanguageProvider>

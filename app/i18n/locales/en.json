@@ -13,15 +13,15 @@
           "download_cv": "Download CV"
      },
      "hero": {
-          "greeting": "Hi, I'm",
+          "greeting": "Hi 👋, I'm",
           "role_prefix": "I'm a",
-          "description": "Full-stack developer from Vavuniya, Sri Lanka, passionate about merging AI, IoT, and modern web technologies to build simple, minimal, and meaningful interactive digital solutions for the global market."
+          "description": "Freelance Full-Stack Developer specializing in high-performance web systems, modern UI/UX, AI integrations, and smart automation. Crafting fast, scalable digital products for forward-thinking clients worldwide."
      },
      "about": {
           "tag": "My Story",
           "title": "About Me",
-          "slogan": "Innovate. Automate. Accelerate.",
-          "description": "I'm Jathu. I'm working at Accron Revolutions as a full-stack developer, and I study BSc Hons Computer Science at the Informatics Institute of Technology, affiliated with the University of Westminster, UK.",
+          "slogan": "Do the things that excite me",
+          "description": "I'm Jathushan, a Freelance Full-Stack Developer & Tech Entrepreneur with 3+ years of experience delivering robust web platforms, automated workflows, and intelligent software solutions. Currently pursuing BSc (Hons) Computer Science at the University of Westminster (IIT), I partner with businesses, startups, and founders worldwide to transform ambitious ideas into polished, high-converting digital products.",
           "stats": {
                "experience": "Years Self-taught Experience",
                "projects": "Completed Projects",

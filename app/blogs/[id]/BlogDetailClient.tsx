@@ -113,7 +113,7 @@ export default function BlogDetailClient({ blog }: { blog: BlogPost | null }) {
 
                <main className="relative pt-24 pb-20">
                     {/* Contained Hero Section */}
-                    <div className="container mx-auto px-4 lg:px-8 max-w-6xl mt-8 mb-16">
+                    <div className="w-[80%] mx-auto mt-8 mb-16">
                          <div className="relative w-full h-[60vh] min-h-[400px] rounded-[32px] overflow-hidden group shadow-2xl">
                               {/* Background Image with Overlay */}
                               <div className="absolute inset-0 w-full h-full">
@@ -166,7 +166,7 @@ export default function BlogDetailClient({ blog }: { blog: BlogPost | null }) {
                          </div>
                     </div>
 
-                    <div className="container mx-auto px-4 lg:px-8 max-w-5xl">
+                    <div className="w-[80%] mx-auto">
                          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
 
                               {/* Sidebar / Share (Desktop) */}
@@ -254,7 +254,7 @@ export default function BlogDetailClient({ blog }: { blog: BlogPost | null }) {
                     </div>
 
                     {/* Next Article Navigation */}
-                    <div className="container mx-auto px-6 max-w-4xl mt-24">
+                    <div className="w-[80%] mx-auto mt-24">
                          <motion.div
                               initial={{ opacity: 0, y: 20 }}
                               whileInView={{ opacity: 1, y: 0 }}

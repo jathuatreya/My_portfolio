@@ -80,7 +80,7 @@ export default function Projects() {
                     <div className="absolute bottom-20 -left-20 w-60 h-60 bg-primary/10 rounded-full blur-3xl opacity-30 pointer-events-none"></div>
 
                     {/* 🔥 Header */}
-                    <div className="container mx-auto max-w-6xl 3xl:max-w-[80rem] 4k:max-w-[100rem] relative z-10 px-4 mb-12">
+                    <div className="w-[80%] mx-auto relative z-10 mb-12">
                          <div className="text-center">
                               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#F5F5F7] dark:bg-white/5 border border-primary/10 mb-4 shadow-sm">
                                    <Layers size={16} className="text-primary" />
@@ -98,7 +98,7 @@ export default function Projects() {
                     </div>
 
                     {/* 🔥 Carousel Container */}
-                    <div className="container mx-auto max-w-7xl 3xl:max-w-[96rem] 4k:max-w-[120rem] px-4 relative">
+                    <div className="w-[80%] mx-auto relative">
                          {/* Card Container with Shadows */}
                          <div
                               ref={containerRef}

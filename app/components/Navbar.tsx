@@ -1,446 +1,328 @@
 "use client";
 
-import { Menu, Globe, ChevronDown } from "lucide-react";
-import Link from "next/link";
-import { navItems, profile } from "../data/portfolio-data";
 import { useState, useEffect } from "react";
-import { toast } from "../utils/toast";
+import Link from "next/link";
+import { Moon, Sun, Globe, Menu, X } from "lucide-react";
+import { profile } from "../data/portfolio-data";
 import { useLanguage, Language } from "../context/LanguageContext";
+import { toast } from "../utils/toast";
 
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isLangMenuOpen, setIsLangMenuOpen] = useState(false);
-  const [isSystemDark, setIsSystemDark] = useState(false);
+  const [isDark, setIsDark] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
+  const [isScrolled, setIsScrolled] = useState(false);
 
   const { t, language, setLanguage } = useLanguage();
-  const [isOtherMenuOpen, setIsOtherMenuOpen] = useState(false);
 
-  // Detect system theme changes
+  // Initialize theme based on localStorage or system preference
   useEffect(() => {
-    // Check if window is defined (client-side)
     if (typeof window !== "undefined") {
-      const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
-      // Set initial value
-      setIsSystemDark(mediaQuery.matches);
+      const savedTheme = localStorage.getItem("theme");
+      const systemPrefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      const shouldBeDark = savedTheme ? savedTheme === "dark" : systemPrefersDark;
 
-      // Create event listener
-      const handleChange = (e: MediaQueryListEvent) => {
-        setIsSystemDark(e.matches);
-      };
-
-      // Add event listener
-      mediaQuery.addEventListener("change", handleChange);
-
-      // Cleanup
-      return () => {
-        mediaQuery.removeEventListener("change", handleChange);
-      };
+      setIsDark(shouldBeDark);
+      if (shouldBeDark) {
+        document.documentElement.classList.add("dark");
+        document.documentElement.classList.remove("light");
+      } else {
+        document.documentElement.classList.remove("dark");
+        document.documentElement.classList.add("light");
+      }
     }
   }, []);
 
-  // ScrollSpy for Active Section
+  // Theme toggle handler
+  const toggleTheme = () => {
+    const nextDark = !isDark;
+    setIsDark(nextDark);
+    if (nextDark) {
+      document.documentElement.classList.add("dark");
+      document.documentElement.classList.remove("light");
+      localStorage.setItem("theme", "dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+      document.documentElement.classList.add("light");
+      localStorage.setItem("theme", "light");
+    }
+  };
+
+  // ScrollSpy & sticky border detection
   useEffect(() => {
     const handleScroll = () => {
-      const sections = navItems.map((item) => item.id);
-      const scrollPosition = window.scrollY + 100; // Offset for navbar height
+      setIsScrolled(window.scrollY > 20);
 
-      for (const section of sections) {
-        const element = document.getElementById(section);
-        if (element) {
-          const offsetTop = element.offsetTop;
-          const offsetHeight = element.offsetHeight;
+      // If currently on blog pages
+      if (window.location.pathname.startsWith("/blogs")) {
+        setActiveSection("blogs");
+        return;
+      }
 
-          if (
-            scrollPosition >= offsetTop &&
-            scrollPosition < offsetTop + offsetHeight
-          ) {
-            setActiveSection(section);
-            return;
-          }
+      const sections = [
+        "home",
+        "about",
+        "experience",
+        "education",
+        "skills",
+        "services",
+        "projects",
+        "testimonials",
+        "contact",
+      ];
+      const scrollPosition = window.scrollY + 140;
+
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const sectionId = sections[i];
+        const el = document.getElementById(sectionId);
+        if (el && scrollPosition >= el.offsetTop) {
+          setActiveSection(sectionId);
+          return;
         }
+      }
+
+      if (window.scrollY < 200) {
+        setActiveSection("home");
       }
     };
 
-    window.addEventListener("scroll", handleScroll);
-    handleScroll(); // Initial check
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const toggleLanguage = (lang: Language) => {
-    setLanguage(lang);
-    setIsLangMenuOpen(false);
+  const languages: { code: Language; name: string }[] = [
+    { code: "en", name: "English" },
+    { code: "ta", name: "தமிழ்" },
+    { code: "si", name: "සිංහල" },
+  ];
+
+  // Navigation items matching Jathushan's portfolio sections in exact page order
+  const desktopNavItems: { id: string; label: string; href: string; external?: boolean }[] = [
+    { id: "home", label: t.nav.home || "Home", href: "/#home" },
+    { id: "about", label: t.nav.about === "About Me" ? "About" : (t.nav.about || "About"), href: "/#about" },
+    { id: "experience", label: t.nav.experience || "Experience", href: "/#experience" },
+    { id: "education", label: t.nav.education || "Education", href: "/#education" },
+    { id: "skills", label: "Skills", href: "/#skills" },
+    { id: "services", label: t.nav.services || "Services", href: "/#services" },
+    { id: "projects", label: t.nav.projects || "Projects", href: "/#projects" },
+    { id: "testimonials", label: t.nav.testimonials || "Testimonials", href: "/#testimonials" },
+    { id: "blogs", label: t.nav.blogs === "Blogs" ? "Blog" : (t.nav.blogs || "Blog"), href: "/blogs" },
+  ];
+
+  // Mobile navigation drawer links
+  const mobileNavItems = desktopNavItems;
+
+  const handleNavClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    item: { id: string; href: string; external?: boolean }
+  ) => {
+    if (item.external) return;
+
+    if (item.href.includes("#")) {
+      const targetId = item.id;
+      const element = document.getElementById(targetId);
+
+      if (element && window.location.pathname === "/") {
+        e.preventDefault();
+        element.scrollIntoView({ behavior: "smooth" });
+        setActiveSection(targetId);
+      }
+    }
   };
-
-  const langLabels = {
-    en: "English",
-    ta: "தமிழ்",
-    si: "සිංහල",
-  };
-
-  // Theme-based classes
-  const navBarClasses = `mx-auto px-2 md:px-4 sm:px-6 lg:px-8 max-w-7xl 3xl:max-w-[96rem] 4k:max-w-[120rem]`;
-
-  const navContainerClasses = `flex items-center justify-between rounded-2xl transition-all duration-300 ${
-    isSystemDark
-      ? "bg-[#1a1a1a]/95 backdrop-blur-sm border border-gray-800 shadow-[0_8px_32px_rgba(0,0,0,0.36)]"
-      : "bg-[#F5F5F7]/95 backdrop-blur-sm border border-gray-100 shadow-[0_8px_32px_rgba(0,0,0,0.08)]"
-  } p-2 md:p-4`;
-
-  const logoTextClasses = `text-xl font-bold tracking-tight transition-colors duration-300 ${isSystemDark ? "text-gray-100" : "text-gray-900"}`;
-
-  const navLinkClasses = (itemId: string) =>
-    `text-sm font-medium transition-all duration-300 ${
-      activeSection === itemId
-        ? "text-primary font-bold"
-        : isSystemDark
-          ? "text-gray-300 hover:text-primary hover:font-bold"
-          : "text-gray-700 hover:text-primary hover:font-bold"
-    }`;
-
-  const downloadCVClasses = `flex cursor-pointer items-center justify-center overflow-hidden rounded-lg text-sm font-bold shadow-sm ring-1 ring-inset transition-all duration-300 px-5 py-2.5 mr-2 ${
-    isSystemDark
-      ? "bg-[#2a2a2a] text-gray-200 ring-white/10 hover:bg-white/10"
-      : "bg-white text-gray-800 ring-black/10 hover:bg-black/5"
-  }`;
-
-  const languageButtonClasses = `flex h-10 w-10 md:w-auto md:px-3 cursor-pointer items-center justify-center gap-2 rounded-lg shadow-sm ring-1 ring-inset transition-all duration-300 ${
-    isSystemDark
-      ? "bg-[#2a2a2a] text-gray-200 ring-white/10 hover:bg-white/10"
-      : "bg-white text-gray-800 ring-black/10 hover:bg-black/5"
-  }`;
-
-  const mobileMenuButtonClasses = `lg:hidden flex h-10 w-10 cursor-pointer items-center justify-center overflow-hidden rounded-lg shadow-sm ring-1 ring-inset transition-colors duration-300 ${
-    isSystemDark
-      ? "bg-[#2a2a2a] text-gray-200 ring-white/10 hover:bg-white/10"
-      : "bg-white text-gray-800 ring-black/10 hover:bg-black/5"
-  }`;
-
-  const mobileMenuClasses = `lg:hidden fixed top-20 left-2 right-2 sm:left-6 sm:right-6 rounded-2xl shadow-xl z-50 transition-all duration-300 transform origin-top max-h-[80vh] overflow-y-auto ${
-    isMobileMenuOpen
-      ? "opacity-100 scale-100 translate-y-0"
-      : "opacity-0 scale-95 -translate-y-4 pointer-events-none"
-  } ${
-    isSystemDark
-      ? "bg-[#1a1a1a] border border-gray-800 shadow-[0_8px_32px_rgba(0,0,0,0.36)]"
-      : "bg-white border border-gray-100 shadow-[0_8px_32px_rgba(0,0,0,0.12)]"
-  }`;
-
-  // Also update mobile menu item highlighting
-  const mobileMenuItemClasses = (itemId: string) =>
-    `flex items-center justify-between p-3 rounded-xl text-base font-medium transition-all duration-300 ${
-      activeSection === itemId
-        ? "bg-primary/10 text-primary font-bold"
-        : isSystemDark
-          ? "text-gray-300 hover:bg-white/5 hover:text-primary hover:font-bold"
-          : "text-gray-700 hover:bg-black/5 hover:text-primary hover:font-bold"
-    }`;
-
-  const mobileCVButtonClasses = `flex h-10 cursor-pointer items-center justify-center rounded-lg text-sm font-bold shadow-sm transition-colors duration-300 ${
-    isSystemDark
-      ? "bg-[#2a2a2a] text-gray-200 hover:bg-white/10"
-      : "bg-[#F5F5F7] text-gray-800 hover:bg-black/5"
-  }`;
 
   return (
     <>
-      {/* Fixed floating navbar */}
-      <nav className="fixed top-5 left-0 right-0 z-50 w-full">
-        {/* Subtle background glow that adapts to theme */}
-        <div
-          className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-1/2 h-24 rounded-full blur-3xl pointer-events-none -z-10 transition-colors duration-300 ${
-            isSystemDark ? "bg-primary/10" : "bg-primary/15"
-          }`}
-        ></div>
+      <header
+        className={`fixed top-0 left-0 right-0 z-50 w-full transition-all duration-300 ${
+          isScrolled
+            ? "bg-white/80 dark:bg-[#0a0a0a]/80 backdrop-blur-md border-b border-black/[0.06] dark:border-white/[0.08] shadow-xs"
+            : "bg-white/60 dark:bg-[#0a0a0a]/60 backdrop-blur-sm border-b border-black/[0.03] dark:border-white/[0.04]"
+        }`}
+      >
+        <div className="w-[80%] mx-auto h-16 sm:h-20 flex items-center justify-between">
+          {/* 1. Left: Brand Logo (e.g. Jathushan.) */}
+          <Link
+            href="/"
+            className="flex items-center text-xl sm:text-2xl font-bold tracking-tight text-neutral-900 dark:text-white transition-opacity hover:opacity-90 shrink-0"
+          >
+            <span>Jathushan</span>
+            <span className="text-[#0077ED] font-black text-2xl leading-none">.</span>
+          </Link>
 
-        <div className={navBarClasses}>
-          <div className={navContainerClasses}>
-            <Link className="flex items-center gap-3 shrink-0" href="/">
-              <div className="size-8 text-primary">
-                <svg
-                  fill="none"
-                  viewBox="0 0 48 48"
-                  xmlns="http://www.w3.org/2000/svg"
+          {/* 2. Center: Navigation Links with Soft Pill Highlight */}
+          <nav className="hidden lg:flex items-center gap-0.5 xl:gap-1.5">
+            {desktopNavItems.map((item) => {
+              const isActive = activeSection === item.id;
+              return (
+                <a
+                  key={item.id}
+                  href={item.href}
+                  onClick={(e) => handleNavClick(e, item)}
+                  className={`px-2.5 xl:px-3.5 py-1.5 text-[14px] xl:text-[16px] font-medium transition-all duration-200 rounded-full ${
+                    isActive
+                      ? "bg-black/5 dark:bg-white/10 text-neutral-900 dark:text-white font-semibold"
+                      : "text-neutral-500 hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-white hover:bg-black/[0.02] dark:hover:bg-white/[0.05]"
+                  }`}
                 >
-                  <path
-                    clipRule="evenodd"
-                    d="M24 4H42V17.3333V30.6667H24V44H6V30.6667V17.3333H24V4Z"
-                    fill="currentColor"
-                    fillRule="evenodd"
-                  ></path>
-                </svg>
-              </div>
-              <h1 className={logoTextClasses}>
-                <span className="sm:hidden">{profile.name.split(" ")[0]}</span>
-                <span className="hidden sm:block">{profile.name}</span>
-              </h1>
-            </Link>
-            <nav className="hidden lg:flex items-center gap-8">
-              {navItems
-                .filter((item) =>
-                  [
-                    "home",
-                    "about",
-                    "services",
-                    "projects",
-                    "contact",
-                    "blogs",
-                  ].includes(item.id),
-                )
-                .map((item) => (
-                  <a
-                    key={item.id}
-                    className={navLinkClasses(item.id)}
-                    href={item.href}
-                    onClick={(e) => {
-                      if (item.href.includes("#")) {
-                        e.preventDefault();
-                        const element = document.getElementById(item.id);
-                        if (element) {
-                          element.scrollIntoView({ behavior: "smooth" });
-                          setActiveSection(item.id);
-                        } else {
-                          window.location.href = item.href;
-                        }
-                      }
-                    }}
-                  >
-                    {t.nav[item.id as keyof typeof t.nav] || item.label}
-                  </a>
-                ))}
+                  {item.label}
+                </a>
+              );
+            })}
+          </nav>
 
-              {/* Dynamic "Other" Dropdown */}
-              <div
-                className="relative"
-                onMouseEnter={() => setIsOtherMenuOpen(true)}
-                onMouseLeave={() => setIsOtherMenuOpen(false)}
+          {/* 3. Right: Circular Theme Toggle + Language + Let's Talk CTA */}
+          <div className="flex items-center gap-2 sm:gap-3">
+            {/* Circular Dark / Light Mode Toggle */}
+            <button
+              type="button"
+              onClick={toggleTheme}
+              aria-label={isDark ? "Switch to light theme" : "Switch to dark theme"}
+              className="w-10 h-10 rounded-full flex items-center justify-center bg-black/5 dark:bg-white/10 hover:bg-black/10 dark:hover:bg-white/20 text-neutral-700 dark:text-neutral-200 transition-colors cursor-pointer"
+            >
+              {isDark ? (
+                <Sun size={17} strokeWidth={2.2} className="text-amber-400" />
+              ) : (
+                <Moon size={17} strokeWidth={2.2} className="text-neutral-700" />
+              )}
+            </button>
+
+            {/* Circular Language Selector */}
+            <div className="relative">
+              <button
+                type="button"
+                onClick={() => setIsLangMenuOpen(!isLangMenuOpen)}
+                aria-label="Change language"
+                className="w-10 h-10 rounded-full flex items-center justify-center bg-black/5 dark:bg-white/10 hover:bg-black/10 dark:hover:bg-white/20 text-neutral-700 dark:text-neutral-200 transition-colors cursor-pointer"
               >
-                <button
-                  className={`flex items-center gap-1 py-2 transition-colors duration-300 ${
-                    isOtherMenuOpen ||
-                    activeSection === "experience" ||
-                    activeSection === "education"
-                      ? "text-primary font-bold"
-                      : navLinkClasses(
-                          activeSection === "education"
-                            ? "education"
-                            : activeSection === "experience"
-                              ? "experience"
-                              : "other",
-                        )
-                  }`}
-                  onClick={() => setIsOtherMenuOpen(!isOtherMenuOpen)}
-                >
-                  {activeSection === "education"
-                    ? t.nav.education
-                    : activeSection === "experience"
-                      ? t.nav.experience
-                      : t.nav.other}
-                  <ChevronDown
-                    size={14}
-                    className={`transition-transform duration-300 ${isOtherMenuOpen ? "rotate-180" : ""}`}
-                  />
-                </button>
+                <Globe size={17} strokeWidth={2} />
+              </button>
 
-                {/* Dropdown Menu with bridging padding */}
-                <div
-                  className={`absolute left-0 pt-2 w-40 z-20 transition-all duration-300 ${
-                    isOtherMenuOpen
-                      ? "opacity-100 scale-100 translate-y-0"
-                      : "opacity-0 scale-95 -translate-y-2 pointer-events-none"
-                  }`}
-                >
+              {isLangMenuOpen && (
+                <>
                   <div
-                    className={`rounded-xl shadow-xl ring-1 overflow-hidden py-1 ${
-                      isSystemDark
-                        ? "bg-[#1a1a1a] border border-gray-800 ring-white/10"
-                        : "bg-[#F5F5F7] border border-gray-100 ring-black/5"
-                    }`}
-                  >
-                    {["experience", "education"].map((id) => (
+                    className="fixed inset-0 z-10"
+                    onClick={() => setIsLangMenuOpen(false)}
+                  />
+                  <div className="absolute right-0 mt-2 w-32 origin-top-right rounded-2xl shadow-xl ring-1 ring-black/5 dark:ring-white/10 z-20 overflow-hidden py-1.5 bg-white dark:bg-[#1a1a1a] backdrop-blur-md">
+                    {languages.map((lang) => (
                       <button
-                        key={id}
+                        key={lang.code}
                         onClick={() => {
-                          const element = document.getElementById(id);
-                          if (element) {
-                            element.scrollIntoView({ behavior: "smooth" });
-                            setActiveSection(id);
-                            setIsOtherMenuOpen(false);
-                          }
+                          setLanguage(lang.code);
+                          setIsLangMenuOpen(false);
                         }}
-                        className={`w-full text-left px-4 py-2 text-sm flex items-center gap-2 transition-all duration-300 ${
-                          activeSection === id
-                            ? "bg-primary/10 text-primary font-bold"
-                            : isSystemDark
-                              ? "text-gray-300 hover:bg-white/5 hover:text-primary hover:font-bold"
-                              : "text-gray-700 hover:bg-[#F5F5F7] hover:text-primary hover:font-bold"
+                        className={`w-full text-left px-4 py-2 text-xs font-semibold flex items-center justify-between transition-colors ${
+                          language === lang.code
+                            ? "bg-[#0077ED]/10 text-[#0077ED]"
+                            : "text-neutral-700 dark:text-neutral-300 hover:bg-black/5 dark:hover:bg-white/5"
                         }`}
                       >
-                        {t.nav[id as keyof typeof t.nav]}
+                        <span>{lang.name}</span>
+                        {language === lang.code && (
+                          <span className="w-1.5 h-1.5 rounded-full bg-[#0077ED]" />
+                        )}
                       </button>
                     ))}
                   </div>
-                </div>
-              </div>
-            </nav>
-            <div className="flex items-center gap-2">
-              <div className="hidden md:flex items-center gap-2">
-                <a
-                  href={profile.resumeURL}
-                  download="Jathushan_SE_CV.pdf"
-                  onClick={() =>
-                    toast.success(
-                      "Thanks for downloading my CV! Let's connect.",
-                    )
-                  }
-                  className={downloadCVClasses}
-                >
-                  <span className="truncate">{t.nav.download_cv}</span>
-                </a>
-              </div>
-
-              {/* Language Switcher Desktop */}
-              <div className="relative">
-                <button
-                  onClick={() => setIsLangMenuOpen(!isLangMenuOpen)}
-                  className={languageButtonClasses}
-                >
-                  <Globe size={20} />
-                  <span className="hidden md:block text-sm font-bold uppercase">
-                    {language}
-                  </span>
-                  <ChevronDown
-                    size={14}
-                    className="hidden md:block opacity-50"
-                  />
-                </button>
-
-                {isLangMenuOpen && (
-                  <>
-                    <div
-                      className="fixed inset-0 z-10"
-                      onClick={() => setIsLangMenuOpen(false)}
-                    ></div>
-                    <div
-                      className={`absolute right-0 mt-2 w-32 origin-top-right rounded-xl shadow-xl ring-1 z-20 overflow-hidden py-1 transition-colors duration-300 ${
-                        isSystemDark
-                          ? "bg-[#1a1a1a] border border-gray-800 ring-white/10"
-                          : "bg-[#F5F5F7] border border-gray-100 ring-black/5"
-                      }`}
-                    >
-                      {(Object.keys(langLabels) as Language[]).map((lang) => (
-                        <button
-                          key={lang}
-                          onClick={() => toggleLanguage(lang)}
-                          className={`w-full text-left px-4 py-2 text-sm flex items-center gap-2 transition-colors duration-300 ${
-                            language === lang
-                              ? "bg-primary/10 text-primary font-bold"
-                              : isSystemDark
-                                ? "text-gray-300 hover:bg-white/5"
-                                : "text-gray-700 hover:bg-[#F5F5F7]"
-                          }`}
-                        >
-                          {langLabels[lang]}
-                        </button>
-                      ))}
-                    </div>
-                  </>
-                )}
-              </div>
-
-              <button
-                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className={mobileMenuButtonClasses}
-              >
-                <Menu size={24} />
-              </button>
+                </>
+              )}
             </div>
+
+            {/* Let's Talk Pill Button */}
+            <a
+              href="#contact"
+              onClick={(e) => {
+                if (window.location.pathname === "/") {
+                  e.preventDefault();
+                  document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+                  setActiveSection("contact");
+                }
+              }}
+              className="rounded-full bg-black dark:bg-white text-white dark:text-black hover:bg-neutral-800 dark:hover:bg-neutral-200 px-5 sm:px-6 py-2 sm:py-2.5 text-[14px] sm:text-[15px] font-semibold transition-all shadow-xs cursor-pointer flex items-center justify-center shrink-0"
+            >
+              Let's Talk
+            </a>
+
+            {/* Mobile Hamburger Button */}
+            <button
+              type="button"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              aria-label="Toggle menu"
+              className="lg:hidden w-10 h-10 rounded-full flex items-center justify-center bg-black/5 dark:bg-white/10 hover:bg-black/10 dark:hover:bg-white/20 text-neutral-800 dark:text-neutral-200 transition-colors cursor-pointer"
+            >
+              {isMobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
+            </button>
           </div>
         </div>
-      </nav>
+      </header>
 
       {/* Mobile Menu Overlay */}
       {isMobileMenuOpen && (
-        <div
-          className="fixed inset-0 bg-black/50 z-40 lg:hidden backdrop-blur-sm transition-opacity duration-300"
-          onClick={() => setIsMobileMenuOpen(false)}
-        />
-      )}
-
-      {/* Mobile Menu */}
-      <div className={mobileMenuClasses}>
-        <div className="flex flex-col p-4 space-y-2">
-          {navItems
-            .filter((item) =>
-              [
-                "home",
-                "about",
-                "services",
-                "projects",
-                "contact",
-                "blogs",
-              ].includes(item.id),
-            )
-            .map((item) => (
-              <a
-                key={item.id}
-                className={mobileMenuItemClasses(item.id)}
-                href={item.href}
-                onClick={(e) => {
-                  if (item.href.includes("#")) {
-                    e.preventDefault();
-                    const element = document.getElementById(item.id);
-                    if (element) {
-                      element.scrollIntoView({ behavior: "smooth" });
-                      setActiveSection(item.id);
+        <>
+          <div
+            className="fixed inset-0 bg-black/40 backdrop-blur-xs z-40 lg:hidden"
+            onClick={() => setIsMobileMenuOpen(false)}
+          />
+          <div className="fixed top-20 left-4 right-4 rounded-3xl bg-white dark:bg-[#141414] border border-black/5 dark:border-white/10 shadow-2xl z-50 p-5 lg:hidden max-h-[82vh] overflow-y-auto">
+            <div className="flex flex-col gap-1.5">
+              {mobileNavItems.map((item) => {
+                const isActive = activeSection === item.id;
+                return (
+                  <a
+                    key={item.id}
+                    href={item.href}
+                    target={item.external ? "_blank" : undefined}
+                    rel={item.external ? "noopener noreferrer" : undefined}
+                    onClick={(e) => {
+                      handleNavClick(e, item);
                       setIsMobileMenuOpen(false);
-                    } else {
-                      window.location.href = item.href;
-                    }
+                    }}
+                    className={`px-4 py-2.5 rounded-full text-[16px] font-medium transition-colors ${
+                      isActive
+                        ? "bg-black/5 dark:bg-white/10 text-neutral-900 dark:text-white font-semibold"
+                        : "text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white hover:bg-black/5 dark:hover:bg-white/5"
+                    }`}
+                  >
+                    {item.label}
+                  </a>
+                );
+              })}
+            </div>
+
+            <div className="mt-4 pt-4 border-t border-black/5 dark:border-white/10 flex flex-col gap-2.5">
+              <a
+                href="/#contact"
+                onClick={(e) => {
+                  if (window.location.pathname === "/") {
+                    e.preventDefault();
+                    setIsMobileMenuOpen(false);
+                    document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+                    setActiveSection("contact");
                   } else {
                     setIsMobileMenuOpen(false);
                   }
                 }}
+                className="w-full py-2.5 rounded-full text-center text-sm font-bold bg-[#0077ED] text-white hover:bg-[#0062C4] transition-colors shadow-sm"
               >
-                {t.nav[item.id as keyof typeof t.nav] || item.label}
+                Let&apos;s Talk
               </a>
-            ))}
-
-          {/* Mobile Experience & Education Items */}
-          {["experience", "education"].map((id) => (
-            <a
-              key={id}
-              className={mobileMenuItemClasses(id)}
-              href={`/#${id}`}
-              onClick={(e) => {
-                e.preventDefault();
-                const element = document.getElementById(id);
-                if (element) {
-                  element.scrollIntoView({ behavior: "smooth" });
-                  setActiveSection(id);
+              <a
+                href={profile.resumeURL}
+                download="Jathushan_SE_Dev.pdf"
+                onClick={() => {
                   setIsMobileMenuOpen(false);
-                }
-              }}
-            >
-              {t.nav[id as keyof typeof t.nav]}
-            </a>
-          ))}
-          <div
-            className={`grid grid-cols-1 gap-3 pt-2 mt-2 border-t transition-colors duration-300 ${
-              isSystemDark ? "border-gray-800" : "border-gray-200"
-            }`}
-          >
-            <a
-              href={profile.resumeURL}
-              download="Jathushan_SE_CV.pdf"
-              className={mobileCVButtonClasses}
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              {t.nav.download_cv}
-            </a>
+                  toast.success("Resume downloaded successfully!");
+                }}
+                className="w-full py-2.5 rounded-full text-center text-sm font-semibold bg-neutral-100 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 hover:bg-neutral-200 dark:hover:bg-neutral-700 transition-colors"
+              >
+                {t.nav.download_cv || "Download CV"}
+              </a>
+            </div>
           </div>
-        </div>
-      </div>
+        </>
+      )}
     </>
   );
 }

@@ -9,8 +9,8 @@ import { MagicCard, MagicContainer } from './MagicCard'
 export default function Testimonials() {
      const { t } = useLanguage()
      return (
-          <section id="testimonials" className="py-20 px-4 sm:px-6 lg:px-8 bg-white dark:bg-[#0a0a0a] relative overflow-hidden">
-               <div className="container mx-auto max-w-7xl 3xl:max-w-[96rem] 4k:max-w-[120rem] relative z-10">
+          <section id="testimonials" className="py-20 bg-white dark:bg-[#0a0a0a] relative overflow-hidden">
+               <div className="w-[80%] mx-auto relative z-10">
                     {/* Background Elements */}
                     <div className="absolute -top-24 -left-48 w-96 h-96 bg-primary/10 dark:bg-primary/20 rounded-full blur-3xl opacity-50"></div>
                     <div className="absolute -bottom-32 -right-40 w-96 h-96 bg-primary/10 dark:bg-primary/20 rounded-full blur-3xl opacity-50"></div>

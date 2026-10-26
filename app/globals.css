@@ -1,5 +1,16 @@
 @import "tailwindcss";
 
+@variant dark {
+  &:where(.dark, .dark *) {
+    @slot;
+  }
+  @media (prefers-color-scheme: dark) {
+    &:not(:where(.light, .light *)) {
+      @slot;
+    }
+  }
+}
+
 :root {
   /* Core Theme Colors */
   --background: #ffffff;
@@ -54,8 +65,16 @@ body {
   max-width: 100vw;
 }
 
+html.dark, :root.dark {
+  --background: #0a0a0a;
+  --foreground: #ffffff;
+  --card: #121212;
+  --nav-bg: #1a1a1a;
+  --ui-background: #0a0a0a;
+}
+
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not(.light) {
     --background: #0a0a0a;
     --foreground: #ffffff;
     --card: #121212;
@@ -66,10 +85,6 @@ body {
   /* Specific overrides for dark mode */
   .text-primary {
     color: var(--primary);
-  }
-
-  .bg-white {
-    background-color: var(--background);
   }
 
   /* Scrollbar override */
@@ -86,15 +101,23 @@ body {
  * Utility aliases / overrides that apply globally or help with specificity
  */
 
+@theme {
+  --color-primary: #0077ED;
+}
+
 /* Primary color enforcement */
 .text-primary {
   color: var(--primary);
 }
 
-/* Preloader protection */
-.bg-white {
-  background-color: var(--background);
+.bg-primary {
+  background-color: var(--primary) !important;
 }
+
+.border-primary {
+  border-color: var(--primary) !important;
+}
+
 
 /* Scrollbar styling */
 ::-webkit-scrollbar {
@@ -112,4 +135,31 @@ body {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #9ca3af;
+}
+
+/* Ensure entire page containers follow 80% width with equal auto left/right margins */
+.container,
+.site-container {
+  width: 80% !important;
+  max-width: 80% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* Waving hand animation for hero greeting */
+@keyframes wave-hand {
+  0% { transform: rotate(0deg); }
+  10% { transform: rotate(14deg); }
+  20% { transform: rotate(-8deg); }
+  30% { transform: rotate(14deg); }
+  40% { transform: rotate(-4deg); }
+  50% { transform: rotate(10deg); }
+  60% { transform: rotate(0deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.animate-wave {
+  animation: wave-hand 2.2s infinite;
+  transform-origin: 70% 70%;
+  display: inline-block;
 }

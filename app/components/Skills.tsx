@@ -14,13 +14,14 @@ export default function Skills() {
                {/* --------------------------------------
              *  TECHNICAL SECTION
              * -------------------------------------- */}
-               <section id="technical-arsenal" className="py-20 px-4 sm:px-6 lg:px-8 bg-white dark:bg-[#0a0a0a] relative overflow-hidden">
+               <section id="skills" className="py-20 bg-white dark:bg-[#0a0a0a] relative overflow-hidden">
+                    <span id="technical-arsenal" className="sr-only" aria-hidden="true">Technical Arsenal</span>
 
                     {/* Decorative Background */}
                     <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/10 rounded-full blur-3xl opacity-20 pointer-events-none"></div>
                     <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-blue-400/10 rounded-full blur-3xl opacity-20 pointer-events-none"></div>
 
-                    <div className="container mx-auto max-w-7xl 3xl:max-w-[96rem] 4k:max-w-[120rem] relative z-10">
+                    <div className="w-[80%] mx-auto relative z-10">
                          {/* Heading */}
                          <ScrollReveal className="text-center mb-16">
                               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#F5F5F7] dark:bg-white/5 border border-primary/10 mb-6 shadow-sm">
@@ -149,11 +150,11 @@ export default function Skills() {
                {/* --------------------------------------
              *  FUTURE GOALS SECTION
              * -------------------------------------- */}
-               <section id="goals" className="py-20 px-4 sm:px-6 lg:px-8 bg-white dark:bg-[#0a0a0a] relative overflow-hidden">
+               <section id="goals" className="py-20 bg-white dark:bg-[#0a0a0a] relative overflow-hidden">
 
                     <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-primary/10 rounded-full blur-3xl opacity-20 pointer-events-none"></div>
 
-                    <div className="container mx-auto max-w-7xl relative z-10">
+                    <div className="w-[80%] mx-auto relative z-10">
                          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
                               <ScrollReveal className="flex flex-col">

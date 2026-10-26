@@ -12,12 +12,12 @@ export default function Services() {
      const servicesList = services
 
      return (
-          <section id="services" className="py-20 px-4 sm:px-6 lg:px-8 bg-white dark:bg-[#0a0a0a] relative overflow-hidden">
+          <section id="services" className="py-20 bg-white dark:bg-[#0a0a0a] relative overflow-hidden">
                {/* Glowing Background Elements */}
                <div className="absolute -top-20 left-1/4 w-80 h-80 bg-primary/15 rounded-full blur-3xl opacity-35 animate-pulse-slow pointer-events-none"></div>
                <div className="absolute bottom-0 right-0 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl opacity-25 animate-pulse-slower pointer-events-none"></div>
 
-               <div className="container mx-auto max-w-7xl 3xl:max-w-[96rem] 4k:max-w-[120rem] relative z-10">
+               <div className="w-[80%] mx-auto relative z-10">
                     <ScrollReveal className="text-center mb-12">
                          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#F5F5F7] dark:bg-white/5 border border-primary/10 mb-6 shadow-sm">
                               <Briefcase size={18} className="text-primary" />
