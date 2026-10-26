@@ -7,6 +7,7 @@ import Link from "next/link";
 import { useLanguage } from "../context/LanguageContext";
 import { ScrollReveal } from "./ScrollReveal";
 import { detailedProjects } from "../data/projectsData";
+import { highlightTitle } from "../utils/highlight-text";
 
 export default function Projects() {
      const { t } = useLanguage();
@@ -30,7 +31,7 @@ export default function Projects() {
                          <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
                               <div>
                                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight text-[#1D1D1F] dark:text-white leading-tight">
-                                        {t.projects.title || "Featured Projects"}
+                                        {highlightTitle(t.projects.title || "Featured Projects")}
                                    </h2>
                                    <p className="text-gray-600 dark:text-gray-400 text-sm sm:text-base leading-relaxed mt-2 max-w-2xl">
                                         {t.projects.subtitle || "A showcase of engineering systems, machine learning models, and modern full-stack applications."}

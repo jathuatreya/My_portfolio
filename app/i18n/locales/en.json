@@ -36,6 +36,18 @@
           "title": "Skills & Capabilities",
           "subtitle": "The engineering proficiencies, languages, and frameworks I use to build robust digital solutions.",
           "categories": {
+               "ui_ux": {
+                    "title": "UI/UX & Web Design",
+                    "desc": "Build fast, responsive, and visually stunning digital experiences. I focus on intuitive user journeys, clean interfaces, and premium branding."
+               },
+               "fullstack": {
+                    "title": "Full-Stack Development",
+                    "desc": "Scalable engineering using Next.js, React, and robust databases. I connect pixel-perfect frontends with secure, reliable backend architectures."
+               },
+               "marketing": {
+                    "title": "Marketing & Growth",
+                    "desc": "Drive traffic and conversions with technical SEO, social media marketing, and strategic digital campaigns that elevate your brand visibility."
+               },
                "custom_software": {
                     "title": "Custom Software Development",
                     "desc": "Architecting bespoke enterprise software, end-to-end automation, and tailored business solutions."

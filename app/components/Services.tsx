@@ -5,6 +5,7 @@ import { Briefcase } from 'lucide-react'
 import { services } from '../data/portfolio-data'
 import { ScrollReveal } from './ScrollReveal'
 import { MagicCard, MagicContainer } from './MagicCard'
+import { highlightTitle } from '../utils/highlight-text'
 
 export default function Services() {
      const { t } = useLanguage()
@@ -23,7 +24,9 @@ export default function Services() {
                               <Briefcase size={18} className="text-primary" />
                               <span className="text-sm font-bold tracking-wide text-primary uppercase">{t.services.tag}</span>
                          </div>
-                         <h2 className="text-[#1D1D1F] dark:text-white text-3xl sm:text-4xl font-bold leading-tight tracking-tight">{t.services.title}</h2>
+                         <h2 className="text-[#1D1D1F] dark:text-white text-3xl sm:text-4xl font-bold leading-tight tracking-tight">
+                              {highlightTitle(t.services.title)}
+                         </h2>
                          <p className="text-gray-600 dark:text-gray-300 text-lg sm:text-xl font-normal leading-normal mt-4 max-w-2xl mx-auto">{t.services.subtitle}</p>
                     </ScrollReveal>
                     <MagicContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">

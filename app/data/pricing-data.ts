@@ -8,6 +8,8 @@ export interface PricingPlan {
   tagline: string;
   priceUSD: number;
   priceDisplay: string;
+  pricePrefix?: string;
+  priceType?: string;
   popular?: boolean;
   deliveryTime: string;
   category: string;
@@ -21,8 +23,10 @@ export const pricingPlans: PricingPlan[] = [
     id: "portfolio",
     name: "Portfolio Website",
     tagline: "Sleek, high-converting digital identity for engineers, doctors, executives, and creators.",
-    priceUSD: 199,
-    priceDisplay: "$199",
+    priceUSD: 150,
+    priceDisplay: "$150",
+    pricePrefix: "Fixed Package",
+    priceType: "Flat Fee",
     popular: false,
     deliveryTime: "3 – 5 Days",
     category: "Personal Brand & Web",
@@ -38,14 +42,16 @@ export const pricingPlans: PricingPlan[] = [
     ],
     ctaText: "Order Portfolio Website",
     whatsappMessage:
-      "Hi Jathushan, I'm interested in the Portfolio Website package ($199). Let's discuss my requirements!",
+      "Hi Jathushan, I'm interested in the Portfolio Website package ($150). Let's discuss my requirements!",
   },
   {
     id: "pos-application",
     name: "POS Application",
     tagline: "High-speed Point of Sale & inventory system built for retail, restaurants, and grocery stores.",
-    priceUSD: 499,
-    priceDisplay: "$499",
+    priceUSD: 200,
+    priceDisplay: "$200",
+    pricePrefix: "Starting from",
+    priceType: "Starting Scope",
     popular: true,
     deliveryTime: "1 – 2 Weeks",
     category: "Retail & Business Automation",
@@ -61,14 +67,16 @@ export const pricingPlans: PricingPlan[] = [
     ],
     ctaText: "Get POS Application",
     whatsappMessage:
-      "Hi Jathushan, I want to implement the POS Application package ($499) for my business. Let's talk!",
+      "Hi Jathushan, I want to implement the POS Application package (starting from $200) for my business. Let's talk!",
   },
   {
     id: "custom-software",
     name: "Custom Software Development",
     tagline: "Bespoke full-stack web platforms, automated business portals, and intelligent workflow systems.",
-    priceUSD: 899,
-    priceDisplay: "Starting at $899",
+    priceUSD: 450,
+    priceDisplay: "$450",
+    pricePrefix: "Starting from",
+    priceType: "Starting Scope",
     popular: false,
     deliveryTime: "2 – 4 Weeks",
     category: "Full-Stack Enterprise & AI",
@@ -84,6 +92,6 @@ export const pricingPlans: PricingPlan[] = [
     ],
     ctaText: "Request Custom Software",
     whatsappMessage:
-      "Hi Jathushan, I have a Custom Software Development project ($899+). I'd love to schedule a discussion!",
+      "Hi Jathushan, I have a Custom Software Development project (starting from $450). I'd love to schedule a discussion!",
   },
 ];

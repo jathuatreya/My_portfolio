@@ -5,6 +5,7 @@ import { testimonials } from '../data/portfolio-data'
 import { useLanguage } from '../context/LanguageContext'
 import { ScrollReveal } from './ScrollReveal'
 import { MagicCard, MagicContainer } from './MagicCard'
+import { highlightTitle } from '../utils/highlight-text'
 
 export default function Testimonials() {
      const { t } = useLanguage()
@@ -31,7 +32,7 @@ export default function Testimonials() {
                               <span className="text-xs font-bold tracking-[0.15em] text-primary uppercase">{t.testimonials.tag}</span>
                          </div>
                          <h2 className="text-[#1D1D1F] dark:text-white text-3xl sm:text-5xl font-bold tracking-tight leading-tight">
-                              {t.testimonials.title}
+                              {highlightTitle(t.testimonials.title)}
                          </h2>
                          <p className="mt-3 text-sm sm:text-base text-gray-500 dark:text-gray-400 max-w-2xl mx-auto">
                               {t.testimonials.subtitle}

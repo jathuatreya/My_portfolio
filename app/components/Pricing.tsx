@@ -38,7 +38,15 @@ export default function Pricing() {
             const whatsappLink = `https://wa.me/94706601734?text=${encodeURIComponent(plan.whatsappMessage)}`;
 
             return (
-              <ScrollReveal key={plan.id} delay={index * 0.12} className="h-full">
+              <ScrollReveal key={plan.id} delay={index * 0.12} className="h-full relative pt-3.5">
+                {/* Popular Floating Badge - Positioned outside overflow-hidden */}
+                {isPopular && (
+                  <div className="absolute top-0 left-1/2 -translate-x-1/2 z-30 px-4 py-1 rounded-full bg-[#0077ED] text-white text-[11px] font-mono font-black uppercase tracking-wider shadow-md shadow-[#0077ED]/30 flex items-center gap-1.5 whitespace-nowrap">
+                    <Sparkles size={12} fill="currentColor" />
+                    <span>Most Popular</span>
+                  </div>
+                )}
+
                 <MagicCard
                   className={`group relative flex flex-col justify-between rounded-3xl p-5 sm:p-7 lg:p-8 transition-all duration-300 h-full backdrop-blur-sm ${
                     isPopular
@@ -46,14 +54,6 @@ export default function Pricing() {
                       : "bg-[#FAFBFD] dark:bg-[#111624] border border-black/[0.08] dark:border-white/10 shadow-sm hover:shadow-xl hover:border-[#0077ED]/40"
                   }`}
                 >
-                  {/* Popular Floating Badge */}
-                  {isPopular && (
-                    <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-[#0077ED] text-white text-[11px] font-mono font-black uppercase tracking-wider shadow-md shadow-[#0077ED]/30 flex items-center gap-1.5">
-                      <Sparkles size={12} fill="currentColor" />
-                      <span>Most Popular</span>
-                    </div>
-                  )}
-
                   <div>
                     {/* Top Category & Delivery Estimate */}
                     <div className="flex items-center justify-between text-xs font-mono mb-4">
@@ -74,14 +74,24 @@ export default function Pricing() {
                       {plan.tagline}
                     </p>
 
-                    {/* Price in USD */}
-                    <div className="pt-2 pb-6 border-y border-black/[0.06] dark:border-white/10 mb-6 flex items-baseline gap-2">
-                      <span className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#1D1D1F] dark:text-white tracking-tight">
-                        {plan.priceDisplay}
-                      </span>
-                      <span className="text-xs font-mono text-gray-400 uppercase tracking-wider">
-                        USD / Flat Fee
-                      </span>
+                    {/* Price in USD - Clear & Prominent */}
+                    <div className="pt-3 pb-5 border-y border-black/[0.06] dark:border-white/10 mb-6">
+                      <div className="flex items-center gap-2 mb-1">
+                        <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-[#0077ED]">
+                          {plan.pricePrefix || "Starting from"}
+                        </span>
+                      </div>
+                      <div className="flex items-baseline gap-2 flex-wrap">
+                        <span className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#1D1D1F] dark:text-white tracking-tight">
+                          ${plan.priceUSD}
+                        </span>
+                        <span className="text-xs font-mono font-bold text-gray-500 dark:text-gray-300 uppercase tracking-wider">
+                          USD
+                        </span>
+                        <span className="text-xs font-mono text-gray-400 uppercase tracking-wider">
+                          • {plan.priceType || "Starting Scope"}
+                        </span>
+                      </div>
                     </div>
 
                     {/* Features Checklist */}

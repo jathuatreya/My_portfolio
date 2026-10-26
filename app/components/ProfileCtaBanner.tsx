@@ -36,7 +36,7 @@ export default function ProfileCtaBanner() {
 
                 {/* Main Heading */}
                 <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[40px] font-black text-white tracking-tight leading-[1.18] mt-4 mb-3">
-                  Want the Complete Professional Profile?
+                  Want the Complete <span className="text-primary">Professional Profile</span>?
                 </h2>
 
                 {/* Description */}

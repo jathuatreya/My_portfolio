@@ -4,6 +4,7 @@ import { profile, aboutStats } from '../data/portfolio-data'
 import { useLanguage } from '../context/LanguageContext'
 import { MagicCard, MagicContainer } from './MagicCard'
 import { User } from 'lucide-react'
+import { highlightTitle } from '../utils/highlight-text'
 
 export default function About() {
      const { t } = useLanguage()
@@ -32,7 +33,9 @@ export default function About() {
                                         <User size={18} className="text-primary" />
                                         <span className="text-sm font-bold tracking-wide text-primary uppercase">{t.about.tag}</span>
                                    </div>
-                                   <h2 className="text-[#1D1D1F] dark:text-white text-3xl sm:text-4xl font-bold leading-tight tracking-tight">{t.about.title}</h2>
+                                   <h2 className="text-[#1D1D1F] dark:text-white text-3xl sm:text-4xl font-bold leading-tight tracking-tight">
+                                        {highlightTitle(t.about.title)}
+                                   </h2>
                                    <p className="mb-6 text-xl sm:text-2xl font-bold italic text-primary">
                                         &quot;{t.about.slogan || profile.slogan}&quot;
                                    </p>

@@ -19,7 +19,7 @@ export default function Experience() {
                                    <span className="text-xs font-bold tracking-[0.15em] text-primary uppercase">Career</span>
                               </div>
                               <h2 className="text-[#1D1D1F] dark:text-white text-3xl sm:text-5xl font-bold leading-tight tracking-tight">
-                                   Professional Journey
+                                   Professional <span className="text-primary">Journey</span>
                               </h2>
                               <p className="text-gray-500 dark:text-gray-400 text-sm sm:text-base mt-2 max-w-lg mx-auto">
                                    Proven industry experience architecting scalable systems and client platforms.

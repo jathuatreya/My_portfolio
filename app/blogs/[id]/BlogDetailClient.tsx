@@ -11,6 +11,7 @@ import Footer from "@/app/components/Footer";
 import { useLanguage } from "@/app/context/LanguageContext";
 import { BlogPost } from "@/app/data/blog-content";
 import { profile } from "@/app/data/portfolio-data";
+import { highlightTitle } from "@/app/utils/highlight-text";
 
 // Share links component extracted for cleaner code
 const ShareButtons = ({ shareUrl, shareText, blogTitle }: { shareUrl: string, shareText: string, blogTitle: string }) => {
@@ -263,7 +264,9 @@ export default function BlogDetailClient({ blog }: { blog: BlogPost | null }) {
                          >
                               <div>
                                    <p className="text-sm font-medium text-gray-500 dark:text-gray-400 mb-2 uppercase tracking-wide">{t.blogs_page.read_more}</p>
-                                   <h4 className="text-3xl font-black text-[#1D1D1F] dark:text-white mb-8">{t.blogs_page.explore_more}</h4>
+                                   <h4 className="text-3xl font-black text-[#1D1D1F] dark:text-white mb-8">
+                                        {highlightTitle(t.blogs_page.explore_more)}
+                                   </h4>
                                    <Link
                                         href="/blogs"
                                         className="inline-block bg-[#1D1D1F] dark:bg-white text-white dark:text-black px-10 py-4 rounded-full font-bold hover:bg-primary hover:text-white dark:hover:bg-primary dark:hover:text-white transition-all shadow-xl hover:shadow-primary/30 hover:-translate-y-1"
