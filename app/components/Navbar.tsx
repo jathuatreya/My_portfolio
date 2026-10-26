@@ -189,7 +189,6 @@ export default function Navbar() {
             className="flex items-center text-sm sm:text-base lg:text-lg xl:text-xl font-bold tracking-tight text-neutral-900 dark:text-white transition-opacity hover:opacity-90 shrink-0"
           >
             <span>{profile.name}</span>
-            <span className="text-[#0077ED] font-black text-lg xl:text-xl leading-none">.</span>
           </Link>
 
           {/* 2. Center: Navigation Links with Soft Pill Highlight */}
