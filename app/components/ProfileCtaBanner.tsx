@@ -22,15 +22,15 @@ export default function ProfileCtaBanner() {
             />
             <div
               aria-hidden="true"
-              className="absolute -bottom-24 -right-24 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl pointer-events-none"
+              className="absolute -bottom-24 -right-24 w-96 h-96 bg-primary/10 rounded-full blur-3xl pointer-events-none"
             />
 
             <div className="relative z-10 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8 lg:gap-12">
               {/* Left Column: Heading, Bio, Metadata */}
               <div className="flex flex-col text-left max-w-3xl">
                 {/* Top Badge */}
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#F59E0B]/10 border border-[#F59E0B]/30 text-[#F59E0B] text-[11px] font-mono font-bold tracking-wider uppercase w-fit shadow-xs">
-                  <FileText size={13} className="text-[#F59E0B] shrink-0" />
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/30 text-primary text-[11px] font-mono font-bold tracking-wider uppercase w-fit shadow-xs">
+                  <FileText size={13} className="text-primary shrink-0" />
                   <span>Full Curriculum Vitae Available</span>
                 </div>
 
@@ -46,8 +46,8 @@ export default function ProfileCtaBanner() {
 
                 {/* Bottom Accreditations */}
                 <div className="flex flex-wrap items-center gap-2 sm:gap-3 pt-6 text-xs font-mono">
-                  <span className="inline-flex items-center gap-1.5 text-emerald-400 font-semibold">
-                    <CheckCircle2 size={15} className="text-emerald-400 shrink-0" />
+                  <span className="inline-flex items-center gap-1.5 text-primary font-semibold">
+                    <CheckCircle2 size={15} className="text-primary shrink-0" />
                     Updated: 2026 Edition
                   </span>
                   <span className="text-gray-600 select-none">•</span>
@@ -64,7 +64,7 @@ export default function ProfileCtaBanner() {
                   href={profile.resumeURL}
                   download="Jathushan_SE_Dev.pdf"
                   onClick={handleDownload}
-                  className="w-full sm:w-auto lg:w-[260px] py-3.5 px-6 rounded-xl bg-[#F59E0B] hover:bg-[#E08E07] active:scale-[0.98] text-black font-extrabold text-xs sm:text-sm tracking-wide uppercase flex items-center justify-center gap-2.5 shadow-lg shadow-[#F59E0B]/20 hover:shadow-[#F59E0B]/35 transition-all duration-200 cursor-pointer group"
+                  className="w-full sm:w-auto lg:w-[260px] py-3.5 px-6 rounded-xl bg-primary hover:bg-[#0066CC] active:scale-[0.98] text-white font-extrabold text-xs sm:text-sm tracking-wide uppercase flex items-center justify-center gap-2.5 shadow-lg shadow-primary/20 hover:shadow-primary/35 transition-all duration-200 cursor-pointer group"
                 >
                   <Download size={16} strokeWidth={2.5} className="group-hover:translate-y-0.5 transition-transform" />
                   <span>DOWNLOAD CV (PDF/TXT)</span>
