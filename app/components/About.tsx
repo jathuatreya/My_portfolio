@@ -14,7 +14,7 @@ export default function About() {
      const stats = aboutStats
 
      return (
-          <section id="about" className="py-20 bg-white dark:bg-[#0a0a0a] relative overflow-hidden">
+          <section id="about" className="pt-28 sm:pt-36 lg:pt-44 pb-20 sm:pb-24 bg-white dark:bg-[#0a0a0a] relative overflow-hidden scroll-mt-6">
                {/* Glowing Background Elements */}
                <div className="absolute top-20 right-0 w-72 h-72 bg-primary/10 rounded-full blur-3xl opacity-40 animate-pulse-slow pointer-events-none"></div>
                <div className="absolute bottom-40 left-0 w-64 h-64 bg-primary/15 rounded-full blur-3xl opacity-30 animate-pulse-slower pointer-events-none"></div>
@@ -58,13 +58,21 @@ export default function About() {
                               </ScrollReveal>
 
                               {/* Highlight Cards with Staggered Entry Animation */}
-                              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                              <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5 sm:gap-3 pt-1">
                                    {stats.map((stat, index) => (
-                                        <ScrollReveal key={index} delay={0.25 + index * 0.1}>
-                                             <div className="flex flex-col items-start p-6 bg-[#F5F5F7] dark:bg-[#1D1D1F] border-2 border-primary/40 hover:border-primary rounded-xl shadow-md hover:shadow-lg transition-all h-full">
-                                                  <stat.icon className="text-primary" size={32} />
-                                                  <p className="text-[#1D1D1F] dark:text-white text-3xl sm:text-4xl font-bold mt-3">{stat.value}</p>
-                                                  <p className="text-gray-600 dark:text-gray-400 text-sm font-medium mt-1">
+                                        <ScrollReveal
+                                             key={index}
+                                             delay={0.2 + (index % 3) * 0.06}
+                                             className={index === 8 ? "col-span-2 sm:col-span-1" : ""}
+                                        >
+                                             <div className="flex flex-col items-start p-3 sm:p-3.5 bg-transparent hover:bg-black/[0.03] dark:hover:bg-white/[0.04] border border-primary/25 hover:border-primary/75 rounded-xl shadow-none hover:shadow-md hover:shadow-primary/5 transition-all duration-300 h-full group">
+                                                  <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-primary/10 dark:bg-primary/15 flex items-center justify-center text-primary group-hover:scale-105 transition-transform duration-200">
+                                                       <stat.icon size={16} strokeWidth={2.2} />
+                                                  </div>
+                                                  <p className="text-lg sm:text-xl font-bold mt-2 tracking-tight text-[#1D1D1F] dark:text-white group-hover:text-primary transition-colors">
+                                                       {stat.value}
+                                                  </p>
+                                                  <p className="text-[11px] sm:text-xs font-medium text-gray-600 dark:text-gray-400 mt-0.5 leading-snug">
                                                        {t.about.stats[stat.id as keyof typeof t.about.stats] || stat.label}
                                                   </p>
                                              </div>

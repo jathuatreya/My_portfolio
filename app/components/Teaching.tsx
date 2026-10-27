@@ -55,7 +55,7 @@ export default function Teaching() {
           </h2>
 
           <p className="mt-3 text-sm sm:text-base text-gray-600 dark:text-gray-400 max-w-2xl mx-auto leading-relaxed">
-            Practical 1-on-1 and cohort mentorship guiding over 10+ students through programming languages, relational & NoSQL databases, modern full-stack web applications, and embedded robotics.
+            Practical 1-on-1 and cohort mentorship guiding over 15+ school students and undergraduates through programming languages, relational & NoSQL databases, modern full-stack web applications, and embedded robotics.
           </p>
         </ScrollReveal>
 

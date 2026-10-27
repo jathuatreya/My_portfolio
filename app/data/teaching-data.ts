@@ -15,7 +15,7 @@ export interface TeachingProgram {
 }
 
 export const teachingStats = [
-  { value: "10+", label: "Students Mentored", highlight: "Active Learners" },
+  { value: "15+", label: "Students Mentored", highlight: "School & Undergrads" },
   { value: "10", label: "Programs Taught", highlight: "Full Spectrum" },
   { value: "100%", label: "Practical Projects", highlight: "Hands-on Focus" },
   { value: "1-on-1", label: "Direct Mentorship", highlight: "Personalized Pace" },

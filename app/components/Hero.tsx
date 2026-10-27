@@ -132,7 +132,7 @@ export default function Hero() {
                {/* 2. Soft Ambient Lighting Behind Central Portrait */}
                <div
                     aria-hidden="true"
-                    className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[500px] sm:w-[750px] md:w-[950px] lg:w-[1250px] xl:w-[1500px] h-[450px] sm:h-[600px] lg:h-[750px] xl:h-[880px] bg-gradient-to-t from-primary/30 via-amber-500/20 to-transparent rounded-t-full blur-3xl pointer-events-none -z-0"
+                    className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[500px] sm:w-[750px] md:w-[950px] lg:w-[1250px] xl:w-[1500px] h-[450px] sm:h-[600px] lg:h-[750px] xl:h-[880px] bg-gradient-to-t from-primary/8 via-amber-500/5 to-transparent rounded-t-full blur-3xl pointer-events-none -z-0"
                />
 
                {/* 3. Corner Accent Lighting */}
@@ -160,7 +160,7 @@ export default function Hero() {
                          priority
                          fetchPriority="high"
                          sizes="(max-width: 1024px) 100vw, (max-width: 1536px) 65vw, 980px"
-                         className="w-auto h-[750px] lg:h-[880px] xl:h-[980px] 2xl:h-[1100px] max-h-[86vh] xl:max-h-[89vh] max-w-[95vw] object-contain object-bottom block drop-shadow-[0_20px_55px_rgba(255, 103, 0,0.28)] dark:drop-shadow-[0_25px_70px_rgba(255, 103, 0,0.4)]"
+                         className="w-auto h-[750px] lg:h-[880px] xl:h-[980px] 2xl:h-[1100px] max-h-[86vh] xl:max-h-[89vh] max-w-[95vw] object-contain object-bottom block drop-shadow-[0_8px_18px_rgba(255,103,0,0.05)] dark:drop-shadow-[0_10px_20px_rgba(255,103,0,0.08)]"
                     />
                </div>
 
@@ -261,7 +261,7 @@ export default function Hero() {
                                         priority
                                         fetchPriority="high"
                                         sizes="(max-width: 640px) 92vw, 680px"
-                                        className="w-full max-w-[680px] sm:max-w-[780px] h-auto object-contain object-bottom block select-none drop-shadow-[0_20px_50px_rgba(255, 103, 0,0.25)]"
+                                        className="w-full max-w-[680px] sm:max-w-[780px] h-auto object-contain object-bottom block select-none drop-shadow-[0_8px_18px_rgba(255,103,0,0.05)]"
                                    />
                               </div>
                          </div>

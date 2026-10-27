@@ -52,7 +52,8 @@ export const profile = {
   ],
 
   achievements: [
-    "10+ completed software projects",
+    "10+ delivered software projects",
+    "Mentored 15+ school students and undergraduates in programming and tech fundamentals",
     "Built a working AI-powered hardware robot",
     "Created multiple full-stack applications",
     "Consistently praised for clean code and dedication",
