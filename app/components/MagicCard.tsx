@@ -5,7 +5,7 @@ import { gsap } from 'gsap';
 
 const DEFAULT_PARTICLE_COUNT = 8; // Reduced for cleaner look
 const DEFAULT_SPOTLIGHT_RADIUS = 400; // Larger spotlight for smoother gradients
-const DEFAULT_GLOW_COLOR = '0, 119, 237'; // Electric Blue
+const DEFAULT_GLOW_COLOR = '255, 103, 0'; // Primary Brand Orange
 
 
 
