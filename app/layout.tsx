@@ -2,11 +2,10 @@ import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
-
 import GlobalToaster from "./components/GlobalToaster";
 import FloatingActions from "./components/FloatingActions";
-import ScrollProgressBar from "./components/ScrollProgressBar";
 import CookieConsent from "./components/CookieConsent";
+import ScrollProgressBar from "./components/ScrollProgressBar";
 import { LanguageProvider } from "./context/LanguageContext";
 import { profile, projects } from "./data/portfolio-data";
 import { ReactNode } from "react";

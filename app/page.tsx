@@ -1,18 +1,21 @@
+import dynamic from 'next/dynamic'
 import Navbar from './components/Navbar'
 import SectionNavigator from './components/SectionNavigator'
 import Hero from './components/Hero'
 import About from './components/About'
-import Experience from './components/Experience'
-import Education from './components/Education'
-import ProfileCtaBanner from './components/ProfileCtaBanner'
-import Skills from './components/Skills'
-import Services from './components/Services'
-import Projects from './components/Projects'
-import Pricing from './components/Pricing'
-import Teaching from './components/Teaching'
-import Testimonials from './components/Testimonials'
-import Contact from './components/Contact'
-import Footer from './components/Footer'
+
+// Lazy load below-the-fold components to minimize initial JS bundle & TBT on mobile
+const Experience = dynamic(() => import('./components/Experience'))
+const Education = dynamic(() => import('./components/Education'))
+const ProfileCtaBanner = dynamic(() => import('./components/ProfileCtaBanner'))
+const Skills = dynamic(() => import('./components/Skills'))
+const Services = dynamic(() => import('./components/Services'))
+const Projects = dynamic(() => import('./components/Projects'))
+const Pricing = dynamic(() => import('./components/Pricing'))
+const Teaching = dynamic(() => import('./components/Teaching'))
+const Testimonials = dynamic(() => import('./components/Testimonials'))
+const Contact = dynamic(() => import('./components/Contact'))
+const Footer = dynamic(() => import('./components/Footer'))
 
 export default function Home() {
   return (

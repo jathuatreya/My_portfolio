@@ -24,15 +24,17 @@ export function HeroBackgroundCanvas() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
+    // Skip heavy canvas loop on mobile (< 768px) and reduced-motion to ensure 95+ mobile Lighthouse performance
+    if (window.innerWidth < 768 || window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      return;
+    }
+
     const canvas = canvasRef.current;
     if (!canvas) return;
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
-    const isMobile = () => window.innerWidth < 768;
-
-    // Reduce particle count on mobile for performance
-    const getParticleCount = () => (isMobile() ? 60 : 150);
+    const getParticleCount = () => 140;
 
     const resize = () => {
       canvas.width = canvas.offsetWidth;

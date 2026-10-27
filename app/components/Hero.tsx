@@ -157,8 +157,7 @@ export default function Hero() {
                          alt={profile.name}
                          width={1536}
                          height={1024}
-                         priority
-                         fetchPriority="high"
+                         loading="eager"
                          sizes="(max-width: 1024px) 100vw, (max-width: 1536px) 65vw, 980px"
                          className="w-auto h-[750px] lg:h-[880px] xl:h-[980px] 2xl:h-[1100px] max-h-[86vh] xl:max-h-[89vh] max-w-[95vw] object-contain object-bottom block drop-shadow-[0_8px_18px_rgba(255,103,0,0.05)] dark:drop-shadow-[0_10px_20px_rgba(255,103,0,0.08)]"
                     />
@@ -260,6 +259,7 @@ export default function Hero() {
                                         height={1024}
                                         priority
                                         fetchPriority="high"
+                                        quality={85}
                                         sizes="(max-width: 640px) 92vw, 680px"
                                         className="w-full max-w-[680px] sm:max-w-[780px] h-auto object-contain object-bottom block select-none drop-shadow-[0_8px_18px_rgba(255,103,0,0.05)]"
                                    />

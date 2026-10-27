@@ -22,6 +22,14 @@ export default function Footer() {
   return (
     <footer className="w-full bg-[#F8FAFC] dark:bg-[#0a0a0a] text-neutral-900 dark:text-white py-10 border-t border-black/[0.08] dark:border-white/5 transition-colors duration-300">
       <div className="w-full px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12">
+        {/* Connect & Follow Badge */}
+        <div className="flex items-center justify-center gap-2 mb-3.5">
+          <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+          <span className="text-xs font-mono font-bold tracking-wider uppercase text-gray-500 dark:text-gray-400">
+            Connect & Follow
+          </span>
+        </div>
+
         {/* Social Media Icons */}
         <div className="flex flex-wrap items-center justify-center gap-2.5 sm:gap-3 mb-6">
           {socialLinks.map((item) => {

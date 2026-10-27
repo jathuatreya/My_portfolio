@@ -57,14 +57,13 @@ export default function About() {
                               </ScrollReveal>
 
                               {/* Highlight Cards: Ultra-Compact Micro Tiles */}
-                              <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-2.5 pt-1">
-                                   {stats.map((stat, index) => (
-                                        <ScrollReveal
-                                             key={index}
-                                             delay={0.15 + (index % 3) * 0.05}
-                                             className={index === 8 ? "col-span-2 sm:col-span-1" : ""}
-                                        >
-                                             <div className="flex items-center gap-2 sm:gap-2.5 p-2 sm:p-2.5 rounded-xl bg-transparent hover:bg-black/[0.02] dark:hover:bg-white/[0.03] border border-primary/20 hover:border-primary/60 transition-all duration-200 group h-full">
+                              <ScrollReveal delay={0.2}>
+                                   <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-2.5 pt-1">
+                                        {stats.map((stat, index) => (
+                                             <div
+                                                  key={index}
+                                                  className={`flex items-center gap-2 sm:gap-2.5 p-2 sm:p-2.5 rounded-xl bg-transparent hover:bg-black/[0.02] dark:hover:bg-white/[0.03] border border-primary/20 hover:border-primary/60 transition-all duration-200 group h-full ${index === 8 ? "col-span-2 sm:col-span-1" : ""}`}
+                                             >
                                                   <div className="w-7 h-7 rounded-lg bg-primary/10 dark:bg-primary/15 flex items-center justify-center text-primary shrink-0 group-hover:scale-105 transition-transform">
                                                        <stat.icon size={14} strokeWidth={2.2} />
                                                   </div>
@@ -77,9 +76,9 @@ export default function About() {
                                                        </div>
                                                   </div>
                                              </div>
-                                        </ScrollReveal>
-                                   ))}
-                              </div>
+                                        ))}
+                                   </div>
+                              </ScrollReveal>
                          </div>
                     </div>
                </div>
