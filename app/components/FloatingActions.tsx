@@ -96,7 +96,7 @@ export default function FloatingActions() {
             onClick={scrollToTop}
             title="Scroll to top"
             aria-label="Scroll to top"
-            className="group relative w-8 h-8 sm:w-9 sm:h-9 rounded-xl sm:rounded-[14px] bg-white/95 dark:bg-[#070c16] border border-black/15 dark:border-[#0077ED]/75 hover:border-[#0077ED] shadow-md shadow-black/10 dark:shadow-sm dark:shadow-[#0077ED]/20 hover:bg-[#0077ED]/10 dark:hover:bg-[#0077ED]/20 flex items-center justify-center transition-all duration-200 active:scale-90 cursor-pointer backdrop-blur-md"
+            className="group relative w-8 h-8 sm:w-9 sm:h-9 before:absolute before:-inset-2 before:content-[''] rounded-xl sm:rounded-[14px] bg-white/95 dark:bg-[#070c16] border border-black/15 dark:border-[#0077ED]/75 hover:border-[#0077ED] shadow-md shadow-black/10 dark:shadow-sm dark:shadow-[#0077ED]/20 hover:bg-[#0077ED]/10 dark:hover:bg-[#0077ED]/20 flex items-center justify-center transition-all duration-200 active:scale-90 cursor-pointer backdrop-blur-md"
           >
             <ArrowUp
               size={15}
@@ -133,7 +133,7 @@ export default function FloatingActions() {
             onClick={scrollToBottom}
             title="Scroll to bottom"
             aria-label="Scroll to bottom"
-            className="group relative w-8 h-8 sm:w-9 sm:h-9 rounded-xl sm:rounded-[14px] bg-white/95 dark:bg-[#070c16] border border-black/15 dark:border-[#0077ED]/75 hover:border-[#0077ED] shadow-md shadow-black/10 dark:shadow-sm dark:shadow-[#0077ED]/20 hover:bg-[#0077ED]/10 dark:hover:bg-[#0077ED]/20 flex items-center justify-center transition-all duration-200 active:scale-90 cursor-pointer backdrop-blur-md"
+            className="group relative w-8 h-8 sm:w-9 sm:h-9 before:absolute before:-inset-2 before:content-[''] rounded-xl sm:rounded-[14px] bg-white/95 dark:bg-[#070c16] border border-black/15 dark:border-[#0077ED]/75 hover:border-[#0077ED] shadow-md shadow-black/10 dark:shadow-sm dark:shadow-[#0077ED]/20 hover:bg-[#0077ED]/10 dark:hover:bg-[#0077ED]/20 flex items-center justify-center transition-all duration-200 active:scale-90 cursor-pointer backdrop-blur-md"
           >
             <ArrowDown
               size={15}
@@ -177,7 +177,7 @@ export default function FloatingActions() {
           rel="noopener noreferrer"
           onClick={() => setHasInteracted(true)}
           aria-label="Chat with Jathushan on WhatsApp"
-          className="relative w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-[#25D366] hover:bg-[#20BD5A] text-white flex items-center justify-center shadow-md shadow-[#25D366]/30 hover:shadow-lg hover:shadow-[#25D366]/45 transition-all duration-300 hover:scale-105 active:scale-95 group cursor-pointer"
+          className="relative w-10 h-10 sm:w-11 sm:h-11 before:absolute before:-inset-2 before:content-[''] rounded-full bg-[#25D366] hover:bg-[#20BD5A] text-white flex items-center justify-center shadow-md shadow-[#25D366]/30 hover:shadow-lg hover:shadow-[#25D366]/45 transition-all duration-300 hover:scale-105 active:scale-95 group cursor-pointer"
         >
           {/* Radar ping ring */}
           <span className="absolute -inset-1 rounded-full bg-[#25D366]/30 animate-ping pointer-events-none" />

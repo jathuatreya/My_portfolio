@@ -151,6 +151,8 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+        <meta name="description" content="Jathushan Varnakulasingam is a Freelance Full-Stack Developer specializing in Next.js, React, Node.js, AI integrations, and smart automation. Delivering high-performance, scalable web solutions worldwide." />
+        <meta name="author" content="Jathushan Varnakulasingam" />
         <link rel="alternate" hrefLang="en" href={profile.portfolioURL} />
         <script
           dangerouslySetInnerHTML={{

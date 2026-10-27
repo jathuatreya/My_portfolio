@@ -249,6 +249,7 @@ export default function Pricing() {
                         href={whatsappLink}
                         target="_blank"
                         rel="noopener noreferrer"
+                        aria-label={`${plan.primaryButtonText} - ${plan.name} package`}
                         className={`w-full py-3 px-5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-200 text-center flex items-center justify-center gap-2 cursor-pointer ${
                           plan.primaryButtonStyle === "white"
                             ? "bg-white hover:bg-neutral-100 text-black font-bold shadow-lg shadow-white/10 active:scale-[0.98]"
@@ -268,6 +269,7 @@ export default function Pricing() {
                         href={whatsappLink}
                         target="_blank"
                         rel="noopener noreferrer"
+                        aria-label={`Inquire about ${plan.name} package via WhatsApp`}
                         className="w-full py-2.5 px-5 rounded-full bg-[#0d1c18] hover:bg-[#112620] text-[#25d366] border border-[#25d366]/30 text-xs sm:text-sm font-medium transition-all duration-200 flex items-center justify-center gap-2 shadow-sm active:scale-[0.98] cursor-pointer"
                       >
                         <WhatsAppIcon className="w-4 h-4 text-[#25d366]" />
@@ -318,19 +320,23 @@ export default function Pricing() {
         </div>
 
         {/* Mobile Carousel Indicators */}
-        <div className="flex lg:hidden items-center justify-center gap-2 mb-10">
+        <div className="flex lg:hidden items-center justify-center gap-1 mb-10">
           {plans.map((_, i) => (
             <button
               key={i}
               type="button"
               onClick={() => scrollToSlide(i)}
               aria-label={`Go to plan ${i + 1}`}
-              className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${
-                activeSlide === i
-                  ? "w-7 bg-[#1d75f2]"
-                  : "w-2 bg-white/20 hover:bg-white/40"
-              }`}
-            />
+              className="p-2 min-h-[44px] min-w-[28px] flex items-center justify-center cursor-pointer"
+            >
+              <span
+                className={`h-2 rounded-full transition-all duration-300 ${
+                  activeSlide === i
+                    ? "w-7 bg-[#1d75f2]"
+                    : "w-2 bg-white/30 hover:bg-white/50"
+                }`}
+              />
+            </button>
           ))}
         </div>
 

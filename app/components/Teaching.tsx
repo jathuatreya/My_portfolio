@@ -142,11 +142,12 @@ export default function Teaching() {
                   </div>
 
                   {/* WhatsApp Inquire Link */}
-                  <div className="pt-2">
+                    <div className="pt-2">
                     <a
                       href={courseWhatsApp}
                       target="_blank"
                       rel="noopener noreferrer"
+                      aria-label={`Inquire about ${prog.title} course`}
                       className="inline-flex items-center gap-1.5 text-xs font-bold text-[#0077ED] hover:text-[#0066CC] dark:hover:text-[#38BDF8] group/link cursor-pointer transition-colors"
                     >
                       <span>Inquire Course</span>
@@ -164,19 +165,23 @@ export default function Teaching() {
           <div className="text-xs font-mono font-bold text-[#0077ED]">
             Course {activeTeachingSlide + 1} of {teachingPrograms.length}
           </div>
-          <div className="flex items-center gap-1 overflow-x-auto no-scrollbar py-1">
+          <div className="flex items-center gap-0.5 overflow-x-auto no-scrollbar py-1">
             {teachingPrograms.map((_, i) => (
               <button
                 key={i}
                 type="button"
                 onClick={() => scrollTeachingTo(i)}
                 aria-label={`Go to course ${i + 1}`}
-                className={`h-1.5 rounded-full transition-all duration-300 cursor-pointer ${
-                  activeTeachingSlide === i
-                    ? "w-4 bg-[#0077ED]"
-                    : "w-1.5 bg-gray-300 dark:bg-white/20"
-                }`}
-              />
+                className="p-2 min-h-[44px] min-w-[20px] flex items-center justify-center cursor-pointer"
+              >
+                <span
+                  className={`h-1.5 rounded-full transition-all duration-300 ${
+                    activeTeachingSlide === i
+                      ? "w-4 bg-[#0077ED]"
+                      : "w-1.5 bg-gray-300 dark:bg-white/20"
+                  }`}
+                />
+              </button>
             ))}
           </div>
         </div>

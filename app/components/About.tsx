@@ -1,5 +1,6 @@
 "use client";
 
+import Image from 'next/image'
 import { profile, aboutStats } from '../data/portfolio-data'
 import { useLanguage } from '../context/LanguageContext'
 import { MagicCard, MagicContainer } from './MagicCard'
@@ -23,8 +24,16 @@ export default function About() {
                          {/* Left Column: Image with Entry Animation */}
                          <div className="flex justify-center lg:justify-start lg:col-span-4 w-full">
                               <ScrollReveal delay={0.1} className="w-full max-w-sm">
-                                   <div className="w-64 h-64 sm:w-80 sm:h-80 lg:w-full lg:h-auto lg:aspect-square rounded-xl bg-[#F5F5F7] dark:bg-slate-800 p-3 shadow-lg">
-                                        <div className="w-full h-full rounded-lg bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url('${profile.aboutImage}')` }}></div>
+                                   <div className="w-64 h-64 sm:w-80 sm:h-80 lg:w-full lg:h-auto lg:aspect-square rounded-xl bg-[#F5F5F7] dark:bg-slate-800 p-3 shadow-lg overflow-hidden relative">
+                                        <Image
+                                             src={profile.aboutImage}
+                                             alt={profile.name}
+                                             width={400}
+                                             height={400}
+                                             sizes="(max-width: 640px) 256px, (max-width: 1024px) 320px, 400px"
+                                             loading="lazy"
+                                             className="w-full h-full object-cover rounded-lg"
+                                        />
                                    </div>
                               </ScrollReveal>
                          </div>

@@ -78,19 +78,23 @@ export default function Services() {
         </div>
 
         {/* Mobile Carousel Indicators */}
-        <div className="flex sm:hidden items-center justify-center gap-2 mt-6">
+        <div className="flex sm:hidden items-center justify-center gap-1 mt-6">
           {servicesList.map((_, i) => (
             <button
               key={i}
               type="button"
               onClick={() => scrollToSlide(i)}
               aria-label={`Go to service ${i + 1}`}
-              className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${
-                activeSlide === i
-                  ? "w-7 bg-[#0077ED]"
-                  : "w-2 bg-gray-300 dark:bg-white/20"
-              }`}
-            />
+              className="p-2 min-h-[44px] min-w-[28px] flex items-center justify-center cursor-pointer"
+            >
+              <span
+                className={`h-2 rounded-full transition-all duration-300 ${
+                  activeSlide === i
+                    ? "w-7 bg-[#0077ED]"
+                    : "w-2 bg-gray-300 dark:bg-white/20"
+                }`}
+              />
+            </button>
           ))}
         </div>
       </div>

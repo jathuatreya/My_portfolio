@@ -158,6 +158,7 @@ export default function Hero() {
                          width={1536}
                          height={1024}
                          priority
+                         fetchPriority="high"
                          sizes="(max-width: 1024px) 100vw, (max-width: 1536px) 65vw, 980px"
                          className="w-auto h-[750px] lg:h-[880px] xl:h-[980px] 2xl:h-[1100px] max-h-[86vh] xl:max-h-[89vh] max-w-[95vw] object-contain object-bottom block drop-shadow-[0_20px_55px_rgba(0,119,237,0.28)] dark:drop-shadow-[0_25px_70px_rgba(0,119,237,0.4)]"
                     />
@@ -251,17 +252,18 @@ export default function Hero() {
                          {/* MOBILE/TABLET CENTER PORTRAIT (< lg)                 */}
                          {/* ==================================================== */}
                          <div className="lg:hidden flex flex-col justify-end items-center relative w-full pt-2 pb-0">
-                              <ScrollReveal className="relative w-full flex justify-center items-end" delay={0.12}>
+                              <div className="relative w-full flex justify-center items-end">
                                    <Image
                                         src="/jathushan.png"
                                         alt={profile.name}
                                         width={1536}
                                         height={1024}
                                         priority
-                                        sizes="(max-width: 768px) 100vw, 680px"
+                                        fetchPriority="high"
+                                        sizes="(max-width: 640px) 92vw, 680px"
                                         className="w-full max-w-[680px] sm:max-w-[780px] h-auto object-contain object-bottom block select-none drop-shadow-[0_20px_50px_rgba(0,119,237,0.25)]"
                                    />
-                              </ScrollReveal>
+                              </div>
                          </div>
                            {/* ==================================================== */}
                             {/* RIGHT PANEL: Social Media Channels Line-by-Line with Usernames */}
@@ -356,6 +358,7 @@ export default function Hero() {
                      }}
                      className="absolute bottom-3 sm:bottom-4 lg:bottom-5 left-1/2 -translate-x-1/2 z-30 flex items-center cursor-pointer group select-none py-1.5 px-3 bg-transparent hover:-translate-y-0.5 active:scale-95 transition-all duration-300"
                      role="button"
+                     tabIndex={0}
                      aria-label="Scroll to explore portfolio"
                 >
                      {/* Mouse Frame with Animated Scrolling Wheel */}

@@ -37,7 +37,7 @@ export interface PricingPlan {
   badge?: string;
   badgeType?: "blue" | "green";
   primaryButtonText: string;
-  primaryButtonStyle: "dark" | "white" | "blue";
+  primaryButtonStyle: "dark" | "white" | "blue" | "primary";
   deliveryTime?: string;
   category: string;
   features: string[];
@@ -134,7 +134,7 @@ export const portfolioPricingPlans: PricingPlan[] = [
     priceType: "Starting Scope",
     popular: false,
     primaryButtonText: "Choose Full Ownership",
-    primaryButtonStyle: "blue",
+    primaryButtonStyle: "primary",
     deliveryTime: "2 – 4 Weeks",
     category: "Full-Stack Enterprise & AI",
     featureItems: [
@@ -236,7 +236,7 @@ export const posRetailPricingPlans: PricingPlan[] = [
     priceSubtextType: "green",
     popular: false,
     primaryButtonText: "Choose Full Ownership",
-    primaryButtonStyle: "blue",
+    primaryButtonStyle: "primary",
     deliveryTime: "Custom Deployment",
     category: "Lifetime Ownership",
     featureItems: [

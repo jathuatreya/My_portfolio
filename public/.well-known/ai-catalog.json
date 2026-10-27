@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json.schemastore.org/ai-catalog.json",
+  "name": "Jathushan Varnakulasingam - Portfolio & AI Services",
+  "version": "1.0.0",
+  "description": "Software engineering portfolio, custom full-stack solutions, AI integrations, local LLM/RAG pipelines, and retail POS systems by Jathushan Varnakulasingam.",
+  "url": "https://jathushan.dev/",
+  "author": {
+    "name": "Jathushan Varnakulasingam",
+    "role": "Full-Stack Developer & AI Integrator",
+    "url": "https://jathushan.dev/",
+    "github": "https://github.com/jathuatreya",
+    "linkedin": "https://www.linkedin.com/in/jathushan-varnakulasingam-431872224/"
+  },
+  "capabilities": [
+    "Full-Stack Web Engineering (Next.js, React, Node.js, TypeScript)",
+    "AI Integration & Automation (Local LLMs, LangChain, RAG Pipelines)",
+    "Retail POS & Billing Solutions (Thermal Printing, Barcode Scanning, Cloud Sync)",
+    "IoT & Embedded Robotics Automation",
+    "Performance Optimization & UI/UX Engineering"
+  ],
+  "resources": {
+    "llms_txt": "https://jathushan.dev/llms.txt",
+    "llms_full_txt": "https://jathushan.dev/llms-full.txt",
+    "projects": "https://jathushan.dev/projects",
+    "blogs": "https://jathushan.dev/blogs",
+    "resume": "https://jathushan.dev/Jathushan_SE_Dev.pdf"
+  },
+  "services": [
+    {
+      "id": "full-stack-web",
+      "name": "Full-Stack Web Development",
+      "description": "Bespoke web applications built with Next.js, React, Node.js, and modern databases."
+    },
+    {
+      "id": "ai-solutions",
+      "name": "AI & Automation Integrations",
+      "description": "Private local LLM agents, RAG document search, and autonomous business workflows."
+    },
+    {
+      "id": "retail-pos",
+      "name": "Retail POS Systems",
+      "description": "Scalable retail point of sale, inventory tracking, and offline billing systems."
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "schema_version": "v1",
+  "name_for_model": "jathushan_portfolio",
+  "name_for_human": "Jathushan Varnakulasingam Portfolio",
+  "description_for_model": "Information about Jathushan Varnakulasingam's software engineering background, full-stack development, AI integrations, retail POS solutions, and projects.",
+  "description_for_human": "Explore Jathushan Varnakulasingam's engineering portfolio, projects, and services.",
+  "auth": {
+    "type": "none"
+  },
+  "api": {
+    "type": "openapi",
+    "url": "https://jathushan.dev/llms.txt"
+  },
+  "logo_url": "https://jathushan.dev/logo.png",
+  "contact_email": "contact@jathushan.dev",
+  "legal_info_url": "https://jathushan.dev/"
+}
