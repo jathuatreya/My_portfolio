@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import {
   Sparkles,
   ArrowRight,
@@ -81,7 +81,25 @@ function renderFeatureIcon(iconName?: string, isPopular = false) {
 
 export default function Pricing() {
   const [activeTab, setActiveTab] = useState<"usd" | "retail">("usd");
+  const [activeSlide, setActiveSlide] = useState(0);
+  const carouselRef = useRef<HTMLDivElement>(null);
   const plans = activeTab === "usd" ? portfolioPricingPlans : posRetailPricingPlans;
+
+  const handleTabChange = (tab: "usd" | "retail") => {
+    setActiveTab(tab);
+    setActiveSlide(0);
+    if (carouselRef.current) {
+      carouselRef.current.scrollTo({ left: 0, behavior: "smooth" });
+    }
+  };
+
+  const scrollToSlide = (idx: number) => {
+    if (carouselRef.current) {
+      const cards = carouselRef.current.querySelectorAll<HTMLElement>("[data-pricing-card]");
+      cards[idx]?.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
+      setActiveSlide(idx);
+    }
+  };
 
   const getWhatsAppLink = (message: string) =>
     `https://wa.me/94706601734?text=${encodeURIComponent(message)}`;
@@ -120,7 +138,7 @@ export default function Pricing() {
           {/* Currency / Category Toggle */}
           <div className="mt-8 inline-flex items-center p-1 rounded-full bg-[#121824] border border-white/10 shadow-inner">
             <button
-              onClick={() => setActiveTab("usd")}
+              onClick={() => handleTabChange("usd")}
               className={`px-5 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all duration-200 cursor-pointer ${
                 activeTab === "usd"
                   ? "bg-[#1d75f2] text-white shadow-md shadow-[#1d75f2]/30"
@@ -130,7 +148,7 @@ export default function Pricing() {
               Web & Custom Software ($)
             </button>
             <button
-              onClick={() => setActiveTab("retail")}
+              onClick={() => handleTabChange("retail")}
               className={`px-5 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all duration-200 cursor-pointer ${
                 activeTab === "retail"
                   ? "bg-[#1d75f2] text-white shadow-md shadow-[#1d75f2]/30"
@@ -160,17 +178,28 @@ export default function Pricing() {
           </div>
         </ScrollReveal>
 
-        {/* 3-Column Modern Pricing Cards Grid Matching Reference Style */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-7 items-stretch mb-16 max-w-7xl mx-auto">
+        {/* Mobile Carousel & Desktop 3-Column Grid */}
+        <div
+          ref={carouselRef}
+          onScroll={(e) => {
+            const el = e.currentTarget;
+            const cardWidth = el.scrollWidth / plans.length;
+            const idx = Math.round(el.scrollLeft / cardWidth);
+            if (idx !== activeSlide && idx >= 0 && idx < plans.length) {
+              setActiveSlide(idx);
+            }
+          }}
+          className="flex lg:grid lg:grid-cols-3 gap-5 sm:gap-6 lg:gap-7 items-stretch mb-4 lg:mb-16 max-w-7xl mx-auto overflow-x-auto lg:overflow-visible snap-x snap-mandatory lg:snap-none no-scrollbar -mx-4 px-4 sm:mx-0 sm:px-0 pb-4 lg:pb-0"
+        >
           {plans.map((plan: PricingPlan, index: number) => {
             const isPopular = plan.popular;
             const whatsappLink = getWhatsAppLink(plan.whatsappMessage);
 
             return (
-              <ScrollReveal
+              <div
                 key={plan.id}
-                delay={index * 0.1}
-                className="h-full flex flex-col"
+                data-pricing-card
+                className="w-[85vw] sm:w-[380px] lg:w-auto shrink-0 lg:shrink snap-center flex flex-col h-full"
               >
                 <div
                   className={`relative flex flex-col justify-between rounded-[28px] p-6 sm:p-8 transition-all duration-300 h-full ${
@@ -283,9 +312,26 @@ export default function Pricing() {
                     </div>
                   </div>
                 </div>
-              </ScrollReveal>
+              </div>
             );
           })}
+        </div>
+
+        {/* Mobile Carousel Indicators */}
+        <div className="flex lg:hidden items-center justify-center gap-2 mb-10">
+          {plans.map((_, i) => (
+            <button
+              key={i}
+              type="button"
+              onClick={() => scrollToSlide(i)}
+              aria-label={`Go to plan ${i + 1}`}
+              className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${
+                activeSlide === i
+                  ? "w-7 bg-[#1d75f2]"
+                  : "w-2 bg-white/20 hover:bg-white/40"
+              }`}
+            />
+          ))}
         </div>
 
         {/* Bottom VIP Custom Scope Banner */}

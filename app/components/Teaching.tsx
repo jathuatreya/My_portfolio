@@ -10,6 +10,26 @@ import { highlightTitle } from "../utils/highlight-text";
 
 export default function Teaching() {
   const whatsappNumber = "94706601734";
+  const [activeTeachingSlide, setActiveTeachingSlide] = React.useState(0);
+  const teachingCarouselRef = React.useRef<HTMLDivElement>(null);
+
+  const handleTeachingScroll = (e: React.UIEvent<HTMLDivElement>) => {
+    const el = e.currentTarget;
+    if (!el) return;
+    const cardWidth = el.scrollWidth / teachingPrograms.length;
+    const idx = Math.round(el.scrollLeft / cardWidth);
+    if (idx !== activeTeachingSlide && idx >= 0 && idx < teachingPrograms.length) {
+      setActiveTeachingSlide(idx);
+    }
+  };
+
+  const scrollTeachingTo = (idx: number) => {
+    if (teachingCarouselRef.current) {
+      const cards = teachingCarouselRef.current.querySelectorAll<HTMLElement>("[data-teaching-card]");
+      cards[idx]?.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
+      setActiveTeachingSlide(idx);
+    }
+  };
 
   return (
     <section id="teaching" className="py-24 bg-white dark:bg-[#0a0a0a] relative overflow-hidden transition-colors duration-300">
@@ -26,12 +46,12 @@ export default function Teaching() {
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#F5F5F7] dark:bg-white/5 border border-primary/10 mb-4 shadow-sm">
             <GraduationCap size={16} className="text-primary" />
             <span className="text-xs font-bold tracking-[0.15em] text-primary uppercase">
-              Tech Mentorship & Tutoring
+              Teaching & Mentoring
             </span>
           </div>
 
           <h2 className="text-[#1D1D1F] dark:text-white text-3xl sm:text-5xl font-black tracking-tight leading-tight">
-            {highlightTitle("Teaching 10+ Students in Core Engineering & Tech", 2)}
+            {highlightTitle("Empowering Students through Teaching & Mentoring", 3)}
           </h2>
 
           <p className="mt-3 text-sm sm:text-base text-gray-600 dark:text-gray-400 max-w-2xl mx-auto leading-relaxed">
@@ -61,15 +81,23 @@ export default function Teaching() {
           </div>
         </ScrollReveal>
 
-        {/* 10 Teaching Programs Grid */}
-        <MagicContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 sm:gap-5 items-stretch">
+        {/* 10 Teaching Programs Carousel on Mobile / Grid on Desktop */}
+        <div
+          ref={teachingCarouselRef}
+          onScroll={handleTeachingScroll}
+          className="flex sm:grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 sm:gap-5 items-stretch overflow-x-auto sm:overflow-visible snap-x snap-mandatory sm:snap-none no-scrollbar -mx-4 px-4 sm:mx-0 sm:px-0 pb-4 sm:pb-0"
+        >
           {teachingPrograms.map((prog, index) => {
             const courseWhatsApp = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
               `Hi Jathushan, I want to learn ${prog.title} in your 1-on-1 mentorship program. Please share the schedule and course details!`
             )}`;
 
             return (
-              <ScrollReveal key={prog.id} delay={index * 0.05} className="h-full">
+              <div
+                key={prog.id}
+                data-teaching-card
+                className="w-[82vw] sm:w-auto shrink-0 sm:shrink snap-center flex flex-col h-full"
+              >
                 <MagicCard
                   className="group relative flex flex-col justify-between rounded-2xl sm:rounded-3xl p-5 sm:p-6 bg-white dark:bg-[#111624] border border-black/[0.08] dark:border-white/10 hover:border-[#0077ED]/40 dark:hover:border-[#0077ED]/40 shadow-sm hover:shadow-xl transition-all duration-300 h-full backdrop-blur-sm"
                 >
@@ -126,10 +154,32 @@ export default function Teaching() {
                     </a>
                   </div>
                 </MagicCard>
-              </ScrollReveal>
+              </div>
             );
           })}
-        </MagicContainer>
+        </div>
+
+        {/* Mobile Carousel Indicators & Course Counter */}
+        <div className="flex sm:hidden items-center justify-between gap-3 px-1 mt-4 mb-2">
+          <div className="text-xs font-mono font-bold text-[#0077ED]">
+            Course {activeTeachingSlide + 1} of {teachingPrograms.length}
+          </div>
+          <div className="flex items-center gap-1 overflow-x-auto no-scrollbar py-1">
+            {teachingPrograms.map((_, i) => (
+              <button
+                key={i}
+                type="button"
+                onClick={() => scrollTeachingTo(i)}
+                aria-label={`Go to course ${i + 1}`}
+                className={`h-1.5 rounded-full transition-all duration-300 cursor-pointer ${
+                  activeTeachingSlide === i
+                    ? "w-4 bg-[#0077ED]"
+                    : "w-1.5 bg-gray-300 dark:bg-white/20"
+                }`}
+              />
+            ))}
+          </div>
+        </div>
 
         {/* Bottom Mentorship Inquiry Banner */}
         <ScrollReveal delay={0.2} className="mt-12 sm:mt-16">

@@ -171,7 +171,7 @@ export default function Hero() {
                          {/* ==================================================== */}
                          {/* LEFT PANEL: Exact Match to Screenshot Typography    */}
                          {/* ==================================================== */}
-                         <div className="w-full lg:w-[380px] xl:w-[440px] 2xl:w-[500px] flex flex-col justify-center text-left items-start space-y-5 sm:space-y-7 shrink-0 translate-y-0 lg:-translate-y-20 xl:-translate-y-28 2xl:-translate-y-32">
+                         <div className="w-full lg:w-[380px] xl:w-[440px] 2xl:w-[500px] flex flex-col justify-center text-center lg:text-left items-center lg:items-start space-y-5 sm:space-y-7 shrink-0 translate-y-0 lg:-translate-y-20 xl:-translate-y-28 2xl:-translate-y-32">
                               <div className="w-full space-y-3 sm:space-y-4">
                                    {/* 1. First: Animated "Hi 👋," */}
                                    <motion.div
@@ -205,7 +205,7 @@ export default function Hero() {
                                         initial={{ opacity: 0, y: 12 }}
                                         animate={{ opacity: 1, y: 0 }}
                                         transition={{ duration: 0.35, delay: 0.22, ease: "easeOut" }}
-                                        className="min-h-[32px] sm:min-h-[40px] flex items-center"
+                                        className="min-h-[32px] sm:min-h-[40px] flex items-center justify-center lg:justify-start"
                                    >
                                         <p className="text-xl sm:text-2xl md:text-3xl font-medium text-[#0077ED] tracking-tight">
                                              {t.hero.role_prefix}{" "}
@@ -219,7 +219,7 @@ export default function Hero() {
                                         initial={{ opacity: 0, y: 16 }}
                                         animate={{ opacity: 1, y: 0 }}
                                         transition={{ duration: 0.35, delay: 0.32, ease: "easeOut" }}
-                                        className="flex items-center gap-3 pt-2 sm:pt-3"
+                                        className="flex items-center justify-center lg:justify-start gap-3 pt-2 sm:pt-3"
                                    >
                                         <Link
                                              href="/projects"
