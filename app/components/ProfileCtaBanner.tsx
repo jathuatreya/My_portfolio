@@ -75,7 +75,7 @@ export default function ProfileCtaBanner() {
                   href={profile.social.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full sm:w-auto lg:w-[260px] py-3.5 px-6 rounded-xl bg-[#1D1D1F] hover:bg-[#1A233A] active:scale-[0.98] border border-white/10 hover:border-white/20 text-white font-semibold text-xs sm:text-sm flex items-center justify-center gap-2.5 shadow-md transition-all duration-200 cursor-pointer group"
+                  className="w-full sm:w-auto lg:w-[260px] py-3.5 px-6 rounded-xl bg-[#1D1D1F] hover:bg-[#2A2A2D] active:scale-[0.98] border border-white/10 hover:border-white/20 text-white font-semibold text-xs sm:text-sm flex items-center justify-center gap-2.5 shadow-md transition-all duration-200 cursor-pointer group"
                 >
                   <Linkedin size={15} className="text-primary shrink-0" />
                   <span>View LinkedIn Profile</span>

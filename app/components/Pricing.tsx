@@ -262,7 +262,7 @@ export default function Pricing() {
                             ? "bg-white hover:bg-neutral-100 text-black font-bold shadow-lg shadow-white/10 active:scale-[0.98]"
                             : plan.primaryButtonStyle === "blue" || plan.primaryButtonStyle === "primary"
                             ? "bg-primary hover:bg-primary/90 text-white font-bold shadow-lg shadow-primary/25 active:scale-[0.98]"
-                            : "bg-[#2A2A2D] hover:bg-[#283244] text-white border border-white/10 active:scale-[0.98]"
+                            : "bg-[#2A2A2D] hover:bg-[#2A2A2D] text-white border border-white/10 active:scale-[0.98]"
                         }`}
                       >
                         {(plan.primaryButtonStyle === "blue" || plan.primaryButtonStyle === "primary") && (

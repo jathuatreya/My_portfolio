@@ -245,7 +245,7 @@ export default function Navbar() {
                     className="fixed inset-0 z-10"
                     onClick={() => setIsLangMenuOpen(false)}
                   />
-                  <div className="absolute right-0 mt-2 w-32 origin-top-right rounded-2xl shadow-xl ring-1 ring-black/5 dark:ring-white/10 z-20 overflow-hidden py-1.5 bg-white dark:bg-[#1a1a1a] backdrop-blur-md">
+                  <div className="absolute right-0 mt-2 w-32 origin-top-right rounded-2xl shadow-xl ring-1 ring-black/5 dark:ring-white/10 z-20 overflow-hidden py-1.5 bg-white dark:bg-[#1D1D1F] backdrop-blur-md">
                     {languages.map((lang) => (
                       <button
                         key={lang.code}

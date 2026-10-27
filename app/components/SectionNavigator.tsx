@@ -122,7 +122,7 @@ export default function SectionNavigator() {
                       : "opacity-0 translate-x-2 scale-95 pointer-events-none"
                   }`}
                 >
-                  <div className="bg-white dark:bg-[#09101d] text-neutral-900 dark:text-white text-xs font-semibold px-3 py-1.5 rounded-xl shadow-xl shadow-black/10 border border-black/10 dark:border-primary/50 flex items-center gap-2 whitespace-nowrap">
+                  <div className="bg-white dark:bg-[#1D1D1F] text-neutral-900 dark:text-white text-xs font-semibold px-3 py-1.5 rounded-xl shadow-xl shadow-black/10 border border-black/10 dark:border-primary/50 flex items-center gap-2 whitespace-nowrap">
                     <span className="w-1.5 h-1.5 rounded-full bg-primary" />
                     <span>{section.label}</span>
                     <span className="text-[10px] font-mono text-primary/80 font-bold">

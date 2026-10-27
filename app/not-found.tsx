@@ -4,7 +4,7 @@ import { Home, ArrowLeft } from 'lucide-react'
 
 export default function NotFound() {
      return (
-          <div className="min-h-screen flex items-center justify-center bg-page-light dark:bg-page-dark p-4">
+          <div className="min-h-screen flex items-center justify-center bg-white dark:bg-[#0a0a0a] p-4">
                <div className="text-center space-y-8 max-w-lg mx-auto">
 
                     {/* Animated 404 Text */}

@@ -85,7 +85,7 @@ export default function FloatingActions() {
                 : "opacity-0 translate-x-2 scale-95 pointer-events-none"
             }`}
           >
-            <div className="bg-white dark:bg-[#09101d] text-neutral-900 dark:text-white text-[11px] font-semibold px-2.5 py-1 rounded-lg shadow-lg border border-black/10 dark:border-primary/40 flex items-center gap-1.5 whitespace-nowrap">
+            <div className="bg-white dark:bg-[#1D1D1F] text-neutral-900 dark:text-white text-[11px] font-semibold px-2.5 py-1 rounded-lg shadow-lg border border-black/10 dark:border-primary/40 flex items-center gap-1.5 whitespace-nowrap">
               <span>Scroll to Top</span>
               <span className="text-primary">↑</span>
             </div>
@@ -122,7 +122,7 @@ export default function FloatingActions() {
                 : "opacity-0 translate-x-2 scale-95 pointer-events-none"
             }`}
           >
-            <div className="bg-white dark:bg-[#09101d] text-neutral-900 dark:text-white text-[11px] font-semibold px-2.5 py-1 rounded-lg shadow-lg border border-black/10 dark:border-primary/40 flex items-center gap-1.5 whitespace-nowrap">
+            <div className="bg-white dark:bg-[#1D1D1F] text-neutral-900 dark:text-white text-[11px] font-semibold px-2.5 py-1 rounded-lg shadow-lg border border-black/10 dark:border-primary/40 flex items-center gap-1.5 whitespace-nowrap">
               <span>Scroll to Bottom</span>
               <span className="text-primary">↓</span>
             </div>

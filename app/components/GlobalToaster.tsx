@@ -24,7 +24,7 @@ export default function GlobalToaster() {
                               t.component
                          ) : t.type === 'error' ? (
                               // Error Toast Style
-                              <div className="bg-[#F5F5F7] dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-xl shadow-lg p-4 flex items-center gap-3">
+                              <div className="bg-[#F5F5F7] dark:bg-[#1D1D1F] border border-gray-200 dark:border-gray-800 rounded-xl shadow-lg p-4 flex items-center gap-3">
                                    <div className="bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400 p-2 rounded-full">
                                         <AlertCircle size={18} />
                                    </div>
@@ -40,7 +40,7 @@ export default function GlobalToaster() {
                               </div>
                          ) : (
                               // Default Success Toast Style
-                              <div className="bg-[#F5F5F7] dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-xl shadow-lg p-4 flex items-center gap-3">
+                              <div className="bg-[#F5F5F7] dark:bg-[#1D1D1F] border border-gray-200 dark:border-gray-800 rounded-xl shadow-lg p-4 flex items-center gap-3">
                                    <div className="bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400 p-2 rounded-full">
                                         <CheckCircle size={18} />
                                    </div>
