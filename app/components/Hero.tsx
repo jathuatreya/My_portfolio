@@ -180,7 +180,7 @@ export default function Hero() {
                                         animate={{ opacity: 1, y: 0 }}
                                         transition={{ duration: 0.35, delay: 0.05, ease: "easeOut" }}
                                    >
-                                        <span className="text-3xl sm:text-5xl lg:text-5xl xl:text-6xl font-bold tracking-tight text-[#1D1D1F] dark:text-white leading-[1.12] block mb-1 sm:mb-2">
+                                        <span className="text-3xl sm:text-5xl lg:text-5xl xl:text-6xl font-bold tracking-tight text-primary leading-[1.12] block mb-1 sm:mb-2">
                                              Hi <span className="animate-wave inline-block origin-[70%_70%] select-none">👋</span>,
                                         </span>
                                    </motion.div>
@@ -193,11 +193,11 @@ export default function Hero() {
                                    >
                                         <h1 className="text-3xl sm:text-5xl lg:text-5xl xl:text-6xl font-bold tracking-tight text-[#1D1D1F] dark:text-white leading-[1.12] break-words">
                                              <span className="block">
-                                                  I&apos;m <span className="text-primary">Jathushan</span>
+                                                  I&apos;m Jathushan
                                              </span>
-                                             <span className="text-primary block">
-                                                  Varnakulasingam
-                                             </span>
+                                             <span className="block">
+                                                   Varnakulasingam
+                                              </span>
                                         </h1>
                                    </motion.div>
 
