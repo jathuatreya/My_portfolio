@@ -209,14 +209,14 @@ export default function Skills() {
                                    </div>
                               </ScrollReveal>
 
-                              <div className="grid grid-cols-1 gap-4">
+                              <div className="grid grid-cols-1 gap-3 sm:gap-3.5">
                                    {goals.map((goal, index) => (
-                                        <ScrollReveal key={index} delay={index * 0.1} className="flex items-center gap-5 p-6 rounded-2xl bg-[#F5F5F7] dark:bg-[#1D1D1F] border border-transparent hover:border-primary/20 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
-                                             <div className="shrink-0 w-10 h-10 rounded-full bg-white dark:bg-white/10 flex items-center justify-center text-primary shadow-sm">
-                                                  <CheckCircle2 size={20} strokeWidth={3} />
+                                        <ScrollReveal key={index} delay={index * 0.06} className="flex items-center gap-3.5 sm:gap-4 p-3.5 sm:p-4 rounded-xl sm:rounded-2xl bg-[#F5F5F7] dark:bg-[#1D1D1F] border border-transparent hover:border-primary/30 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300">
+                                             <div className="shrink-0 w-8 h-8 rounded-full bg-white dark:bg-white/10 flex items-center justify-center text-primary shadow-xs">
+                                                  <CheckCircle2 size={16} strokeWidth={2.5} />
                                              </div>
 
-                                             <p className="text-[#1D1D1F] dark:text-white font-bold text-lg leading-snug">
+                                             <p className="text-[#1D1D1F] dark:text-white font-semibold text-xs sm:text-sm leading-snug">
                                                   {goal}
                                              </p>
                                         </ScrollReveal>

@@ -74,10 +74,10 @@ export const technologies = [
 // --------------------------------------
 
 export const goals = [
-  "Master full-stack development using modern frameworks and technologies.",
-  "Train, fine-tune, and deploy machine learning models, including RAG applications.",
-  "Build innovative IoT and robotics projects integrating AI and hardware.",
-  "Explore electrical, mechanical, and computer engineering intersections.",
-  "Contribute to open-source projects and grow a strong professional portfolio.",
-  "Continuously learn new technologies, frameworks, and engineering skills.",
+  "Build fast, modern web apps from frontend to backend.",
+  "Create and deploy smart AI and machine learning models.",
+  "Build smart IoT and robotics projects with AI and hardware.",
+  "Combine electronics, hardware, and software into real-world devices.",
+  "Contribute to open-source projects and build helpful software.",
+  "Always learn new technologies and sharpen engineering skills.",
 ] as const;
