@@ -9,7 +9,6 @@ const Experience = dynamic(() => import('./components/Experience'))
 const Education = dynamic(() => import('./components/Education'))
 const ProfileCtaBanner = dynamic(() => import('./components/ProfileCtaBanner'))
 const Skills = dynamic(() => import('./components/Skills'))
-const Services = dynamic(() => import('./components/Services'))
 const Projects = dynamic(() => import('./components/Projects'))
 const Pricing = dynamic(() => import('./components/Pricing'))
 const Teaching = dynamic(() => import('./components/Teaching'))
@@ -30,7 +29,6 @@ export default function Home() {
           <Education />
           <ProfileCtaBanner />
           <Skills />
-          <Services />
           <Projects />
           <Pricing />
           <Teaching />

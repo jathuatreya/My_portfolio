@@ -15,7 +15,6 @@ const SECTIONS: Section[] = [
   { id: "experience", label: "Experience", shortLabel: "Exp" },
   { id: "education", label: "Education", shortLabel: "Edu" },
   { id: "skills", label: "Skills & Capabilities", shortLabel: "Skills" },
-  { id: "services", label: "Services", shortLabel: "Services" },
   { id: "projects", label: "Featured Projects", shortLabel: "Projects" },
   { id: "pricing", label: "Pricing Packages", shortLabel: "Pricing" },
   { id: "teaching", label: "Tech Mentorship", shortLabel: "Teaching" },
