@@ -20,7 +20,7 @@ const socialLinks = [
 
 export default function Footer() {
   return (
-    <footer className="w-full bg-[#F8FAFC] dark:bg-[#070A12] text-neutral-900 dark:text-white py-10 border-t border-black/[0.08] dark:border-white/5 transition-colors duration-300">
+    <footer className="w-full bg-[#F8FAFC] dark:bg-[#0a0a0a] text-neutral-900 dark:text-white py-10 border-t border-black/[0.08] dark:border-white/5 transition-colors duration-300">
       <div className="w-full px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12">
         {/* Social Media Icons */}
         <div className="flex flex-wrap items-center justify-center gap-2.5 sm:gap-3 mb-6">

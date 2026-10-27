@@ -72,7 +72,7 @@ export default function Testimonials() {
               data-testimonial-card
               className="w-[85vw] sm:w-[380px] md:w-auto shrink-0 md:shrink snap-center flex flex-col h-full"
             >
-              <MagicCard className="group relative flex flex-col justify-between rounded-2xl sm:rounded-3xl bg-[#FAFBFD] dark:bg-[#111624] border-2 border-primary/40 hover:border-primary p-5 sm:p-7 shadow-md shadow-primary/10 hover:shadow-[0_0_30px_rgba(255,103,0,0.22)] transition-all duration-300 h-full backdrop-blur-sm">
+              <MagicCard className="group relative flex flex-col justify-between rounded-2xl sm:rounded-3xl bg-[#FAFBFD] dark:bg-[#1D1D1F] border-2 border-primary/40 hover:border-primary p-5 sm:p-7 shadow-md shadow-primary/10 hover:shadow-[0_0_30px_rgba(255,103,0,0.22)] transition-all duration-300 h-full backdrop-blur-sm">
                 <div>
                   {/* Header: Avatar, Name, Role, and Quote Icon */}
                   <div className="flex items-start justify-between gap-3 mb-5">

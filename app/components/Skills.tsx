@@ -50,7 +50,7 @@ export default function Skills() {
                                         desc: "Scalable engineering using Next.js 16, React 19, TypeScript, Node.js, and modern databases. I connect pixel-perfect frontends with secure, reliable cloud backend architectures.",
                                         icon: <Code2 size={24} strokeWidth={1.5} />,
                                         colSpan: "md:col-span-1 lg:col-span-2",
-                                        cardClass: "border-2 border-emerald-500/40 dark:border-emerald-500/50 bg-gradient-to-b from-emerald-500/[0.08] via-emerald-500/[0.02] to-white dark:from-emerald-500/[0.12] dark:via-[#111624] dark:to-[#111624] bg-white dark:bg-[#111624] shadow-lg shadow-emerald-500/5",
+                                        cardClass: "border-2 border-emerald-500/40 dark:border-emerald-500/50 bg-gradient-to-b from-emerald-500/[0.08] via-emerald-500/[0.02] to-white dark:from-emerald-500/[0.12] dark:via-[#1D1D1F] dark:to-[#1D1D1F] bg-white dark:bg-[#1D1D1F] shadow-lg shadow-emerald-500/5",
                                         numberClass: "text-[#16A34A] dark:text-[#22C55E]",
                                         iconClass: "text-[#1D1D1F] dark:text-neutral-200",
                                         linkClass: "text-[#16A34A] dark:text-[#22C55E]",
@@ -62,7 +62,7 @@ export default function Skills() {
                                         desc: "Drive high-intent traffic and conversions with technical SEO, targeted PPC campaigns, and data-driven digital growth strategies that elevate your brand visibility.",
                                         icon: <TrendingUp size={24} strokeWidth={1.5} />,
                                         colSpan: "md:col-span-1 lg:col-span-2",
-                                        cardClass: "border-2 border-primary/40 dark:border-primary/50 hover:border-primary bg-white dark:bg-[#111624] shadow-sm hover:shadow-xl shadow-primary/5 transition-all duration-300",
+                                        cardClass: "border-2 border-primary/40 dark:border-primary/50 hover:border-primary bg-white dark:bg-[#1D1D1F] shadow-sm hover:shadow-xl shadow-primary/5 transition-all duration-300",
                                         numberClass: "text-[#9CA3AF] dark:text-neutral-600 group-hover:text-neutral-700 dark:group-hover:text-neutral-300",
                                         iconClass: "text-[#9CA3AF] dark:text-neutral-500 group-hover:text-neutral-800 dark:group-hover:text-white",
                                         linkClass: "text-neutral-900 dark:text-white",
@@ -74,7 +74,7 @@ export default function Skills() {
                                         desc: "Bespoke enterprise applications, cloud POS systems, inventory management engines, and tailor-made business tools built to solve unique operational bottlenecks.",
                                         icon: <Layers size={24} strokeWidth={1.5} />,
                                         colSpan: "md:col-span-2 lg:col-span-2",
-                                        cardClass: "border-2 border-primary/40 dark:border-primary/50 hover:border-primary bg-white dark:bg-[#111624] shadow-sm hover:shadow-xl shadow-primary/5 transition-all duration-300",
+                                        cardClass: "border-2 border-primary/40 dark:border-primary/50 hover:border-primary bg-white dark:bg-[#1D1D1F] shadow-sm hover:shadow-xl shadow-primary/5 transition-all duration-300",
                                         numberClass: "text-[#9CA3AF] dark:text-neutral-600 group-hover:text-neutral-700 dark:group-hover:text-neutral-300",
                                         iconClass: "text-[#9CA3AF] dark:text-neutral-500 group-hover:text-neutral-800 dark:group-hover:text-white",
                                         linkClass: "text-neutral-900 dark:text-white",
@@ -86,7 +86,7 @@ export default function Skills() {
                                         desc: "Deep learning models, computer vision systems (OpenCV), predictive algorithms with PyTorch & TensorFlow, and custom LLM integrations tailored for production impact.",
                                         icon: <Cpu size={24} strokeWidth={1.5} />,
                                         colSpan: "md:col-span-1 lg:col-span-3",
-                                        cardClass: "border border-black/[0.08] dark:border-white/10 bg-white dark:bg-[#111624] shadow-sm hover:shadow-xl hover:border-black/20 dark:hover:border-white/20",
+                                        cardClass: "border border-black/[0.08] dark:border-white/10 bg-white dark:bg-[#1D1D1F] shadow-sm hover:shadow-xl hover:border-black/20 dark:hover:border-white/20",
                                         numberClass: "text-[#9CA3AF] dark:text-neutral-600 group-hover:text-neutral-700 dark:group-hover:text-neutral-300",
                                         iconClass: "text-[#9CA3AF] dark:text-neutral-500 group-hover:text-neutral-800 dark:group-hover:text-white",
                                         linkClass: "text-neutral-900 dark:text-white",
@@ -98,7 +98,7 @@ export default function Skills() {
                                         desc: "End-to-end workflow automations, webhook pipelines, WhatsApp & messaging bots, and smart IoT telemetry that eliminate repetitive manual tasks and accelerate operations.",
                                         icon: <Zap size={24} strokeWidth={1.5} />,
                                         colSpan: "md:col-span-1 lg:col-span-3",
-                                        cardClass: "border border-black/[0.08] dark:border-white/10 bg-white dark:bg-[#111624] shadow-sm hover:shadow-xl hover:border-black/20 dark:hover:border-white/20",
+                                        cardClass: "border border-black/[0.08] dark:border-white/10 bg-white dark:bg-[#1D1D1F] shadow-sm hover:shadow-xl hover:border-black/20 dark:hover:border-white/20",
                                         numberClass: "text-[#9CA3AF] dark:text-neutral-600 group-hover:text-neutral-700 dark:group-hover:text-neutral-300",
                                         iconClass: "text-[#9CA3AF] dark:text-neutral-500 group-hover:text-neutral-800 dark:group-hover:text-white",
                                         linkClass: "text-neutral-900 dark:text-white",
@@ -157,7 +157,7 @@ export default function Skills() {
                                         {technologies.map((tech, index) => (
                                              <MagicCard
                                                   key={index}
-                                                  className="group flex items-center gap-1.5 sm:gap-2.5 px-2.5 py-1.5 sm:px-4 sm:py-2.5 rounded-xl sm:rounded-2xl bg-[#F5F5F7] dark:bg-[#161b26] border border-black/5 dark:border-white/5 hover:border-primary/40 dark:hover:border-primary/40 hover:bg-white dark:hover:bg-[#1a2234] hover:shadow-md transition-all cursor-default"
+                                                  className="group flex items-center gap-1.5 sm:gap-2.5 px-2.5 py-1.5 sm:px-4 sm:py-2.5 rounded-xl sm:rounded-2xl bg-[#F5F5F7] dark:bg-[#1D1D1F] border border-black/5 dark:border-white/5 hover:border-primary/40 dark:hover:border-primary/40 hover:bg-white dark:hover:bg-[#1a2234] hover:shadow-md transition-all cursor-default"
                                                   disableAnimations={true}
                                                   particleCount={0}
                                                   enableTilt={true}

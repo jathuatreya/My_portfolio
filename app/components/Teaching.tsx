@@ -65,7 +65,7 @@ export default function Teaching() {
             {teachingStats.map((stat, i) => (
               <div
                 key={i}
-                className="p-4 sm:p-5 rounded-2xl bg-[#F5F5F7]/80 dark:bg-[#111624] border border-black/[0.05] dark:border-white/10 text-center shadow-xs hover:border-primary/30 transition-all"
+                className="p-4 sm:p-5 rounded-2xl bg-[#F5F5F7]/80 dark:bg-[#1D1D1F] border border-black/[0.05] dark:border-white/10 text-center shadow-xs hover:border-primary/30 transition-all"
               >
                 <div className="text-2xl sm:text-4xl font-black text-primary tracking-tight">
                   {stat.value}
@@ -99,7 +99,7 @@ export default function Teaching() {
                 className="w-[82vw] sm:w-auto shrink-0 sm:shrink snap-center flex flex-col h-full"
               >
                 <MagicCard
-                  className="group relative flex flex-col justify-between rounded-2xl sm:rounded-3xl p-5 sm:p-6 bg-white dark:bg-[#111624] border-2 border-primary/40 hover:border-primary shadow-md shadow-primary/10 hover:shadow-[0_0_28px_rgba(255,103,0,0.22)] transition-all duration-300 h-full backdrop-blur-sm"
+                  className="group relative flex flex-col justify-between rounded-2xl sm:rounded-3xl p-5 sm:p-6 bg-white dark:bg-[#1D1D1F] border-2 border-primary/40 hover:border-primary shadow-md shadow-primary/10 hover:shadow-[0_0_28px_rgba(255,103,0,0.22)] transition-all duration-300 h-full backdrop-blur-sm"
                 >
                   <div>
                     {/* Card Top: Number + Tech Icon + Category Badge */}

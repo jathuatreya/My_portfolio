@@ -14,7 +14,7 @@ export default function ProfileCtaBanner() {
     <section className="py-12 sm:py-16 bg-white dark:bg-[#0a0a0a] transition-colors duration-300 overflow-hidden">
       <div className="w-[92%] sm:w-[88%] lg:w-[82%] xl:w-[80%] mx-auto">
         <ScrollReveal>
-          <div className="relative rounded-[28px] sm:rounded-[36px] bg-[#070B16] dark:bg-[#080D1D] border border-white/10 dark:border-white/[0.08] p-5 sm:p-8 lg:p-14 shadow-2xl overflow-hidden group">
+          <div className="relative rounded-[28px] sm:rounded-[36px] bg-[#0a0a0a] dark:bg-[#1D1D1F] border border-white/10 dark:border-white/[0.08] p-5 sm:p-8 lg:p-14 shadow-2xl overflow-hidden group">
             {/* Soft Ambient Background Glow */}
             <div
               aria-hidden="true"
@@ -75,7 +75,7 @@ export default function ProfileCtaBanner() {
                   href={profile.social.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full sm:w-auto lg:w-[260px] py-3.5 px-6 rounded-xl bg-[#141B2D] hover:bg-[#1A233A] active:scale-[0.98] border border-white/10 hover:border-white/20 text-white font-semibold text-xs sm:text-sm flex items-center justify-center gap-2.5 shadow-md transition-all duration-200 cursor-pointer group"
+                  className="w-full sm:w-auto lg:w-[260px] py-3.5 px-6 rounded-xl bg-[#1D1D1F] hover:bg-[#1A233A] active:scale-[0.98] border border-white/10 hover:border-white/20 text-white font-semibold text-xs sm:text-sm flex items-center justify-center gap-2.5 shadow-md transition-all duration-200 cursor-pointer group"
                 >
                   <Linkedin size={15} className="text-primary shrink-0" />
                   <span>View LinkedIn Profile</span>

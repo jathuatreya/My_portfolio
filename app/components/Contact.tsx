@@ -84,13 +84,13 @@ export default function Contact() {
 
         {/* Main Unified Contact Card */}
         <ScrollReveal delay={0.15}>
-          <div className="rounded-[28px] sm:rounded-[36px] bg-[#EEF2F6] dark:bg-[#0E1526] border border-black/[0.06] dark:border-white/10 p-2.5 sm:p-4 lg:p-5 shadow-2xl overflow-hidden">
+          <div className="rounded-[28px] sm:rounded-[36px] bg-[#EEF2F6] dark:bg-[#1D1D1F] border border-black/[0.06] dark:border-white/10 p-2.5 sm:p-4 lg:p-5 shadow-2xl overflow-hidden">
             <div className="flex flex-col lg:flex-row gap-4 sm:gap-6 lg:gap-8 items-stretch">
               
               {/* ==================================================== */}
               {/* LEFT COLUMN: Dark Info Panel                         */}
               {/* ==================================================== */}
-              <div className="w-full lg:w-[40%] xl:w-[38%] rounded-[24px] sm:rounded-[28px] bg-[#161E2E] dark:bg-[#080C16] text-white p-5 sm:p-7 lg:p-9 flex flex-col justify-between space-y-8 border border-white/5 shadow-xl">
+              <div className="w-full lg:w-[40%] xl:w-[38%] rounded-[24px] sm:rounded-[28px] bg-[#1D1D1F] dark:bg-[#0a0a0a] text-white p-5 sm:p-7 lg:p-9 flex flex-col justify-between space-y-8 border border-white/5 shadow-xl">
                 <div>
                   <h3 className="text-2xl sm:text-3xl font-extrabold tracking-tight leading-snug text-white">
                     Let&apos;s Build Something{" "}
@@ -240,7 +240,7 @@ export default function Contact() {
                           type="text"
                           required
                           placeholder="John Anderson"
-                          className="w-full rounded-xl bg-white dark:bg-[#141B2D] border border-black/10 dark:border-white/10 px-4 py-3 text-sm text-[#1D1D1F] dark:text-white placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all shadow-xs"
+                          className="w-full rounded-xl bg-white dark:bg-[#1D1D1F] border border-black/10 dark:border-white/10 px-4 py-3 text-sm text-[#1D1D1F] dark:text-white placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all shadow-xs"
                         />
                       </div>
                       <div>
@@ -252,7 +252,7 @@ export default function Contact() {
                           type="email"
                           required
                           placeholder="contact@company.com"
-                          className="w-full rounded-xl bg-white dark:bg-[#141B2D] border border-black/10 dark:border-white/10 px-4 py-3 text-sm text-[#1D1D1F] dark:text-white placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all shadow-xs"
+                          className="w-full rounded-xl bg-white dark:bg-[#1D1D1F] border border-black/10 dark:border-white/10 px-4 py-3 text-sm text-[#1D1D1F] dark:text-white placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all shadow-xs"
                         />
                       </div>
                     </div>
@@ -266,7 +266,7 @@ export default function Contact() {
                         name="phone"
                         type="tel"
                         placeholder="+94 ... or +1 ..."
-                        className="w-full rounded-xl bg-white dark:bg-[#141B2D] border border-black/10 dark:border-white/10 px-4 py-3 text-sm text-[#1D1D1F] dark:text-white placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all shadow-xs"
+                        className="w-full rounded-xl bg-white dark:bg-[#1D1D1F] border border-black/10 dark:border-white/10 px-4 py-3 text-sm text-[#1D1D1F] dark:text-white placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all shadow-xs"
                       />
                     </div>
 
@@ -280,7 +280,7 @@ export default function Contact() {
                         required
                         rows={4}
                         placeholder="Describe your engineering requirements, project location, timeline..."
-                        className="w-full rounded-xl bg-white dark:bg-[#141B2D] border border-black/10 dark:border-white/10 px-4 py-3 text-sm text-[#1D1D1F] dark:text-white placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all shadow-xs resize-none"
+                        className="w-full rounded-xl bg-white dark:bg-[#1D1D1F] border border-black/10 dark:border-white/10 px-4 py-3 text-sm text-[#1D1D1F] dark:text-white placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all shadow-xs resize-none"
                       />
                     </div>
 

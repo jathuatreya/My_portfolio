@@ -21,10 +21,10 @@ export default function About() {
 
                <div className="w-[92%] sm:w-[88%] lg:w-[82%] xl:w-[80%] mx-auto relative z-10">
                     <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-                         {/* Left Column: Image with Entry Animation (Shifted slightly downside for balanced alignment) */}
-                         <div className="flex justify-center lg:justify-start lg:col-span-4 w-full pt-3 sm:pt-5 lg:pt-10">
+                         {/* Left Column: Image with Entry Animation (Shifted further downside for balanced alignment) */}
+                         <div className="flex justify-center lg:justify-start lg:col-span-4 w-full pt-6 sm:pt-10 lg:pt-20 xl:pt-24">
                               <ScrollReveal delay={0.1} className="w-full max-w-sm">
-                                   <div className="w-64 h-64 sm:w-80 sm:h-80 lg:w-full lg:h-auto lg:aspect-square rounded-2xl bg-[#F5F5F7] dark:bg-[#111624] p-3 border-2 border-primary/40 shadow-lg shadow-primary/10 overflow-hidden relative">
+                                   <div className="w-64 h-64 sm:w-80 sm:h-80 lg:w-full lg:h-auto lg:aspect-square rounded-2xl bg-[#F5F5F7] dark:bg-[#1D1D1F] p-3 border-2 border-primary/40 shadow-lg shadow-primary/10 overflow-hidden relative">
                                         <Image
                                              src={profile.aboutImage}
                                              alt={profile.name}

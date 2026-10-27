@@ -158,7 +158,7 @@ export default function FloatingActions() {
               : "opacity-0 translate-x-2 scale-95 pointer-events-none"
           }`}
         >
-          <div className="bg-white dark:bg-[#121824] text-neutral-900 dark:text-white text-xs font-medium px-3.5 py-2 rounded-xl shadow-xl border border-black/10 dark:border-white/10 flex flex-col whitespace-nowrap shadow-black/10">
+          <div className="bg-white dark:bg-[#1D1D1F] text-neutral-900 dark:text-white text-xs font-medium px-3.5 py-2 rounded-xl shadow-xl border border-black/10 dark:border-white/10 flex flex-col whitespace-nowrap shadow-black/10">
             <div className="flex items-center gap-1.5 font-bold text-neutral-900 dark:text-white">
               <span>Chat with Jathushan</span>
               <span className="w-2 h-2 rounded-full bg-[#25D366] animate-pulse" />
@@ -166,7 +166,7 @@ export default function FloatingActions() {
             <span className="text-[11px] text-neutral-500 dark:text-neutral-400 font-mono mt-0.5">
               Typically replies in minutes • WhatsApp
             </span>
-            <div className="absolute top-1/2 -right-1.5 -translate-y-1/2 w-2.5 h-2.5 bg-white dark:bg-[#121824] border-t border-r border-black/10 dark:border-white/10 rotate-45" />
+            <div className="absolute top-1/2 -right-1.5 -translate-y-1/2 w-2.5 h-2.5 bg-white dark:bg-[#1D1D1F] border-t border-r border-black/10 dark:border-white/10 rotate-45" />
           </div>
         </div>
 

@@ -80,10 +80,10 @@ export default function BlogModal({ blog, onClose, onSelectBlog }: BlogModalProp
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.94, y: 20 }}
           transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-          className="relative w-full max-w-4xl max-h-[92vh] bg-white dark:bg-[#0c111d] border border-black/10 dark:border-white/10 rounded-[28px] sm:rounded-[36px] shadow-2xl overflow-hidden flex flex-col z-10"
+          className="relative w-full max-w-4xl max-h-[92vh] bg-white dark:bg-[#1D1D1F] border border-black/10 dark:border-white/10 rounded-[28px] sm:rounded-[36px] shadow-2xl overflow-hidden flex flex-col z-10"
         >
           {/* Top Sticky Header */}
-          <div className="sticky top-0 z-20 flex items-center justify-between px-4 sm:px-8 py-3.5 sm:py-4 bg-white/90 dark:bg-[#0c111d]/90 backdrop-blur-md border-b border-black/5 dark:border-white/10">
+          <div className="sticky top-0 z-20 flex items-center justify-between px-4 sm:px-8 py-3.5 sm:py-4 bg-white/90 dark:bg-[#1D1D1F]/90 backdrop-blur-md border-b border-black/5 dark:border-white/10">
             <div className="flex items-center gap-3">
               <span className="px-3 py-1 rounded-full bg-primary/10 border border-primary/25 text-primary text-xs font-mono font-bold uppercase tracking-wider">
                 {blog.category}

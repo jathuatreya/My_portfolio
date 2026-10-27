@@ -122,45 +122,6 @@ export const portfolioPricingPlans: PricingPlan[] = [
     whatsappMessage:
       "Hi Jathushan, I want to build a Custom Web Application with Cloud POS & Inventory management ($250). Let's talk!",
   },
-  {
-    id: "enterprise-custom-software",
-    tier: "Pro",
-    badge: "0 MAINT. FOREVER",
-    badgeType: "green",
-    name: "Enterprise Software & AI Suite",
-    tagline: "Bespoke enterprise cloud software, offline-first POS engine, AI business agents & 100% code ownership.",
-    priceUSD: 500,
-    priceDisplay: "$500",
-    priceUnit: "/ starting scope",
-    priceSubtext: "One-time payment • $0 maintenance forever",
-    priceSubtextType: "green",
-    pricePrefix: "Starting from",
-    priceType: "Starting Scope",
-    popular: false,
-    primaryButtonText: "Choose Full Ownership",
-    primaryButtonStyle: "primary",
-    deliveryTime: "2 – 4 Weeks",
-    category: "Enterprise Cloud, Offline POS & AI",
-    featureItems: [
-      { text: "100% full administrative access & complete source code ownership", iconName: "key" },
-      { text: "Offline-first continuous billing with hybrid cloud database sync", iconName: "monitor" },
-      { text: "Custom private AI assistants & automated business workflows", iconName: "sparkles" },
-      { text: "Hardware integrations (Barcode scanners, weighing scales, printers)", iconName: "store" },
-      { text: "Enterprise security, custom REST APIs & multi-branch architecture", iconName: "shield" },
-      { text: "Comprehensive staff training & lifetime SLA deployment", iconName: "headphones" },
-    ],
-    features: [
-      "100% full administrative access & complete source code ownership",
-      "Offline-first continuous billing with hybrid cloud database sync",
-      "Custom private AI assistants & automated business workflows",
-      "Hardware integrations (Barcode scanners, weighing scales, printers)",
-      "Enterprise security, custom REST APIs & multi-branch architecture",
-      "Comprehensive staff training & lifetime SLA deployment",
-    ],
-    ctaText: "Choose Full Ownership",
-    whatsappMessage:
-      "Hi Jathushan, I have an Enterprise Software & Custom AI/POS project (starting from $500) and require full source code ownership. Let's schedule a discussion!",
-  },
 ];
 
 // 🏬 2. Retail POS Billing Packages (Exact LKR / Rs. Edition from reference)

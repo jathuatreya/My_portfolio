@@ -88,7 +88,7 @@ export default function Education() {
                                                                  </div>
 
                                                                  {/* Minimized Compact MagicCard matching Professional Journey */}
-                                                                 <MagicCard className="bg-[#FAFBFD] dark:bg-[#111624] border-2 border-primary/40 hover:border-primary rounded-2xl sm:rounded-3xl p-4 sm:p-6 shadow-md shadow-primary/10 hover:shadow-[0_0_28px_rgba(255,103,0,0.22)] transition-all duration-300 backdrop-blur-sm">
+                                                                 <MagicCard className="bg-[#FAFBFD] dark:bg-[#1D1D1F] border-2 border-primary/40 hover:border-primary rounded-2xl sm:rounded-3xl p-4 sm:p-6 shadow-md shadow-primary/10 hover:shadow-[0_0_28px_rgba(255,103,0,0.22)] transition-all duration-300 backdrop-blur-sm">
                                                                       <p className="text-gray-600 dark:text-gray-400 text-xs sm:text-sm leading-relaxed mb-5">
                                                                            {edu.description}
                                                                       </p>

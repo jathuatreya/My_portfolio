@@ -35,7 +35,7 @@
 
   --card: #F5F5F7;
   --card-light: #F5F5F7;
-  --card-dark: #121212;
+  --card-dark: #1D1D1F;
 
   --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
 
@@ -71,8 +71,9 @@ body {
 html.dark, :root.dark {
   --background: #0a0a0a;
   --foreground: #ffffff;
-  --card: #121212;
-  --nav-bg: #1a1a1a;
+  --card: #1D1D1F;
+  --card-dark: #1D1D1F;
+  --nav-bg: #1D1D1F;
   --ui-background: #0a0a0a;
 }
 
@@ -80,8 +81,9 @@ html.dark, :root.dark {
   :root:not(.light) {
     --background: #0a0a0a;
     --foreground: #ffffff;
-    --card: #121212;
-    --nav-bg: #1a1a1a;
+    --card: #1D1D1F;
+    --card-dark: #1D1D1F;
+    --nav-bg: #1D1D1F;
     --ui-background: #0a0a0a;
   }
 
@@ -109,6 +111,7 @@ html.dark, :root.dark {
   --color-primary-hover: #E65C00;
   --color-primary-light: #FF8533;
   --color-primary-dark: #CC5200;
+  --color-card-dark: #1D1D1F;
 }
 
 /* Primary color tokens tied to global CSS variables */

@@ -77,7 +77,7 @@ export default function Projects() {
               data-project-card
               className="w-[86vw] sm:w-[380px] md:w-auto shrink-0 md:shrink snap-center flex flex-col h-full"
             >
-              <div className="h-full rounded-[24px] sm:rounded-[28px] border-2 border-primary/40 hover:border-primary bg-white dark:bg-[#111624] p-4 sm:p-6 shadow-md shadow-primary/10 hover:shadow-[0_0_30px_rgba(255,103,0,0.22)] transition-all duration-300 flex flex-col justify-between group overflow-hidden">
+              <div className="h-full rounded-[24px] sm:rounded-[28px] border-2 border-primary/40 hover:border-primary bg-white dark:bg-[#1D1D1F] p-4 sm:p-6 shadow-md shadow-primary/10 hover:shadow-[0_0_30px_rgba(255,103,0,0.22)] transition-all duration-300 flex flex-col justify-between group overflow-hidden">
                 <div>
                   {/* Top Image Mockup Frame */}
                   <div className="relative w-full h-[190px] sm:h-[210px] rounded-2xl overflow-hidden border border-black/[0.06] dark:border-white/10 bg-gray-50 dark:bg-black/30 mb-5">

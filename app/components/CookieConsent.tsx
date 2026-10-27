@@ -80,7 +80,7 @@ export default function CookieConsent() {
           aria-modal="true"
           aria-labelledby="cookie-title"
         >
-          <div className="relative rounded-3xl bg-white/95 dark:bg-[#0c121e]/95 backdrop-blur-xl border border-black/10 dark:border-white/15 p-5 sm:p-6 shadow-2xl shadow-black/15 dark:shadow-black/70 overflow-hidden">
+          <div className="relative rounded-3xl bg-white/95 dark:bg-[#1D1D1F]/95 backdrop-blur-xl border border-black/10 dark:border-white/15 p-5 sm:p-6 shadow-2xl shadow-black/15 dark:shadow-black/70 overflow-hidden">
             {/* Subtle Top Gradient Line */}
             <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-primary via-[#6366F1] to-[#EC4899]" />
 

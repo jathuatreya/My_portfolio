@@ -107,7 +107,7 @@ export default function Pricing() {
   return (
     <section
       id="pricing"
-      className="py-24 sm:py-28 bg-[#090d16] text-white relative overflow-hidden transition-colors duration-300"
+      className="py-24 sm:py-28 bg-[#0a0a0a] text-white relative overflow-hidden transition-colors duration-300"
     >
       {/* Subtle Ambient Background Lighting */}
       <div className="absolute top-1/4 -right-40 w-[550px] h-[550px] bg-primary/10 rounded-full blur-[150px] pointer-events-none" />
@@ -136,7 +136,7 @@ export default function Pricing() {
           </p>
 
           {/* Currency / Category Toggle */}
-          <div className="mt-8 inline-flex items-center p-1 rounded-full bg-[#121824] border border-white/10 shadow-inner">
+          <div className="mt-8 inline-flex items-center p-1 rounded-full bg-[#1D1D1F] border border-white/10 shadow-inner">
             <button
               onClick={() => handleTabChange("usd")}
               className={`px-5 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all duration-200 cursor-pointer ${
@@ -189,7 +189,11 @@ export default function Pricing() {
               setActiveSlide(idx);
             }
           }}
-          className="flex lg:grid lg:grid-cols-3 gap-5 sm:gap-6 lg:gap-7 items-stretch mb-4 lg:mb-16 max-w-7xl mx-auto overflow-x-auto lg:overflow-visible snap-x snap-mandatory lg:snap-none no-scrollbar -mx-4 px-4 sm:mx-0 sm:px-0 pb-4 lg:pb-0"
+          className={`flex lg:grid gap-5 sm:gap-6 lg:gap-7 items-stretch mb-4 lg:mb-16 mx-auto overflow-x-auto lg:overflow-visible snap-x snap-mandatory lg:snap-none no-scrollbar -mx-4 px-4 sm:mx-0 sm:px-0 pb-4 lg:pb-0 ${
+            plans.length === 2
+              ? "lg:grid-cols-2 max-w-4xl"
+              : "lg:grid-cols-3 max-w-7xl"
+          }`}
         >
           {plans.map((plan: PricingPlan) => {
             const isPopular = plan.popular;
@@ -204,8 +208,8 @@ export default function Pricing() {
                 <div
                   className={`relative flex flex-col justify-between rounded-[28px] p-6 sm:p-8 transition-all duration-300 h-full border-2 ${
                     isPopular
-                      ? "bg-[#0f1624] border-primary shadow-xl shadow-primary/30 z-10"
-                      : "bg-[#0e131d] border-primary/50 hover:border-primary shadow-lg shadow-primary/15 hover:shadow-[0_0_36px_rgba(255,103,0,0.25)]"
+                      ? "bg-[#1D1D1F] border-primary shadow-xl shadow-primary/30 z-10"
+                      : "bg-[#1D1D1F] border-primary/50 hover:border-primary shadow-lg shadow-primary/15 hover:shadow-[0_0_36px_rgba(255,103,0,0.25)]"
                   }`}
                 >
                   {/* Top Block: Header, Title, Subtitle, Buttons, and Price all synchronized in height */}
@@ -258,7 +262,7 @@ export default function Pricing() {
                             ? "bg-white hover:bg-neutral-100 text-black font-bold shadow-lg shadow-white/10 active:scale-[0.98]"
                             : plan.primaryButtonStyle === "blue" || plan.primaryButtonStyle === "primary"
                             ? "bg-primary hover:bg-primary/90 text-white font-bold shadow-lg shadow-primary/25 active:scale-[0.98]"
-                            : "bg-[#1e2533] hover:bg-[#283244] text-white border border-white/10 active:scale-[0.98]"
+                            : "bg-[#2A2A2D] hover:bg-[#283244] text-white border border-white/10 active:scale-[0.98]"
                         }`}
                       >
                         {(plan.primaryButtonStyle === "blue" || plan.primaryButtonStyle === "primary") && (

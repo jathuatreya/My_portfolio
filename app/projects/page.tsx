@@ -89,7 +89,7 @@ export default function ProjectsPage() {
                                              animate={{ opacity: 1, y: 0 }}
                                              exit={{ opacity: 0, scale: 0.96 }}
                                              transition={{ duration: 0.45, delay: index * 0.05, ease: "easeOut" }}
-                                             className="w-full rounded-[28px] sm:rounded-[36px] bg-[#FAFBFD] dark:bg-[#101624] border-2 border-primary/40 hover:border-primary p-4 sm:p-8 lg:p-10 shadow-[0_8px_32px_rgba(255,103,0,0.06)] dark:shadow-[0_12px_40px_rgba(0,0,0,0.35)] hover:shadow-[0_0_30px_rgba(255,103,0,0.22)] transition-all duration-300 group"
+                                             className="w-full rounded-[28px] sm:rounded-[36px] bg-[#FAFBFD] dark:bg-[#1D1D1F] border-2 border-primary/40 hover:border-primary p-4 sm:p-8 lg:p-10 shadow-[0_8px_32px_rgba(255,103,0,0.06)] dark:shadow-[0_12px_40px_rgba(0,0,0,0.35)] hover:shadow-[0_0_30px_rgba(255,103,0,0.22)] transition-all duration-300 group"
                                         >
                                              <div className="flex flex-col lg:flex-row items-stretch gap-8 lg:gap-12 justify-between">
                                                   {/* Left Column: Details & Tech Stack */}
