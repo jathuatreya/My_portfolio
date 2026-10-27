@@ -85,9 +85,9 @@ export default function FloatingActions() {
                 : "opacity-0 translate-x-2 scale-95 pointer-events-none"
             }`}
           >
-            <div className="bg-white dark:bg-[#09101d] text-neutral-900 dark:text-white text-[11px] font-semibold px-2.5 py-1 rounded-lg shadow-lg border border-black/10 dark:border-[#0077ED]/40 flex items-center gap-1.5 whitespace-nowrap">
+            <div className="bg-white dark:bg-[#09101d] text-neutral-900 dark:text-white text-[11px] font-semibold px-2.5 py-1 rounded-lg shadow-lg border border-black/10 dark:border-[#FF6700]/40 flex items-center gap-1.5 whitespace-nowrap">
               <span>Scroll to Top</span>
-              <span className="text-[#0077ED]">↑</span>
+              <span className="text-[#FF6700]">↑</span>
             </div>
           </div>
 
@@ -96,12 +96,12 @@ export default function FloatingActions() {
             onClick={scrollToTop}
             title="Scroll to top"
             aria-label="Scroll to top"
-            className="group relative w-8 h-8 sm:w-9 sm:h-9 before:absolute before:-inset-2 before:content-[''] rounded-xl sm:rounded-[14px] bg-white/95 dark:bg-[#070c16] border border-black/15 dark:border-[#0077ED]/75 hover:border-[#0077ED] shadow-md shadow-black/10 dark:shadow-sm dark:shadow-[#0077ED]/20 hover:bg-[#0077ED]/10 dark:hover:bg-[#0077ED]/20 flex items-center justify-center transition-all duration-200 active:scale-90 cursor-pointer backdrop-blur-md"
+            className="group relative w-8 h-8 sm:w-9 sm:h-9 before:absolute before:-inset-2 before:content-[''] rounded-xl sm:rounded-[14px] bg-white/95 dark:bg-[#070c16] border border-black/15 dark:border-[#FF6700]/75 hover:border-[#FF6700] shadow-md shadow-black/10 dark:shadow-sm dark:shadow-[#FF6700]/20 hover:bg-[#FF6700]/10 dark:hover:bg-[#FF6700]/20 flex items-center justify-center transition-all duration-200 active:scale-90 cursor-pointer backdrop-blur-md"
           >
             <ArrowUp
               size={15}
               strokeWidth={2.4}
-              className="text-[#0077ED] dark:text-[#38bdf8] group-hover:-translate-y-0.5 transition-transform duration-200"
+              className="text-[#FF6700] dark:text-[#FF8533] group-hover:-translate-y-0.5 transition-transform duration-200"
             />
           </button>
         </div>
@@ -122,9 +122,9 @@ export default function FloatingActions() {
                 : "opacity-0 translate-x-2 scale-95 pointer-events-none"
             }`}
           >
-            <div className="bg-white dark:bg-[#09101d] text-neutral-900 dark:text-white text-[11px] font-semibold px-2.5 py-1 rounded-lg shadow-lg border border-black/10 dark:border-[#0077ED]/40 flex items-center gap-1.5 whitespace-nowrap">
+            <div className="bg-white dark:bg-[#09101d] text-neutral-900 dark:text-white text-[11px] font-semibold px-2.5 py-1 rounded-lg shadow-lg border border-black/10 dark:border-[#FF6700]/40 flex items-center gap-1.5 whitespace-nowrap">
               <span>Scroll to Bottom</span>
-              <span className="text-[#0077ED]">↓</span>
+              <span className="text-[#FF6700]">↓</span>
             </div>
           </div>
 
@@ -133,12 +133,12 @@ export default function FloatingActions() {
             onClick={scrollToBottom}
             title="Scroll to bottom"
             aria-label="Scroll to bottom"
-            className="group relative w-8 h-8 sm:w-9 sm:h-9 before:absolute before:-inset-2 before:content-[''] rounded-xl sm:rounded-[14px] bg-white/95 dark:bg-[#070c16] border border-black/15 dark:border-[#0077ED]/75 hover:border-[#0077ED] shadow-md shadow-black/10 dark:shadow-sm dark:shadow-[#0077ED]/20 hover:bg-[#0077ED]/10 dark:hover:bg-[#0077ED]/20 flex items-center justify-center transition-all duration-200 active:scale-90 cursor-pointer backdrop-blur-md"
+            className="group relative w-8 h-8 sm:w-9 sm:h-9 before:absolute before:-inset-2 before:content-[''] rounded-xl sm:rounded-[14px] bg-white/95 dark:bg-[#070c16] border border-black/15 dark:border-[#FF6700]/75 hover:border-[#FF6700] shadow-md shadow-black/10 dark:shadow-sm dark:shadow-[#FF6700]/20 hover:bg-[#FF6700]/10 dark:hover:bg-[#FF6700]/20 flex items-center justify-center transition-all duration-200 active:scale-90 cursor-pointer backdrop-blur-md"
           >
             <ArrowDown
               size={15}
               strokeWidth={2.4}
-              className="text-[#0077ED] dark:text-[#38bdf8] group-hover:translate-y-0.5 transition-transform duration-200"
+              className="text-[#FF6700] dark:text-[#FF8533] group-hover:translate-y-0.5 transition-transform duration-200"
             />
           </button>
         </div>

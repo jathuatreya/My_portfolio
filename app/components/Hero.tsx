@@ -132,7 +132,7 @@ export default function Hero() {
                {/* 2. Soft Ambient Lighting Behind Central Portrait */}
                <div
                     aria-hidden="true"
-                    className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[500px] sm:w-[750px] md:w-[950px] lg:w-[1250px] xl:w-[1500px] h-[450px] sm:h-[600px] lg:h-[750px] xl:h-[880px] bg-gradient-to-t from-primary/30 via-blue-600/20 to-transparent rounded-t-full blur-3xl pointer-events-none -z-0"
+                    className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[500px] sm:w-[750px] md:w-[950px] lg:w-[1250px] xl:w-[1500px] h-[450px] sm:h-[600px] lg:h-[750px] xl:h-[880px] bg-gradient-to-t from-primary/30 via-amber-500/20 to-transparent rounded-t-full blur-3xl pointer-events-none -z-0"
                />
 
                {/* 3. Corner Accent Lighting */}
@@ -142,7 +142,7 @@ export default function Hero() {
                />
                <div
                     aria-hidden="true"
-                    className="absolute top-10 right-6 w-72 h-72 bg-indigo-500/10 rounded-full blur-3xl pointer-events-none -z-0"
+                    className="absolute top-10 right-6 w-72 h-72 bg-amber-500/10 rounded-full blur-3xl pointer-events-none -z-0"
                />
 
 
@@ -160,7 +160,7 @@ export default function Hero() {
                          priority
                          fetchPriority="high"
                          sizes="(max-width: 1024px) 100vw, (max-width: 1536px) 65vw, 980px"
-                         className="w-auto h-[750px] lg:h-[880px] xl:h-[980px] 2xl:h-[1100px] max-h-[86vh] xl:max-h-[89vh] max-w-[95vw] object-contain object-bottom block drop-shadow-[0_20px_55px_rgba(0,119,237,0.28)] dark:drop-shadow-[0_25px_70px_rgba(0,119,237,0.4)]"
+                         className="w-auto h-[750px] lg:h-[880px] xl:h-[980px] 2xl:h-[1100px] max-h-[86vh] xl:max-h-[89vh] max-w-[95vw] object-contain object-bottom block drop-shadow-[0_20px_55px_rgba(255, 103, 0,0.28)] dark:drop-shadow-[0_25px_70px_rgba(255, 103, 0,0.4)]"
                     />
                </div>
 
@@ -193,9 +193,9 @@ export default function Hero() {
                                    >
                                         <h1 className="text-3xl sm:text-5xl lg:text-5xl xl:text-6xl font-bold tracking-tight text-[#1D1D1F] dark:text-white leading-[1.12] break-words">
                                              <span className="block">
-                                                  I&apos;m <span className="text-[#0077ED]">Jathushan</span>
+                                                  I&apos;m <span className="text-[#FF6700]">Jathushan</span>
                                              </span>
-                                             <span className="text-[#0077ED] block">
+                                             <span className="text-[#FF6700] block">
                                                   Varnakulasingam
                                              </span>
                                         </h1>
@@ -208,10 +208,10 @@ export default function Hero() {
                                         transition={{ duration: 0.35, delay: 0.22, ease: "easeOut" }}
                                         className="min-h-[32px] sm:min-h-[40px] flex items-center justify-center lg:justify-start"
                                    >
-                                        <p className="text-xl sm:text-2xl md:text-3xl font-medium text-[#0077ED] tracking-tight">
+                                        <p className="text-xl sm:text-2xl md:text-3xl font-medium text-[#FF6700] tracking-tight">
                                              {t.hero.role_prefix}{" "}
                                              <span>{displayText}</span>
-                                             <span className="inline-block w-[3px] h-6 sm:h-7 bg-[#0077ED] ml-1 animate-pulse align-middle"></span>
+                                             <span className="inline-block w-[3px] h-6 sm:h-7 bg-[#FF6700] ml-1 animate-pulse align-middle"></span>
                                         </p
                                    ></motion.div>
 
@@ -224,7 +224,7 @@ export default function Hero() {
                                    >
                                         <Link
                                              href="/projects"
-                                             className="group relative inline-flex items-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 rounded-full bg-[#0077ED] hover:bg-[#0062C4] text-white font-semibold text-sm sm:text-base shadow-lg shadow-[#0077ED]/25 hover:shadow-xl hover:shadow-[#0077ED]/35 transition-all duration-300 hover:-translate-y-0.5 active:scale-95 cursor-pointer"
+                                             className="group relative inline-flex items-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 rounded-full bg-[#FF6700] hover:bg-[#E65C00] text-white font-semibold text-sm sm:text-base shadow-lg shadow-[#FF6700]/25 hover:shadow-xl hover:shadow-[#FF6700]/35 transition-all duration-300 hover:-translate-y-0.5 active:scale-95 cursor-pointer"
                                         >
                                              <span>Projects</span>
                                              <svg className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -261,7 +261,7 @@ export default function Hero() {
                                         priority
                                         fetchPriority="high"
                                         sizes="(max-width: 640px) 92vw, 680px"
-                                        className="w-full max-w-[680px] sm:max-w-[780px] h-auto object-contain object-bottom block select-none drop-shadow-[0_20px_50px_rgba(0,119,237,0.25)]"
+                                        className="w-full max-w-[680px] sm:max-w-[780px] h-auto object-contain object-bottom block select-none drop-shadow-[0_20px_50px_rgba(255, 103, 0,0.25)]"
                                    />
                               </div>
                          </div>
@@ -275,7 +275,7 @@ export default function Hero() {
                                       transition={{ duration: 0.35, delay: 0.2 }}
                                       className="flex items-center gap-2 mb-3.5 px-1"
                                  >
-                                      <span className="w-2 h-2 rounded-full bg-[#0077ED] animate-pulse" />
+                                      <span className="w-2 h-2 rounded-full bg-[#FF6700] animate-pulse" />
                                       <span className="text-xs font-mono font-bold tracking-wider uppercase text-gray-500 dark:text-gray-400">
                                            Connect & Follow
                                       </span>
@@ -308,7 +308,7 @@ export default function Hero() {
                                                 }}
                                                 whileHover={{ x: -4, transition: { duration: 0.2 } }}
                                                 whileTap={{ scale: 0.98 }}
-                                                className="group relative flex items-center justify-between p-2.5 sm:p-3 rounded-2xl bg-transparent hover:bg-black/[0.03] dark:hover:bg-white/[0.04] border border-black/10 dark:border-white/10 hover:border-[#0077ED]/45 dark:hover:border-[#0077ED]/55 shadow-none hover:shadow-md hover:shadow-[#0077ED]/10 transition-all duration-200 cursor-pointer"
+                                                className="group relative flex items-center justify-between p-2.5 sm:p-3 rounded-2xl bg-transparent hover:bg-black/[0.03] dark:hover:bg-white/[0.04] border border-black/10 dark:border-white/10 hover:border-[#FF6700]/45 dark:hover:border-[#FF6700]/55 shadow-none hover:shadow-md hover:shadow-[#FF6700]/10 transition-all duration-200 cursor-pointer"
                                            >
                                                 {/* Left: Brand Icon + Name & Username */}
                                                 <div className="flex items-center gap-3 min-w-0">
@@ -317,7 +317,7 @@ export default function Hero() {
                                                      </div>
                                                      <div className="flex flex-col min-w-0 text-left">
                                                           <div className="flex items-center gap-1.5">
-                                                               <span className="text-xs sm:text-sm font-bold text-neutral-900 dark:text-white truncate group-hover:text-[#0077ED] transition-colors">
+                                                               <span className="text-xs sm:text-sm font-bold text-neutral-900 dark:text-white truncate group-hover:text-[#FF6700] transition-colors">
                                                                     {social.name}
                                                                </span>
                                                           </div>
@@ -328,7 +328,7 @@ export default function Hero() {
                                                 </div>
 
                                                 {/* Right: Subtle External Arrow */}
-                                                <div className="w-7 h-7 rounded-full flex items-center justify-center text-neutral-400 group-hover:text-[#0077ED] group-hover:translate-x-0.5 transition-all shrink-0">
+                                                <div className="w-7 h-7 rounded-full flex items-center justify-center text-neutral-400 group-hover:text-[#FF6700] group-hover:translate-x-0.5 transition-all shrink-0">
                                                      <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round">
                                                           <path d="M7 17L17 7M17 7H7M17 7V17" />
                                                      </svg>
@@ -363,20 +363,20 @@ export default function Hero() {
                 >
                      {/* Mouse Frame with Animated Scrolling Wheel */}
                      <div className="flex items-center gap-2">
-                          <div className="w-3.5 h-5 sm:w-4 sm:h-6 rounded-full border-[1.5px] border-white/80 group-hover:border-[#0077ED] flex items-start justify-center p-0.5 transition-colors">
+                          <div className="w-3.5 h-5 sm:w-4 sm:h-6 rounded-full border-[1.5px] border-white/80 group-hover:border-[#FF6700] flex items-start justify-center p-0.5 transition-colors">
                                <motion.div
                                     animate={{ y: [0, 6, 0], opacity: [1, 0.3, 1] }}
                                     transition={{ duration: 1.6, repeat: Infinity, ease: "easeInOut" }}
-                                    className="w-1 h-1.5 rounded-full bg-[#0077ED]"
+                                    className="w-1 h-1.5 rounded-full bg-[#FF6700]"
                                />
                           </div>
-                          <span className="text-[11px] sm:text-xs font-mono font-bold tracking-wider text-white group-hover:text-[#0077ED] drop-shadow-sm transition-colors">
+                          <span className="text-[11px] sm:text-xs font-mono font-bold tracking-wider text-white group-hover:text-[#FF6700] drop-shadow-sm transition-colors">
                                Scroll to Explore
                           </span>
                           <motion.span
                                animate={{ y: [0, 2, 0] }}
                                transition={{ duration: 1.2, repeat: Infinity, ease: "easeInOut" }}
-                               className="text-[#0077ED] text-xs font-bold"
+                               className="text-[#FF6700] text-xs font-bold"
                           >
                                ↓
                           </motion.span>

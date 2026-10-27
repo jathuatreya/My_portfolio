@@ -32,7 +32,7 @@ export default function Experience() {
                               {/* Central Vertical Timeline Line (centered on md+, left-aligned on mobile) */}
                               <div 
                                    aria-hidden="true" 
-                                   className="absolute left-3.5 sm:left-4 md:left-1/2 -translate-x-1/2 top-4 bottom-4 w-[2px] bg-gradient-to-b from-[#0077ED] via-[#0077ED]/30 to-transparent pointer-events-none" 
+                                   className="absolute left-3.5 sm:left-4 md:left-1/2 -translate-x-1/2 top-4 bottom-4 w-[2px] bg-gradient-to-b from-[#FF6700] via-[#FF6700]/30 to-transparent pointer-events-none" 
                               />
 
                               <div className="space-y-10 sm:space-y-12 md:space-y-16">
@@ -42,8 +42,8 @@ export default function Experience() {
                                         return (
                                              <div key={exp.id} className="relative">
                                                   {/* Center Timeline Indicator Dot */}
-                                                  <div className="absolute left-3.5 sm:left-4 md:left-1/2 -translate-x-1/2 top-6 w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-white dark:bg-[#0a0a0a] border-[3px] sm:border-4 border-[#0077ED] flex items-center justify-center shadow-[0_0_14px_rgba(0,119,237,0.4)] z-20 group-hover:scale-125 transition-transform duration-300">
-                                                       <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-[#0077ED] rounded-full"></div>
+                                                  <div className="absolute left-3.5 sm:left-4 md:left-1/2 -translate-x-1/2 top-6 w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-white dark:bg-[#0a0a0a] border-[3px] sm:border-4 border-[#FF6700] flex items-center justify-center shadow-[0_0_14px_rgba(255, 103, 0,0.4)] z-20 group-hover:scale-125 transition-transform duration-300">
+                                                       <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-[#FF6700] rounded-full"></div>
                                                   </div>
 
                                                   {/* Compact Card Container: Left on even, Right on odd on md+ */}
@@ -83,7 +83,7 @@ export default function Experience() {
                                                                  </div>
 
                                                                  {/* Minimized Compact Card */}
-                                                                 <MagicCard className="bg-[#FAFBFD] dark:bg-[#111624] border border-black/[0.08] dark:border-white/10 rounded-2xl sm:rounded-3xl p-4 sm:p-6 shadow-sm hover:shadow-xl hover:border-[#0077ED]/40 dark:hover:border-[#0077ED]/40 transition-all duration-300 backdrop-blur-sm">
+                                                                 <MagicCard className="bg-[#FAFBFD] dark:bg-[#111624] border-2 border-primary/40 hover:border-primary rounded-2xl sm:rounded-3xl p-4 sm:p-6 shadow-[0_0_18px_rgba(255,103,0,0.08)] hover:shadow-[0_0_28px_rgba(255,103,0,0.22)] transition-all duration-300 backdrop-blur-sm">
                                                                       <p className="text-gray-600 dark:text-gray-400 text-xs sm:text-sm leading-relaxed mb-5">
                                                                            {exp.description}
                                                                       </p>

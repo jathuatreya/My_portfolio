@@ -42,7 +42,7 @@ export default function Projects() {
       <div className="w-[92%] sm:w-[88%] lg:w-[82%] xl:w-[80%] mx-auto relative z-10">
         {/* Section Header */}
         <ScrollReveal className="text-left mb-10 sm:mb-12">
-          <div className="flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-widest text-[#0077ED] mb-3">
+          <div className="flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-widest text-[#FF6700] mb-3">
             <Layers size={14} />
             <span>{t.projects.tag || "Featured Projects"}</span>
           </div>
@@ -57,7 +57,7 @@ export default function Projects() {
             </div>
             <Link
               href="/projects"
-              className="hidden md:inline-flex items-center gap-2 text-sm font-bold text-[#0077ED] hover:text-[#0066CC] transition-colors group shrink-0 mb-1"
+              className="hidden md:inline-flex items-center gap-2 text-sm font-bold text-[#FF6700] hover:text-[#E65C00] transition-colors group shrink-0 mb-1"
             >
               <span>View All {detailedProjects.length} Projects</span>
               <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
@@ -77,7 +77,7 @@ export default function Projects() {
               data-project-card
               className="w-[86vw] sm:w-[380px] md:w-auto shrink-0 md:shrink snap-center flex flex-col h-full"
             >
-              <div className="h-full rounded-[24px] sm:rounded-[28px] border border-black/[0.08] dark:border-white/10 bg-white dark:bg-[#111624] p-4 sm:p-6 shadow-sm hover:shadow-2xl hover:border-[#0077ED]/40 dark:hover:border-[#0077ED]/40 transition-all duration-300 flex flex-col justify-between group overflow-hidden">
+              <div className="h-full rounded-[24px] sm:rounded-[28px] border-2 border-primary/40 hover:border-primary bg-white dark:bg-[#111624] p-4 sm:p-6 shadow-[0_0_18px_rgba(255,103,0,0.08)] hover:shadow-[0_0_30px_rgba(255,103,0,0.22)] transition-all duration-300 flex flex-col justify-between group overflow-hidden">
                 <div>
                   {/* Top Image Mockup Frame */}
                   <div className="relative w-full h-[190px] sm:h-[210px] rounded-2xl overflow-hidden border border-black/[0.06] dark:border-white/10 bg-gray-50 dark:bg-black/30 mb-5">
@@ -97,7 +97,7 @@ export default function Projects() {
                   </span>
 
                   {/* Title */}
-                  <h3 className="text-xl sm:text-2xl font-extrabold text-[#1D1D1F] dark:text-white tracking-tight group-hover:text-[#0077ED] transition-colors">
+                  <h3 className="text-xl sm:text-2xl font-extrabold text-[#1D1D1F] dark:text-white tracking-tight group-hover:text-[#FF6700] transition-colors">
                     {project.title}
                   </h3>
 
@@ -115,7 +115,7 @@ export default function Projects() {
                   {project.highlight1 && project.highlight2 && (
                     <div className="grid grid-cols-2 gap-3 my-5 pt-4 border-t border-black/[0.06] dark:border-white/10">
                       <div>
-                        <span className="text-sm font-black text-[#6366F1] dark:text-[#818CF8] block">
+                        <span className="text-sm font-black text-[#6366F1] dark:text-[#FFA066] block">
                           {project.highlight1.value}
                         </span>
                         <span className="text-[11px] text-gray-500 dark:text-gray-400 block mt-0.5">
@@ -123,7 +123,7 @@ export default function Projects() {
                         </span>
                       </div>
                       <div>
-                        <span className="text-sm font-black text-[#0077ED] dark:text-[#38BDF8] block">
+                        <span className="text-sm font-black text-[#FF6700] dark:text-[#FF8533] block">
                           {project.highlight2.value}
                         </span>
                         <span className="text-[11px] text-gray-500 dark:text-gray-400 block mt-0.5">
@@ -146,7 +146,7 @@ export default function Projects() {
                       </span>
                     ))}
                     {project.techStack.length > 4 && (
-                      <span className="px-2 py-0.5 rounded-full text-[11px] font-semibold bg-[#0077ED]/10 text-[#0077ED] border border-[#0077ED]/20">
+                      <span className="px-2 py-0.5 rounded-full text-[11px] font-semibold bg-[#FF6700]/10 text-[#FF6700] border border-[#FF6700]/20">
                         +{project.techStack.length - 4}
                       </span>
                     )}
@@ -160,7 +160,7 @@ export default function Projects() {
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label={`View GitHub source code for ${project.title}`}
-                        className="inline-flex items-center gap-1.5 text-xs font-bold text-gray-700 dark:text-gray-300 hover:text-[#0077ED] transition-colors"
+                        className="inline-flex items-center gap-1.5 text-xs font-bold text-gray-700 dark:text-gray-300 hover:text-[#FF6700] transition-colors"
                       >
                         <Github size={14} />
                         <span>Code</span>
@@ -172,7 +172,7 @@ export default function Projects() {
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label={`View live preview of ${project.title}`}
-                        className="inline-flex items-center gap-1.5 text-xs font-bold text-[#0077ED] hover:text-[#0066CC] transition-colors ml-auto"
+                        className="inline-flex items-center gap-1.5 text-xs font-bold text-[#FF6700] hover:text-[#E65C00] transition-colors ml-auto"
                       >
                         <span>Live Preview</span>
                         <ArrowUpRight size={14} />
@@ -198,7 +198,7 @@ export default function Projects() {
               <span
                 className={`h-2 rounded-full transition-all duration-300 ${
                   activeSlide === i
-                    ? "w-7 bg-[#0077ED]"
+                    ? "w-7 bg-[#FF6700]"
                     : "w-2 bg-gray-300 dark:bg-white/20"
                 }`}
               />
@@ -210,7 +210,7 @@ export default function Projects() {
         <ScrollReveal delay={0.3} className="flex justify-center mt-12 sm:mt-16">
           <Link
             href="/projects"
-            className="inline-flex items-center gap-3 px-8 py-4 rounded-2xl bg-[#0077ED] hover:bg-[#0066CC] active:scale-[0.98] text-white font-extrabold text-sm sm:text-base tracking-wide shadow-lg shadow-[#0077ED]/25 hover:shadow-[#0077ED]/40 transition-all duration-300 group cursor-pointer"
+            className="inline-flex items-center gap-3 px-8 py-4 rounded-2xl bg-[#FF6700] hover:bg-[#E65C00] active:scale-[0.98] text-white font-extrabold text-sm sm:text-base tracking-wide shadow-lg shadow-[#FF6700]/25 hover:shadow-[#FF6700]/40 transition-all duration-300 group cursor-pointer"
           >
             <span>View All Projects ({detailedProjects.length})</span>
             <ArrowRight size={18} className="group-hover:translate-x-1.5 transition-transform" />

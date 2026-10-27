@@ -82,12 +82,12 @@ export default function CookieConsent() {
         >
           <div className="relative rounded-3xl bg-white/95 dark:bg-[#0c121e]/95 backdrop-blur-xl border border-black/10 dark:border-white/15 p-5 sm:p-6 shadow-2xl shadow-black/15 dark:shadow-black/70 overflow-hidden">
             {/* Subtle Top Gradient Line */}
-            <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-[#0077ED] via-[#6366F1] to-[#EC4899]" />
+            <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-[#FF6700] via-[#6366F1] to-[#EC4899]" />
 
             {/* Header */}
             <div className="flex items-start justify-between gap-3 mb-3">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-2xl bg-gradient-to-br from-[#0077ED]/15 to-[#EC4899]/15 dark:from-[#0077ED]/25 dark:to-[#EC4899]/25 border border-[#0077ED]/20 flex items-center justify-center text-[#0077ED] dark:text-[#38bdf8] shrink-0">
+                <div className="w-10 h-10 rounded-2xl bg-gradient-to-br from-[#FF6700]/15 to-[#EC4899]/15 dark:from-[#FF6700]/25 dark:to-[#EC4899]/25 border border-[#FF6700]/20 flex items-center justify-center text-[#FF6700] dark:text-[#FF8533] shrink-0">
                   <Cookie size={20} strokeWidth={2.2} />
                 </div>
                 <div>
@@ -150,7 +150,7 @@ export default function CookieConsent() {
                   {/* Analytics Cookies (Toggleable) */}
                   <div className="flex items-center justify-between p-2.5 rounded-xl bg-black/[0.03] dark:bg-white/[0.04] border border-black/5 dark:border-white/5">
                     <div className="flex items-center gap-2">
-                      <Sliders size={15} className="text-[#0077ED] shrink-0" />
+                      <Sliders size={15} className="text-[#FF6700] shrink-0" />
                       <div>
                         <p className="text-xs font-semibold text-neutral-900 dark:text-white">
                           Analytics & Insights
@@ -167,7 +167,7 @@ export default function CookieConsent() {
                       onClick={() => setAnalyticsEnabled(!analyticsEnabled)}
                       className={`relative inline-flex h-5 w-9 shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none ${
                         analyticsEnabled
-                          ? "bg-[#0077ED]"
+                          ? "bg-[#FF6700]"
                           : "bg-neutral-300 dark:bg-neutral-700"
                       }`}
                     >
@@ -189,7 +189,7 @@ export default function CookieConsent() {
                   <button
                     type="button"
                     onClick={handleSaveCustom}
-                    className="w-full sm:flex-1 py-3 px-5 rounded-xl bg-[#0077ED] hover:bg-[#0062C4] text-white text-xs sm:text-sm font-semibold shadow-md shadow-[#0077ED]/25 transition-all duration-200 active:scale-95 flex items-center justify-center gap-1.5 cursor-pointer"
+                    className="w-full sm:flex-1 py-3 px-5 rounded-xl bg-[#FF6700] hover:bg-[#E65C00] text-white text-xs sm:text-sm font-semibold shadow-md shadow-[#FF6700]/25 transition-all duration-200 active:scale-95 flex items-center justify-center gap-1.5 cursor-pointer"
                   >
                     <Check size={14} strokeWidth={2.5} />
                     <span>Save Preferences</span>
@@ -207,7 +207,7 @@ export default function CookieConsent() {
                   <button
                     type="button"
                     onClick={handleAcceptAll}
-                    className="w-full sm:flex-1 py-2.5 px-4 rounded-xl bg-[#0077ED] hover:bg-[#0062C4] text-white text-xs font-semibold shadow-md shadow-[#0077ED]/25 transition-all duration-200 active:scale-95 flex items-center justify-center gap-1.5 cursor-pointer"
+                    className="w-full sm:flex-1 py-2.5 px-4 rounded-xl bg-[#FF6700] hover:bg-[#E65C00] text-white text-xs font-semibold shadow-md shadow-[#FF6700]/25 transition-all duration-200 active:scale-95 flex items-center justify-center gap-1.5 cursor-pointer"
                   >
                     <Check size={14} strokeWidth={2.5} />
                     <span>Accept All</span>

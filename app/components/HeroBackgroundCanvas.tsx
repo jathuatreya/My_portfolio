@@ -14,7 +14,7 @@ interface Particle {
 const CONNECTION_DIST = 150;
 const MOUSE_REPEL_DIST = 130;
 const SPEED = 0.5;
-const PRIMARY = { r: 0, g: 119, b: 237 }; // #0077ED
+const PRIMARY = { r: 0, g: 119, b: 237 }; // #FF6700
 
 /**
  * Animated hero background — floating particles connected by lines.

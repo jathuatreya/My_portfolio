@@ -15,7 +15,7 @@
   /* Core Theme Colors */
   --background: #ffffff;
   --foreground: #1D1D1F;
-  --primary: #F28500;
+  --primary: #FF6700;
 
   /* Additional Palette Variables required by tailwind.config.ts */
   --background-light: #ffffff;
@@ -102,7 +102,7 @@ html.dark, :root.dark {
  */
 
 @theme {
-  --color-primary: #f28500;
+  --color-primary: #FF6700;
 }
 
 /* Primary color enforcement */

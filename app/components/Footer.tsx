@@ -10,7 +10,7 @@ export default function Footer() {
             Made with <Heart size={13} className="text-red-500 fill-red-500" /> in Sri Lanka
           </p>
           <p className="text-gray-400">
-            Designed & Developed by <span className="text-[#0077ED] font-semibold">Jathushan</span>
+            Designed & Developed by <span className="text-[#FF6700] font-semibold">Jathushan</span>
           </p>
         </div>
       </div>

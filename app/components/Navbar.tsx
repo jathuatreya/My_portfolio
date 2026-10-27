@@ -255,13 +255,13 @@ export default function Navbar() {
                         }}
                         className={`w-full text-left px-4 py-2 text-xs font-semibold flex items-center justify-between transition-colors ${
                           language === lang.code
-                            ? "bg-[#0077ED]/10 text-[#0077ED]"
+                            ? "bg-[#FF6700]/10 text-[#FF6700]"
                             : "text-neutral-700 dark:text-neutral-300 hover:bg-black/5 dark:hover:bg-white/5"
                         }`}
                       >
                         <span>{lang.name}</span>
                         {language === lang.code && (
-                          <span className="w-1.5 h-1.5 rounded-full bg-[#0077ED]" />
+                          <span className="w-1.5 h-1.5 rounded-full bg-[#FF6700]" />
                         )}
                       </button>
                     ))}
@@ -344,7 +344,7 @@ export default function Navbar() {
                     setIsMobileMenuOpen(false);
                   }
                 }}
-                className="w-full py-2.5 rounded-full text-center text-sm font-bold bg-[#0077ED] text-white hover:bg-[#0062C4] transition-colors shadow-sm"
+                className="w-full py-2.5 rounded-full text-center text-sm font-bold bg-[#FF6700] text-white hover:bg-[#E65C00] transition-colors shadow-sm"
               >
                 Let&apos;s Talk
               </a>

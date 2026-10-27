@@ -62,7 +62,7 @@ export default function Skills() {
                                         desc: "Drive high-intent traffic and conversions with technical SEO, targeted PPC campaigns, and data-driven digital growth strategies that elevate your brand visibility.",
                                         icon: <TrendingUp size={24} strokeWidth={1.5} />,
                                         colSpan: "md:col-span-1 lg:col-span-2",
-                                        cardClass: "border border-black/[0.08] dark:border-white/10 bg-white dark:bg-[#111624] shadow-sm hover:shadow-xl hover:border-black/20 dark:hover:border-white/20",
+                                        cardClass: "border-2 border-primary/40 dark:border-primary/50 hover:border-primary bg-white dark:bg-[#111624] shadow-sm hover:shadow-xl shadow-primary/5 transition-all duration-300",
                                         numberClass: "text-[#9CA3AF] dark:text-neutral-600 group-hover:text-neutral-700 dark:group-hover:text-neutral-300",
                                         iconClass: "text-[#9CA3AF] dark:text-neutral-500 group-hover:text-neutral-800 dark:group-hover:text-white",
                                         linkClass: "text-neutral-900 dark:text-white",
@@ -74,7 +74,7 @@ export default function Skills() {
                                         desc: "Bespoke enterprise applications, cloud POS systems, inventory management engines, and tailor-made business tools built to solve unique operational bottlenecks.",
                                         icon: <Layers size={24} strokeWidth={1.5} />,
                                         colSpan: "md:col-span-2 lg:col-span-2",
-                                        cardClass: "border border-black/[0.08] dark:border-white/10 bg-white dark:bg-[#111624] shadow-sm hover:shadow-xl hover:border-black/20 dark:hover:border-white/20",
+                                        cardClass: "border-2 border-primary/40 dark:border-primary/50 hover:border-primary bg-white dark:bg-[#111624] shadow-sm hover:shadow-xl shadow-primary/5 transition-all duration-300",
                                         numberClass: "text-[#9CA3AF] dark:text-neutral-600 group-hover:text-neutral-700 dark:group-hover:text-neutral-300",
                                         iconClass: "text-[#9CA3AF] dark:text-neutral-500 group-hover:text-neutral-800 dark:group-hover:text-white",
                                         linkClass: "text-neutral-900 dark:text-white",
@@ -157,7 +157,7 @@ export default function Skills() {
                                         {technologies.map((tech, index) => (
                                              <MagicCard
                                                   key={index}
-                                                  className="group flex items-center gap-1.5 sm:gap-2.5 px-2.5 py-1.5 sm:px-4 sm:py-2.5 rounded-xl sm:rounded-2xl bg-[#F5F5F7] dark:bg-[#161b26] border border-black/5 dark:border-white/5 hover:border-[#0077ED]/40 dark:hover:border-[#0077ED]/40 hover:bg-white dark:hover:bg-[#1a2234] hover:shadow-md transition-all cursor-default"
+                                                  className="group flex items-center gap-1.5 sm:gap-2.5 px-2.5 py-1.5 sm:px-4 sm:py-2.5 rounded-xl sm:rounded-2xl bg-[#F5F5F7] dark:bg-[#161b26] border border-black/5 dark:border-white/5 hover:border-[#FF6700]/40 dark:hover:border-[#FF6700]/40 hover:bg-white dark:hover:bg-[#1a2234] hover:shadow-md transition-all cursor-default"
                                                   disableAnimations={true}
                                                   particleCount={0}
                                                   enableTilt={true}
