@@ -42,13 +42,13 @@ export default function Skills() {
                          </ScrollReveal>
 
                          {/* Capabilities Grid - 5 Core Pillars: Full Stack, Digital Marketing, Custom Software, AI/ML Projects, Automations */}
-                         <MagicContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-6 sm:gap-7 lg:gap-8 mb-16">
+                         <MagicContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-4 sm:gap-5 lg:gap-5 mb-10 sm:mb-12">
                               {[
                                    {
                                         number: "01",
                                         title: "Full-Stack Development",
                                         desc: "Scalable engineering using Next.js 16, React 19, TypeScript, Node.js, and modern databases. I connect pixel-perfect frontends with secure, reliable cloud backend architectures.",
-                                        icon: <Code2 size={24} strokeWidth={1.5} />,
+                                        icon: <Code2 size={20} strokeWidth={1.5} />,
                                         colSpan: "md:col-span-1 lg:col-span-2",
                                         cardClass: "border-2 border-primary/40 dark:border-primary/50 hover:border-primary bg-white dark:bg-[#1D1D1F] shadow-sm hover:shadow-xl shadow-primary/5 transition-all duration-300",
                                         numberClass: "text-[#9CA3AF] dark:text-neutral-600 group-hover:text-primary transition-colors",
@@ -60,7 +60,7 @@ export default function Skills() {
                                         number: "02",
                                         title: "Digital Marketing",
                                         desc: "Drive high-intent traffic and conversions with technical SEO, targeted PPC campaigns, and data-driven digital growth strategies that elevate your brand visibility.",
-                                        icon: <TrendingUp size={24} strokeWidth={1.5} />,
+                                        icon: <TrendingUp size={20} strokeWidth={1.5} />,
                                         colSpan: "md:col-span-1 lg:col-span-2",
                                         cardClass: "border-2 border-primary/40 dark:border-primary/50 hover:border-primary bg-white dark:bg-[#1D1D1F] shadow-sm hover:shadow-xl shadow-primary/5 transition-all duration-300",
                                         numberClass: "text-[#9CA3AF] dark:text-neutral-600 group-hover:text-primary transition-colors",
@@ -72,7 +72,7 @@ export default function Skills() {
                                         number: "03",
                                         title: "Custom Software",
                                         desc: "Bespoke enterprise applications, cloud POS systems, inventory management engines, and tailor-made business tools built to solve unique operational bottlenecks.",
-                                        icon: <Layers size={24} strokeWidth={1.5} />,
+                                        icon: <Layers size={20} strokeWidth={1.5} />,
                                         colSpan: "md:col-span-2 lg:col-span-2",
                                         cardClass: "border-2 border-primary/40 dark:border-primary/50 hover:border-primary bg-white dark:bg-[#1D1D1F] shadow-sm hover:shadow-xl shadow-primary/5 transition-all duration-300",
                                         numberClass: "text-[#9CA3AF] dark:text-neutral-600 group-hover:text-primary transition-colors",
@@ -84,7 +84,7 @@ export default function Skills() {
                                         number: "04",
                                         title: "AI & ML Projects",
                                         desc: "Deep learning models, computer vision systems (OpenCV), predictive algorithms with PyTorch & TensorFlow, and custom LLM integrations tailored for production impact.",
-                                        icon: <Cpu size={24} strokeWidth={1.5} />,
+                                        icon: <Cpu size={20} strokeWidth={1.5} />,
                                         colSpan: "md:col-span-1 lg:col-span-3",
                                         cardClass: "border-2 border-primary/40 dark:border-primary/50 hover:border-primary bg-white dark:bg-[#1D1D1F] shadow-sm hover:shadow-xl shadow-primary/5 transition-all duration-300",
                                         numberClass: "text-[#9CA3AF] dark:text-neutral-600 group-hover:text-primary transition-colors",
@@ -96,7 +96,7 @@ export default function Skills() {
                                         number: "05",
                                         title: "Automations",
                                         desc: "End-to-end workflow automations, webhook pipelines, WhatsApp & messaging bots, and smart IoT telemetry that eliminate repetitive manual tasks and accelerate operations.",
-                                        icon: <Zap size={24} strokeWidth={1.5} />,
+                                        icon: <Zap size={20} strokeWidth={1.5} />,
                                         colSpan: "md:col-span-1 lg:col-span-3",
                                         cardClass: "border-2 border-primary/40 dark:border-primary/50 hover:border-primary bg-white dark:bg-[#1D1D1F] shadow-sm hover:shadow-xl shadow-primary/5 transition-all duration-300",
                                         numberClass: "text-[#9CA3AF] dark:text-neutral-600 group-hover:text-primary transition-colors",
@@ -107,12 +107,12 @@ export default function Skills() {
                               ].map((item, index) => (
                                    <ScrollReveal key={item.number} delay={index * 0.08} className={`h-full ${item.colSpan}`}>
                                         <MagicCard
-                                             className={`group relative flex flex-col justify-between rounded-[28px] sm:rounded-[34px] p-7 sm:p-9 h-full transition-all duration-300 ${item.cardClass}`}
+                                             className={`group relative flex flex-col justify-between rounded-2xl sm:rounded-3xl p-5 sm:p-6 h-full transition-all duration-300 ${item.cardClass}`}
                                         >
                                              <div>
                                                   {/* Top Header Row: Big Number (01, 02...) + Top-Right Minimal Icon */}
                                                   <div className="flex items-start justify-between">
-                                                       <span className={`text-5xl sm:text-6xl font-normal tracking-tight font-sans transition-colors duration-300 ${item.numberClass}`}>
+                                                       <span className={`text-3xl sm:text-4xl font-normal tracking-tight font-sans transition-colors duration-300 ${item.numberClass}`}>
                                                             {item.number}
                                                        </span>
                                                        <div className={`transition-colors duration-300 ${item.iconClass}`}>
@@ -121,24 +121,24 @@ export default function Skills() {
                                                   </div>
 
                                                   {/* Title */}
-                                                  <h3 className="text-xl sm:text-2xl font-bold text-[#1D1D1F] dark:text-white mt-10 mb-4 tracking-tight">
+                                                  <h3 className="text-base sm:text-lg font-bold text-[#1D1D1F] dark:text-white mt-4 sm:mt-5 mb-2 tracking-tight">
                                                        {item.title}
                                                   </h3>
 
                                                   {/* Description */}
-                                                  <p className="text-sm sm:text-[15px] text-neutral-600 dark:text-neutral-400 leading-relaxed font-normal min-h-[72px]">
+                                                  <p className="text-xs sm:text-[13px] text-neutral-600 dark:text-neutral-400 leading-relaxed font-normal min-h-[48px] sm:min-h-[54px]">
                                                        {item.desc}
                                                   </p>
                                              </div>
 
                                              {/* Bottom Action: "Learn more ->" */}
-                                             <div className="pt-8 sm:pt-10">
+                                             <div className="pt-4 sm:pt-5">
                                                   <a
                                                        href={item.link}
-                                                       className={`inline-flex items-center gap-2 font-semibold text-sm sm:text-[15px] tracking-wide transition-all duration-200 group/link cursor-pointer ${item.linkClass}`}
+                                                       className={`inline-flex items-center gap-1.5 font-semibold text-xs sm:text-sm tracking-wide transition-all duration-200 group/link cursor-pointer ${item.linkClass}`}
                                                   >
                                                        <span>Learn more</span>
-                                                       <ArrowRight size={16} className="group-hover/link:translate-x-1.5 transition-transform" />
+                                                       <ArrowRight size={14} className="group-hover/link:translate-x-1.5 transition-transform" />
                                                   </a>
                                              </div>
                                         </MagicCard>

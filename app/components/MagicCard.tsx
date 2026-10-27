@@ -433,7 +433,7 @@ const GlobalSpotlight: React.FC<{
 export const MagicContainer: React.FC<{
      children: React.ReactNode;
      className?: string;
-     glowColor?: string; // e.g. "0, 119, 237"
+     glowColor?: string; // e.g. "255, 103, 0"
 }> = ({ children, className = "", glowColor = DEFAULT_GLOW_COLOR }) => {
      const containerRef = useRef<HTMLDivElement>(null);
 
