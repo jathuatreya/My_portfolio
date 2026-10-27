@@ -204,8 +204,8 @@ export default function Pricing() {
                 <div
                   className={`relative flex flex-col justify-between rounded-[28px] p-6 sm:p-8 transition-all duration-300 h-full border-2 ${
                     isPopular
-                      ? "bg-[#0f1624] border-primary shadow-[0_0_36px_rgba(255,103,0,0.3)] z-10"
-                      : "bg-[#0e131d] border-primary/50 hover:border-primary shadow-[0_0_24px_rgba(255,103,0,0.12)] hover:shadow-[0_0_36px_rgba(255,103,0,0.25)]"
+                      ? "bg-[#0f1624] border-primary shadow-xl shadow-primary/30 z-10"
+                      : "bg-[#0e131d] border-primary/50 hover:border-primary shadow-lg shadow-primary/15 hover:shadow-[0_0_36px_rgba(255,103,0,0.25)]"
                   }`}
                 >
                   {/* Top Block: Header, Title, Subtitle, Buttons, and Price all synchronized in height */}

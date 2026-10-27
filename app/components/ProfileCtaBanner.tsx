@@ -64,7 +64,7 @@ export default function ProfileCtaBanner() {
                   href={profile.resumeURL}
                   download="Jathushan_SE_Dev.pdf"
                   onClick={handleDownload}
-                  className="w-full sm:w-auto lg:w-[260px] py-3.5 px-6 rounded-xl bg-primary hover:bg-[#E65C00] active:scale-[0.98] text-white font-extrabold text-xs sm:text-sm tracking-wide uppercase flex items-center justify-center gap-2.5 shadow-lg shadow-primary/20 hover:shadow-primary/35 transition-all duration-200 cursor-pointer group"
+                  className="w-full sm:w-auto lg:w-[260px] py-3.5 px-6 rounded-xl bg-primary hover:bg-primary-hover active:scale-[0.98] text-white font-extrabold text-xs sm:text-sm tracking-wide uppercase flex items-center justify-center gap-2.5 shadow-lg shadow-primary/20 hover:shadow-primary/35 transition-all duration-200 cursor-pointer group"
                 >
                   <Download size={16} strokeWidth={2.5} className="group-hover:translate-y-0.5 transition-transform" />
                   <span>DOWNLOAD CV (PDF/TXT)</span>
@@ -77,7 +77,7 @@ export default function ProfileCtaBanner() {
                   rel="noopener noreferrer"
                   className="w-full sm:w-auto lg:w-[260px] py-3.5 px-6 rounded-xl bg-[#141B2D] hover:bg-[#1A233A] active:scale-[0.98] border border-white/10 hover:border-white/20 text-white font-semibold text-xs sm:text-sm flex items-center justify-center gap-2.5 shadow-md transition-all duration-200 cursor-pointer group"
                 >
-                  <Linkedin size={15} className="text-[#FF6700] shrink-0" />
+                  <Linkedin size={15} className="text-primary shrink-0" />
                   <span>View LinkedIn Profile</span>
                   <ArrowRight size={14} className="text-gray-400 group-hover:translate-x-1 group-hover:text-white transition-all ml-1" />
                 </a>

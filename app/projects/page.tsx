@@ -29,22 +29,22 @@ export default function ProjectsPage() {
                     <div className="w-[92%] sm:w-[88%] lg:w-[82%] xl:w-[80%] mx-auto relative z-10">
                          {/* Breadcrumb Navigation */}
                          <div className="flex items-center gap-2 text-xs font-mono font-medium text-gray-500 dark:text-gray-400 mb-6">
-                              <Link href="/" className="hover:text-[#FF6700] transition-colors flex items-center gap-1">
+                              <Link href="/" className="hover:text-primary transition-colors flex items-center gap-1">
                                    <Home size={13} />
                                    <span>Home</span>
                               </Link>
                               <span>/</span>
-                              <span className="text-[#FF6700] font-bold">Projects</span>
+                              <span className="text-primary font-bold">Projects</span>
                          </div>
 
                          {/* Page Header */}
                          <div className="text-left mb-10 sm:mb-14">
-                              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#FF6700]/10 border border-[#FF6700]/20 text-[#FF6700] text-xs font-mono font-bold uppercase tracking-widest mb-3">
+                              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-mono font-bold uppercase tracking-widest mb-3">
                                    <Layers size={14} />
                                    <span>Complete Portfolio</span>
                               </div>
                               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tight text-[#1D1D1F] dark:text-white leading-tight">
-                                   All Engineering <span className="text-[#FF6700]">Projects</span>
+                                   All Engineering <span className="text-primary">Projects</span>
                               </h1>
                               <p className="text-gray-600 dark:text-gray-400 text-base sm:text-lg leading-relaxed mt-3 max-w-2xl">
                                    A complete index of full-stack web applications, machine learning experiments, IoT robotics, and system simulations crafted with clean architecture.
@@ -65,7 +65,7 @@ export default function ProjectsPage() {
                                              onClick={() => setActiveCategory(cat)}
                                              className={`px-4 py-2 rounded-full text-xs font-semibold tracking-wide transition-all duration-200 cursor-pointer flex items-center gap-1.5 ${
                                                   isSelected
-                                                       ? "bg-[#FF6700] text-white shadow-md shadow-[#FF6700]/25"
+                                                       ? "bg-primary text-white shadow-md shadow-primary/25"
                                                        : "bg-black/[0.04] dark:bg-white/[0.06] text-gray-700 dark:text-gray-300 hover:bg-black/[0.08] dark:hover:bg-white/[0.12] border border-black/[0.04] dark:border-white/[0.06]"
                                              }`}
                                         >
@@ -120,7 +120,7 @@ export default function ProjectsPage() {
                                                                   <div className="grid grid-cols-2 gap-3 w-full max-w-sm mt-5">
                                                                        {project.highlight1 && (
                                                                             <div className="px-3.5 py-2 rounded-xl bg-white/80 dark:bg-white/[0.04] border border-black/[0.06] dark:border-white/10 shadow-xs">
-                                                                                 <span className="text-xs sm:text-sm font-bold text-[#FF6700] block">
+                                                                                 <span className="text-xs sm:text-sm font-bold text-primary block">
                                                                                       {project.highlight1.value}
                                                                                  </span>
                                                                                  <span className="text-[11px] text-gray-500 dark:text-gray-400 block mt-0.5">
@@ -130,7 +130,7 @@ export default function ProjectsPage() {
                                                                        )}
                                                                        {project.highlight2 && (
                                                                             <div className="px-3.5 py-2 rounded-xl bg-white/80 dark:bg-white/[0.04] border border-black/[0.06] dark:border-white/10 shadow-xs">
-                                                                                 <span className="text-xs sm:text-sm font-bold text-[#FF6700] block">
+                                                                                 <span className="text-xs sm:text-sm font-bold text-primary block">
                                                                                       {project.highlight2.value}
                                                                                  </span>
                                                                                  <span className="text-[11px] text-gray-500 dark:text-gray-400 block mt-0.5">
@@ -146,7 +146,7 @@ export default function ProjectsPage() {
                                                                  {project.techStack.map((tech) => (
                                                                       <span
                                                                            key={tech}
-                                                                           className="px-3 py-1.5 rounded-full text-xs font-medium bg-black/[0.04] dark:bg-white/[0.06] text-gray-800 dark:text-gray-200 border border-black/[0.05] dark:border-white/[0.08] hover:border-[#FF6700]/40 transition-colors"
+                                                                           className="px-3 py-1.5 rounded-full text-xs font-medium bg-black/[0.04] dark:bg-white/[0.06] text-gray-800 dark:text-gray-200 border border-black/[0.05] dark:border-white/[0.08] hover:border-primary/40 transition-colors"
                                                                       >
                                                                            {tech}
                                                                       </span>
@@ -161,10 +161,10 @@ export default function ProjectsPage() {
                                                                       href={project.demoUrl}
                                                                       target="_blank"
                                                                       rel="noopener noreferrer"
-                                                                      className="inline-flex items-center gap-1.5 text-sm font-bold text-[#1D1D1F] dark:text-white hover:text-[#FF6700] transition-colors group/link"
+                                                                      className="inline-flex items-center gap-1.5 text-sm font-bold text-[#1D1D1F] dark:text-white hover:text-primary transition-colors group/link"
                                                                  >
                                                                       <span>Live Demo</span>
-                                                                      <ArrowUpRight size={17} className="text-[#FF6700] group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform" />
+                                                                      <ArrowUpRight size={17} className="text-primary group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform" />
                                                                  </a>
                                                             )}
                                                             {project.codeUrl && (
@@ -172,17 +172,17 @@ export default function ProjectsPage() {
                                                                       href={project.codeUrl}
                                                                       target="_blank"
                                                                       rel="noopener noreferrer"
-                                                                      className="inline-flex items-center gap-1.5 text-sm font-bold text-[#1D1D1F] dark:text-white hover:text-[#FF6700] transition-colors group/link"
+                                                                      className="inline-flex items-center gap-1.5 text-sm font-bold text-[#1D1D1F] dark:text-white hover:text-primary transition-colors group/link"
                                                                  >
                                                                       <Github size={16} />
                                                                       <span>View Source</span>
-                                                                      <ArrowUpRight size={16} className="text-[#FF6700] group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform" />
+                                                                      <ArrowUpRight size={16} className="text-primary group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform" />
                                                                  </a>
                                                             )}
                                                             {!project.demoUrl && !project.codeUrl && (
                                                                  <div className="inline-flex items-center gap-1.5 text-sm font-semibold text-gray-500 dark:text-gray-400">
                                                                       <span>Architecture Verified</span>
-                                                                      <ArrowUpRight size={16} className="text-[#FF6700]" />
+                                                                      <ArrowUpRight size={16} className="text-primary" />
                                                                  </div>
                                                             )}
                                                        </div>
@@ -211,7 +211,7 @@ export default function ProjectsPage() {
                          <div className="flex justify-center mt-16 sm:mt-20">
                               <Link
                                    href="/#projects"
-                                   className="inline-flex items-center gap-2 px-6 py-3.5 rounded-2xl bg-black/[0.05] dark:bg-white/[0.08] hover:bg-[#FF6700] hover:text-white text-gray-800 dark:text-gray-200 font-bold text-sm transition-all duration-200"
+                                   className="inline-flex items-center gap-2 px-6 py-3.5 rounded-2xl bg-black/[0.05] dark:bg-white/[0.08] hover:bg-primary hover:text-white text-gray-800 dark:text-gray-200 font-bold text-sm transition-all duration-200"
                               >
                                    <ArrowLeft size={16} />
                                    <span>Back to Home</span>

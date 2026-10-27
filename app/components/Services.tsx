@@ -62,8 +62,8 @@ export default function Services() {
               data-service-card
               className="w-[85vw] sm:w-auto shrink-0 sm:shrink snap-center flex flex-col h-full"
             >
-              <MagicCard className="flex flex-col gap-4 rounded-2xl bg-[#F5F5F7] dark:bg-[#121212] p-6 border-2 border-primary/40 hover:border-primary shadow-[0_0_18px_rgba(255,103,0,0.08)] hover:shadow-[0_0_28px_rgba(255,103,0,0.22)] transition-all duration-300 h-full">
-                <service.icon className="text-[#FF6700]" size={40} />
+              <MagicCard className="flex flex-col gap-4 rounded-2xl bg-[#F5F5F7] dark:bg-[#121212] p-6 border-2 border-primary/40 hover:border-primary shadow-md shadow-primary/10 hover:shadow-[0_0_28px_rgba(255,103,0,0.22)] transition-all duration-300 h-full">
+                <service.icon className="text-primary" size={40} />
                 <div className="flex flex-col gap-2">
                   <h3 className="text-[#1D1D1F] dark:text-white text-lg font-bold leading-tight">
                     {t.services.items[service.id as keyof typeof t.services.items]?.title || service.title}
@@ -90,7 +90,7 @@ export default function Services() {
               <span
                 className={`h-2 rounded-full transition-all duration-300 ${
                   activeSlide === i
-                    ? "w-7 bg-[#FF6700]"
+                    ? "w-7 bg-primary"
                     : "w-2 bg-gray-300 dark:bg-white/20"
                 }`}
               />

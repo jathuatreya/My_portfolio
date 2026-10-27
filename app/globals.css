@@ -14,8 +14,11 @@
 :root {
   /* Core Theme Colors */
   --background: #ffffff;
-  --foreground: #1D1D1F;
   --primary: #FF6700;
+  --primary-hover: #E65C00;
+  --primary-light: #FF8533;
+  --primary-dark: #CC5200;
+  --primary-rgb: 255, 103, 0;
 
   /* Additional Palette Variables required by tailwind.config.ts */
   --background-light: #ffffff;
@@ -103,19 +106,40 @@ html.dark, :root.dark {
 
 @theme {
   --color-primary: #FF6700;
+  --color-primary-hover: #E65C00;
+  --color-primary-light: #FF8533;
+  --color-primary-dark: #CC5200;
 }
 
-/* Primary color enforcement */
+/* Primary color tokens tied to global CSS variables */
 .text-primary {
   color: var(--primary);
 }
+.text-primary-hover {
+  color: var(--primary-hover);
+}
+.text-primary-light {
+  color: var(--primary-light);
+}
 
 .bg-primary {
-  background-color: var(--primary) !important;
+  background-color: var(--primary);
+}
+.bg-primary-hover {
+  background-color: var(--primary-hover);
+}
+.bg-primary-light {
+  background-color: var(--primary-light);
 }
 
 .border-primary {
-  border-color: var(--primary) !important;
+  border-color: var(--primary);
+}
+.border-primary-hover {
+  border-color: var(--primary-hover);
+}
+.border-primary-light {
+  border-color: var(--primary-light);
 }
 
 

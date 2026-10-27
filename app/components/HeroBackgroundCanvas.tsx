@@ -14,7 +14,6 @@ interface Particle {
 const CONNECTION_DIST = 150;
 const MOUSE_REPEL_DIST = 130;
 const SPEED = 0.5;
-const PRIMARY = { r: 0, g: 119, b: 237 }; // #FF6700
 
 /**
  * Animated hero background — floating particles connected by lines.
@@ -61,8 +60,23 @@ export function HeroBackgroundCanvas() {
     );
 
     // ── Helpers ──────────────────────────────────────────────────────
+    const getPrimaryColor = () => {
+      if (typeof window !== "undefined") {
+        const rgbStr = getComputedStyle(document.documentElement)
+          .getPropertyValue("--primary-rgb")
+          .trim();
+        if (rgbStr) {
+          const parts = rgbStr.split(",").map((s) => parseInt(s.trim(), 10));
+          if (parts.length === 3 && !parts.some(isNaN)) {
+            return { r: parts[0], g: parts[1], b: parts[2] };
+          }
+        }
+      }
+      return { r: 255, g: 103, b: 0 };
+    };
+    const primaryColor = getPrimaryColor();
     const rgba = (a: number) =>
-      `rgba(${PRIMARY.r},${PRIMARY.g},${PRIMARY.b},${a})`;
+      `rgba(${primaryColor.r},${primaryColor.g},${primaryColor.b},${a})`;
 
     // ── Render loop ──────────────────────────────────────────────────
     const draw = () => {

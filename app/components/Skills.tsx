@@ -148,7 +148,7 @@ export default function Skills() {
 
                          {/* Full Tech Cloud with Real Brand & Domain Icons */}
                          <ScrollReveal delay={0.4}>
-                              <MagicContainer className="bg-white dark:bg-[#121212] rounded-3xl sm:rounded-4xl p-4 sm:p-8 lg:p-12 shadow-md border border-gray-200 dark:border-white/10 text-center">
+                              <MagicContainer className="bg-white dark:bg-[#121212] rounded-3xl sm:rounded-4xl p-4 sm:p-8 lg:p-12 shadow-md border-2 border-primary/40 dark:border-primary/40 text-center">
                                    <h3 className="text-sm sm:text-lg font-bold text-gray-500 dark:text-gray-400 uppercase tracking-widest mb-6 sm:mb-8">
                                         {highlightTitle(t.skills.stack_title, 2)}
                                    </h3>
@@ -157,7 +157,7 @@ export default function Skills() {
                                         {technologies.map((tech, index) => (
                                              <MagicCard
                                                   key={index}
-                                                  className="group flex items-center gap-1.5 sm:gap-2.5 px-2.5 py-1.5 sm:px-4 sm:py-2.5 rounded-xl sm:rounded-2xl bg-[#F5F5F7] dark:bg-[#161b26] border border-black/5 dark:border-white/5 hover:border-[#FF6700]/40 dark:hover:border-[#FF6700]/40 hover:bg-white dark:hover:bg-[#1a2234] hover:shadow-md transition-all cursor-default"
+                                                  className="group flex items-center gap-1.5 sm:gap-2.5 px-2.5 py-1.5 sm:px-4 sm:py-2.5 rounded-xl sm:rounded-2xl bg-[#F5F5F7] dark:bg-[#161b26] border border-black/5 dark:border-white/5 hover:border-primary/40 dark:hover:border-primary/40 hover:bg-white dark:hover:bg-[#1a2234] hover:shadow-md transition-all cursor-default"
                                                   disableAnimations={true}
                                                   particleCount={0}
                                                   enableTilt={true}

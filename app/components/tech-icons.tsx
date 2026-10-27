@@ -4,7 +4,7 @@ export function getTechIcon(name: string): React.ReactNode {
   switch (name) {
     case "Custom Software Development":
       return (
-        <svg className="w-4 h-4 sm:w-5 sm:h-5 text-[#FF6700]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <svg className="w-4 h-4 sm:w-5 sm:h-5 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
           <polygon points="12 2 2 7 12 12 22 7 12 2" />
           <polyline points="2 17 12 22 22 17" />
           <polyline points="2 12 12 17 22 12" />
@@ -110,7 +110,7 @@ export function getTechIcon(name: string): React.ReactNode {
 
     case "Tailwind CSS":
       return (
-        <svg className="w-4 h-4 sm:w-5 sm:h-5 text-[#FF8533]" viewBox="0 0 24 24" fill="currentColor">
+        <svg className="w-4 h-4 sm:w-5 sm:h-5 text-primary-light" viewBox="0 0 24 24" fill="currentColor">
           <path d="M12.001 4.8c-3.2 0-5.2 1.6-6 4.8 1.2-1.6 2.6-2.2 4.2-1.8.913.228 1.565.89 2.288 1.624C13.666 10.618 15.027 12 18.001 12c3.2 0 5.2-1.6 6-4.8-1.2 1.6-2.6 2.2-4.2 1.8-.913-.228-1.565-.89-2.288-1.624C16.335 6.182 14.974 4.8 12.001 4.8zm-6 7.2c-3.2 0-5.2 1.6-6 4.8 1.2-1.6 2.6-2.2 4.2-1.8.913.228 1.565.89 2.288 1.624 1.177 1.194 2.538 2.576 5.512 2.576 3.2 0 5.2-1.6 6-4.8-1.2 1.6-2.6 2.2-4.2 1.8-.913-.228-1.565-.89-2.288-1.624C10.335 13.382 8.974 12 6.001 12z"/>
         </svg>
       );
@@ -290,7 +290,7 @@ export function getTechIcon(name: string): React.ReactNode {
     case "Robotics":
     case "AI & Robotics Projects":
       return (
-        <svg className="w-4 h-4 sm:w-5 sm:h-5 text-[#FF6700]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <svg className="w-4 h-4 sm:w-5 sm:h-5 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
           <rect x="3" y="11" width="18" height="10" rx="2" />
           <circle cx="8.5" cy="16" r="1.5" fill="currentColor" />
           <circle cx="15.5" cy="16" r="1.5" fill="currentColor" />

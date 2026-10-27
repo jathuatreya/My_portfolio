@@ -72,13 +72,13 @@ export default function Testimonials() {
               data-testimonial-card
               className="w-[85vw] sm:w-[380px] md:w-auto shrink-0 md:shrink snap-center flex flex-col h-full"
             >
-              <MagicCard className="group relative flex flex-col justify-between rounded-2xl sm:rounded-3xl bg-[#FAFBFD] dark:bg-[#111624] border-2 border-primary/40 hover:border-primary p-5 sm:p-7 shadow-[0_0_18px_rgba(255,103,0,0.08)] hover:shadow-[0_0_30px_rgba(255,103,0,0.22)] transition-all duration-300 h-full backdrop-blur-sm">
+              <MagicCard className="group relative flex flex-col justify-between rounded-2xl sm:rounded-3xl bg-[#FAFBFD] dark:bg-[#111624] border-2 border-primary/40 hover:border-primary p-5 sm:p-7 shadow-md shadow-primary/10 hover:shadow-[0_0_30px_rgba(255,103,0,0.22)] transition-all duration-300 h-full backdrop-blur-sm">
                 <div>
                   {/* Header: Avatar, Name, Role, and Quote Icon */}
                   <div className="flex items-start justify-between gap-3 mb-5">
                     <div className="flex items-center gap-3">
                       {/* Initials Avatar Monogram */}
-                      <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-[#FF6700] to-orange-700 text-white font-bold text-xs sm:text-sm flex items-center justify-center shrink-0 shadow-md shadow-[#FF6700]/20">
+                      <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-primary to-orange-700 text-white font-bold text-xs sm:text-sm flex items-center justify-center shrink-0 shadow-md shadow-primary/20">
                         {getInitials(testimonial.name)}
                       </div>
                       <div className="min-w-0">
@@ -87,7 +87,7 @@ export default function Testimonials() {
                             {testimonial.name}
                           </p>
                           <span title="Verified Client / Partner">
-                            <CheckCircle2 size={14} className="text-[#FF6700] shrink-0" />
+                            <CheckCircle2 size={14} className="text-primary shrink-0" />
                           </span>
                         </div>
                         <p className="text-xs text-primary font-medium line-clamp-1">
@@ -95,7 +95,7 @@ export default function Testimonials() {
                         </p>
                       </div>
                     </div>
-                    <Quote className="text-[#FF6700] dark:text-[#FF8533] opacity-85 group-hover:opacity-100 group-hover:scale-110 drop-shadow-[0_2px_8px_rgba(255, 103, 0,0.35)] transition-all shrink-0" size={30} />
+                    <Quote className="text-primary dark:text-primary-light opacity-85 group-hover:opacity-100 group-hover:scale-110 drop-shadow-[0_2px_8px_rgba(255, 103, 0,0.35)] transition-all shrink-0" size={30} />
                   </div>
 
                   {/* Quote Content */}
@@ -106,7 +106,7 @@ export default function Testimonials() {
 
                 {/* Footer: 5 Stars (Primary Color) + Verified Badge */}
                 <div className="mt-6 pt-4 border-t border-black/[0.05] dark:border-white/5 flex items-center justify-between">
-                  <div className="flex text-[#FF6700] dark:text-[#FF8533] gap-1">
+                  <div className="flex text-primary dark:text-primary-light gap-1">
                     {[...Array(5)].map((_, i) => (
                       <svg key={i} className="w-4 h-4 fill-current drop-shadow-[0_1px_4px_rgba(255, 103, 0,0.3)]" viewBox="0 0 20 20">
                         <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
@@ -135,7 +135,7 @@ export default function Testimonials() {
               <span
                 className={`h-2 rounded-full transition-all duration-300 ${
                   activeSlide === i
-                    ? "w-7 bg-[#FF6700]"
+                    ? "w-7 bg-primary"
                     : "w-2 bg-gray-300 dark:bg-white/20"
                 }`}
               />

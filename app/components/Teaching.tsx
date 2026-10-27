@@ -65,9 +65,9 @@ export default function Teaching() {
             {teachingStats.map((stat, i) => (
               <div
                 key={i}
-                className="p-4 sm:p-5 rounded-2xl bg-[#F5F5F7]/80 dark:bg-[#111624] border border-black/[0.05] dark:border-white/10 text-center shadow-xs hover:border-[#FF6700]/30 transition-all"
+                className="p-4 sm:p-5 rounded-2xl bg-[#F5F5F7]/80 dark:bg-[#111624] border border-black/[0.05] dark:border-white/10 text-center shadow-xs hover:border-primary/30 transition-all"
               >
-                <div className="text-2xl sm:text-4xl font-black text-[#FF6700] tracking-tight">
+                <div className="text-2xl sm:text-4xl font-black text-primary tracking-tight">
                   {stat.value}
                 </div>
                 <div className="text-xs sm:text-sm font-bold text-[#1D1D1F] dark:text-white mt-1">
@@ -99,7 +99,7 @@ export default function Teaching() {
                 className="w-[82vw] sm:w-auto shrink-0 sm:shrink snap-center flex flex-col h-full"
               >
                 <MagicCard
-                  className="group relative flex flex-col justify-between rounded-2xl sm:rounded-3xl p-5 sm:p-6 bg-white dark:bg-[#111624] border-2 border-primary/40 hover:border-primary shadow-[0_0_18px_rgba(255,103,0,0.08)] hover:shadow-[0_0_28px_rgba(255,103,0,0.22)] transition-all duration-300 h-full backdrop-blur-sm"
+                  className="group relative flex flex-col justify-between rounded-2xl sm:rounded-3xl p-5 sm:p-6 bg-white dark:bg-[#111624] border-2 border-primary/40 hover:border-primary shadow-md shadow-primary/10 hover:shadow-[0_0_28px_rgba(255,103,0,0.22)] transition-all duration-300 h-full backdrop-blur-sm"
                 >
                   <div>
                     {/* Card Top: Number + Tech Icon + Category Badge */}
@@ -112,13 +112,13 @@ export default function Teaching() {
                           {getTechIcon(prog.iconName)}
                         </div>
                       </div>
-                      <span className="text-[10px] font-mono font-bold uppercase tracking-wider px-2 py-0.5 rounded-md bg-[#FF6700]/10 text-[#FF6700] border border-[#FF6700]/20 whitespace-nowrap">
+                      <span className="text-[10px] font-mono font-bold uppercase tracking-wider px-2 py-0.5 rounded-md bg-primary/10 text-primary border border-primary/20 whitespace-nowrap">
                         {prog.badge}
                       </span>
                     </div>
 
                     {/* Program Title */}
-                    <h3 className="text-base sm:text-lg font-bold text-[#1D1D1F] dark:text-white group-hover:text-[#FF6700] transition-colors line-clamp-1 mb-1">
+                    <h3 className="text-base sm:text-lg font-bold text-[#1D1D1F] dark:text-white group-hover:text-primary transition-colors line-clamp-1 mb-1">
                       {prog.title}
                     </h3>
                     <p className="text-[11px] font-mono uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-3">
@@ -134,7 +134,7 @@ export default function Teaching() {
                     <div className="space-y-1.5 pt-3 border-t border-black/[0.05] dark:border-white/5 mb-5">
                       {prog.topics.map((topic, i) => (
                         <div key={i} className="flex items-center gap-1.5 text-[11px] text-gray-700 dark:text-gray-300">
-                          <CheckCircle2 size={12} className="text-[#FF6700] shrink-0" />
+                          <CheckCircle2 size={12} className="text-primary shrink-0" />
                           <span className="truncate">{topic}</span>
                         </div>
                       ))}
@@ -148,7 +148,7 @@ export default function Teaching() {
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label={`Inquire about ${prog.title} course`}
-                      className="inline-flex items-center gap-1.5 text-xs font-bold text-[#FF6700] hover:text-[#E65C00] dark:hover:text-[#FF8533] group/link cursor-pointer transition-colors"
+                      className="inline-flex items-center gap-1.5 text-xs font-bold text-primary hover:text-primary-hover dark:hover:text-primary-light group/link cursor-pointer transition-colors"
                     >
                       <span>Inquire Course</span>
                       <ArrowRight size={13} className="group-hover/link:translate-x-1 transition-transform" />
@@ -162,7 +162,7 @@ export default function Teaching() {
 
         {/* Mobile Carousel Indicators & Course Counter */}
         <div className="flex sm:hidden items-center justify-between gap-3 px-1 mt-4 mb-2">
-          <div className="text-xs font-mono font-bold text-[#FF6700]">
+          <div className="text-xs font-mono font-bold text-primary">
             Course {activeTeachingSlide + 1} of {teachingPrograms.length}
           </div>
           <div className="flex items-center gap-0.5 overflow-x-auto no-scrollbar py-1">
@@ -177,7 +177,7 @@ export default function Teaching() {
                 <span
                   className={`h-1.5 rounded-full transition-all duration-300 ${
                     activeTeachingSlide === i
-                      ? "w-4 bg-[#FF6700]"
+                      ? "w-4 bg-primary"
                       : "w-1.5 bg-gray-300 dark:bg-white/20"
                   }`}
                 />
@@ -188,7 +188,7 @@ export default function Teaching() {
 
         {/* Bottom Mentorship Inquiry Banner */}
         <ScrollReveal delay={0.2} className="mt-12 sm:mt-16">
-          <div className="p-6 sm:p-8 lg:p-10 rounded-3xl bg-gradient-to-r from-[#FF6700]/10 via-primary/5 to-emerald-500/10 border border-primary/20 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+          <div className="p-6 sm:p-8 lg:p-10 rounded-3xl bg-gradient-to-r from-primary/10 via-primary/5 to-emerald-500/10 border border-primary/20 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
             <div className="flex items-center gap-4">
               <div className="w-12 h-12 rounded-2xl bg-primary/20 text-primary flex items-center justify-center shrink-0 shadow-sm">
                 <BookOpen size={24} />
@@ -209,7 +209,7 @@ export default function Teaching() {
               )}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-2xl bg-[#FF6700] hover:bg-[#E65C00] text-white font-bold text-xs sm:text-sm tracking-wide uppercase transition-all shadow-md shadow-[#FF6700]/25 hover:shadow-[#FF6700]/40 hover:-translate-y-0.5 shrink-0 cursor-pointer"
+              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-2xl bg-primary hover:bg-primary-hover text-white font-bold text-xs sm:text-sm tracking-wide uppercase transition-all shadow-md shadow-primary/25 hover:shadow-primary/40 hover:-translate-y-0.5 shrink-0 cursor-pointer"
             >
               <MessageCircle size={16} />
               <span>Inquire for Mentorship</span>

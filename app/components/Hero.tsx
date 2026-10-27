@@ -193,9 +193,9 @@ export default function Hero() {
                                    >
                                         <h1 className="text-3xl sm:text-5xl lg:text-5xl xl:text-6xl font-bold tracking-tight text-[#1D1D1F] dark:text-white leading-[1.12] break-words">
                                              <span className="block">
-                                                  I&apos;m <span className="text-[#FF6700]">Jathushan</span>
+                                                  I&apos;m <span className="text-primary">Jathushan</span>
                                              </span>
-                                             <span className="text-[#FF6700] block">
+                                             <span className="text-primary block">
                                                   Varnakulasingam
                                              </span>
                                         </h1>
@@ -208,10 +208,10 @@ export default function Hero() {
                                         transition={{ duration: 0.35, delay: 0.22, ease: "easeOut" }}
                                         className="min-h-[32px] sm:min-h-[40px] flex items-center justify-center lg:justify-start"
                                    >
-                                        <p className="text-xl sm:text-2xl md:text-3xl font-medium text-[#FF6700] tracking-tight">
+                                        <p className="text-xl sm:text-2xl md:text-3xl font-medium text-primary tracking-tight">
                                              {t.hero.role_prefix}{" "}
                                              <span>{displayText}</span>
-                                             <span className="inline-block w-[3px] h-6 sm:h-7 bg-[#FF6700] ml-1 animate-pulse align-middle"></span>
+                                             <span className="inline-block w-[3px] h-6 sm:h-7 bg-primary ml-1 animate-pulse align-middle"></span>
                                         </p
                                    ></motion.div>
 
@@ -224,7 +224,7 @@ export default function Hero() {
                                    >
                                         <Link
                                              href="/projects"
-                                             className="group relative inline-flex items-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 rounded-full bg-[#FF6700] hover:bg-[#E65C00] text-white font-semibold text-sm sm:text-base shadow-lg shadow-[#FF6700]/25 hover:shadow-xl hover:shadow-[#FF6700]/35 transition-all duration-300 hover:-translate-y-0.5 active:scale-95 cursor-pointer"
+                                             className="group relative inline-flex items-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 rounded-full bg-primary hover:bg-primary-hover text-white font-semibold text-sm sm:text-base shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/35 transition-all duration-300 hover:-translate-y-0.5 active:scale-95 cursor-pointer"
                                         >
                                              <span>Projects</span>
                                              <svg className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -275,7 +275,7 @@ export default function Hero() {
                                       transition={{ duration: 0.35, delay: 0.2 }}
                                       className="flex items-center gap-2 mb-3.5 px-1"
                                  >
-                                      <span className="w-2 h-2 rounded-full bg-[#FF6700] animate-pulse" />
+                                      <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
                                       <span className="text-xs font-mono font-bold tracking-wider uppercase text-gray-500 dark:text-gray-400">
                                            Connect & Follow
                                       </span>
@@ -308,7 +308,7 @@ export default function Hero() {
                                                 }}
                                                 whileHover={{ x: -4, transition: { duration: 0.2 } }}
                                                 whileTap={{ scale: 0.98 }}
-                                                className="group relative flex items-center justify-between p-2.5 sm:p-3 rounded-2xl bg-transparent hover:bg-black/[0.03] dark:hover:bg-white/[0.04] border border-black/10 dark:border-white/10 hover:border-[#FF6700]/45 dark:hover:border-[#FF6700]/55 shadow-none hover:shadow-md hover:shadow-[#FF6700]/10 transition-all duration-200 cursor-pointer"
+                                                className="group relative flex items-center justify-between p-2.5 sm:p-3 rounded-2xl bg-transparent hover:bg-black/[0.03] dark:hover:bg-white/[0.04] border border-black/10 dark:border-white/10 hover:border-primary/45 dark:hover:border-primary/55 shadow-none hover:shadow-md hover:shadow-primary/10 transition-all duration-200 cursor-pointer"
                                            >
                                                 {/* Left: Brand Icon + Name & Username */}
                                                 <div className="flex items-center gap-3 min-w-0">
@@ -317,7 +317,7 @@ export default function Hero() {
                                                      </div>
                                                      <div className="flex flex-col min-w-0 text-left">
                                                           <div className="flex items-center gap-1.5">
-                                                               <span className="text-xs sm:text-sm font-bold text-neutral-900 dark:text-white truncate group-hover:text-[#FF6700] transition-colors">
+                                                               <span className="text-xs sm:text-sm font-bold text-neutral-900 dark:text-white truncate group-hover:text-primary transition-colors">
                                                                     {social.name}
                                                                </span>
                                                           </div>
@@ -328,7 +328,7 @@ export default function Hero() {
                                                 </div>
 
                                                 {/* Right: Subtle External Arrow */}
-                                                <div className="w-7 h-7 rounded-full flex items-center justify-center text-neutral-400 group-hover:text-[#FF6700] group-hover:translate-x-0.5 transition-all shrink-0">
+                                                <div className="w-7 h-7 rounded-full flex items-center justify-center text-neutral-400 group-hover:text-primary group-hover:translate-x-0.5 transition-all shrink-0">
                                                      <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round">
                                                           <path d="M7 17L17 7M17 7H7M17 7V17" />
                                                      </svg>
@@ -363,20 +363,20 @@ export default function Hero() {
                 >
                      {/* Mouse Frame with Animated Scrolling Wheel */}
                      <div className="flex items-center gap-2">
-                          <div className="w-3.5 h-5 sm:w-4 sm:h-6 rounded-full border-[1.5px] border-white/80 group-hover:border-[#FF6700] flex items-start justify-center p-0.5 transition-colors">
+                          <div className="w-3.5 h-5 sm:w-4 sm:h-6 rounded-full border-[1.5px] border-white/80 group-hover:border-primary flex items-start justify-center p-0.5 transition-colors">
                                <motion.div
                                     animate={{ y: [0, 6, 0], opacity: [1, 0.3, 1] }}
                                     transition={{ duration: 1.6, repeat: Infinity, ease: "easeInOut" }}
-                                    className="w-1 h-1.5 rounded-full bg-[#FF6700]"
+                                    className="w-1 h-1.5 rounded-full bg-primary"
                                />
                           </div>
-                          <span className="text-[11px] sm:text-xs font-mono font-bold tracking-wider text-white group-hover:text-[#FF6700] drop-shadow-sm transition-colors">
+                          <span className="text-[11px] sm:text-xs font-mono font-bold tracking-wider text-white group-hover:text-primary drop-shadow-sm transition-colors">
                                Scroll to Explore
                           </span>
                           <motion.span
                                animate={{ y: [0, 2, 0] }}
                                transition={{ duration: 1.2, repeat: Infinity, ease: "easeInOut" }}
-                               className="text-[#FF6700] text-xs font-bold"
+                               className="text-primary text-xs font-bold"
                           >
                                ↓
                           </motion.span>

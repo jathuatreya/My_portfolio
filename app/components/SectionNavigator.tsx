@@ -88,7 +88,7 @@ export default function SectionNavigator() {
           : "opacity-0 translate-x-4 pointer-events-none"
       }`}
     >
-      <div className="flex flex-col items-center bg-white/95 dark:bg-[#070c16]/95 backdrop-blur-md border border-black/15 dark:border-[#FF6700]/40 rounded-full py-2 px-1.5 shadow-xl shadow-black/10 dark:shadow-2xl dark:shadow-black/50 gap-1.5 transition-all">
+      <div className="flex flex-col items-center bg-transparent border border-black/15 dark:border-primary/40 rounded-full py-2 px-1.5 gap-1.5 transition-all">
         {/* Quick Prev Section Arrow */}
         <button
           type="button"
@@ -96,7 +96,7 @@ export default function SectionNavigator() {
           disabled={currentIndex <= 0}
           title="Previous section"
           aria-label="Previous section"
-          className="w-6 h-6 rounded-full flex items-center justify-center text-[#FF6700] dark:text-[#FF8533] hover:text-white hover:bg-[#FF6700] dark:hover:bg-[#FF6700]/40 disabled:opacity-20 disabled:hover:bg-transparent disabled:hover:text-[#FF6700] transition-all cursor-pointer"
+          className="w-6 h-6 rounded-full flex items-center justify-center text-primary dark:text-primary-light hover:text-white hover:bg-primary dark:hover:bg-primary/40 disabled:opacity-20 disabled:hover:bg-transparent disabled:hover:text-primary transition-all cursor-pointer"
         >
           <ChevronUp size={14} strokeWidth={2.5} />
         </button>
@@ -122,10 +122,10 @@ export default function SectionNavigator() {
                       : "opacity-0 translate-x-2 scale-95 pointer-events-none"
                   }`}
                 >
-                  <div className="bg-white dark:bg-[#09101d] text-neutral-900 dark:text-white text-xs font-semibold px-3 py-1.5 rounded-xl shadow-xl shadow-black/10 border border-black/10 dark:border-[#FF6700]/50 flex items-center gap-2 whitespace-nowrap">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#FF6700]" />
+                  <div className="bg-white dark:bg-[#09101d] text-neutral-900 dark:text-white text-xs font-semibold px-3 py-1.5 rounded-xl shadow-xl shadow-black/10 border border-black/10 dark:border-primary/50 flex items-center gap-2 whitespace-nowrap">
+                    <span className="w-1.5 h-1.5 rounded-full bg-primary" />
                     <span>{section.label}</span>
-                    <span className="text-[10px] font-mono text-[#FF6700]/80 font-bold">
+                    <span className="text-[10px] font-mono text-primary/80 font-bold">
                       0{idx + 1}
                     </span>
                   </div>
@@ -141,8 +141,8 @@ export default function SectionNavigator() {
                   <span
                     className={`block rounded-full transition-all duration-300 ${
                       isActive
-                        ? "w-2.5 h-5 bg-[#FF6700] shadow-[0_0_12px_rgba(255, 103, 0,0.7)]"
-                        : "w-2 h-2 bg-neutral-300 dark:bg-white/25 hover:bg-[#FF6700] dark:hover:bg-[#FF6700]/80 hover:scale-125"
+                        ? "w-2.5 h-5 bg-primary shadow-md shadow-primary/70"
+                        : "w-2 h-2 bg-neutral-300 dark:bg-white/25 hover:bg-primary dark:hover:bg-primary/80 hover:scale-125"
                     }`}
                   />
                 </button>
@@ -157,7 +157,7 @@ export default function SectionNavigator() {
           onClick={goToNextSection}
           title="Next section"
           aria-label="Next section"
-          className="w-6 h-6 rounded-full flex items-center justify-center text-[#FF6700] dark:text-[#FF8533] hover:text-white hover:bg-[#FF6700] dark:hover:bg-[#FF6700]/40 transition-all cursor-pointer animate-pulse"
+          className="w-6 h-6 rounded-full flex items-center justify-center text-primary dark:text-primary-light hover:text-white hover:bg-primary dark:hover:bg-primary/40 transition-all cursor-pointer animate-pulse"
         >
           <ChevronDown size={14} strokeWidth={2.5} />
         </button>

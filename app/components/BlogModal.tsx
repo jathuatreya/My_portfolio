@@ -85,7 +85,7 @@ export default function BlogModal({ blog, onClose, onSelectBlog }: BlogModalProp
           {/* Top Sticky Header */}
           <div className="sticky top-0 z-20 flex items-center justify-between px-4 sm:px-8 py-3.5 sm:py-4 bg-white/90 dark:bg-[#0c111d]/90 backdrop-blur-md border-b border-black/5 dark:border-white/10">
             <div className="flex items-center gap-3">
-              <span className="px-3 py-1 rounded-full bg-[#FF6700]/10 border border-[#FF6700]/25 text-[#FF6700] text-xs font-mono font-bold uppercase tracking-wider">
+              <span className="px-3 py-1 rounded-full bg-primary/10 border border-primary/25 text-primary text-xs font-mono font-bold uppercase tracking-wider">
                 {blog.category}
               </span>
               <span className="hidden sm:inline-flex items-center gap-1.5 text-xs text-neutral-500 dark:text-neutral-400 font-mono">
@@ -149,28 +149,28 @@ export default function BlogModal({ blog, onClose, onSelectBlog }: BlogModalProp
 
               {/* Author badge */}
               <div className="flex items-center gap-3 pt-1 pb-4 border-b border-black/5 dark:border-white/10">
-                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#FF6700] to-orange-700 flex items-center justify-center font-bold text-white text-sm shadow-md shadow-[#FF6700]/25">
+                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-orange-700 flex items-center justify-center font-bold text-white text-sm shadow-md shadow-primary/25">
                   JV
                 </div>
                 <div className="flex flex-col text-left">
                   <span className="text-xs sm:text-sm font-bold text-neutral-900 dark:text-white">
                     {profile.name}
                   </span>
-                  <span className="text-[11px] text-[#FF6700] font-mono">
+                  <span className="text-[11px] text-primary font-mono">
                     Full-Stack Developer • ML & IoT Innovator
                   </span>
                 </div>
               </div>
 
               {/* Excerpt Lead Paragraph */}
-              <p className="text-base sm:text-lg text-neutral-700 dark:text-neutral-200 leading-relaxed font-medium italic bg-neutral-50 dark:bg-white/[0.03] p-4 sm:p-5 rounded-2xl border-l-4 border-[#FF6700]">
+              <p className="text-base sm:text-lg text-neutral-700 dark:text-neutral-200 leading-relaxed font-medium italic bg-neutral-50 dark:bg-white/[0.03] p-4 sm:p-5 rounded-2xl border-l-4 border-primary">
                 &ldquo;{blog.excerpt}&rdquo;
               </p>
             </div>
 
             {/* Main Content Introduction */}
             <div className="prose dark:prose-invert max-w-none text-neutral-700 dark:text-neutral-300 text-sm sm:text-base leading-relaxed sm:leading-loose">
-              <p className="text-base sm:text-lg leading-relaxed first-letter:text-5xl first-letter:font-black first-letter:text-[#FF6700] first-letter:float-left first-letter:mr-3 first-letter:leading-none">
+              <p className="text-base sm:text-lg leading-relaxed first-letter:text-5xl first-letter:font-black first-letter:text-primary first-letter:float-left first-letter:mr-3 first-letter:leading-none">
                 {blog.content}
               </p>
 
@@ -183,7 +183,7 @@ export default function BlogModal({ blog, onClose, onSelectBlog }: BlogModalProp
                       className="p-5 sm:p-6 rounded-2xl bg-neutral-50/70 dark:bg-white/[0.02] border border-black/5 dark:border-white/5 space-y-3"
                     >
                       <h2 className="text-lg sm:text-xl font-bold text-neutral-900 dark:text-white flex items-center gap-2.5">
-                        <span className="w-2 h-2 rounded-full bg-[#FF6700]" />
+                        <span className="w-2 h-2 rounded-full bg-primary" />
                         {section.heading}
                       </h2>
                       <p className="text-sm sm:text-base text-neutral-600 dark:text-neutral-300 leading-relaxed whitespace-pre-line">
@@ -218,7 +218,7 @@ export default function BlogModal({ blog, onClose, onSelectBlog }: BlogModalProp
                       key={i}
                       className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-mono font-medium bg-black/5 dark:bg-white/10 text-neutral-800 dark:text-neutral-200 border border-black/5 dark:border-white/5"
                     >
-                      <Tag size={12} className="text-[#FF6700]" />
+                      <Tag size={12} className="text-primary" />
                       {tech}
                     </span>
                   ))}
@@ -266,9 +266,9 @@ export default function BlogModal({ blog, onClose, onSelectBlog }: BlogModalProp
                 <button
                   type="button"
                   onClick={() => onSelectBlog && onSelectBlog(prevBlog)}
-                  className="p-3.5 rounded-2xl bg-black/[0.03] dark:bg-white/[0.03] hover:bg-[#FF6700]/10 border border-black/5 dark:border-white/5 hover:border-[#FF6700]/30 text-left transition-all group cursor-pointer flex items-center gap-3"
+                  className="p-3.5 rounded-2xl bg-black/[0.03] dark:bg-white/[0.03] hover:bg-primary/10 border border-black/5 dark:border-white/5 hover:border-primary/30 text-left transition-all group cursor-pointer flex items-center gap-3"
                 >
-                  <ArrowLeft size={16} className="text-[#FF6700] shrink-0 group-hover:-translate-x-1 transition-transform" />
+                  <ArrowLeft size={16} className="text-primary shrink-0 group-hover:-translate-x-1 transition-transform" />
                   <div className="flex flex-col min-w-0">
                     <span className="text-[10px] font-mono text-neutral-400 uppercase tracking-wider">Previous Post</span>
                     <span className="text-xs sm:text-sm font-bold text-neutral-900 dark:text-white truncate">
@@ -284,7 +284,7 @@ export default function BlogModal({ blog, onClose, onSelectBlog }: BlogModalProp
                 <button
                   type="button"
                   onClick={() => onSelectBlog && onSelectBlog(nextBlog)}
-                  className="p-3.5 rounded-2xl bg-black/[0.03] dark:bg-white/[0.03] hover:bg-[#FF6700]/10 border border-black/5 dark:border-white/5 hover:border-[#FF6700]/30 text-right transition-all group cursor-pointer flex items-center justify-end gap-3"
+                  className="p-3.5 rounded-2xl bg-black/[0.03] dark:bg-white/[0.03] hover:bg-primary/10 border border-black/5 dark:border-white/5 hover:border-primary/30 text-right transition-all group cursor-pointer flex items-center justify-end gap-3"
                 >
                   <div className="flex flex-col min-w-0">
                     <span className="text-[10px] font-mono text-neutral-400 uppercase tracking-wider">Next Post</span>
@@ -292,7 +292,7 @@ export default function BlogModal({ blog, onClose, onSelectBlog }: BlogModalProp
                       {nextBlog.title}
                     </span>
                   </div>
-                  <ArrowRight size={16} className="text-[#FF6700] shrink-0 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight size={16} className="text-primary shrink-0 group-hover:translate-x-1 transition-transform" />
                 </button>
               ) : (
                 <div />

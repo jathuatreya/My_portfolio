@@ -19,10 +19,10 @@ export default function ScrollProgressBar() {
     >
       <motion.div
         style={{ scaleX, transformOrigin: "0%" }}
-        className="h-full w-full bg-[#FF6700] relative shadow-[0_0_14px_rgba(255, 103, 0,0.8)]"
+        className="h-full w-full bg-primary relative shadow-md shadow-primary/80"
       >
         {/* Glowing Leading Head in Primary Color */}
-        <div className="absolute right-0 top-1/2 -translate-y-1/2 w-2.5 h-2.5 rounded-full bg-white shadow-[0_0_10px_#FF6700,0_0_20px_#FF6700] animate-pulse" />
+        <div className="absolute right-0 top-1/2 -translate-y-1/2 w-2.5 h-2.5 rounded-full bg-white shadow-md shadow-primary animate-pulse" />
       </motion.div>
     </div>
   );
