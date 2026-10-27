@@ -130,7 +130,7 @@ export default function Pricing() {
             </span>
           </h2>
 
-          <p className="mt-4 text-base sm:text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed font-normal">
+          <p className="mt-4 text-base sm:text-lg text-neutral-300 max-w-2xl mx-auto leading-relaxed font-normal">
             Fixed-scope development packages designed for professionals and growing businesses.
             Full administrative access, transparent pricing, and 100% clean source code ownership.
           </p>
@@ -142,7 +142,7 @@ export default function Pricing() {
               className={`px-5 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all duration-200 cursor-pointer ${
                 activeTab === "usd"
                   ? "bg-primary text-white shadow-md shadow-primary/30 font-bold"
-                  : "text-slate-400 hover:text-white"
+                  : "text-neutral-400 hover:text-white"
               }`}
             >
               Web & Custom Software ($)
@@ -152,7 +152,7 @@ export default function Pricing() {
               className={`px-5 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all duration-200 cursor-pointer ${
                 activeTab === "retail"
                   ? "bg-primary text-white shadow-md shadow-primary/30 font-bold"
-                  : "text-slate-400 hover:text-white"
+                  : "text-neutral-400 hover:text-white"
               }`}
             >
               Retail & POS Billing (Rs.)
@@ -160,17 +160,17 @@ export default function Pricing() {
           </div>
 
           {/* Quick Assurance Badges */}
-          <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 pt-7 text-xs sm:text-sm font-medium text-slate-300">
+          <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 pt-7 text-xs sm:text-sm font-medium text-neutral-300">
             <span className="inline-flex items-center gap-1.5">
               <BadgeCheck size={16} className="text-primary" />
               Milestone Payments
             </span>
-            <span className="text-slate-700">•</span>
+            <span className="text-neutral-600">•</span>
             <span className="inline-flex items-center gap-1.5">
               <Lock size={15} className="text-primary" />
               Full Source Code Ownership
             </span>
-            <span className="text-slate-700">•</span>
+            <span className="text-neutral-600">•</span>
             <span className="inline-flex items-center gap-1.5">
               <Headphones size={15} className="text-primary" />
               Direct Developer Contact
@@ -189,10 +189,10 @@ export default function Pricing() {
               setActiveSlide(idx);
             }
           }}
-          className={`flex lg:grid gap-5 sm:gap-6 lg:gap-7 items-stretch mb-4 lg:mb-16 mx-auto overflow-x-auto lg:overflow-visible snap-x snap-mandatory lg:snap-none no-scrollbar -mx-4 px-4 sm:mx-0 sm:px-0 pb-4 lg:pb-0 ${
+          className={`flex items-stretch justify-center gap-5 sm:gap-6 lg:gap-8 mb-4 lg:mb-16 mx-auto overflow-x-auto sm:overflow-visible snap-x snap-mandatory sm:snap-none no-scrollbar px-4 sm:px-0 pb-4 lg:pb-0 ${
             plans.length === 2
-              ? "lg:grid-cols-2 max-w-4xl"
-              : "lg:grid-cols-3 max-w-7xl"
+              ? "sm:grid sm:grid-cols-2 max-w-4xl w-full"
+              : "lg:grid lg:grid-cols-3 max-w-7xl w-full"
           }`}
         >
           {plans.map((plan: PricingPlan) => {
@@ -203,7 +203,11 @@ export default function Pricing() {
               <div
                 key={plan.id}
                 data-pricing-card
-                className="w-[85vw] sm:w-[380px] lg:w-auto shrink-0 lg:shrink snap-center flex flex-col h-full"
+                className={`snap-center flex flex-col h-full ${
+                  plans.length === 2
+                    ? "w-[85vw] sm:w-full shrink-0 sm:shrink"
+                    : "w-[85vw] sm:w-[360px] lg:w-full shrink-0 lg:shrink"
+                }`}
               >
                 <div
                   className={`relative flex flex-col justify-between rounded-[28px] p-6 sm:p-8 transition-all duration-300 h-full border-2 ${
@@ -218,7 +222,7 @@ export default function Pricing() {
                     <div className="flex items-center justify-between gap-3 mb-4 h-7">
                       <span
                         className={`text-sm font-semibold tracking-wide ${
-                          isPopular ? "text-primary font-bold" : "text-slate-400"
+                          isPopular ? "text-primary font-bold" : "text-neutral-400"
                         }`}
                       >
                         {plan.tier}
@@ -245,7 +249,7 @@ export default function Pricing() {
                     </h3>
 
                     {/* Tagline / Subtitle (Consistent height across all 3 cards) */}
-                    <p className="text-xs sm:text-[13px] text-slate-300 leading-relaxed mb-6 min-h-[44px] flex items-center">
+                    <p className="text-xs sm:text-[13px] text-neutral-300 leading-relaxed mb-6 min-h-[44px] flex items-center">
                       {plan.tagline}
                     </p>
 
@@ -290,7 +294,7 @@ export default function Pricing() {
                         <span className="text-3xl sm:text-4xl lg:text-[40px] font-black text-white tracking-tight">
                           {plan.priceDisplay}
                         </span>
-                        <span className="text-xs sm:text-sm text-slate-300 font-normal">
+                        <span className="text-xs sm:text-sm text-neutral-300 font-normal">
                           {plan.priceUnit}
                         </span>
                       </div>
@@ -298,7 +302,7 @@ export default function Pricing() {
                         className={`text-xs mt-1.5 ${
                           plan.priceSubtextType === "green"
                             ? "text-[#34d399] font-medium"
-                            : "text-slate-300"
+                            : "text-neutral-300"
                         }`}
                       >
                         {plan.priceSubtext}
@@ -311,7 +315,7 @@ export default function Pricing() {
                     {plan.featureItems?.map((item, i) => (
                       <div
                         key={i}
-                        className="flex items-start gap-3 text-xs sm:text-[13px] text-slate-300 leading-snug"
+                        className="flex items-start gap-3 text-xs sm:text-[13px] text-neutral-300 leading-snug"
                       >
                         <div className="shrink-0 mt-0.5">
                           {renderFeatureIcon(item.iconName, isPopular)}
@@ -364,7 +368,7 @@ export default function Pricing() {
                   <h4 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
                     Need a bespoke system, custom AI model, or enterprise integration?
                   </h4>
-                  <p className="text-xs sm:text-sm text-slate-300 mt-1 max-w-2xl leading-relaxed">
+                  <p className="text-xs sm:text-sm text-neutral-300 mt-1 max-w-2xl leading-relaxed">
                     Have unique retail POS workflows, custom database schemas, or cloud automation needs? Get a detailed architectural roadmap and fixed quotation within 24 hours.
                   </p>
                 </div>
