@@ -125,15 +125,10 @@ export default function Pricing() {
 
           <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white leading-[1.12]">
             Predictable Investment,{" "}
-            <span className="bg-gradient-to-r from-primary via-amber-300 to-primary bg-clip-text text-transparent">
+            <span className="text-primary">
               Exceptional Results
             </span>
           </h2>
-
-          <p className="mt-4 text-base sm:text-lg text-neutral-300 max-w-2xl mx-auto leading-relaxed font-normal">
-            Fixed-scope development packages designed for professionals and growing businesses.
-            Full administrative access, transparent pricing, and 100% clean source code ownership.
-          </p>
 
           {/* Currency / Category Toggle */}
           <div className="mt-8 inline-flex items-center p-1 rounded-full bg-[#1D1D1F] border border-white/10 shadow-inner">

@@ -3,7 +3,6 @@
 import Image from 'next/image'
 import { profile, aboutStats } from '../data/portfolio-data'
 import { useLanguage } from '../context/LanguageContext'
-import { MagicCard, MagicContainer } from './MagicCard'
 import { User } from 'lucide-react'
 import { highlightTitle } from '../utils/highlight-text'
 import { ScrollReveal } from './ScrollReveal'
@@ -57,24 +56,26 @@ export default function About() {
                                    </p>
                               </ScrollReveal>
 
-                              {/* Highlight Cards with Staggered Entry Animation */}
-                              <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5 sm:gap-3 pt-1">
+                              {/* Highlight Cards: Ultra-Compact Micro Tiles */}
+                              <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-2.5 pt-1">
                                    {stats.map((stat, index) => (
                                         <ScrollReveal
                                              key={index}
-                                             delay={0.2 + (index % 3) * 0.06}
+                                             delay={0.15 + (index % 3) * 0.05}
                                              className={index === 8 ? "col-span-2 sm:col-span-1" : ""}
                                         >
-                                             <div className="flex flex-col items-start p-3 sm:p-3.5 bg-transparent hover:bg-black/[0.03] dark:hover:bg-white/[0.04] border border-primary/25 hover:border-primary/75 rounded-xl shadow-none hover:shadow-md hover:shadow-primary/5 transition-all duration-300 h-full group">
-                                                  <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-primary/10 dark:bg-primary/15 flex items-center justify-center text-primary group-hover:scale-105 transition-transform duration-200">
-                                                       <stat.icon size={16} strokeWidth={2.2} />
+                                             <div className="flex items-center gap-2 sm:gap-2.5 p-2 sm:p-2.5 rounded-xl bg-transparent hover:bg-black/[0.02] dark:hover:bg-white/[0.03] border border-primary/20 hover:border-primary/60 transition-all duration-200 group h-full">
+                                                  <div className="w-7 h-7 rounded-lg bg-primary/10 dark:bg-primary/15 flex items-center justify-center text-primary shrink-0 group-hover:scale-105 transition-transform">
+                                                       <stat.icon size={14} strokeWidth={2.2} />
                                                   </div>
-                                                  <p className="text-lg sm:text-xl font-bold mt-2 tracking-tight text-[#1D1D1F] dark:text-white group-hover:text-primary transition-colors">
-                                                       {stat.value}
-                                                  </p>
-                                                  <p className="text-[11px] sm:text-xs font-medium text-gray-600 dark:text-gray-400 mt-0.5 leading-snug">
-                                                       {t.about.stats[stat.id as keyof typeof t.about.stats] || stat.label}
-                                                  </p>
+                                                  <div className="min-w-0 flex-1">
+                                                       <div className="text-sm sm:text-base font-bold text-[#1D1D1F] dark:text-white leading-tight group-hover:text-primary transition-colors">
+                                                            {stat.value}
+                                                       </div>
+                                                       <div className="text-[10px] sm:text-[11px] font-medium text-gray-500 dark:text-gray-400 truncate leading-tight mt-0.5" title={t.about.stats[stat.id as keyof typeof t.about.stats] || stat.label}>
+                                                            {t.about.stats[stat.id as keyof typeof t.about.stats] || stat.label}
+                                                       </div>
+                                                  </div>
                                              </div>
                                         </ScrollReveal>
                                    ))}
