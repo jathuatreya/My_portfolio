@@ -124,7 +124,7 @@ export default function Hero() {
      return (
           <section
                id="home"
-               className="relative min-h-[calc(100vh-5rem)] lg:h-[calc(100vh-5rem)] flex flex-col justify-between pt-2 sm:pt-4 pb-0 bg-white dark:bg-[#0a0a0a] overflow-hidden"
+               className="relative min-h-screen lg:h-screen flex flex-col justify-between pt-16 sm:pt-20 pb-0 bg-white dark:bg-[#0a0a0a] overflow-hidden"
           >
                {/* 1. Animated Particle Network Canvas */}
                <HeroBackgroundCanvas />

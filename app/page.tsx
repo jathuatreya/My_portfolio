@@ -20,7 +20,7 @@ export default function Home() {
         <Navbar />
         <SectionNavigator />
 
-        <main className="pt-20">
+        <main>
           <Hero />
           <About />
           <Experience />

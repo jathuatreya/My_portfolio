@@ -53,7 +53,7 @@ export default function Navbar() {
   useEffect(() => {
     const handleScroll = () => {
       const isHome = window.location.pathname === "/";
-      const scrollThreshold = isHome ? 420 : 20;
+      const scrollThreshold = isHome ? 80 : 20;
       setIsScrolled(window.scrollY > scrollThreshold);
 
       // If currently on blog pages
